@@ -23,8 +23,8 @@
 - {{contact.first_name}} — lead's first name
 
 ## GHL API
-- ABC Company API: pit-6ec8f479-5a81-4a7b-99c0-72eb8644e80a
-- EquityMax API: pit-80be1184-3cbd-4dfb-b25d-6fdb8298c8ae
+- ABC Company API: {{ABC_API_KEY}}
+- EquityMax API: {{EQM_API_KEY}}
 - Base URL: https://services.leadconnectorhq.com
 
 ## GOOGLE DRIVE DOCS

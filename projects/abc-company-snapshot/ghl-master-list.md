@@ -78,7 +78,7 @@ This is how the ABC snapshot stays universal. When the AI detects which product 
 
 # ABC COMPANY (Generic Snapshot — Layer 1)
 **Location ID:** `AKbAtRra4m908e2w2Kbo`  
-**API key:** `pit-6ec8f479-5a81-4a7b-99c0-72eb8644e80a`
+**API key:** `{{ABC_API_KEY}}`
 
 ## ABC — Custom Fields (59)
 
@@ -390,7 +390,7 @@ This is how the ABC snapshot stays universal. When the AI detects which product 
 
 # EQUITYMAX (Live Mortgage Account — Layer 2 source)
 **Location ID:** `OBmMdqdnPLZvVyHloFly`  
-**API key:** `pit-80be1184-3cbd-4dfb-b25d-6fdb8298c8ae`  
+**API key:** `{{EQM_API_KEY}}`  
 **⚠️ LIVE — do not trigger workflows. Read/copy only.**
 
 ## EqM — Custom Fields (389)

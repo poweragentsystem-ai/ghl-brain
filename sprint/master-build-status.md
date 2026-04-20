@@ -19,7 +19,7 @@
 ## CURRENT STATE — LIVE STATUS
 
 ### TRACK 1 — ABC COMPANY (Generic Universal Snapshot)
-**Location ID:** `AKbAtRra4m908e2w2Kbo` | **API key:** `pit-6ec8f479-5a81-4a7b-99c0-72eb8644e80a`
+**Location ID:** `AKbAtRra4m908e2w2Kbo` | **API key:** `{{ABC_API_KEY}}`
 **Status:** 85% — ready to finalize
 
 | Item | Count | State | Notes |
@@ -49,7 +49,7 @@
 ---
 
 ### TRACK 2 — EQUITYMAX (Mortgage Snapshot — Layer 2)
-**Location ID:** `OBmMdqdnPLZvVyHloFly` | **API key:** `pit-80be1184-3cbd-4dfb-b25d-6fdb8298c8ae`
+**Location ID:** `OBmMdqdnPLZvVyHloFly` | **API key:** `{{EQM_API_KEY}}`
 **Status:** 30% — live account in use, needs major cleanup before snapshot extraction
 
 | Item | Count | State | Notes |
