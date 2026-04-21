@@ -59,6 +59,55 @@ GHL's API returns 401/404 for these deletes — they require manual browser:
 **Delete this calendar** (Calendars → Settings → Delete):
 - Hemza Q's Personal Calendar (unknown ownership, likely ex-contractor)
 
+### ⚠️ CORRECTIONS RENÉE ADDED 2026-04-21 — apply these during all phases below
+
+**Lifecycle tags — every workflow uses these progressively:**
+- `new-business-lead` applied at lead creation (via source router)
+- `warm-lead` applied when lead replies OR opens pre-qualify
+- `hot-lead` applied when qualified + booked OR in application
+- `cold-lead` applied after 3 no-response touches
+- `old-lead` applied at 90 days silent
+
+**FSRA footer must use INDIVIDUAL customs (no composite):**
+In every email + website footer, compose the footer inline:
+```
+{{custom_values.user_full_name}} — {{custom_values.license_type}} · License {{custom_values.license_number}}
+Brokered through {{custom_values.brokerage_name}} · FSRA Regulated
+Not intended to solicit clients currently under contract with another mortgage professional · O.A.C.
+```
+Do NOT use `{{custom_values.fsra_footer_full}}` — that composite custom value has been removed.
+
+**Real Estate partner flow is a CORE feature — add AI Studio folder "Real Estate" with:**
+1. Real Estate Buyer Intake + Qualify workflow (collects buying criteria, books partner's calendar via `{{custom_values.real_estate_partner_calendar_link}}`, tags `real-estate-buyer` + `real-estate-qualified`)
+2. Real Estate Seller Intake + Qualify workflow (same, seller side)
+3. Real Estate Partner Notification workflow (alerts partner's email `{{custom_values.partner_email}}` when a qualified lead books)
+
+**Real Estate ONE landing page** (not three) — single page with "I'm buying / I'm selling / Just exploring" selector at top. Form branches accordingly.
+
+**Partner is NOT always a real estate agent** — `{{custom_values.partner_type}}` is a dropdown: Real Estate Agent / Lawyer / Financial Advisor / Builder / Other. The real estate flow is the highest-value example but partnership workflows must be generic enough to work with any partner type.
+
+**Folder structure (apply during AI Studio work):**
+1. Mortgage
+2. Partnership (generic B2B — all partner types)
+3. Recruitment
+4. **Real Estate** (NEW — buyer + seller flows)
+5. Voice AI Bots
+6. Conversational AI
+7. Miscellaneous (spam, source router, reply handling)
+
+**Tag hygiene:**
+- Use `source-meta` (not `source-facebook`) in all new/edited workflows
+- Single `no-show` tag is sufficient — DO NOT use deprecated `no-show-rebooked` or `no-show-final`
+
+**Webhooks to wire:**
+- `{{custom_values.lead_webhook_url}}` — external landing pages post leads here
+- `{{custom_values.application_webhook_url}}` — application platform (Scarlette/Lendesk/Velocity) callback
+- `{{custom_values.payment_webhook_url}}` — Stripe payment confirmation
+
+**Do NOT use these (deprecated):** `mortgage_agent_full_name`, `mortgage_agent_license_type`, `mortgage_agent_license_number`, `fsra_footer_full`, `doc_upload_link`, `industry`.
+
+---
+
 ### PHASE B — EquityMax AI Studio audit + rebuild
 
 Go to **AI Agents → Agent Studio → General Business Automation folder** (10 agents). For each:
