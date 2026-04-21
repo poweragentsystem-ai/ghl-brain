@@ -142,7 +142,48 @@ When above phases done:
 1. Agency Dashboard → Snapshots → Create Snapshot → from EquityMax → name "Canadian Mortgage Professional Snapshot v1"
 2. Agency Dashboard → Snapshots → Create Snapshot → from ABC → name "Generic Business Snapshot v1"
 
-## AT THE END
+## STOP CONDITIONS — halt and ask Renée, don't guess
 
-Append to `XpertVault/sprint/master-build-status.md` a status log line:
-`- [YYYY-MM-DD HH:MM | Console] Mortgage snapshot phases A–I complete. X agents built, Y workflows cleaned, Z emails humanized. Snapshot exported.`
+Call back before continuing if ANY of these happen:
+- A delete fails because the item is referenced by a live workflow (may break real leads)
+- The API returns 403/401 consistently (creds may have rotated)
+- GHL Build-with-AI explanation flags a workflow as having hardcoded personal info you can't attribute to Renée's info vs something else (she may want to keep it)
+- You're about to publish a workflow that contains an outbound message trigger (risk of firing at real contacts)
+- Any workflow shows "Schedule Appointment" modal overlays blocking Playwright clicks (known iframe issue — need Renée's manual approval)
+
+## DONE CRITERIA — how you report success
+
+Append one line to `XpertVault/sprint/master-build-status.md` via the API:
+```
+- [YYYY-MM-DD HH:MM | Console] Mortgage snapshot phases A–I complete. X junk deleted, Y agents built/audited, Z emails humanized, W snippets created. Snapshots exported: "Canadian Mortgage Professional Snapshot v1", "Generic Business Snapshot v1".
+```
+
+Then reply to Renée with:
+- **Counts:** exact numbers for workflows deleted, agents built, emails humanized, forms cleaned
+- **URLs:** direct links to the 2 exported snapshots in the Agency dashboard
+- **Blockers:** anything that couldn't finish + why
+- **Next session hand-off:** 1 specific sentence on what Renée should do next (purchase phone numbers, connect calendars, etc.)
+
+## RULES (must obey)
+
+Read these skill files before starting:
+- `C:/Users/User/claude-skills/message-tone.md` — human tone, no robotic phrases
+- `C:/Users/User/claude-skills/lead-journey-walkthrough.md` — verify every path before declaring done
+- `C:/Users/User/claude-skills/system-walkthrough.md` — test as end user + business owner + admin
+- `C:/Users/User/claude-skills/console-handoff.md` — the handoff protocol you're executing
+
+**Safety rules (non-negotiable):**
+- Never send messages, emails, or calls to any lead or contact in any sub-account
+- Testing only uses Renée's contact: phone 4168784622 / email renee.ross@gmail.com
+- Canadian compliance always applies: CASL (consent), PIPEDA (data handling), CRTC (voice), FSRA (mortgage ads)
+- Draft-only on EquityMax workflows — DO NOT toggle to Published until Renée reviews
+- On ABC, publish only the 4 specific draft workflows listed in Phase H
+
+**Tone rules (every email + voice bot + snippet):**
+- Human, warm, contractions, short sentences
+- Never "Please be advised" / "Hello [Name]," / "Reply YES/NO"
+- Good reply CTAs like "Reply with the days that work for you" are encouraged
+- Every marketing/nurture email includes `{{custom_values.fsra_footer_full}}` footer
+- Never hardcoded names — all `{{custom_values.*}}` tokens
+
+**When in doubt:** STOP. Use one of the stop conditions above. Do NOT improvise on live data.
