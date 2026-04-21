@@ -59,9 +59,10 @@ GHL's API returns 401/404 for these deletes — they require manual browser:
 **Delete this calendar** (Calendars → Settings → Delete):
 - Hemza Q's Personal Calendar (unknown ownership, likely ex-contractor)
 
-### 📖 THE DEFINITIVE WORKFLOW PLAYBOOK (read this before building any workflow)
+### 📖 THE DEFINITIVE WORKFLOW PLAYBOOK + AI AGENT BUILD PLAN (read BOTH before building)
 
-`https://raw.githubusercontent.com/poweragentsystem-ai/ghl-brain/main/sprint/mortgage-workflow-playbook.md`
+1. `https://raw.githubusercontent.com/poweragentsystem-ai/ghl-brain/main/sprint/mortgage-workflow-playbook.md` — the exact lead journey, timing, tags
+2. `https://raw.githubusercontent.com/poweragentsystem-ai/ghl-brain/main/sprint/ai-agent-build-plan.md` — how to build the AI agents in Build-with-AI (prompt→agent mapping, KB content plan, per-agent settings, build order, success criteria)
 
 This document contains the exact lead journey Renée walked through. Every automation, every stage, every timing rule, every tag, every compliance boundary. Build workflows from THIS document, not from assumptions.
 
