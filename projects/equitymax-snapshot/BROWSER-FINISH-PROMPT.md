@@ -59,6 +59,20 @@ GHL's API returns 401/404 for these deletes — they require manual browser:
 **Delete this calendar** (Calendars → Settings → Delete):
 - Hemza Q's Personal Calendar (unknown ownership, likely ex-contractor)
 
+### 📖 THE DEFINITIVE WORKFLOW PLAYBOOK (read this before building any workflow)
+
+`https://raw.githubusercontent.com/poweragentsystem-ai/ghl-brain/main/sprint/mortgage-workflow-playbook.md`
+
+This document contains the exact lead journey Renée walked through. Every automation, every stage, every timing rule, every tag, every compliance boundary. Build workflows from THIS document, not from assumptions.
+
+Key rules it specifies:
+- Never email + SMS + call simultaneously. Email → SMS → 5 min → voice AI.
+- 10-min delay on every stage entry except "New Lead" (user correction window).
+- Bot performance tracking is cumulative (both `ai-chat-booked` AND `ai-voice-rebooked` can co-exist on one contact).
+- Partnership workflows use `{{partner.niche}}` + `{{partner.service_N}}` tokens — generic across real estate / legal / financial planning / construction / any partner type.
+- Voice call outcome handling has 5 distinct states (success / not-answered / hung-up / call-failed / voicemail) — each with different callback logic.
+- Application chat bot can collect data; final submission goes through user's registered application platform (Scarlette / Velocity / Lendesk / Finmo).
+
 ### ⚠️ CORRECTIONS RENÉE ADDED 2026-04-21 — apply these during all phases below
 
 **Lifecycle tags — every workflow uses these progressively:**
