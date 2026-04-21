@@ -17,31 +17,35 @@
 
 ---
 
-## PROMPT → AGENT MAPPING
+## PROMPT → AGENT MAPPING (canonical slots only — updated 2026-04-21)
 
-Each prompt custom value is designed to be the SYSTEM PROMPT for one specific agent. When building in Build-with-AI, paste `{{custom_values.ai_prompt_<name>}}` as the agent's system prompt so it pulls the current tokenized version automatically.
+Use these CANONICAL properly-cased slots. The legacy lowercase-i `{{custom_values.ai_prompt_*}}` slots are intentionally blank and will be deleted after verification.
 
-| Agent Role | Prompt Token | Folder |
+| Agent Role | Prompt Token (canonical) | Folder |
 |---|---|---|
-| Welcome / 24/7 Auto-Reply | `{{custom_values.ai_prompt_1_general}}` | Mortgage |
-| Inbound Voice Reception | `{{custom_values.ai_prompt_inbound}}` | Voice AI Bots |
-| Outbound New-Lead Caller | `{{custom_values.ai_prompt_outbound_new_lead}}` | Voice AI Bots |
+| Welcome / 24/7 Auto-Reply | `{{custom_values.ai_prompt_welcome}}` | Mortgage |
+| Inbound Voice Reception | `{{custom_values.ai_prompt_inbound_reception}}` | Voice AI Bots |
+| Outbound New-Lead Caller | `{{custom_values.ai_prompt_outbound_lead_call}}` | Voice AI Bots |
 | Pre-Qualify Follow-Up | `{{custom_values.ai_prompt_pre_qualify_follow_up}}` | Mortgage |
-| Booking Follow-Up | `{{custom_values.ai_prompt_2_booking}}` | Mortgage |
-| Appointment Reminder Agent | `{{custom_values.ai_prompt_appointment_reminder}}` | Mortgage |
-| No-Show Rebooker (Voice) | `{{custom_values.ai_prompt_no_show}}` | Voice AI Bots |
+| Booking Follow-Up | `{{custom_values.ai_prompt_booking_follow_up}}` | Mortgage |
+| Appointment Reminder Agent | `{{custom_values.ai_prompt_appointment_reminder_new}}` | Mortgage |
+| No-Show Rebooker (Voice) | `{{custom_values.ai_prompt_no_show_rebook}}` | Voice AI Bots |
 | Application Reminder | `{{custom_values.ai_prompt_application_reminder}}` | Mortgage |
 | Document Collection (Voice) | `{{custom_values.ai_prompt_document_reminder}}` | Voice AI Bots |
 | Renewal Outreach (Voice) | `{{custom_values.ai_prompt_renewal_countdown}}` | Voice AI Bots |
-| Partnership Chat | `{{custom_values.ai_prompt_partnership}}` | Partnership |
+| Partnership Chat | `{{custom_values.ai_prompt_partnership_chat}}` | Partnership |
 | Recruitment Chat | `{{custom_values.ai_prompt_recruitment}}` | Recruitment |
-| Referral Request | `{{custom_values.ai_prompt_referral_request}}` | Mortgage |
-| Google Review Request | `{{custom_values.ai_prompt_google_review_request}}` | Mortgage |
-| Old Lead Resurrection | `{{custom_values.ai_prompt_old_lead_resurrection}}` | Mortgage |
+| Referral Request | `{{custom_values.ai_prompt_referral_request_new}}` | Mortgage |
+| Google Review Request | `{{custom_values.ai_prompt_google_review}}` | Mortgage |
+| Old Lead Resurrection | `{{custom_values.ai_prompt_old_lead_resurrect}}` | Mortgage |
 | Long-Term Nurture Generator | `{{custom_values.ai_prompt_long_term_nurture}}` | Mortgage |
-| Real Estate Buyer Intake | `{{custom_values.ai_prompt_buyer}}` | Real Estate |
-| Real Estate Seller Intake | `{{custom_values.ai_prompt_seller}}` | Real Estate |
-| Generic Follow-Up | `{{custom_values.ai_prompt_follow_up}}` | Miscellaneous |
+| Real Estate Buyer Intake | `{{custom_values.ai_prompt_real_estate_buyer}}` | Real Estate |
+| Real Estate Seller Intake | `{{custom_values.ai_prompt_real_estate_seller}}` | Real Estate |
+
+**DO NOT USE these legacy slots (intentionally blanked, scheduled for deletion):**
+- `ai_prompt_inbound`, `ai_prompt_outbound_new_lead`, `ai_prompt_no_show`, `ai_prompt_1_general`, `ai_prompt_follow_up`, `ai_prompt_document_follow_up`, `ai_prompt_seller`, `ai_prompt_buyer`, `ai_prompt_2_booking`, `ai_prompt_appointment_reminder`, `ai_prompt_partnership`, `ai_prompt_referral_request`, `ai_prompt_google_review_request`, `ai_prompt_application_follow_up`, `ai_prompt_old_lead_resurrection`, `openai_prompt`
+
+**Console deletion phase (after lead journey walk passes):** Console deletes these 16 legacy slots via the GHL API.
 
 ---
 
