@@ -21,7 +21,7 @@
 | 2026-04-22 | GHL canonical pick: `ai_job_title` vs `ai_assistant_job_title` (AI role title CV) | Renée decides next session — unblocks Phase 3 CV swaps. Rec: `ai_job_title` | HIGH |
 | 2026-04-22 | ABC internal 3-way dups: pick canonical for `privacy_policy`, `terms_of_service`, `qualified_*`, `not_qualified_*` | Renée decides next session — must resolve ABC before normalizing EqM. Rec: shortest key | HIGH |
 | 2026-04-22 | ABC tag standardization: spaced → hyphenated across all tags | Renée confirms next session. Rec: yes | MED |
-| 2026-04-22 | 14 gaps in forward-walk-gap-report.md — decide build-now / defer / accept per gap | Renée walks the report next session; Partnership post-qualify flow is highest-impact | HIGH |
+| 2026-04-22 | 14 gaps in forward-walk-gap-report.md — DEFERRED per Renée 2026-04-22 "lets defer" | Revisit after v1 snapshot ships + first client onboards. Partnership post-qualify already handled in v1 flow spec. | MED |
 | 2026-04-22 | Pre-Qualifier agent #11 vs New Lead Prequalify & Book #9 — one must be disabled to avoid double-fire | Renée picks which stays; do this before Phase 3 swaps | HIGH |
 
 ---
