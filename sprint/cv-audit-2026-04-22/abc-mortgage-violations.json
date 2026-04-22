@@ -1,0 +1,41 @@
+{
+  "cvs": [
+    {
+      "id": "Lw4CVFsiTNR0yPAaXRHi",
+      "name": "Inbound Prequalify Bot",
+      "key": "inbound_prequalify_bot",
+      "valueSample": "",
+      "matchedOn": "prequalif"
+    },
+    {
+      "id": "a1XUTZXWWbyd8NdhzoVd",
+      "name": "Prequalifying Form Link",
+      "key": "prequalifying_form_link",
+      "valueSample": "",
+      "matchedOn": "prequalif"
+    }
+  ],
+  "tags": [
+    {
+      "id": "aJH7sIB2U6xeTLTkEPqo",
+      "name": "pre-qualified",
+      "matchedOn": "pre-qualif"
+    },
+    {
+      "id": "fc9yIdcclUaIc9iAPJTA",
+      "name": "pre-qualify-complete",
+      "matchedOn": "pre-qualif"
+    },
+    {
+      "id": "IzEnagj2US1U7zxmmpYz",
+      "name": "pre-qualify-started",
+      "matchedOn": "pre-qualif"
+    },
+    {
+      "id": "rjLsuUEYnVdUI3UfYgs4",
+      "name": "submitted-to-lender",
+      "matchedOn": "lender"
+    }
+  ],
+  "workflows": []
+}
