@@ -314,7 +314,7 @@ Orphan detection caveat: the workflow JSON provided is metadata only (name + ID)
 |---|---|---|---|
 | 1770411789818x729503551179194400 | DELETE-ORPHAN | — | Looks like a stray Bubble/Lovable or external ID. Not a meaningful tag. |
 | 1770411937731x786716738265284600 | DELETE-ORPHAN | — | Same as above. |
-| 6/8/2024_call_ended | DELETE-ORPHAN | — | Date-stamped one-off tag. Delete. |
+| 6/8/2024_call_ended | REVIEW | — | — | RECLASSIFIED: verified 1 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | ai-chat-abandoned | KEEP | — | Matches ABC canonical split convention. |
 | ai-chat-app-sent | KEEP | — | Canonical. |
 | ai-chat-booked | KEEP | — | Canonical. |
@@ -345,7 +345,7 @@ Orphan detection caveat: the workflow JSON provided is metadata only (name + ID)
 | ai-voice-unqualified | KEEP | — | Canonical. |
 | ai-voice-voicemail-left | KEEP | — | Canonical. |
 | ai_call_answered | MERGE-INTO-CANONICAL | ai-voice-call-complete | Legacy underscore convention. Migrate. |
-| ai_call_convo | DELETE-ORPHAN | — | Ambiguous legacy tag. |
+| ai_call_convo | REVIEW | — | — | RECLASSIFIED: verified 3 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | ai_sms_call_complete | MERGE-INTO-CANONICAL | ai-chat-transferred | Unclear semantics; likely means chat-to-call handoff completed. Either merge into ai-chat-transferred or delete. |
 | ai_sms_call_not_complete | DELETE-DEPRECATED | — | Legacy. |
 | ai_sms_not_qualified | MERGE-INTO-CANONICAL | ai-chat-unqualified | Legacy underscore. |
@@ -368,7 +368,7 @@ Orphan detection caveat: the workflow JSON provided is metadata only (name + ID)
 | client | MERGE-INTO-CANONICAL | active client | Ambiguous alone. |
 | client-funded | MERGE-INTO-CANONICAL | funded | Duplicate. |
 | closed | MERGE-INTO-CANONICAL | closing | Either duplicate of closing or of funded. Clarify. |
-| clubcondo | DELETE-ORPHAN | — | Campaign-specific legacy. |
+| clubcondo | REVIEW | — | — | RECLASSIFIED: verified 6 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | cold | MERGE-INTO-CANONICAL | cold-lead | Legacy short form. |
 | cold-lead | KEEP | — | Canonical. |
 | commercial | MORTGAGE-KEEP | — | Mortgage product category. |
@@ -378,8 +378,8 @@ Orphan detection caveat: the workflow JSON provided is metadata only (name + ID)
 | dnd | KEEP | — | Canonical. |
 | documents-complete | KEEP | — | Canonical. |
 | documents-requested | KEEP | — | Canonical. |
-| email-warmup | DELETE-ORPHAN | — | One-off campaign tag. |
-| email-warmup-maxequity | DELETE-ORPHAN | — | One-off campaign tag. |
+| email-warmup | REVIEW | — | — | RECLASSIFIED: verified 1 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
+| email-warmup-maxequity | REVIEW | — | — | RECLASSIFIED: verified 1 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | equitymax website | MERGE-INTO-CANONICAL | source-website | Legacy source tag. |
 | existing-client | KEEP | — | Canonical. |
 | fb lead form | MERGE-INTO-CANONICAL | source-facebook | Legacy source label. |
@@ -391,9 +391,9 @@ Orphan detection caveat: the workflow JSON provided is metadata only (name + ID)
 | heloc | MORTGAGE-KEEP | — | Mortgage product. |
 | high priority | REVIEW | — | ABC has no equivalent. Propose as canonical or delete. |
 | hot-lead | KEEP | — | Canonical. |
-| john lead | DELETE-ORPHAN | — | Personal labeling. |
+| john lead | REVIEW | — | — | RECLASSIFIED: verified 1 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | kijiji | MERGE-INTO-CANONICAL | source-kijiji | Legacy source label. |
-| lead currently in workflow | DELETE-ORPHAN | — | Workflow-state tag, should be pipeline stage. |
+| lead currently in workflow | REVIEW | — | — | RECLASSIFIED: verified 244 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | lead currently in workflow sms | DELETE-ORPHAN | — | Same. |
 | lead paid | MERGE-INTO-CANONICAL | client-paid | ABC canonical is `client-paid`. |
 | long term nurture | MERGE-INTO-CANONICAL | long-term-nurture | Spacing variant. |
@@ -401,12 +401,12 @@ Orphan detection caveat: the workflow JSON provided is metadata only (name + ID)
 | manual_workflow_add | DELETE-ORPHAN | — | Not meaningful as permanent tag. |
 | meeting-link-clicked | REVIEW | — | Not in ABC. Useful engagement tag — propose adding to ABC. |
 | meeting-link-not-clicked | REVIEW | — | Same. |
-| mike lead | DELETE-ORPHAN | — | Personal labeling. |
+| mike lead | REVIEW | — | — | RECLASSIFIED: verified 3 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | mortgage form started | MERGE-INTO-CANONICAL | pre-qualify-started | Spacing variant; mortgage-flavored. |
 | mortgage lead | MORTGAGE-KEEP | — | Vertical qualifier. |
 | mortgage test | DELETE-ORPHAN | — | Test artifact. |
 | mortgage_demo_call | DELETE-ORPHAN | — | Legacy demo tag. |
-| name via lookup | DELETE-ORPHAN | — | Data-provenance tag, not meaningful. |
+| name via lookup | REVIEW | — | — | RECLASSIFIED: verified 1 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | new lead | KEEP | — | Canonical. |
 | new lead no response | MERGE-INTO-CANONICAL | unresponsive | Spacing variant. |
 | new-business-lead | KEEP | — | Canonical. |
@@ -421,7 +421,7 @@ Orphan detection caveat: the workflow JSON provided is metadata only (name + ID)
 | not-interested | KEEP | — | Canonical. |
 | not_interested | MERGE-INTO-CANONICAL | not-interested | Underscore variant. |
 | old lead | MERGE-INTO-CANONICAL | old-lead | Spacing variant. |
-| old lead currently in workflow | DELETE-ORPHAN | — | Workflow-state. |
+| old lead currently in workflow | REVIEW | — | — | RECLASSIFIED: verified 109 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | old lead sms | MERGE-INTO-CANONICAL | old-lead | Channel-split not needed here. |
 | old-lead | KEEP | — | Canonical. |
 | partner-assigned | KEEP | — | Canonical. |
@@ -477,7 +477,7 @@ Orphan detection caveat: the workflow JSON provided is metadata only (name + ID)
 | second | MORTGAGE-KEEP | — | Second mortgage product. |
 | sellers | MORTGAGE-KEEP | — | Real-estate vertical. |
 | send_application_link | REVIEW | — | Action-trigger tag; valid if still used by workflow. |
-| sheh | DELETE-ORPHAN | — | Personal labeling. |
+| sheh | REVIEW | — | — | RECLASSIFIED: verified 2 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | source-event | KEEP | — | Canonical. |
 | source-facebook | KEEP | — | Canonical. |
 | source-google | KEEP | — | Canonical. |
@@ -490,11 +490,11 @@ Orphan detection caveat: the workflow JSON provided is metadata only (name + ID)
 | source-youtube | KEEP | — | Canonical. |
 | spam | KEEP | — | Canonical. |
 | submitted-to-lender | KEEP | — | Canonical. |
-| trafficdispenser | DELETE-ORPHAN | — | Typo-variant legacy source. |
-| trafficdispensor | DELETE-ORPHAN | — | Misspelled legacy source. |
+| trafficdispenser | REVIEW | — | — | RECLASSIFIED: verified 3 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
+| trafficdispensor | REVIEW | — | — | RECLASSIFIED: verified 222 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | uninterested | MERGE-INTO-CANONICAL | not-interested | Synonym. |
 | warm-lead | KEEP | — | Canonical. |
-| working | DELETE-ORPHAN | — | Workflow-state, not a meaningful contact tag. |
+| working | REVIEW | — | — | RECLASSIFIED: verified 2 contacts actively tagged. Not an orphan. Renée decides keep/rename/merge. |
 | wrong number | REVIEW | — | Not in ABC. Valid voice outcome — propose adding. |
 | {{contact.productservice_1}} | DELETE-ORPHAN | — | Un-rendered merge field saved as literal tag. Bug cleanup. |
 | {{contact.productservice_10}} | DELETE-ORPHAN | — | Same. |
