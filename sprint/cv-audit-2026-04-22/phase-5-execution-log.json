@@ -1,0 +1,205 @@
+{
+  "log": [
+    {
+      "step": 1,
+      "action": "sync business_hours from hours_of_operation",
+      "status": 200,
+      "value": "Monday to Friday, 9am to 6pm EST. Saturday 10am to 2pm EST. Closed Sundays."
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "industry",
+      "id": "r1rqVBMvdxuiTLDneZCn",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "website_url",
+      "id": "ColU0peIZWjkn4vRcbz9",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "business_name",
+      "id": "dD8n6EWZCqeHxMWX1euz",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "business_phone",
+      "id": "vwI0W9Z07cCH4kY6Ur5p",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "business_address",
+      "id": "F1ik2IYPjlNk1MSa3s3F",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "company_sloagan",
+      "id": "GrpNY3l9ROJxDNBfLcjU",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "tagline",
+      "id": "uwJP3Wx850hlXkRHneqE",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "product__service_1",
+      "id": "GNn6siokE1CH5mLk3Ch3",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "product__service_2",
+      "id": "SolfXSERvQqavB0YFlQm",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "hours_of_operation",
+      "id": "LExIzM5geNKWYFafZAuL",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "office_hours",
+      "id": "EOU8N6aft6TsM5QrppDX",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "booking_link",
+      "id": "p16iA1PcFzSKLN0OmBUq",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "owner_name",
+      "id": "JG74b0UFQRYpm85IEctN",
+      "status": 200
+    },
+    {
+      "step": 2,
+      "sub": "EqM",
+      "action": "delete CV",
+      "key": "owner_full_name",
+      "id": "suzuwpay2wYXSLDq4Uz2",
+      "status": 200
+    },
+    {
+      "step": 3,
+      "sub": "ABC",
+      "action": "delete CV",
+      "key": "privacy_policy_page",
+      "id": "1rGxJZgWMtcNgAyxRy6G",
+      "status": 200
+    },
+    {
+      "step": 3,
+      "sub": "ABC",
+      "action": "delete CV",
+      "key": "privacy_policy_url",
+      "id": "0fkMgexdzoSuuor4wJOU",
+      "status": 200
+    },
+    {
+      "step": 3,
+      "sub": "ABC",
+      "action": "delete CV",
+      "key": "terms_url",
+      "id": "XhZIb01zLCPIJyyeNmXN",
+      "status": 200
+    },
+    {
+      "step": 3,
+      "sub": "ABC",
+      "action": "delete CV",
+      "key": "terms_and_conditions_page",
+      "id": "pIsA7OgWxZ28o170KWmC",
+      "status": 200
+    },
+    {
+      "step": 3,
+      "sub": "ABC",
+      "action": "delete CV",
+      "key": "qualified_lead_details",
+      "id": "OfW07ObK19YJI5ZWYYTb",
+      "status": 200
+    },
+    {
+      "step": 3,
+      "sub": "ABC",
+      "action": "delete CV",
+      "key": "not_qualified_lead_details",
+      "id": "YtrmFUQyNH3xsxjMf2XQ",
+      "status": 200
+    },
+    {
+      "step": 3,
+      "sub": "ABC",
+      "action": "delete CV",
+      "key": "qualified_landing_page",
+      "id": "1hrKEiPKLWIQpueVQSXH",
+      "status": 200
+    },
+    {
+      "step": 3,
+      "sub": "ABC",
+      "action": "delete CV",
+      "key": "not_qualified_landing_page",
+      "id": "7L56TTm70q2pzVARR34g",
+      "status": 200
+    },
+    {
+      "step": 4,
+      "sub": "ABC",
+      "action": "delete tag",
+      "name": "submitted-to-lender",
+      "id": "rjLsuUEYnVdUI3UfYgs4",
+      "status": 200
+    }
+  ],
+  "completedAt": "2026-04-22T23:47:58.447Z",
+  "finalState": {
+    "ABC": {
+      "cvs": 209,
+      "tags": 114
+    },
+    "EqM": {
+      "cvs": 234,
+      "tags": 157
+    }
+  }
+}

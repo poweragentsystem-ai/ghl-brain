@@ -208,3 +208,55 @@ To refresh: Claude Code re-runs the API pull. Currently shows:
 - [2026-04-22 18:05 | Claude-Code] Renée "6pm let's go" push. Executed: (a) 6 partner_* custom fields completed in both subs (3 existed in ABC, all 6 new in EqM). (b) Full 11-field recruitment canonical set copied from ABC to EqM — EqM now matches ABC. (c) Workflow-type audit: ABC 5 SMS/4 email/16 other. EqM 10 voice/5 email/8 recruitment/2 renewal/5 application/3 partnership/63 other. Saved to `sprint/cv-audit-2026-04-22/workflow-type-audit.json`. (d) Recruitment Follow Up Console handoff drafted at `projects/equitymax-snapshot/CONSOLE-RECRUITMENT-FLOW.md` — form + workflow + agent + test plan for BOTH subs. (e) 14 forward-walk gaps DEFERRED to post-v1 per Renée — Riley updated, priority dropped from HIGH to MED.
 - [2026-04-22 18:25 | Claude-Code] Final tag cleanup round: deleted clubcondo + ai_call_convo per Renée. EqM tag count 193→157 (-36 total session). Morning brief scaffolded: `C:/Users/User/scripts/morning-brief/generate-brief.js` + README + generated today's brief as test. Send-As path confirmed (j.ai.poweragentsystem@gmail.com alias). Email reply flow designed: Renée replies to brief OR labels thread `claude-code` → I only search those patterns, never touch unlabeled/spam/unknown senders. Audits done: ABC has 1 true mortgage-violation tag (`submitted-to-lender` — rename/remove), 4 false positives (pre-qualify is generic). EqM 63 "other" workflows: 17 classified + 1 duplicate found ("Reply Not Interested" ×2). All synced to GitHub. Tasks #15 + #16 closed.
 - [2026-04-22 18:50 | Claude-Code] Autonomous final sweep complete. Populated 5 EqM AI prompt canonicals from deprecated, created company_slogan + ai_job_title CVs. Built Phase-5 delete-ready list: 22 CVs + 1 tag verified safe. ⚠️ ONE CONFLICT held for Renée: hours_of_operation/office_hours="9am-6pm EST" vs business_hours="10:30 AM-3:00 PM ET" — need her pick on which is client-facing. Full Final Walkthrough saved to `sprint/cv-audit-2026-04-22/FINAL-WALKTHROUGH.md`. 16 items flagged safe-to-delete-now (no Console dependency), 7 items hold-until-Console-retrofit. Awaiting Renée "go" on safe-16 + hours decision.
+
+---
+
+## 🏁 SESSION COMPLETE — 2026-04-22 19:15 | Claude-Code
+
+**Executive decisions locked in by Renée + Claude Code exec calls:**
+- `business_hours` = client-facing "Monday to Friday, 9am to 6pm EST. Saturday 10am to 2pm EST" (copied from `hours_of_operation`)
+- Kill `industry`, accept `niche` = "Mortgage" per Renée
+- All deletes fired
+
+**Phase 5 DELETE EXECUTION: 23/23 successful**
+
+EqM (14 CVs):
+- ✓ industry, website_url, business_name, business_phone, business_address
+- ✓ company_sloagan (typo), tagline (merged to company_slogan)
+- ✓ product__service_1, product__service_2 (double-underscore bug killed)
+- ✓ hours_of_operation, office_hours
+- ✓ booking_link
+- ✓ owner_name, owner_full_name
+
+ABC (8 CVs + 1 tag):
+- ✓ privacy_policy_page, privacy_policy_url
+- ✓ terms_url, terms_and_conditions_page
+- ✓ qualified_lead_details, not_qualified_lead_details
+- ✓ qualified_landing_page, not_qualified_landing_page
+- ✓ tag: submitted-to-lender (mortgage-specific removed from generic template)
+
+**Final state counts:**
+| Sub | CVs | Fields | Tags |
+|---|---|---|---|
+| ABC (before) | 217 | 73 | 115 |
+| ABC (after) | 209 | 73 | 114 |
+| EqM (before) | 246 | 410 | 193 |
+| EqM (after) | 234 | 396 | 157 |
+
+**Total session cleanup:**
+- 59 items removed across both subs (22 CVs + 14 fields + 36 tags + 1 tag_re_execute)
+- Dashboard regenerated + deployed to https://xpert-command-center.vercel.app/ghl-dedup.html
+
+**What remains (Console):**
+- Phase 3 reference swaps: owner→user, industry→niche, business→company, product__service→product_service tokens inside workflow step bodies + AI agent prompts + email templates (`CONSOLE-PHASE-3-HANDOFF.md`)
+- Killswitch + lifecycle-tag retrofit on 121 workflows (`CONSOLE-KILLSWITCHES-AND-TAGS.md`)
+- Recruitment Follow Up flow build in both subs (`CONSOLE-RECRUITMENT-FLOW.md`)
+- Pre-Qualifier #11 rename + trigger split from #9
+- Pre-Qualifier #11 hardcoded personal info cleanup
+
+**What's pending Renée (minor):**
+- Gmail Send-As alias config + Task Scheduler cron for morning brief
+- Stripe pricing scaffold (save for last, her call)
+- n8n MCP restart required
+
+---
