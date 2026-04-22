@@ -1,0 +1,1454 @@
+[
+  {
+    "id": "o569r0Q4DpsFjEO3YQ4V",
+    "name": "65%LTV",
+    "key": "65_landing",
+    "value": ""
+  },
+  {
+    "id": "9TMTlP9PqS33h3J9Tri8",
+    "name": "80%LTV",
+    "key": "80ltv",
+    "value": ""
+  },
+  {
+    "id": "NCCjIsXegrwqpiDJOIeI",
+    "name": "95%LTV",
+    "key": "95ltv",
+    "value": ""
+  },
+  {
+    "id": "Q58KHS7IhtLf6VVO7ruw",
+    "name": "A.I. Agent name",
+    "key": "ai_agent_name",
+    "value": "Jordan"
+  },
+  {
+    "id": "wcN8bpm6AFxJfymVXxl4",
+    "name": "AI Agent Persona",
+    "key": "ai_agent_persona",
+    "value": "Friendly, confident, professional. Speaks like a real person — contractions, sho"
+  },
+  {
+    "id": "iCzKG7rR5hMcoaikvoHf",
+    "name": "A.I. Job Title",
+    "key": "ai_assistant_job_title",
+    "value": "Assistant"
+  },
+  {
+    "id": "BswvyrfFR0sOqkui69vY",
+    "name": "A.I. Agent Model ID",
+    "key": "ai_call_confirmation_id",
+    "value": ""
+  },
+  {
+    "id": "AuRFi7pmcahFq2UmeWLj",
+    "name": "A.I. Calling Api Key",
+    "key": "ai_calling_api_key",
+    "value": ""
+  },
+  {
+    "id": "TOIlHPk5UTzOSiGZEEGf",
+    "name": "Ai Conversation Notes",
+    "key": "ai_conversation_notes",
+    "value": ""
+  },
+  {
+    "id": "RmiBWmeKr70zu0CXg7kr",
+    "name": "AI Goals",
+    "key": "ai_goals",
+    "value": "Qualify leads, book meetings, never dead-end a conversation, always offer a next"
+  },
+  {
+    "id": "rDoHEKtq0j1ZYVVtCd9K",
+    "name": "A.I. Inbound Call Number",
+    "key": "ai_inbound_call_number",
+    "value": ""
+  },
+  {
+    "id": "5cF44jntXtIMTNDoeoeP",
+    "name": "Ai Prompt 1 General",
+    "key": "ai_prompt_1_general",
+    "value": ""
+  },
+  {
+    "id": "im9HNCXvGeDW8tZI8CFD",
+    "name": "Ai Prompt 2 Booking",
+    "key": "ai_prompt_2_booking",
+    "value": ""
+  },
+  {
+    "id": "Mo8P0qb61tIHvfyOXtam",
+    "name": "Ai Prompt Application Follow Up",
+    "key": "ai_prompt_application_follow_up",
+    "value": ""
+  },
+  {
+    "id": "s3UxnkH74k3yTKyLJIOD",
+    "name": "AI Prompt Application Reminder",
+    "key": "ai_prompt_application_reminder",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "ea3F3jW211Dj1KQDqljs",
+    "name": "Ai Prompt Appointment Reminder",
+    "key": "ai_prompt_appointment_reminder",
+    "value": ""
+  },
+  {
+    "id": "kMeb1uMJouKbGn9Gb8dD",
+    "name": "AI Prompt Appointment Reminder New",
+    "key": "ai_prompt_appointment_reminder_new",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "RSccxDneTbvpTEY3tj8D",
+    "name": "AI Prompt Booking Follow Up",
+    "key": "ai_prompt_booking_follow_up",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "QBZhorfsIlj44Jr8xAkZ",
+    "name": "AI Prompt Buyer",
+    "key": "ai_prompt_buyer",
+    "value": ""
+  },
+  {
+    "id": "gb9hIm3UtHfQI8oTYNmv",
+    "name": "Ai Prompt Document Follow Up",
+    "key": "ai_prompt_document_follow_up",
+    "value": ""
+  },
+  {
+    "id": "RmamgyrgQWyJCn1dhnJv",
+    "name": "AI Prompt Document Reminder",
+    "key": "ai_prompt_document_reminder",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "NOdwYuZ622FWfqGE42o4",
+    "name": "Ai Prompt Follow Up",
+    "key": "ai_prompt_follow_up",
+    "value": ""
+  },
+  {
+    "id": "v0O8T5LbExLJregMBYwm",
+    "name": "AI Prompt Google Review",
+    "key": "ai_prompt_google_review",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "tJOk7jBIRxwwfRoNdnlI",
+    "name": "Ai Prompt Google Review Request",
+    "key": "ai_prompt_google_review_request",
+    "value": ""
+  },
+  {
+    "id": "QpDSkDteG1hS1JMVN2G7",
+    "name": "Ai Prompt Inbound",
+    "key": "ai_prompt_inbound",
+    "value": ""
+  },
+  {
+    "id": "RxW6LHq0jBrJpNFVgEGI",
+    "name": "AI Prompt Inbound Reception",
+    "key": "ai_prompt_inbound_reception",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "85R6g1y7OphmhHkHxAh5",
+    "name": "AI Prompt Long Term Nurture",
+    "key": "ai_prompt_long_term_nurture",
+    "value": "You are generating a monthly value email for a cold {{ custom_values.niche }} le"
+  },
+  {
+    "id": "YqDb1wa40gDqUUyNX6b0",
+    "name": "Ai Prompt No Show",
+    "key": "ai_prompt_no_show",
+    "value": ""
+  },
+  {
+    "id": "4PnPIx4vgOkNyDNoTbc7",
+    "name": "AI Prompt No Show Rebook",
+    "key": "ai_prompt_no_show_rebook",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "8zcjCkQI9j9N3rDT9JKM",
+    "name": "AI Prompt Old Lead Resurrect",
+    "key": "ai_prompt_old_lead_resurrect",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "3p0xzAF6HhJiHTCF7P66",
+    "name": "Ai Prompt Old Lead Resurrection",
+    "key": "ai_prompt_old_lead_resurrection",
+    "value": ""
+  },
+  {
+    "id": "3PXmOmKzvniCTc79NdTN",
+    "name": "AI Prompt Outbound Lead Call",
+    "key": "ai_prompt_outbound_lead_call",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "TA5Ls1kdWhYzQrJpvHUi",
+    "name": "Ai Prompt Outbound New Lead",
+    "key": "ai_prompt_outbound_new_lead",
+    "value": ""
+  },
+  {
+    "id": "knnSendZArAFlw3xGt2x",
+    "name": "Ai Prompt Partnership",
+    "key": "ai_prompt_partnership",
+    "value": ""
+  },
+  {
+    "id": "8vAJ7320vTSZ6LJr3n78",
+    "name": "AI Prompt Partnership Chat",
+    "key": "ai_prompt_partnership_chat",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "fKzZTIa2EHfgK0JsILKm",
+    "name": "A.I. Prompt Pre Qualify",
+    "key": "ai_prompt_pre_qualify",
+    "value": ""
+  },
+  {
+    "id": "38Y6owp8AX57viClyeln",
+    "name": "AI Prompt Pre Qualify Follow Up",
+    "key": "ai_prompt_pre_qualify_follow_up",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "rZjKe3deaveMGN94JyFp",
+    "name": "AI Prompt Real Estate Buyer",
+    "key": "ai_prompt_real_estate_buyer",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "AvGejJ3DMsBZ4mr2YTMo",
+    "name": "AI Prompt Real Estate Seller",
+    "key": "ai_prompt_real_estate_seller",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "ooj25iCfZOXBIAWyFVUi",
+    "name": "AI Prompt Recruitment",
+    "key": "ai_prompt_recruitment",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "q6yJogLs1FOEvNJtmPAY",
+    "name": "Ai Prompt Referral Request",
+    "key": "ai_prompt_referral_request",
+    "value": ""
+  },
+  {
+    "id": "MwlgDGJVsE0rMYye7XBZ",
+    "name": "AI Prompt Referral Request New",
+    "key": "ai_prompt_referral_request_new",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "pWI4xfSoKhsdEjqCh1Lu",
+    "name": "AI Prompt Renewal Countdown",
+    "key": "ai_prompt_renewal_countdown",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "BVMBzTYBoG0kNrzdCawx",
+    "name": "Ai Prompt Seller",
+    "key": "ai_prompt_seller",
+    "value": ""
+  },
+  {
+    "id": "LZOHxI9qCWR0c45k1PDc",
+    "name": "AI Prompt Welcome",
+    "key": "ai_prompt_welcome",
+    "value": "You are {{ custom_values.ai_agent_name }}, an AI assistant working for {{ custom"
+  },
+  {
+    "id": "g5EMrWbJJaSxrQJ04QzJ",
+    "name": "A.I. Question 1",
+    "key": "ai_question_1",
+    "value": ""
+  },
+  {
+    "id": "suUHEu97XhxYtusZfV91",
+    "name": "A.I. Question 1 Answer",
+    "key": "ai_question_1_answer",
+    "value": ""
+  },
+  {
+    "id": "JxZJ870476963rpcLQrE",
+    "name": "A.I. Question 10",
+    "key": "ai_question_10",
+    "value": ""
+  },
+  {
+    "id": "smSm3NZClVXK65Ak6lVJ",
+    "name": "A.I. Question 10 Answer",
+    "key": "ai_question_10_answer",
+    "value": ""
+  },
+  {
+    "id": "S13O8DIaH2XHvCt0nAHB",
+    "name": "A.I. Question 2",
+    "key": "ai_question_2",
+    "value": ""
+  },
+  {
+    "id": "zqGDdA1mCBtJszzGCa9Q",
+    "name": "A.I. Question 2 Answer",
+    "key": "ai_question_2_answer",
+    "value": ""
+  },
+  {
+    "id": "C64Yd5CLtM4BtTYk9rUu",
+    "name": "A.I. Question 3",
+    "key": "ai_question_3",
+    "value": ""
+  },
+  {
+    "id": "6SndM37Pp7LWoPjNWocm",
+    "name": "A.I. Question 3 Answer",
+    "key": "ai_question_3_answer",
+    "value": ""
+  },
+  {
+    "id": "5pOBZiCwVhCMnbPZsJph",
+    "name": "A.I. Question 4",
+    "key": "ai_question_4",
+    "value": ""
+  },
+  {
+    "id": "onbRVBjhzddGvq4y17Kt",
+    "name": "A.I. Question 4 Answer",
+    "key": "ai_question_4_answer",
+    "value": ""
+  },
+  {
+    "id": "ScieTxEoxgBMphbf9vmA",
+    "name": "A.I. Question 5",
+    "key": "ai_question_5",
+    "value": ""
+  },
+  {
+    "id": "TvHJW8kNgzO1KGASjx4q",
+    "name": "A.I. Question 5 Answer",
+    "key": "ai_question_5_answer",
+    "value": ""
+  },
+  {
+    "id": "jrhIqXQmWxO1w7hx9Ekl",
+    "name": "A.I. Question 6",
+    "key": "ai_question_6",
+    "value": ""
+  },
+  {
+    "id": "C12ALGXVoxmzv5Nq5o17",
+    "name": "A.I. Question 6 Answer",
+    "key": "ai_question_6_answer",
+    "value": ""
+  },
+  {
+    "id": "NFdlyHrkzGhdDgRbURK8",
+    "name": "A.I. Question 7",
+    "key": "ai_question_7",
+    "value": ""
+  },
+  {
+    "id": "WfcrcDoHakvRXxLGNpHq",
+    "name": "A.I. Question 7 Answer",
+    "key": "ai_question_7_answer",
+    "value": ""
+  },
+  {
+    "id": "Drixl499RIYqKZjJAxMI",
+    "name": "A.I. Question 8",
+    "key": "ai_question_8",
+    "value": ""
+  },
+  {
+    "id": "JrqWysN7JGDBH04zVTyT",
+    "name": "A.I. Question 8 Answer",
+    "key": "ai_question_8_answer",
+    "value": ""
+  },
+  {
+    "id": "T7PuN9hwkl8DXu6eHFXA",
+    "name": "A.I. Question 9",
+    "key": "ai_question_9",
+    "value": ""
+  },
+  {
+    "id": "T8cOyEMWoDwOuK4jH1Rp",
+    "name": "A.I. Question 9 Answer",
+    "key": "ai_question_9_answer",
+    "value": ""
+  },
+  {
+    "id": "PProcFjuBIPBKPTBGhkc",
+    "name": "AI Recruitment Prompt",
+    "key": "ai_recruitment_prompt",
+    "value": ""
+  },
+  {
+    "id": "F91oFTO7K4Sa3JyFo2LL",
+    "name": "AI Rules",
+    "key": "ai_rules",
+    "value": "Never promise specific rates. Never mention lender names unless asked. Always ho"
+  },
+  {
+    "id": "tB5owWzEOAh5WgHyoHVG",
+    "name": "Application API Key",
+    "key": "application_api_key",
+    "value": ""
+  },
+  {
+    "id": "xLFVl85TgUcStee3WZI1",
+    "name": "Application Link",
+    "key": "application_link",
+    "value": ""
+  },
+  {
+    "id": "RSfqfFE2T9IHp2GEoWoY",
+    "name": "Application Platform Name",
+    "key": "application_platform_name",
+    "value": "Scarlette"
+  },
+  {
+    "id": "a3e6hdyLcMCJYygYXKaf",
+    "name": "Application Reminder Bot",
+    "key": "application_reminder_bot",
+    "value": ""
+  },
+  {
+    "id": "4NToK6XKJ6vKjn0lwSBz",
+    "name": "Application Webhook URL",
+    "key": "application_webhook_url",
+    "value": ""
+  },
+  {
+    "id": "4XinLBHiAFI6CI3lvZJA",
+    "name": "Approval Status",
+    "key": "approval_status",
+    "value": ""
+  },
+  {
+    "id": "FSmfFJGIzR75TdOgAZI4",
+    "name": "Billing Email",
+    "key": "billing",
+    "value": ""
+  },
+  {
+    "id": "WUkPRyCNdkzBWxuyBUCb",
+    "name": "Billing Phone Number",
+    "key": "billing_phone_number",
+    "value": ""
+  },
+  {
+    "id": "p16iA1PcFzSKLN0OmBUq",
+    "name": "Booking Link",
+    "key": "booking_link",
+    "value": ""
+  },
+  {
+    "id": "nvH9yvZ6HJ7ANn8ZQJ1V",
+    "name": "Brand Color Accent",
+    "key": "brand_color_accent",
+    "value": "#E8C97A"
+  },
+  {
+    "id": "O5Yf2GK6NVG7VUCKd1YX",
+    "name": "Brand Color Accent (Hex) w/ #",
+    "key": "brand_color_accent_hex_w_",
+    "value": ""
+  },
+  {
+    "id": "T6Wz2fI78j45xXt39g7u",
+    "name": "Brand Color Primary",
+    "key": "brand_color_primary",
+    "value": "#0A1628"
+  },
+  {
+    "id": "0HQLWRaZhyzSLiqv1y7W",
+    "name": "Brand Color Secondary",
+    "key": "brand_color_secondary",
+    "value": "#C9A84C"
+  },
+  {
+    "id": "zdaT7JV9w48XBkzFkW2C",
+    "name": "Brand Color Secondary (Hex) w/ #",
+    "key": "brand_color_secondary_hex_w_",
+    "value": ""
+  },
+  {
+    "id": "BDHfa4DWWVoMB4ELTKN1",
+    "name": "Brokerage License Number",
+    "key": "brokerage_license_number",
+    "value": ""
+  },
+  {
+    "id": "0UiDLUTX6LYECZHZ1qh4",
+    "name": "Brokerage Name",
+    "key": "brokerage_name",
+    "value": "Ontario Lending Solutions"
+  },
+  {
+    "id": "F1ik2IYPjlNk1MSa3s3F",
+    "name": "Business Address",
+    "key": "business_address",
+    "value": ""
+  },
+  {
+    "id": "gx1Vw1dyKsoAbm9qavMr",
+    "name": "Business Hours",
+    "key": "business_hours",
+    "value": "Monday to Friday, 10:30 AM - 3:00 PM ET (Calls outside these hours may roll to v"
+  },
+  {
+    "id": "dD8n6EWZCqeHxMWX1euz",
+    "name": "Business Name",
+    "key": "business_name",
+    "value": ""
+  },
+  {
+    "id": "vwI0W9Z07cCH4kY6Ur5p",
+    "name": "Business Phone",
+    "key": "business_phone",
+    "value": ""
+  },
+  {
+    "id": "ozA5YTYUxrkovc8k2laW",
+    "name": "Calendar ID",
+    "key": "calendar_id",
+    "value": ""
+  },
+  {
+    "id": "WdhgVLEd3XowVBGjRb3G",
+    "name": "Calendar Page Link (Include Https://)",
+    "key": "calendar_page_link_include_https",
+    "value": ""
+  },
+  {
+    "id": "WkfV1IyLDyut609TrcYb",
+    "name": "CASL Consent Text",
+    "key": "casl_consent_text",
+    "value": "By submitting this form, you consent to receive electronic communications from u"
+  },
+  {
+    "id": "QZAG9LAaL0RMOr12Ot24",
+    "name": "City",
+    "key": "city",
+    "value": ""
+  },
+  {
+    "id": "jbymAvsPVYGaHZcs7Ra9",
+    "name": "Client Onboarding Funnel",
+    "key": "client_onboarding_funnel",
+    "value": ""
+  },
+  {
+    "id": "PSW6GzZ78iJgE5wqrK9D",
+    "name": "Close Date",
+    "key": "close_date",
+    "value": ""
+  },
+  {
+    "id": "iUiJUVdVLIb94o7d7ek7",
+    "name": "Color Code (Hex) w/ #",
+    "key": "color_code",
+    "value": ""
+  },
+  {
+    "id": "SgmMHeNggj6tK358TmLq",
+    "name": "Company Address",
+    "key": "company_address",
+    "value": ""
+  },
+  {
+    "id": "OLnhi9SV69lPuEDDpYUR",
+    "name": "Company City",
+    "key": "company_city",
+    "value": "Toronto"
+  },
+  {
+    "id": "V2mBiKe9UORqeLuBfJ7T",
+    "name": "Company Logo",
+    "key": "company_logo",
+    "value": ""
+  },
+  {
+    "id": "b8iMtygODb9EUo8tWKfH",
+    "name": "Company Name",
+    "key": "company_name",
+    "value": "EquityMax.ca"
+  },
+  {
+    "id": "KZ7x5ZG7sIpxtiWkM6Rn",
+    "name": "Company Phone",
+    "key": "company_phone",
+    "value": ""
+  },
+  {
+    "id": "sfON7Ib1uU5ODLTxzQLb",
+    "name": "Company Province",
+    "key": "company_province",
+    "value": "Ontario"
+  },
+  {
+    "id": "GrpNY3l9ROJxDNBfLcjU",
+    "name": "Company Sloagan",
+    "key": "company_sloagan",
+    "value": ""
+  },
+  {
+    "id": "Vw9TnOaRmEs16FdXdnNK",
+    "name": "Compliance Disclaimer",
+    "key": "compliance_disclaimer",
+    "value": ""
+  },
+  {
+    "id": "F3WYWQkw3RxaPV1zvh1p",
+    "name": "Conditions List",
+    "key": "conditions_list",
+    "value": ""
+  },
+  {
+    "id": "IZFTdnczJdlgV09mMDOB",
+    "name": "Country",
+    "key": "country",
+    "value": ""
+  },
+  {
+    "id": "Ew2t438GxGBRfcAqI0C1",
+    "name": "Credit Score",
+    "key": "credit_score",
+    "value": ""
+  },
+  {
+    "id": "UAyHHz9932X3Vc5ElhZt",
+    "name": "Deal Amount",
+    "key": "deal_amount",
+    "value": ""
+  },
+  {
+    "id": "R4rTDdMlnJOPA9yG8TsP",
+    "name": "Digital Phone Number",
+    "key": "digital_phone_number",
+    "value": ""
+  },
+  {
+    "id": "x9fV7goXk6gLsx8C5UEz",
+    "name": "Doc Upload Link",
+    "key": "doc_upload_link",
+    "value": ""
+  },
+  {
+    "id": "v5aSe9RNDBWxYU6x9MFp",
+    "name": "Down Payment",
+    "key": "down_payment",
+    "value": ""
+  },
+  {
+    "id": "cnFdIsaAd5kDB5bPTpHf",
+    "name": "Email Signature",
+    "key": "email_signature",
+    "value": ""
+  },
+  {
+    "id": "IJO0g9I9AgLEr120KBMO",
+    "name": "Follow Up Calendar Booking Link",
+    "key": "follow_up_calendar_booking_link",
+    "value": ""
+  },
+  {
+    "id": "yHBGsspt1WyfIxx0ZIBL",
+    "name": "Follow up Document Bot",
+    "key": "follow_up_document_bot",
+    "value": ""
+  },
+  {
+    "id": "lxorkGX2BszyvHUX6r4d",
+    "name": "FSRA Footer Full",
+    "key": "fsra_footer_full",
+    "value": "Renée Ross — Mortgage Agent Level 2 · Licence #13063 · Brokered through Ontario "
+  },
+  {
+    "id": "Up6eIYcYfm1LfCjtK2qe",
+    "name": "Google Review Link",
+    "key": "google_review_link",
+    "value": ""
+  },
+  {
+    "id": "WgJ7vFU5AH998PMuncbM",
+    "name": "Headshot",
+    "key": "headshot",
+    "value": ""
+  },
+  {
+    "id": "LExIzM5geNKWYFafZAuL",
+    "name": "Hours Of Operation",
+    "key": "hours_of_operation",
+    "value": "Monday to Friday, 9am to 6pm EST. Saturday 10am to 2pm EST. Closed Sundays."
+  },
+  {
+    "id": "KPlSwZTtGS5BKX68e7zV",
+    "name": "Income",
+    "key": "income",
+    "value": ""
+  },
+  {
+    "id": "r1rqVBMvdxuiTLDneZCn",
+    "name": "Industry",
+    "key": "industry",
+    "value": "Financial Services - Mortgage"
+  },
+  {
+    "id": "Oegkot1zxlAHwzD531L0",
+    "name": "Internal Notification Email",
+    "key": "internal_notification_email",
+    "value": "renee.ross@gmail.com"
+  },
+  {
+    "id": "wessojTYlTsBbms2BDwU",
+    "name": "Appointment Confirmation Bot",
+    "key": "introductory_bot_appointment_confirmation",
+    "value": ""
+  },
+  {
+    "id": "Z9pdGYYD3FEldlXHX672",
+    "name": "Knowledge Link 1",
+    "key": "knowledge_link_1",
+    "value": ""
+  },
+  {
+    "id": "q14HPReS90IOdqtIUG0g",
+    "name": "Knowledge Link 2",
+    "key": "knowledge_link_2",
+    "value": ""
+  },
+  {
+    "id": "ZILwvbzcmcFmiHhyqgA6",
+    "name": "Knowledge Link 3",
+    "key": "knowledge_link_3",
+    "value": ""
+  },
+  {
+    "id": "sNiEVvwGu1xqyGnSnd5y",
+    "name": "Knowledge Link 4",
+    "key": "knowledge_link_4",
+    "value": ""
+  },
+  {
+    "id": "Ijym8E29K0wEyprYl4Ew",
+    "name": "Lead Webhook URL",
+    "key": "lead_webhook_url",
+    "value": ""
+  },
+  {
+    "id": "BCboJyodbt8eu4dMULcX",
+    "name": "Lender Name",
+    "key": "lender_name",
+    "value": ""
+  },
+  {
+    "id": "SO2V9XPCscMZrGviYa4v",
+    "name": "Lender Submitted Date",
+    "key": "lender_submitted_date",
+    "value": ""
+  },
+  {
+    "id": "v5bajk2p49y6ryqcwBsd",
+    "name": "License Number",
+    "key": "license_number",
+    "value": ""
+  },
+  {
+    "id": "aqake01n1NZgBMxeGcLD",
+    "name": "License Type",
+    "key": "license_type",
+    "value": "Mortgage Agent Level 2"
+  },
+  {
+    "id": "1BAT1HP6u2HOgoMiK1VQ",
+    "name": "Logo URL",
+    "key": "logo_url",
+    "value": ""
+  },
+  {
+    "id": "ZvZgCjG1VM7wT8jkSAjn",
+    "name": "LTV Calculator Link",
+    "key": "ltv_calculator_link",
+    "value": ""
+  },
+  {
+    "id": "8ciDB0frut63X6KDNwcj",
+    "name": "LTV (Loan to Value)",
+    "key": "ltv_loan_to_value",
+    "value": ""
+  },
+  {
+    "id": "olMRHzYZNHfbWYAXKkYm",
+    "name": "Main Landing Page",
+    "key": "main_landing_page",
+    "value": ""
+  },
+  {
+    "id": "WyD9qhvaR6tVpWSKHnIw",
+    "name": "Maturity Date",
+    "key": "maturity_date",
+    "value": ""
+  },
+  {
+    "id": "MfY06s24dA6lGihcHiMz",
+    "name": "Max LTV",
+    "key": "max_ltv",
+    "value": ""
+  },
+  {
+    "id": "1WkSvE4VrSud0rpca5jJ",
+    "name": "Min Credit Score",
+    "key": "min_credit_score",
+    "value": ""
+  },
+  {
+    "id": "wh056ZJszrROh7m8ujwU",
+    "name": "Mortgage Agent Full Name",
+    "key": "mortgage_agent_full_name",
+    "value": "Renée Ross"
+  },
+  {
+    "id": "Xvp1gGAmSDy86fc6Uq4y",
+    "name": "Mortgage Agent License Number",
+    "key": "mortgage_agent_license_number",
+    "value": "#13063"
+  },
+  {
+    "id": "hfGUiDMwJOH49kLwU3IA",
+    "name": "Mortgage Agent License Type",
+    "key": "mortgage_agent_license_type",
+    "value": "Mortgage Agent Level 2"
+  },
+  {
+    "id": "vLQJlNEKhC9SNFhtJ2Uy",
+    "name": "Mortgage Amount",
+    "key": "mortgage_amount",
+    "value": ""
+  },
+  {
+    "id": "b6DcBZLHWHdsXzexRbvL",
+    "name": "Prequalify Bot",
+    "key": "mortgage_bot",
+    "value": ""
+  },
+  {
+    "id": "FqxIWVW14dkAVhs5JVcR",
+    "name": "Qualified Booking Link",
+    "key": "mortgage_form_qualified_trigger_to_booking_link",
+    "value": ""
+  },
+  {
+    "id": "IiaAokdoS4lwNfZREqhd",
+    "name": "Mortgage Type",
+    "key": "mortgage_type",
+    "value": ""
+  },
+  {
+    "id": "xeonaRnKs4TRml9pgkxV",
+    "name": "My Calendar",
+    "key": "my_calendar",
+    "value": ""
+  },
+  {
+    "id": "wnjPnjyo8zeL2PRR8MQo",
+    "name": "New Team Member Onboarding Form Link",
+    "key": "new_team_member_onboarding_form_link",
+    "value": ""
+  },
+  {
+    "id": "X6RZPdeGOOkuA1doOFxI",
+    "name": "niche",
+    "key": "niche",
+    "value": "Mortgage Brokerage"
+  },
+  {
+    "id": "8AOgcv5RQPKFrO3OHO0y",
+    "name": "Not Qualified Details",
+    "key": "not_qualified_details",
+    "value": ""
+  },
+  {
+    "id": "QlJnuj5W5ubrb1BkRgja",
+    "name": "NOT Qualified Landing Page Link",
+    "key": "not_qualified_landing_page_link",
+    "value": ""
+  },
+  {
+    "id": "O5kp5UAr7wq28dwoXshb",
+    "name": "Not Qualified Lead Description",
+    "key": "not_qualified_lead_description",
+    "value": ""
+  },
+  {
+    "id": "DNSIspiH4uh2ihOJnyLL",
+    "name": "Not Qualified Lead Details",
+    "key": "not_qualified_lead_details",
+    "value": "Outside Canada. Under 18. Fraudulent or suspicious info. Under $50K mortgage amo"
+  },
+  {
+    "id": "EOU8N6aft6TsM5QrppDX",
+    "name": "office_hours",
+    "key": "office_hours",
+    "value": "Monday to Friday, 9am to 6pm EST. Saturday 10am to 2pm EST. Closed Sundays."
+  },
+  {
+    "id": "hKKgHTBXo8qZc1E57Gar",
+    "name": "OpenAI Prompt",
+    "key": "openai_prompt",
+    "value": ""
+  },
+  {
+    "id": "suzuwpay2wYXSLDq4Uz2",
+    "name": "Owner Full Name",
+    "key": "owner_full_name",
+    "value": "Renée Ross"
+  },
+  {
+    "id": "JG74b0UFQRYpm85IEctN",
+    "name": "Owner Name",
+    "key": "owner_name",
+    "value": "Renée"
+  },
+  {
+    "id": "lFsC56BC26fjfxu42fza",
+    "name": "Partner Email",
+    "key": "partner_email",
+    "value": ""
+  },
+  {
+    "id": "iZPAOuNhPjbzCM8o2hNd",
+    "name": "Partner Name",
+    "key": "partner_name",
+    "value": ""
+  },
+  {
+    "id": "alQWBqi3cvjdeT7WDMmT",
+    "name": "Partner Phone",
+    "key": "partner_phone",
+    "value": ""
+  },
+  {
+    "id": "JbOvhj6aElor9Y1r1N7N",
+    "name": "Partner Type",
+    "key": "partner_type",
+    "value": ""
+  },
+  {
+    "id": "nEZoNe5lCKLivcisdKP1",
+    "name": "Partnership Calendar Booking Link",
+    "key": "partnership_calendar_booking_link",
+    "value": ""
+  },
+  {
+    "id": "snrJhIqhVJIJQTNexMUs",
+    "name": "Partnership Calendar Link",
+    "key": "partnership_calendar_link",
+    "value": ""
+  },
+  {
+    "id": "e8XuiUJxVKMTrSompgfX",
+    "name": "Payment Webhook URL",
+    "key": "payment_webhook_url",
+    "value": ""
+  },
+  {
+    "id": "Rg3Zc6uepYv6PinS0ePE",
+    "name": "Pre Qualify Buyer Form Link",
+    "key": "pre_qualify_buyer_link",
+    "value": ""
+  },
+  {
+    "id": "FkwrXZmEtjRZhZKot3Pv",
+    "name": "Pre Qualify Form Link",
+    "key": "pre_qualify_form_link",
+    "value": ""
+  },
+  {
+    "id": "P0h2qySQFSs6WY7f33Gv",
+    "name": "Pre Qualify Seller Form Link",
+    "key": "pre_qualify_seller_link",
+    "value": ""
+  },
+  {
+    "id": "oDBNFzm0xHRzvh5slPI7",
+    "name": "Pre Qualifying Form Link",
+    "key": "pre_qualifying_form_link",
+    "value": ""
+  },
+  {
+    "id": "LDRVjWceCt5NfoeCHY5E",
+    "name": "Primary Hex Color",
+    "key": "primary_hex_color",
+    "value": ""
+  },
+  {
+    "id": "5MzpHvqJCXg1O9qV4oBF",
+    "name": "Principal Broker Name",
+    "key": "principal_broker_name",
+    "value": ""
+  },
+  {
+    "id": "K4SuepMuNbhi3i0ndSWp",
+    "name": "Privacy Policy",
+    "key": "privacy_policy",
+    "value": ""
+  },
+  {
+    "id": "0hiVaHGJANHJ5QMGR5M0",
+    "name": "Privacy Policy URL",
+    "key": "privacy_policy_url",
+    "value": ""
+  },
+  {
+    "id": "GNn6siokE1CH5mLk3Ch3",
+    "name": "product / service 1",
+    "key": "product__service_1",
+    "value": ""
+  },
+  {
+    "id": "SolfXSERvQqavB0YFlQm",
+    "name": "product / service 2",
+    "key": "product__service_2",
+    "value": ""
+  },
+  {
+    "id": "91SgM0RTS18VjWRxqnTR",
+    "name": "Product Service 1",
+    "key": "product_service_1",
+    "value": "Purchase"
+  },
+  {
+    "id": "PmWPbTnCRfSwIjpda3mW",
+    "name": "product/ service 10",
+    "key": "product_service_10",
+    "value": ""
+  },
+  {
+    "id": "mUFhX6V7fpT0n4eIixzt",
+    "name": "Product Service 2",
+    "key": "product_service_2",
+    "value": "Purchase First-Time Buyer"
+  },
+  {
+    "id": "027l41jmq8k2nRX2lJpY",
+    "name": "product/ service 3",
+    "key": "product_service_3",
+    "value": ""
+  },
+  {
+    "id": "ghwartbI71SqlwXtQUzI",
+    "name": "product/ service 4",
+    "key": "product_service_4",
+    "value": ""
+  },
+  {
+    "id": "4BJgWO89L4NE4vcryNXt",
+    "name": "product/ service 5",
+    "key": "product_service_5",
+    "value": ""
+  },
+  {
+    "id": "1dQY8Fz275hsa3QIunWO",
+    "name": "product/ service 6",
+    "key": "product_service_6",
+    "value": ""
+  },
+  {
+    "id": "cKocslbGworJQVX5H2Vj",
+    "name": "product/ service 7",
+    "key": "product_service_7",
+    "value": ""
+  },
+  {
+    "id": "zCw3btq9NaHuzcGuPqHi",
+    "name": "product/ service 8",
+    "key": "product_service_8",
+    "value": ""
+  },
+  {
+    "id": "RCY6euwNalnEG32gxSar",
+    "name": "product/ service 9",
+    "key": "product_service_9",
+    "value": ""
+  },
+  {
+    "id": "441zGftjFRyVlGF6DplT",
+    "name": "Property Type",
+    "key": "property_type",
+    "value": ""
+  },
+  {
+    "id": "Bdt5cuMCHHbLMb28IPTl",
+    "name": "Property Value",
+    "key": "property_value",
+    "value": ""
+  },
+  {
+    "id": "JPsyQJIJlMfGspk1UEsE",
+    "name": "Province Or State",
+    "key": "province_or_state",
+    "value": ""
+  },
+  {
+    "id": "kl64Zd6WboR7tyYux7Nm",
+    "name": "Purpose",
+    "key": "purpose",
+    "value": ""
+  },
+  {
+    "id": "IaKo6SwtLu2EoUtiheAy",
+    "name": "Qualified Details",
+    "key": "qualified_details",
+    "value": ""
+  },
+  {
+    "id": "Axymv1B2Mc84He6OcSb5",
+    "name": "Qualified Landing Page",
+    "key": "qualified_landing_page",
+    "value": ""
+  },
+  {
+    "id": "Kz5YNxwXMBmTRDCEJEIk",
+    "name": "Qualified Lead Description",
+    "key": "qualified_lead_description",
+    "value": ""
+  },
+  {
+    "id": "EACks6cdYP4E73LXvz3K",
+    "name": "Qualified Lead Details",
+    "key": "qualified_lead_details",
+    "value": "Canadian resident. Property in Ontario or surrounding provinces. Mortgage amount"
+  },
+  {
+    "id": "DsOae5rY7s02cuTWoUIz",
+    "name": "Rate Request Form Link",
+    "key": "rate_request_form_link",
+    "value": ""
+  },
+  {
+    "id": "nBUoNw1Xinilg3AzOkRa",
+    "name": "Real Estate Buyer Form Link",
+    "key": "real_estate_buyer_form_link",
+    "value": ""
+  },
+  {
+    "id": "o7ps3XeYIlWho4VdkqbH",
+    "name": "Real Estate Landing Page URL",
+    "key": "real_estate_landing_page_url",
+    "value": ""
+  },
+  {
+    "id": "Q3QQ3n2ozh2MDLmYFiA0",
+    "name": "Real Estate Partner Calendar Link",
+    "key": "real_estate_partner_calendar_link",
+    "value": ""
+  },
+  {
+    "id": "j2qKRQb5hdq2Bdc3eS7l",
+    "name": "Real Estate Seller Form Link",
+    "key": "real_estate_seller_form_link",
+    "value": ""
+  },
+  {
+    "id": "nAd31zr3GzvWFQRZ4cfp",
+    "name": "Recruitment Calendar",
+    "key": "recruitment_calendar",
+    "value": ""
+  },
+  {
+    "id": "KMhCdLYEQZc9rdVjRbIo",
+    "name": "Recruitment Calendar Booking Link",
+    "key": "recruitment_calendar_booking_link",
+    "value": ""
+  },
+  {
+    "id": "KuYpzRoXq1jEu4ikNW5M",
+    "name": "Recruitment Landing Page",
+    "key": "recruitment_landing_page",
+    "value": ""
+  },
+  {
+    "id": "4xxKbpFtqxh3F1197Xh4",
+    "name": "Recruitment Link",
+    "key": "recruitment_link",
+    "value": ""
+  },
+  {
+    "id": "gNIezRknUILSbhkqN7wE",
+    "name": "Referral Link",
+    "key": "referral_link",
+    "value": ""
+  },
+  {
+    "id": "5dQ4WE7zaq1ldROoTj5B",
+    "name": "Renewal Date",
+    "key": "renewal_date",
+    "value": ""
+  },
+  {
+    "id": "J1ZOstyFZEuWVfMRVOQ8",
+    "name": "Robot Webhook",
+    "key": "robot_webhook",
+    "value": ""
+  },
+  {
+    "id": "u07h9WkjFIxTUQGWOMPr",
+    "name": "Robot Webhook - Nonbooking",
+    "key": "robot_webhook__nonbooking",
+    "value": ""
+  },
+  {
+    "id": "ouIqPPSXAKRtaU8OLAiw",
+    "name": "Sales Email",
+    "key": "sales_email",
+    "value": ""
+  },
+  {
+    "id": "NnsAZ1sQKw5pnLuTTnJn",
+    "name": "Sales Phone",
+    "key": "sales_phone",
+    "value": ""
+  },
+  {
+    "id": "mPckz0zFoMFE837JKSYH",
+    "name": "Secondary Hex Color",
+    "key": "secondary_hex_color",
+    "value": ""
+  },
+  {
+    "id": "uK2gZrqlpHXZ0lL4HH9x",
+    "name": "Self Employed",
+    "key": "self_employed",
+    "value": ""
+  },
+  {
+    "id": "LGjT4jEZOGc1uuILJS1E",
+    "name": "Seller Calendar",
+    "key": "seller_calendar",
+    "value": ""
+  },
+  {
+    "id": "Y2eoBmAn9rEO5M7FmuhP",
+    "name": "Service Area",
+    "key": "service_area",
+    "value": ""
+  },
+  {
+    "id": "yDBQ2TuhhoLNf4VjyhMb",
+    "name": "service_description",
+    "key": "service_description",
+    "value": "Residential and commercial mortgage financing, refinancing, renewals, private le"
+  },
+  {
+    "id": "mhd5m3DX9KYjMJiwZNZe",
+    "name": "Services",
+    "key": "services",
+    "value": ""
+  },
+  {
+    "id": "rJ4yD1bZuYucOw2QhTnw",
+    "name": "Short Address",
+    "key": "short_address",
+    "value": ""
+  },
+  {
+    "id": "i7OTkoLjAv2QGrBwZgi7",
+    "name": "Specialties",
+    "key": "specialties",
+    "value": ""
+  },
+  {
+    "id": "YdvSm5FFRVU6u7IKs2ze",
+    "name": "Support Phone",
+    "key": "support",
+    "value": ""
+  },
+  {
+    "id": "mjUeAxE3NMIPdHMPK58V",
+    "name": "Support Email",
+    "key": "support_email",
+    "value": ""
+  },
+  {
+    "id": "uwJP3Wx850hlXkRHneqE",
+    "name": "Tagline",
+    "key": "tagline",
+    "value": ""
+  },
+  {
+    "id": "jFTUbU07ofUQ9jsVftez",
+    "name": "Target Market",
+    "key": "target_market",
+    "value": ""
+  },
+  {
+    "id": "7tueGGElxOpfuR3wUZCQ",
+    "name": "Team Onboarding Funnel",
+    "key": "team_onboarding_funnel",
+    "value": ""
+  },
+  {
+    "id": "tYuYqgPH0ya9LCac0dAU",
+    "name": "Team Onboarding Survey",
+    "key": "team_onboarding_survey",
+    "value": ""
+  },
+  {
+    "id": "5C1g5T9D7wVPLsWoKkSP",
+    "name": "Term",
+    "key": "term",
+    "value": ""
+  },
+  {
+    "id": "9mToBPLCgdM554Qng7QT",
+    "name": "Terms of Service",
+    "key": "terms_of_service",
+    "value": ""
+  },
+  {
+    "id": "8gJPnZ5yDvsATA3cLWiv",
+    "name": "Terms URL",
+    "key": "terms_url",
+    "value": ""
+  },
+  {
+    "id": "y3SIX7OXdP0SNt7xxcYo",
+    "name": "Timeline",
+    "key": "timeline",
+    "value": ""
+  },
+  {
+    "id": "2OCOSDwHDrnlvaFj4grG",
+    "name": "Timezone",
+    "key": "timezone",
+    "value": ""
+  },
+  {
+    "id": "7BHmq9tTm1sWGoNSrCie",
+    "name": "Total Debt",
+    "key": "total_debt",
+    "value": ""
+  },
+  {
+    "id": "ULzOoJUYhybyPJHeVoDi",
+    "name": "Transfer Phone Number",
+    "key": "transfer_phone_number",
+    "value": "+14168784622"
+  },
+  {
+    "id": "G60aYEH5eNQcpK5rRwt0",
+    "name": "User About Paragraph",
+    "key": "user_about_paragraph",
+    "value": ""
+  },
+  {
+    "id": "qdyZrFpZ4HYVAqMJacTF",
+    "name": "User Calendar Booking Link",
+    "key": "user_calendar_booking_link",
+    "value": ""
+  },
+  {
+    "id": "JGyL3PQvDdn0JarlbpSl",
+    "name": "User Email",
+    "key": "user_email",
+    "value": ""
+  },
+  {
+    "id": "8nzyXz0A4iuoEl8f5Ekr",
+    "name": "User First Name",
+    "key": "user_first_name",
+    "value": ""
+  },
+  {
+    "id": "wGOURYvckccqHTsQyokI",
+    "name": "User Full Name",
+    "key": "user_full_name",
+    "value": ""
+  },
+  {
+    "id": "IUwQK7EIFJbiJeMp1rv4",
+    "name": "User Headshot URL",
+    "key": "user_headshot_url",
+    "value": ""
+  },
+  {
+    "id": "96Ho80OXBEvpWY23alft",
+    "name": "User Job Title",
+    "key": "user_job_title",
+    "value": ""
+  },
+  {
+    "id": "gG2XDhAOYpsJLRH0o5Iy",
+    "name": "User Last Name",
+    "key": "user_last_name",
+    "value": "Ross"
+  },
+  {
+    "id": "SAjfpVtT8b3lmWFusqkw",
+    "name": "User Phone",
+    "key": "user_phone",
+    "value": "+14168784622"
+  },
+  {
+    "id": "zF6fD5W10SfK55UY1rAO",
+    "name": "user sms signature",
+    "key": "user_sms_signature",
+    "value": ""
+  },
+  {
+    "id": "1sExbarKpckgkhwoaxpZ",
+    "name": "Voice Bot ID",
+    "key": "voice_bot_id",
+    "value": ""
+  },
+  {
+    "id": "AN5XyZbbGPn34FHkJ3VJ",
+    "name": "Webinar Date",
+    "key": "webinar_date",
+    "value": ""
+  },
+  {
+    "id": "n6szd5L1EvQm3qKvBbXY",
+    "name": "Webinar Link",
+    "key": "webinar_link",
+    "value": ""
+  },
+  {
+    "id": "RkHxHoWj5PXca2Txh5OI",
+    "name": "Webinar Time",
+    "key": "webinar_time",
+    "value": ""
+  },
+  {
+    "id": "op634PZzqSZvnYAEdRI8",
+    "name": "User Website",
+    "key": "website",
+    "value": ""
+  },
+  {
+    "id": "ColU0peIZWjkn4vRcbz9",
+    "name": "Website URL",
+    "key": "website_url",
+    "value": "https://equitymax.ca"
+  },
+  {
+    "id": "3MJiC9HoqRnbmBkf1fXR",
+    "name": "Years In Business",
+    "key": "years_in_business",
+    "value": ""
+  }
+]

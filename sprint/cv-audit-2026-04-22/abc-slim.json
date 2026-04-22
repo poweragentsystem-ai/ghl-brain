@@ -1,0 +1,1280 @@
+[
+  {
+    "id": "hzs3rMuyVBhBAOPDTXgH",
+    "name": "Agent Email",
+    "key": "agent_email",
+    "value": ""
+  },
+  {
+    "id": "GdTt9mWEHKaAwFzc7fT6",
+    "name": "A.I. Agent Model ID",
+    "key": "ai_agent_model_id",
+    "value": ""
+  },
+  {
+    "id": "ArbjF05MPFy4P4FXfj9k",
+    "name": "A.I. Agent Name",
+    "key": "ai_agent_name",
+    "value": ""
+  },
+  {
+    "id": "Nzf53nyCvTqC5J0OS40N",
+    "name": "AI Agent Persona",
+    "key": "ai_agent_persona",
+    "value": "Friendly, confident, professional. Speaks like a real person — contractions, sho"
+  },
+  {
+    "id": "ivGwuGkAqLoruwRM0qRi",
+    "name": "A.I. Calling Api Key",
+    "key": "ai_calling_api_key",
+    "value": ""
+  },
+  {
+    "id": "kjLJbGYnmFklBh8OLQl2",
+    "name": "Ai Conversation Notes",
+    "key": "ai_conversation_notes",
+    "value": ""
+  },
+  {
+    "id": "EWC1PBcuUVyFekaHBmry",
+    "name": "AI Email Nurture Prompt",
+    "key": "ai_email_nurture_prompt",
+    "value": "Your job is to generate engaging monthly emails for the user's business. Conside"
+  },
+  {
+    "id": "FAUjHRBbqeuhjXg89blf",
+    "name": "ai_goals",
+    "key": "ai_goals",
+    "value": "PRIMARY GOAL: Qualify leads and book discovery calls. SECONDARY GOAL: Nurture un"
+  },
+  {
+    "id": "kZ6fuLicApmiuPd6VARl",
+    "name": "ai_id_after_hours_bot",
+    "key": "ai_id_after_hours_bot",
+    "value": ""
+  },
+  {
+    "id": "V3wbNbzk1KDlXTVDxfc7",
+    "name": "ai_id_appointment_confirmation_bot",
+    "key": "ai_id_appointment_confirmation_bot",
+    "value": ""
+  },
+  {
+    "id": "m0g8l6GRk1rttAAPDYLM",
+    "name": "ai_id_follow_up_bot",
+    "key": "ai_id_follow_up_bot",
+    "value": ""
+  },
+  {
+    "id": "JnQ7uQEETPFz2pNWT29d",
+    "name": "ai_id_missed_call_text_back",
+    "key": "ai_id_missed_call_text_back",
+    "value": ""
+  },
+  {
+    "id": "pYgZ65a6mvxPhBx399vh",
+    "name": "ai_id_new_lead_bot",
+    "key": "ai_id_new_lead_bot",
+    "value": ""
+  },
+  {
+    "id": "9X48fJoGnG4srKZ2NWAV",
+    "name": "ai_id_no_show_bot",
+    "key": "ai_id_no_show_bot",
+    "value": ""
+  },
+  {
+    "id": "xZTVM6IjFchEXzvulJEQ",
+    "name": "ai_id_objection_handler_bot",
+    "key": "ai_id_objection_handler_bot",
+    "value": ""
+  },
+  {
+    "id": "6tymgW7x27ksy0LWOoae",
+    "name": "ai_id_partnership_bot",
+    "key": "ai_id_partnership_bot",
+    "value": ""
+  },
+  {
+    "id": "T23c2ary2WybGywB4ra9",
+    "name": "ai_id_personal_assistant_bot",
+    "key": "ai_id_personal_assistant_bot",
+    "value": ""
+  },
+  {
+    "id": "qJyWse72ue6sqJowTSmL",
+    "name": "ai_id_pre_qualification_bot",
+    "key": "ai_id_pre_qualification_bot",
+    "value": ""
+  },
+  {
+    "id": "J4qXVSJwWHMXlREZs4Pc",
+    "name": "ai_id_reactivation_bot",
+    "key": "ai_id_reactivation_bot",
+    "value": ""
+  },
+  {
+    "id": "tGRBUIN9YAzjF39mN7t3",
+    "name": "ai_id_recruitment_bot",
+    "key": "ai_id_recruitment_bot",
+    "value": ""
+  },
+  {
+    "id": "x2I7rGeu7I60GNH0Fg73",
+    "name": "ai_id_review_request_bot",
+    "key": "ai_id_review_request_bot",
+    "value": ""
+  },
+  {
+    "id": "WIIZQyh8UPNzosG2Vl7x",
+    "name": "ai_id_web_chat_bot",
+    "key": "ai_id_web_chat_bot",
+    "value": ""
+  },
+  {
+    "id": "P5TlnspbaCkM8w3Z4Jjz",
+    "name": "A.I. Inbound Call Number",
+    "key": "ai_inbound_call_number",
+    "value": ""
+  },
+  {
+    "id": "JjLThwKMkjeNtbHcpC2k",
+    "name": "AI Intro Message",
+    "key": "ai_intro_message",
+    "value": ""
+  },
+  {
+    "id": "3RI41Cz206Fcie5YKZnQ",
+    "name": "A.I. Job Title",
+    "key": "ai_job_title",
+    "value": ""
+  },
+  {
+    "id": "XEipW5aFrWXOx2iXCdXP",
+    "name": "AI Personality",
+    "key": "ai_personality",
+    "value": ""
+  },
+  {
+    "id": "oDQROW9kyklzNcIauQYi",
+    "name": "General",
+    "key": "ai_prompt_1_general",
+    "value": "You are {{custom_values.a_i_agent_name}}, AI assistant for {{location.name}}.\n\nR"
+  },
+  {
+    "id": "rMau5vXVSNt2TZsbusnw",
+    "name": "Ai Prompt 2 Booking",
+    "key": "ai_prompt_2_booking",
+    "value": "You are {{custom_values.a_i_agent_name}}. A warm lead needs to be booked. This i"
+  },
+  {
+    "id": "4pUBGKMJY6S9sEZr17e8",
+    "name": "Proposal Follow Up",
+    "key": "ai_prompt_application_follow_up",
+    "value": "You are {{custom_values.a_i_agent_name}}. A proposal has been sent. They have no"
+  },
+  {
+    "id": "JAoefTkc6Bu5ODnro40J",
+    "name": "AI Prompt Booking Alt",
+    "key": "ai_prompt_booking_alt",
+    "value": ""
+  },
+  {
+    "id": "N7G0hHcPrlTkRk1wAA5m",
+    "name": "AI Prompt Booking Follow Up",
+    "key": "ai_prompt_booking_follow_up",
+    "value": "You are {{custom_values.ai_agent_name}} from {{custom_values.company_name}}. Lea"
+  },
+  {
+    "id": "7XzQPjatOz8S9kINtzA6",
+    "name": "Ai Prompt Follow Up",
+    "key": "ai_prompt_follow_up",
+    "value": "You are {{custom_values.a_i_agent_name}}. This lead has not responded. You are n"
+  },
+  {
+    "id": "i8sHCmUYe2TCjR6PBJRW",
+    "name": "Review Request",
+    "key": "ai_prompt_google_review_request",
+    "value": "You are {{custom_values.a_i_agent_name}}. This contact is a happy client. Ask th"
+  },
+  {
+    "id": "juEHFFvgQI5DCb0UwJ1v",
+    "name": "Ai Prompt Inbound",
+    "key": "ai_prompt_inbound",
+    "value": "You are {{custom_values.a_i_agent_name}}, AI assistant for {{location.name}}. Yo"
+  },
+  {
+    "id": "zcc5cvALC9wrnYjceLmH",
+    "name": "AI Prompt Long Term Nurture",
+    "key": "ai_prompt_long_term_nurture",
+    "value": "Generate a monthly value email for this cold {{custom_values.niche}} lead. Tone:"
+  },
+  {
+    "id": "hnmu28jG7b3tDkal5M9E",
+    "name": "No Show",
+    "key": "ai_prompt_no_show",
+    "value": "You are {{custom_values.a_i_agent_name}}. A lead booked an appointment but did n"
+  },
+  {
+    "id": "haXPVlJTh3Sa2BhTHaYL",
+    "name": "Old Lead Resurrection",
+    "key": "ai_prompt_old_lead_resurrection",
+    "value": "You are {{custom_values.a_i_agent_name}}. This is a cold lead. Resurrect the rel"
+  },
+  {
+    "id": "caw95gcuKZxpLlBLZhOs",
+    "name": "Ai Prompt Partnership",
+    "key": "ai_prompt_partnership",
+    "value": "You are {{custom_values.a_i_agent_name}}, reaching out about a potential partner"
+  },
+  {
+    "id": "H5OOeAGrkUdSvV7IdDhO",
+    "name": "AI Prompt Pre Qualify Follow Up",
+    "key": "ai_prompt_pre_qualify_follow_up",
+    "value": "You are {{custom_values.ai_agent_name}} from {{custom_values.company_name}}. Thi"
+  },
+  {
+    "id": "oSrd1uWL70rP2nZGvG0P",
+    "name": "Referral Request",
+    "key": "ai_prompt_referral_request",
+    "value": "You are {{custom_values.a_i_agent_name}}. This contact is a past client or warm "
+  },
+  {
+    "id": "twDKuI16zRZJJhOVcyDL",
+    "name": "A.I. Question 1",
+    "key": "ai_question_1",
+    "value": ""
+  },
+  {
+    "id": "ID3DqAVEw25AdBy67OJH",
+    "name": "A.I. Question 1 Answer",
+    "key": "ai_question_1_answer",
+    "value": ""
+  },
+  {
+    "id": "tezzBrgDqZ5bmEVVz7el",
+    "name": "A.I. Question 10",
+    "key": "ai_question_10",
+    "value": ""
+  },
+  {
+    "id": "xCxQvwXAR7Zyd4zlP2DX",
+    "name": "A.I. Question 10 Answer",
+    "key": "ai_question_10_answer",
+    "value": ""
+  },
+  {
+    "id": "rJfg8PmAvkE3kMm69dXb",
+    "name": "A.I. Question 2",
+    "key": "ai_question_2",
+    "value": ""
+  },
+  {
+    "id": "u1IKrUyH2KqC4EmmPhOl",
+    "name": "A.I. Question 2 Answer",
+    "key": "ai_question_2_answer",
+    "value": ""
+  },
+  {
+    "id": "E24Cd2FSGxiYiWYhhxcd",
+    "name": "A.I. Question 3",
+    "key": "ai_question_3",
+    "value": ""
+  },
+  {
+    "id": "WDJB599o9aj47XkqslMw",
+    "name": "A.I. Question 3 Answer",
+    "key": "ai_question_3_answer",
+    "value": ""
+  },
+  {
+    "id": "fr3dHMclO8AUCYGYIUUM",
+    "name": "A.I. Question 4",
+    "key": "ai_question_4",
+    "value": ""
+  },
+  {
+    "id": "vruk04oO6czaCAUBpDq4",
+    "name": "A.I. Question 4 Answer",
+    "key": "ai_question_4_answer",
+    "value": ""
+  },
+  {
+    "id": "bKW0PAyb5b5IbYPc6PGM",
+    "name": "A.I. Question 5",
+    "key": "ai_question_5",
+    "value": ""
+  },
+  {
+    "id": "vg5vF19azgemLoVOQoW1",
+    "name": "A.I. Question 5 Answer",
+    "key": "ai_question_5_answer",
+    "value": ""
+  },
+  {
+    "id": "htFuUtyBSZM8PD5qFkaB",
+    "name": "A.I. Question 6",
+    "key": "ai_question_6",
+    "value": ""
+  },
+  {
+    "id": "X25rp4P354J3eyNJEwdZ",
+    "name": "A.I. Question 6 Answer",
+    "key": "ai_question_6_answer",
+    "value": ""
+  },
+  {
+    "id": "bmZMmsQuFFSQTXMbyZQT",
+    "name": "A.I. Question 7",
+    "key": "ai_question_7",
+    "value": ""
+  },
+  {
+    "id": "lnINSJwN8b14ztftM2Fa",
+    "name": "A.I. Question 7 Answer",
+    "key": "ai_question_7_answer",
+    "value": ""
+  },
+  {
+    "id": "v54BLPTjebqqK9S5TLBX",
+    "name": "A.I. Question 8",
+    "key": "ai_question_8",
+    "value": ""
+  },
+  {
+    "id": "xP3SWzNspwLyftc4T0AR",
+    "name": "A.I. Question 8 Answer",
+    "key": "ai_question_8_answer",
+    "value": ""
+  },
+  {
+    "id": "MrGTjY4ZAzuCgURZE0Ln",
+    "name": "A.I. Question 9",
+    "key": "ai_question_9",
+    "value": ""
+  },
+  {
+    "id": "PCubjfYMao9z7QpavCo9",
+    "name": "A.I. Question 9 Answer",
+    "key": "ai_question_9_answer",
+    "value": ""
+  },
+  {
+    "id": "TVKkFWNzQoGnbPGLZ3km",
+    "name": "Recruitment",
+    "key": "ai_recruitment_prompt",
+    "value": "You are {{custom_values.a_i_agent_name}}, handling recruitment for {{location.na"
+  },
+  {
+    "id": "Db0LrHblU2cQ17IroX2F",
+    "name": "ai_rules",
+    "key": "ai_rules",
+    "value": "1. Always address leads by first name. 2. Never send more than 5 follow-up messa"
+  },
+  {
+    "id": "7GVoD1mYnfLwneXJvO9U",
+    "name": "AI Special Skills",
+    "key": "ai_special_skills",
+    "value": ""
+  },
+  {
+    "id": "fR0KAlruYXWmRxBdcn0Z",
+    "name": "AI Status",
+    "key": "ai_status",
+    "value": ""
+  },
+  {
+    "id": "7ZZLlZRWSuiFZoXCp07u",
+    "name": "AI Tone",
+    "key": "ai_tone",
+    "value": ""
+  },
+  {
+    "id": "15VE2GckYHgTkAPLc1pL",
+    "name": "AI Voice Preference",
+    "key": "ai_voice_preference",
+    "value": ""
+  },
+  {
+    "id": "pDVAk5ZUGcZCPAagw355",
+    "name": "Application Link",
+    "key": "application_link",
+    "value": ""
+  },
+  {
+    "id": "IyauBxy4CqgNRQUp48yx",
+    "name": "Area",
+    "key": "area",
+    "value": ""
+  },
+  {
+    "id": "ZnwYvNkAY8aclafExsbK",
+    "name": "Billing Email",
+    "key": "billing_email",
+    "value": ""
+  },
+  {
+    "id": "FiqWj0jcw2VJtaWn82LI",
+    "name": "Billing Phone Number",
+    "key": "billing_phone_number",
+    "value": ""
+  },
+  {
+    "id": "h79zgPx6SYQMkxggs6gI",
+    "name": "Brand Color Accent",
+    "key": "brand_color_accent",
+    "value": ""
+  },
+  {
+    "id": "obvm79en7h8zOgC3IfKR",
+    "name": "Brand Color Primary",
+    "key": "brand_color_primary",
+    "value": ""
+  },
+  {
+    "id": "8ZUPgcAnaSliWIMKLVJD",
+    "name": "Brand Color Secondary",
+    "key": "brand_color_secondary",
+    "value": ""
+  },
+  {
+    "id": "TUULt8qpeYtKGBGwusUv",
+    "name": "Business Hours",
+    "key": "business_hours",
+    "value": ""
+  },
+  {
+    "id": "J5gGnE3rP1LEMX6D75IV",
+    "name": "Business Name",
+    "key": "business_name",
+    "value": ""
+  },
+  {
+    "id": "w4S4Z6PlG68lOaVXDlkB",
+    "name": "Business Niche",
+    "key": "business_niche",
+    "value": ""
+  },
+  {
+    "id": "BVcvf4X0d7lvpaECEGa9",
+    "name": "Business Registration Number",
+    "key": "business_registration_number",
+    "value": ""
+  },
+  {
+    "id": "phtvVgS0KCXeZ8RrrBoW",
+    "name": "Business Registration Type",
+    "key": "business_registration_type",
+    "value": ""
+  },
+  {
+    "id": "BLIJCMg2PjgeXaOyGINY",
+    "name": "calendar_follow_up_link",
+    "key": "calendar_follow_up_link",
+    "value": ""
+  },
+  {
+    "id": "cGu6x6n4jYaPSp1c19nG",
+    "name": "Calendar ID",
+    "key": "calendar_id",
+    "value": "2vzlktJN4NF20ebWC91r"
+  },
+  {
+    "id": "5lxpJcJX7CCvoEmHBtCe",
+    "name": "Calendar ID Follow Up",
+    "key": "calendar_id_follow_up",
+    "value": ""
+  },
+  {
+    "id": "8nNLb7LQV1RRXIjqHLqU",
+    "name": "Calendar ID Partnership",
+    "key": "calendar_id_partnership",
+    "value": ""
+  },
+  {
+    "id": "zwfPxaKsvWuX7pXrEl6i",
+    "name": "Calendar ID Personal",
+    "key": "calendar_id_personal",
+    "value": ""
+  },
+  {
+    "id": "Ok7faG2HObiyRmtshYHA",
+    "name": "Calendar ID Recruitment",
+    "key": "calendar_id_recruitment",
+    "value": ""
+  },
+  {
+    "id": "NInTHGtycuwrylZPSUWV",
+    "name": "Calendar ID Team",
+    "key": "calendar_id_team",
+    "value": ""
+  },
+  {
+    "id": "1p2FQZKXF5IpSxrumwwc",
+    "name": "CASL Consent Text",
+    "key": "casl_consent_text",
+    "value": "By submitting this form, you consent to receive electronic communications from u"
+  },
+  {
+    "id": "CgtJvIZGbzm05DYQQaaj",
+    "name": "City",
+    "key": "city",
+    "value": ""
+  },
+  {
+    "id": "ZV1vcytbcyNrWtEWOcTR",
+    "name": "Client Onboarding Funnel",
+    "key": "client_onboarding_funnel",
+    "value": ""
+  },
+  {
+    "id": "ZL0xMKlbJUE0O20DVESi",
+    "name": "Color Code (Hex)",
+    "key": "color_code_hex",
+    "value": ""
+  },
+  {
+    "id": "1jOyA841DRAcVHUfSb8n",
+    "name": "Company Address",
+    "key": "company_address",
+    "value": ""
+  },
+  {
+    "id": "Tw2wZizF0i0TiRdq7tqm",
+    "name": "Company City",
+    "key": "company_city",
+    "value": ""
+  },
+  {
+    "id": "2mipMtPyssK3UQCdClsR",
+    "name": "Company Logo",
+    "key": "company_logo",
+    "value": ""
+  },
+  {
+    "id": "xTj7eZ5F2aWr2kyeYj2f",
+    "name": "Company Logo Alt",
+    "key": "company_logo_alt",
+    "value": ""
+  },
+  {
+    "id": "92mvUxD2Xjpz9jJo9Ez7",
+    "name": "Company Name",
+    "key": "company_name",
+    "value": ""
+  },
+  {
+    "id": "eVtgTA2hYMripkAPKEwA",
+    "name": "Company Phone",
+    "key": "company_phone",
+    "value": ""
+  },
+  {
+    "id": "q6z2F8N7M4y5d0pxNKLc",
+    "name": "Company Primary Hex Color",
+    "key": "company_primary_hex_color",
+    "value": ""
+  },
+  {
+    "id": "6YbT0bhYjbhOREUhKpMl",
+    "name": "Company Province",
+    "key": "company_province",
+    "value": ""
+  },
+  {
+    "id": "XQjd1Ke88aZEwTumytFb",
+    "name": "Company Secondary Hex Color",
+    "key": "company_secondary_hex_color",
+    "value": ""
+  },
+  {
+    "id": "Ek0w2aNcSxYSIxqAbhiT",
+    "name": "Company Slogan",
+    "key": "company_slogan",
+    "value": ""
+  },
+  {
+    "id": "Fc8PiesuSNhdaxiKAJZS",
+    "name": "Compliance Disclaimer",
+    "key": "compliance_disclaimer",
+    "value": ""
+  },
+  {
+    "id": "FxrmkQStYir8y1FB7OSM",
+    "name": "Country",
+    "key": "country",
+    "value": ""
+  },
+  {
+    "id": "cCey0stbcj2zkFQVqx1K",
+    "name": "Digital Phone Number",
+    "key": "digital_phone_number",
+    "value": ""
+  },
+  {
+    "id": "vzjceJHb1KYBDnANClzn",
+    "name": "Digital Phone Number Alt",
+    "key": "digital_phone_number_alt",
+    "value": ""
+  },
+  {
+    "id": "3TzE0w8wjQBBjX8iEjFV",
+    "name": "ElevenLabs Upgrade Path",
+    "key": "elevenlabs_upgrade_path",
+    "value": "ELEVENLABS PREMIUM VOICE UPGRADE PATH: When client upgrades to ElevenLabs premiu"
+  },
+  {
+    "id": "Gpt0ltZWxYf1Zq7dutlW",
+    "name": "Email Signature",
+    "key": "email_signature",
+    "value": ""
+  },
+  {
+    "id": "8k4TYcKvEDoLCF5h21Su",
+    "name": "Event Page",
+    "key": "event_page",
+    "value": ""
+  },
+  {
+    "id": "LIsusckGrp4SGWe06A1r",
+    "name": "Follow Up Calendar Booking Link",
+    "key": "follow_up_calendar_booking_link",
+    "value": ""
+  },
+  {
+    "id": "sKBXlPEO0k5pPCQOtUFz",
+    "name": "Follow Up Calendar Link",
+    "key": "follow_up_calendar_link",
+    "value": ""
+  },
+  {
+    "id": "4lf4yBLy9ZYH3bhWJDpA",
+    "name": "Google Review Link",
+    "key": "google_review_link",
+    "value": ""
+  },
+  {
+    "id": "ykuBO7t3lgl9i9iaRpAp",
+    "name": "Headshot",
+    "key": "headshot",
+    "value": ""
+  },
+  {
+    "id": "XbesxhMtRfmRL6QoCrAI",
+    "name": "Inbound Assistant",
+    "key": "inbound_assistant",
+    "value": ""
+  },
+  {
+    "id": "Lw4CVFsiTNR0yPAaXRHi",
+    "name": "Inbound Prequalify Bot",
+    "key": "inbound_prequalify_bot",
+    "value": ""
+  },
+  {
+    "id": "HPHtUopLwV6pPNtWHZXy",
+    "name": "Inbound Reception Bot",
+    "key": "inbound_reception_bot",
+    "value": ""
+  },
+  {
+    "id": "AxM68qc1bMTw9SIW74r6",
+    "name": "Industry",
+    "key": "industry",
+    "value": ""
+  },
+  {
+    "id": "mPQR9zb214eF5x1KvqR6",
+    "name": "Internal Notification Email",
+    "key": "internal_notification_email",
+    "value": ""
+  },
+  {
+    "id": "RbQuy2QwmF43qp54Au9d",
+    "name": "Intro Message",
+    "key": "intro_message",
+    "value": ""
+  },
+  {
+    "id": "ekyNu2aTDRlnfM8Tk2MY",
+    "name": "Knowledge Link 1",
+    "key": "knowledge_link_1",
+    "value": ""
+  },
+  {
+    "id": "uyhyfq7IM7508OPsL5pu",
+    "name": "Knowledge Link 2",
+    "key": "knowledge_link_2",
+    "value": ""
+  },
+  {
+    "id": "GFiZOAhY0QoUfjFrJ4DG",
+    "name": "Knowledge Link 3",
+    "key": "knowledge_link_3",
+    "value": ""
+  },
+  {
+    "id": "xs5qtcMhxomRSXqh572z",
+    "name": "Knowledge Link 4",
+    "key": "knowledge_link_4",
+    "value": ""
+  },
+  {
+    "id": "USOQrj2XqDZygu69TYyT",
+    "name": "Lead Webhook URL",
+    "key": "lead_webhook_url",
+    "value": ""
+  },
+  {
+    "id": "IOPz0PoHvVdl8JTuSBMV",
+    "name": "License Number",
+    "key": "license_number",
+    "value": ""
+  },
+  {
+    "id": "pEjKCOWs1PAoL7hIrNYg",
+    "name": "Logo URL",
+    "key": "logo_url",
+    "value": ""
+  },
+  {
+    "id": "nwWzsDwhJyB7LCFHiNxQ",
+    "name": "Main Landing Page",
+    "key": "main_landing_page",
+    "value": ""
+  },
+  {
+    "id": "4eVqrdx4TSRWiuOW7q4m",
+    "name": "Main Landing Page Link",
+    "key": "main_landing_page_link",
+    "value": ""
+  },
+  {
+    "id": "iabQvdzERKmSlf7ZA9oO",
+    "name": "My Calendar",
+    "key": "my_calendar",
+    "value": ""
+  },
+  {
+    "id": "wkIK5txjvxnLH4F0pwup",
+    "name": "Niche",
+    "key": "niche",
+    "value": ""
+  },
+  {
+    "id": "lD90ESGnSH11UK8eG6q1",
+    "name": "Not Qualified Details",
+    "key": "not_qualified_details",
+    "value": ""
+  },
+  {
+    "id": "7L56TTm70q2pzVARR34g",
+    "name": "not_qualified_landing_page",
+    "key": "not_qualified_landing_page",
+    "value": ""
+  },
+  {
+    "id": "YtrmFUQyNH3xsxjMf2XQ",
+    "name": "Not Qualified Lead Details",
+    "key": "not_qualified_lead_details",
+    "value": ""
+  },
+  {
+    "id": "0diy5jCENcW3lUiNcHMx",
+    "name": "Not Qualified Page",
+    "key": "not_qualified_page",
+    "value": ""
+  },
+  {
+    "id": "gmdDurhR9q2b2kVjUbwb",
+    "name": "OpenAI Prompt",
+    "key": "openai_prompt",
+    "value": ""
+  },
+  {
+    "id": "Z23y5hwlcIVWrCYbk4Ce",
+    "name": "Outbound Application Reminder Bot",
+    "key": "outbound_application_reminder_bot",
+    "value": ""
+  },
+  {
+    "id": "Igtqw3Aytoz0iEAZONRs",
+    "name": "Outbound Assistant",
+    "key": "outbound_assistant",
+    "value": ""
+  },
+  {
+    "id": "mEt8Pmn2qibCMRhqcOwh",
+    "name": "Outbound Booking Reminder Bot",
+    "key": "outbound_booking_reminder_bot",
+    "value": ""
+  },
+  {
+    "id": "wuD9LTDMAPVuAD7rTMOq",
+    "name": "Outbound Document Reminder Bot",
+    "key": "outbound_document_reminder_bot",
+    "value": ""
+  },
+  {
+    "id": "le6ngdoH4kUKVUJxjGpw",
+    "name": "Outbound New Client Bot",
+    "key": "outbound_new_client_bot",
+    "value": ""
+  },
+  {
+    "id": "Bd5W1XwNyicGqZDc0HvA",
+    "name": "Outbound Pre Qualify Bot",
+    "key": "outbound_pre_qualify_bot",
+    "value": ""
+  },
+  {
+    "id": "tpUOKkNXvO7vrsYmUfQ3",
+    "name": "Outbound Rebook Bot",
+    "key": "outbound_rebook_bot",
+    "value": ""
+  },
+  {
+    "id": "VksBpoWEQuKsT60UDTwq",
+    "name": "Outbound Referral Request Bot",
+    "key": "outbound_referral_request_bot",
+    "value": ""
+  },
+  {
+    "id": "pYkxswfmKFl0gcqrwGF9",
+    "name": "Outbound Review Request Bot",
+    "key": "outbound_review_request_bot",
+    "value": ""
+  },
+  {
+    "id": "CXUZbhguDSDJxHiN8jfu",
+    "name": "Partner Email",
+    "key": "partner_email",
+    "value": ""
+  },
+  {
+    "id": "1QlnDbERdt98KmJ8MYF9",
+    "name": "Partner Name",
+    "key": "partner_name",
+    "value": ""
+  },
+  {
+    "id": "L1D37I8EOPmU2aZJhWdv",
+    "name": "Partner Phone",
+    "key": "partner_phone",
+    "value": ""
+  },
+  {
+    "id": "BQEd2O6ZtyamJ3yitTgH",
+    "name": "Partner Type",
+    "key": "partner_type",
+    "value": ""
+  },
+  {
+    "id": "fExZuGKCXvaKDXzuwtjG",
+    "name": "Partnership Calendar Booking Link",
+    "key": "partnership_calendar_booking_link",
+    "value": ""
+  },
+  {
+    "id": "NvHGrGuEu0b0g9fzTaQH",
+    "name": "Partnership Calendar Link",
+    "key": "partnership_calendar_link",
+    "value": ""
+  },
+  {
+    "id": "MHMaLsx9UW7DKq1utdpV",
+    "name": "Payment Page",
+    "key": "payment_page",
+    "value": ""
+  },
+  {
+    "id": "KThklu4IM1EChZL2cyrV",
+    "name": "Payment Webhook URL",
+    "key": "payment_webhook_url",
+    "value": ""
+  },
+  {
+    "id": "kIpqsHnedULa4n1bgrR0",
+    "name": "Pre Qualify Form Link",
+    "key": "pre_qualify_form_link",
+    "value": ""
+  },
+  {
+    "id": "a1XUTZXWWbyd8NdhzoVd",
+    "name": "Prequalifying Form Link",
+    "key": "prequalifying_form_link",
+    "value": ""
+  },
+  {
+    "id": "YrW8mUnnDGu454zQHsdT",
+    "name": "Privacy Policy",
+    "key": "privacy_policy",
+    "value": ""
+  },
+  {
+    "id": "1rGxJZgWMtcNgAyxRy6G",
+    "name": "Privacy Policy Page",
+    "key": "privacy_policy_page",
+    "value": ""
+  },
+  {
+    "id": "0fkMgexdzoSuuor4wJOU",
+    "name": "Privacy Policy URL",
+    "key": "privacy_policy_url",
+    "value": ""
+  },
+  {
+    "id": "X2iCU9wQeXXjqPBdeb4s",
+    "name": "Product Service 1",
+    "key": "product_service_1",
+    "value": ""
+  },
+  {
+    "id": "LvhYDzwQZ88GKwtXCndO",
+    "name": "Product Service 10",
+    "key": "product_service_10",
+    "value": ""
+  },
+  {
+    "id": "HtQ0Ri5qzChOPH9svyeM",
+    "name": "Product Service 2",
+    "key": "product_service_2",
+    "value": ""
+  },
+  {
+    "id": "C53jNnqHjBYziQXcs94v",
+    "name": "Product Service 3",
+    "key": "product_service_3",
+    "value": ""
+  },
+  {
+    "id": "LmBA8D8bPrOgxeE3tRrt",
+    "name": "Product Service 4",
+    "key": "product_service_4",
+    "value": ""
+  },
+  {
+    "id": "RgIf94IJWU3DTUWqxv5i",
+    "name": "Product Service 5",
+    "key": "product_service_5",
+    "value": ""
+  },
+  {
+    "id": "GZUpmrtsJKzxHwTtfHUq",
+    "name": "Product Service 6",
+    "key": "product_service_6",
+    "value": ""
+  },
+  {
+    "id": "GNPDFShlae92pVn6MbPt",
+    "name": "Product Service 7",
+    "key": "product_service_7",
+    "value": ""
+  },
+  {
+    "id": "l4hohNiwnrJW6gH5Ms3k",
+    "name": "Product Service 8",
+    "key": "product_service_8",
+    "value": ""
+  },
+  {
+    "id": "NUma1dmtoNFrnW96aezz",
+    "name": "Product Service 9",
+    "key": "product_service_9",
+    "value": ""
+  },
+  {
+    "id": "uENJ4FaoaYgYC6G4R6Yq",
+    "name": "Province or State",
+    "key": "province_or_state",
+    "value": ""
+  },
+  {
+    "id": "5B5QRs30vkMRAo0kz0RN",
+    "name": "Qualified Booking Link",
+    "key": "qualified_booking_link",
+    "value": ""
+  },
+  {
+    "id": "PO0ZpvJ8WNXksHbLKlwS",
+    "name": "Qualified Details",
+    "key": "qualified_details",
+    "value": ""
+  },
+  {
+    "id": "1hrKEiPKLWIQpueVQSXH",
+    "name": "Qualified Landing Page",
+    "key": "qualified_landing_page",
+    "value": ""
+  },
+  {
+    "id": "OfW07ObK19YJI5ZWYYTb",
+    "name": "Qualified Lead Details",
+    "key": "qualified_lead_details",
+    "value": ""
+  },
+  {
+    "id": "GrQjfXfbKDLg9DXSrrJi",
+    "name": "Qualified Page",
+    "key": "qualified_page",
+    "value": ""
+  },
+  {
+    "id": "sJQHAGrJ871Dzu3bBCIU",
+    "name": "Reactivation Message",
+    "key": "reactivation_message",
+    "value": "Hey {{contact.first_name}} - it has been a while! I wanted to check in and see i"
+  },
+  {
+    "id": "iig8ZoWBHS7Dt8IEQZKu",
+    "name": "Recruitment Calendar",
+    "key": "recruitment_calendar",
+    "value": ""
+  },
+  {
+    "id": "B9SxzDvAZdGRKv6jKueX",
+    "name": "Recruitment Calendar Booking Link",
+    "key": "recruitment_calendar_booking_link",
+    "value": ""
+  },
+  {
+    "id": "RgqrccIIhavCVykdcF1H",
+    "name": "Recruitment Form Link",
+    "key": "recruitment_form_link",
+    "value": ""
+  },
+  {
+    "id": "BDLLjAHWZDztJezyk9sp",
+    "name": "Recruitment Landing Page",
+    "key": "recruitment_landing_page",
+    "value": ""
+  },
+  {
+    "id": "NbT5CUKTprczii95bYon",
+    "name": "Recruitment Link",
+    "key": "recruitment_link",
+    "value": ""
+  },
+  {
+    "id": "4J6EZracz2b3gdM5fEek",
+    "name": "Recruitment Page",
+    "key": "recruitment_page",
+    "value": ""
+  },
+  {
+    "id": "1QgwybUGB75fFO1UX1of",
+    "name": "Referral Form Link",
+    "key": "referral_form_link",
+    "value": ""
+  },
+  {
+    "id": "3AXelDG8MLEUkpL92fG5",
+    "name": "Referral Incentive Details",
+    "key": "referral_incentive_details",
+    "value": ""
+  },
+  {
+    "id": "nk0txS9ldq9qV0ZHKex2",
+    "name": "Referral Link",
+    "key": "referral_link",
+    "value": ""
+  },
+  {
+    "id": "sxjuSiqsVLOAx1yWOgcv",
+    "name": "Sales Email",
+    "key": "sales_email",
+    "value": ""
+  },
+  {
+    "id": "3SMVVLG9knqfEvC7ssyT",
+    "name": "Sales Phone",
+    "key": "sales_phone",
+    "value": ""
+  },
+  {
+    "id": "xxS9sNCmNlXscWsxjDZH",
+    "name": "Scorecard Interview Calendar",
+    "key": "scorecard_interview",
+    "value": ""
+  },
+  {
+    "id": "vYtTnh4y6EDudYLN0rSv",
+    "name": "Service Area",
+    "key": "service_area",
+    "value": ""
+  },
+  {
+    "id": "jrlEOwzooZYgC2GhDVqn",
+    "name": "Short Address",
+    "key": "short_address",
+    "value": ""
+  },
+  {
+    "id": "qHtX3iaepJjTF8OoJOW1",
+    "name": "Support Email",
+    "key": "support_email",
+    "value": ""
+  },
+  {
+    "id": "YkzPcj18GHGJo5bTQHsK",
+    "name": "Support Phone",
+    "key": "support_phone",
+    "value": ""
+  },
+  {
+    "id": "WeV7Z5yxdgEkgNRgEc16",
+    "name": "Target Market",
+    "key": "target_market",
+    "value": ""
+  },
+  {
+    "id": "skIHdO24s1d9BfGCydmv",
+    "name": "Team Onboarding Funnel",
+    "key": "team_onboarding_funnel",
+    "value": ""
+  },
+  {
+    "id": "4AFNC54YjVecamKcxtzY",
+    "name": "Team Onboarding Survey",
+    "key": "team_onboarding_survey",
+    "value": ""
+  },
+  {
+    "id": "pIsA7OgWxZ28o170KWmC",
+    "name": "Terms and Conditions Page",
+    "key": "terms_and_conditions_page",
+    "value": ""
+  },
+  {
+    "id": "Q2cMtmCTtbUSRfxt6au3",
+    "name": "Terms of Service",
+    "key": "terms_of_service",
+    "value": ""
+  },
+  {
+    "id": "XhZIb01zLCPIJyyeNmXN",
+    "name": "Terms URL",
+    "key": "terms_url",
+    "value": ""
+  },
+  {
+    "id": "agkTU1IXRLOlh2JugRCF",
+    "name": "timezone",
+    "key": "timezone",
+    "value": ""
+  },
+  {
+    "id": "CjuXZeQPTxtrUGvHxar3",
+    "name": "Transfer Phone Number",
+    "key": "transfer_phone_number",
+    "value": ""
+  },
+  {
+    "id": "0hMCK5E9JL4TjPXRhWGM",
+    "name": "User About Paragraph",
+    "key": "user_about_paragraph",
+    "value": ""
+  },
+  {
+    "id": "qjPyn3U5oaG1z3IvNQq0",
+    "name": "User Business Description",
+    "key": "user_business_description",
+    "value": ""
+  },
+  {
+    "id": "h3pBN2BFQCIHFSPlc1bW",
+    "name": "User Calendar Booking Link",
+    "key": "user_calendar_booking_link",
+    "value": ""
+  },
+  {
+    "id": "YfZyE3fXTHAPQ9vw9KE6",
+    "name": "User Email",
+    "key": "user_email",
+    "value": ""
+  },
+  {
+    "id": "XBtF3OaGB3Ls1dzb0FNd",
+    "name": "User First Name",
+    "key": "user_first_name",
+    "value": ""
+  },
+  {
+    "id": "rrbogBkUqpkNNjUoHpEk",
+    "name": "User Full Name",
+    "key": "user_full_name",
+    "value": ""
+  },
+  {
+    "id": "rcAWrsSiKxlWRPtSpqSI",
+    "name": "User Headshot URL",
+    "key": "user_headshot_url",
+    "value": ""
+  },
+  {
+    "id": "lApwIe413mScpUTlxPGU",
+    "name": "User Job Title",
+    "key": "user_job_title",
+    "value": ""
+  },
+  {
+    "id": "xrmpHl39gVKWFFugwS2R",
+    "name": "User Job Title Display",
+    "key": "user_job_title_display",
+    "value": ""
+  },
+  {
+    "id": "MTqetFUGpM8NTng0F9fj",
+    "name": "User Last Name",
+    "key": "user_last_name",
+    "value": ""
+  },
+  {
+    "id": "GM8QcjbtDdQ24j3UYUr2",
+    "name": "User Phone",
+    "key": "user_phone",
+    "value": ""
+  },
+  {
+    "id": "mahdaHIh9aSEfGPmlRo1",
+    "name": "User SMS Signature",
+    "key": "user_sms_signature",
+    "value": ""
+  },
+  {
+    "id": "zx7EvYPMlbwzf2hC4PXM",
+    "name": "User Website",
+    "key": "user_website",
+    "value": ""
+  },
+  {
+    "id": "NZeJJHjPBjPI864sf8NZ",
+    "name": "Webinar Date",
+    "key": "webinar_date",
+    "value": ""
+  },
+  {
+    "id": "J3qC5nvDUeOnDWYCYVUY",
+    "name": "Webinar Link",
+    "key": "webinar_link",
+    "value": ""
+  },
+  {
+    "id": "BKGKNq38p4JgqVFDkoAW",
+    "name": "Webinar Name",
+    "key": "webinar_name",
+    "value": ""
+  },
+  {
+    "id": "p8jJ2EygrkDa9FbQIAEk",
+    "name": "Webinar Time",
+    "key": "webinar_time",
+    "value": ""
+  },
+  {
+    "id": "vmFRZtg9NbpUyrYRQP2s",
+    "name": "Website URL",
+    "key": "website_url",
+    "value": ""
+  }
+]
