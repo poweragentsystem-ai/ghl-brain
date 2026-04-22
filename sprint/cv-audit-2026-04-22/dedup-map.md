@@ -5,6 +5,8 @@ Live account being normalized: EquityMax (`OBmMdqdnPLZvVyHloFly`).
 
 Orphan detection caveat: the workflow JSON provided is metadata only (name + ID), not action bodies. "Likely-orphan" is therefore a best-effort flag based on whether the CV/tag name or key appears in a workflow name, plus whether an obvious canonical equivalent exists. Actual action-body reference checks require exporting workflow definitions (not in scope today).
 
+**IMPORTANT — UPDATED 2026-04-22 13:05:** After deeper verification via contact-search API (every DELETE-ORPHAN tag checked for active contact usage), **14 of 38 DELETE-ORPHAN tags were confirmed to actually be IN USE** (between 1 and 244 contacts tagged). These are NOT safe to delete — they must be reclassified to REVIEW. See `orphan-tag-usage-verified.json` in this folder for full data. Biggest actively-used tags flagged as orphan in error: `lead currently in workflow` (244 contacts), `trafficdispensor` (222), `old lead currently in workflow` (109), `clubcondo` (6), `ai_call_convo` (3), `trafficdispenser` (3), `mike lead` (3). **The 10 junk `{{contact.productservice_N}}` tags and 24 other DELETE-ORPHAN candidates DID verify as unused — those stay on the delete list.**
+
 ---
 
 ## Summary counts

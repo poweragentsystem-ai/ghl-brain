@@ -1,0 +1,230 @@
+[
+  {
+    "id": "gbidZgTws5O0YP7Fvz45",
+    "name": "1770411789818x729503551179194400",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "rEFNnpGEkhMg1OVDmNYs",
+    "name": "1770411937731x786716738265284600",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "TuYqaaY3Yg2NnYXrEJt1",
+    "name": "6/8/2024_call_ended",
+    "contactsUsing": 1,
+    "status": "USED"
+  },
+  {
+    "id": "daOpi4y0W6h1wRiO9MEn",
+    "name": "ai_call_convo",
+    "contactsUsing": 3,
+    "status": "USED"
+  },
+  {
+    "id": "M2BdF5Wsa1C3dfGqQzGj",
+    "name": "appointment confirmation call",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "PsePPnGfPnnw5jwJxNpk",
+    "name": "clubcondo",
+    "contactsUsing": 6,
+    "status": "USED"
+  },
+  {
+    "id": "VF0Q4xbZzQWVNAUz40oD",
+    "name": "email-warmup",
+    "contactsUsing": 1,
+    "status": "USED"
+  },
+  {
+    "id": "weNIb38RHzBfILoFzti6",
+    "name": "email-warmup-maxequity",
+    "contactsUsing": 1,
+    "status": "USED"
+  },
+  {
+    "id": "OeAB9wREw6iU0nUa0nYH",
+    "name": "generic",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "6nEFqtYQmt5E6ZtRYrT7",
+    "name": "john lead",
+    "contactsUsing": 1,
+    "status": "USED"
+  },
+  {
+    "id": "fjoUS32Px29rduzi3PUy",
+    "name": "lead currently in workflow",
+    "contactsUsing": 244,
+    "status": "USED"
+  },
+  {
+    "id": "FN6xWnE21EJBVKiwZI1D",
+    "name": "lead currently in workflow sms",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "KBhpSE8nZMytbwXi7LWr",
+    "name": "manual_workflow_add",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "ncxbYGtRAZF8dxM9aSE4",
+    "name": "mike lead",
+    "contactsUsing": 3,
+    "status": "USED"
+  },
+  {
+    "id": "5QUY3Yf8WwsDoIYNWN1W",
+    "name": "mortgage test",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "XGMWm8yGj0iUYfzDq7jp",
+    "name": "mortgage_demo_call",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "95g9MCplgq7QQS9HQaBA",
+    "name": "name via lookup",
+    "contactsUsing": 1,
+    "status": "USED"
+  },
+  {
+    "id": "gPFFZGC9VgPcHGuumKvX",
+    "name": "nikki lead",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "go2WSDxWg7kCOI1jbrg6",
+    "name": "old lead currently in workflow",
+    "contactsUsing": 109,
+    "status": "USED"
+  },
+  {
+    "id": "LsBl1laJzQOq1cPlfxm1",
+    "name": "resend_construction",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "cScGBkXAPzRsLqeZmP6v",
+    "name": "resend_generic",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "5Do1VuuLIn3NYg9pAKQ9",
+    "name": "resend_private",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "5gtIyLB7UXas49og0hEd",
+    "name": "resend_purchase",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "8OE2zid7u1NoYw5foHy8",
+    "name": "resend_reverse",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "gn7bCbvPqNkqYZqiT4MT",
+    "name": "sheh",
+    "contactsUsing": 2,
+    "status": "USED"
+  },
+  {
+    "id": "xAdR639AAZfsWB9CpfQw",
+    "name": "trafficdispenser",
+    "contactsUsing": 3,
+    "status": "USED"
+  },
+  {
+    "id": "hgizvT3jFl92pQWpg9AO",
+    "name": "trafficdispensor",
+    "contactsUsing": 222,
+    "status": "USED"
+  },
+  {
+    "id": "pyzo5gkPP1EugZGPmdwo",
+    "name": "working",
+    "contactsUsing": 2,
+    "status": "USED"
+  },
+  {
+    "id": "zDK2dwnZs8Z9LFF5GRKB",
+    "name": "{{contact.productservice_10}}",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "44bHBnZvDugqtajGVuqb",
+    "name": "{{contact.productservice_1}}",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "HBs2X7sa9341KJP6MXwy",
+    "name": "{{contact.productservice_2}}",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "cc1WjIp0Q4qg7IIBglQB",
+    "name": "{{contact.productservice_3}}",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "7HLnU9XnHuYdiMC656xn",
+    "name": "{{contact.productservice_4}}",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "OCifO7wIsStkHJYJ3sjl",
+    "name": "{{contact.productservice_5}}",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "TF33X0eSHsuULIwoQq5v",
+    "name": "{{contact.productservice_6}}",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "eBhhnp7sv9pqMQueltzu",
+    "name": "{{contact.productservice_7}}",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "Gm6DPCJyTGi2g2FWsubH",
+    "name": "{{contact.productservice_8}}",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  },
+  {
+    "id": "Wcp5PuE3LOHwjXsyMsNC",
+    "name": "{{contact.productservice_9}}",
+    "contactsUsing": 0,
+    "status": "UNUSED"
+  }
+]
