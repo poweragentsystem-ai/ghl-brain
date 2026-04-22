@@ -163,3 +163,35 @@ To refresh: Claude Code re-runs the API pull. Currently shows:
 - [2026-04-21 ~00:00 | Claude-Code] OVERNIGHT PUSH — GHL snapshots priority. EquityMax: 51 custom values (humanized AI prompts, FSRA footer, booking links, 9 mortgage products in product_service_1-9), 64 tags (AI-voice/chat attribution + lifecycle). ABC: 28 custom values, 51 tags, 7 custom fields (Product Interest, Qualified Status, etc.). GHL API does NOT support DELETE of workflows/forms/pipelines — all browser-only. Wrote definitive BROWSER-FINISH-PROMPT.md (phases A-I) for Console to execute in the morning.
 - [2026-04-21 ~04:00 | Claude-Code] Agency landing page redeployed with animated premium orb hero (3D attempted, Three.js/drei version mismatch, error boundary caught fall to photoreal-ish CSS orb). Morning report saved to Desktop as HTML. Master build status + mortgage-snapshot-spec + BROWSER-FINISH-PROMPT all auto-synced to github.com/poweragentsystem-ai/ghl-brain for mobile/Console access.
 - [2026-04-21 ~04:30 | Claude-Code] ✅ SHIPPED: Agency lead capture LIVE + tested. Serverless function /api/submit-lead at agency-site → creates GHL contact in ABC via API → tags agency-inquiry + source-website + industry-*. End-to-end test passed (contact created + cleaned up). GHL_ABC_API_KEY stored as Vercel env var (never exposed client-side). Agency URL is now actively capturing leads.
+- [2026-04-22 09:43 | Claude-Code] CV DEDUPE AUDIT — full CV/tag/workflow pull from both subs saved to `sprint/cv-audit-2026-04-22/`. Found: EquityMax has duplicate person-name CVs (`owner_name` = "Renée" ID `JG74b0UFQRYpm85IEctN`, `owner_full_name` = "Renée Ross" ID `suzuwpay2wYXSLDq4Uz2`) competing with empty `user_first_name`/`user_last_name`/`user_full_name`. ABC has only `user_*` (empty — correct for generic template).
+- [2026-04-22 11:35 | Claude-Code] DECISION SAVED (recovered from prior chat, should have been logged live): **KEEP `user_*` series, DELETE `owner_name` + `owner_full_name` in EquityMax.** Reason: `user_*` are the canonical convention (`console-rules.md` already says "NOT owner_name"). `owner_*` are legacy duplicates from older agent prompts. Execution plan below.
+
+---
+
+## CV DEDUPE EXECUTION PLAN — PENDING APPROVAL
+
+**Decision (2026-04-22):** In EquityMax, keep `user_first_name` / `user_last_name` / `user_full_name`. Delete `owner_name` and `owner_full_name`. ABC already clean.
+
+**Step 1 — Populate empty `user_*` CVs in EquityMax via API (Claude Code):**
+| Key | ID | New value |
+|---|---|---|
+| `user_first_name` | `8nzyXz0A4iuoEl8f5Ekr` | Renée |
+| `user_last_name` | `gG2XDhAOYpsJLRH0o5Iy` | Ross (already set) |
+| `user_full_name` | `wGOURYvckccqHTsQyokI` | Renée Ross |
+
+**Step 2 — Find all references (Claude Code via API where possible):**
+- Grep all EquityMax workflows (metadata via API), emails, SMS templates for `{{custom_values.owner_name}}` and `{{custom_values.owner_full_name}}`
+- GHL API returns workflow metadata only, not step content → Console must sweep AI Agent Studio voice bots + workflow step text manually
+
+**Step 3 — Replace references:** swap `owner_name` → `user_first_name`, `owner_full_name` → `user_full_name`
+
+**Step 4 — Delete the two owner CVs via API:**
+- `owner_name` → ID `JG74b0UFQRYpm85IEctN`
+- `owner_full_name` → ID `suzuwpay2wYXSLDq4Uz2`
+
+**Split of work:** Claude Code owns Steps 1, 2 (API scan), and 4. Console owns Step 3 for any voice bot / workflow step text the API can't reach.
+- [2026-04-22 11:45 | Claude-Code] SCOPE EXPANSION — Renée expanded CV dedupe task: find ALL duplicate-meaning CVs (not just owner_name) + tags across EqM; align to ABC as canonical (minus mortgage-specific); flag unused; regenerate ghl-state.html dashboard with KEEP/MERGE/DELETE/UNUSED badges; verify voice AI + chat AI are using canonical keys; reference Google Drive mortgage scripts + existing conversational bot scripts. 10 tracked tasks created. Deletes gated on Renée approval after functional verification. Starting Phase 1 (read-only audit + semantic dedup map).
+- [2026-04-22 12:00 | Claude-Code] Audit done. Semantic dedup map saved to `sprint/cv-audit-2026-04-22/dedup-map.md`. EqM CVs: 59 KEEP / 48 MORTGAGE-KEEP / 34 MERGE / 7 DELETE-DEPRECATED / 8 DELETE-ORPHAN / 14 REVIEW. EqM tags: 38 KEEP / 20 MORTGAGE-KEEP / 42 MERGE / 2 DELETE-DEPRECATED / 32 DELETE-ORPHAN / 38 REVIEW. Google Drive mortgage voice + chat scripts pulled to `projects/equitymax-snapshot/voice-bot-inspiration/`. AI agent inventory + CV/tag map saved to `projects/equitymax-snapshot/ai-agent-cv-map.md`. Dashboard render sub-agent launched (target: `public/ghl-dedup.html`).
+- [2026-04-22 12:00 | Claude-Code] **Canonical ambiguities flagged for Renée decision:** (1) `my_calendar` vs `booking_link` — console-rules says my_calendar, Drive scripts use booking_link. Recommend `my_calendar`. (2) `ai_job_title` vs `ai_assistant_job_title` — console-rules says ai_job_title, Drive scripts use ai_assistant_job_title. Recommend `ai_job_title`. (3) ABC has internal 3-way dups on `privacy_policy`, `terms_of_service`, `qualified_*`, `not_qualified_*` — need to pick canonical in ABC first. (4) ABC tags: spaced vs hyphenated — standardize on hyphens.
+- [2026-04-22 12:05 | Claude-Code] ✅ Dedup dashboard LIVE at https://xpert-command-center.vercel.app/ghl-dedup.html. 7,748 lines / 316KB. Nav link added to ghl-state.html (first item, orange pill). Filter tabs per bucket (KEEP / MORTGAGE-KEEP / MERGE / REVIEW / DELETE-DEPRECATED / DELETE-ORPHAN). Each card has unique ID for deep-link during walkthrough. Sub-agent flagged: dedup-map.md summary line showed stale counts (170/172) vs action tables (242/194); action tables match slim JSON — use tables as truth. Generator saved to sprint/cv-audit-2026-04-22/build-dedup-html.js for re-runs.
+- [2026-04-22 12:15 | Claude-Code] AXEL REFLEX PROGRAMMED. Renée correction: I didn't forward-walk agents during audit (e.g. Partnership bot: "qualified → then what? multiple partners? onboarding?"). Fix: (1) new feedback memory `feedback_forward_walk_every_workflow.md` — Success/Failure/Multiplicity/Handoff on every bot touched. (2) `actuator-agent.md` updated with the forward-walk reflex codified. (3) CLAUDE.md ALWAYS-ON list now includes "forward-walk during audit, not just pre-launch." (4) Applied immediately: ran the reflex on all 11 EqM AI agents → gap report at `projects/equitymax-snapshot/forward-walk-gap-report.md`. 14 critical gaps flagged including major Partnership post-qualify flow undefined, per-product opportunity tracking missing, Renewal per-property missing, Pre-Qualifier #11 double-fire risk vs #9, no Renée notifications for high-value lost leads. NOT READY for snapshot until resolved.
