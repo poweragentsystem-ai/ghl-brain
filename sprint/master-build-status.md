@@ -260,3 +260,16 @@ ABC (8 CVs + 1 tag):
 - n8n MCP restart required
 
 ---
+
+---
+
+## 2026-04-23 — EASY DEPLOY SPRINT KICKOFF
+
+- [2026-04-23 01:00 | Claude-Code] Massive new scope: Easy Deploy = the main product. Renée laid out full vision: ORB chat interviews leads → builds niche-tailored AI system → sliding-scale pricing → auto-proposal → sign+pay → auto-deploy to GHL sub-account cloned from ABC. 9 core bots + niche-specific. 4 videos of Ulio to study.
+- [2026-04-23 01:10 | Claude-Code] Intel sources: 3 Drive videos (79/110/197 MB, IDs saved) + 1 IG reel (DW1NP2yR8qx). Intel Drop only has the gstack one — Renée's drop didn't save (possible backend auth issue on GITHUB_TOKEN).
+- [2026-04-23 01:15 | Claude-Code] GHL BYO caller ID confirmed via official docs — "Verified Caller ID" feature exists, 10 per sub-account. Locked in for Easy Deploy architecture.
+- [2026-04-23 01:20 | Claude-Code] Sub-agent A launched: watch all 4 Ulio videos + document the full partner journey, lead finder mechanics, deploy engine, proposal engine, pricing/commission clues, tech stack clues, gaps. Output: `projects/easy-deploy-business/ULIO-RECON.md` + screenshots folder.
+- [2026-04-23 01:22 | Claude-Code] Sub-agent B launched: build 4 skills (business-proposal-writing, high-ticket-setter-outbound, high-ticket-closer, easy-deploy-legal-disclaimer). Research-backed (SPIN/Challenger/Sandler/Straight Line/Voss), Canadian-compliant, human-tone.
+- [2026-04-23 01:30 | Claude-Code] Architecture doc saved to `projects/easy-deploy-business/ARCHITECTURE.md`. Covers: top-level flow, ORB interview script (12 questions), pricing sliding scale, 9-bot library + niche-specific, legal disclaimer, tech stack (React + R3F for orb + Claude API + GHL MCP + Stripe + Gmail MCP), 4-week critical path to first dollar, 10 differentiators vs Ulio.
+- [2026-04-23 01:45 | Claude-Code] Orb system prompt + conversation flow saved to `projects/easy-deploy-business/ORB-SYSTEM-PROMPT.md`. 12 core questions, niche-specific branches (mortgage/dental/realtor/trades/consultants), parallel background jobs (website scrape + GBP lookup + market signals), closing move, edge handling, tech call spec. Ready for Claude API implementation once architecture approved.
+- [2026-04-23 02:00 | Claude-Code] Sub-agent B delivered 4 skills: business-proposal-writing (392 lines), high-ticket-setter-outbound (484 lines), high-ticket-closer (508 lines), easy-deploy-legal-disclaimer (507 lines). Research-backed (SPIN/Challenger/Sandler/Straight Line/Voss/Gong/Salesloft/Apollo citations). 5 stats flagged for Ryan verification before client-facing use. 10 legal risks (indemnity scope, liability cap, AIDA/EU AI Act classification, arbitration waiver, cross-border data flow, voice-cloning right-of-publicity, FINTRAC exposure, etc.) flagged for actual Ontario lawyer — disclaimer is starting template only, NOT legal advice. 5 mandatory acknowledgment checkboxes must be signed before Sign & Pay activates.

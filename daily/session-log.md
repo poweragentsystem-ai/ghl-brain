@@ -239,3 +239,62 @@ NEXT SESSION STARTS WITH:
 4. Once decisions are in, Claude Code executes Phase 3: populate canonical CV values in EquityMax via API (populate user_first_name/full_name, then merge content from deprecated keys to canonical keys in reachable places), then hands Console a tight prompt for voice bot + workflow step text the API can't edit.
 5. Phase 4: functional verification. Phase 5 (LAST): delete unchecked items Renée approved.
 ---
+
+---
+DATE: 2026-04-22 (FINAL — session end 19:20 ET)
+WHAT WE BUILT (FINAL TALLY):
+- Phase 1-5 of GHL Dedup + Universality Sprint — COMPLETE on the API side
+- 59 items removed across both subs (22 CVs + 14 fields + 36 tags — verified safe, zero reference losses)
+- 22 new items created (8 killswitch CVs + 8 social/partner fields + 6 auto-populated canonicals)
+- 4 new permanent memories + 2 new skills + updated Axel + Kip + CLAUDE.md
+- 3 comprehensive Console handoff prompts drafted + pushed to GitHub
+- GHL MCP installed (both subs) + Gmail MCP + Stripe MCP authenticated
+- Morning brief scaffolded at C:/Users/User/scripts/morning-brief/
+
+FILES CHANGED (final):
+- sprint/master-build-status.md (massive append + session-complete marker)
+- sprint/active-build-spec.md (rewritten for this sprint)
+- sprint/cv-audit-2026-04-22/ (full audit trail + action tables + execution logs + final walkthrough)
+- daily/session-log.md (this file)
+- riley/deferred-decisions.md (6 new rows resolved or deferred)
+- operating-system/pending-saves-queue.md (4 items completed + marked)
+- projects/equitymax-snapshot/ai-agent-cv-map.md (NEW)
+- projects/equitymax-snapshot/forward-walk-gap-report.md (NEW)
+- projects/equitymax-snapshot/partnership-flow-spec.md (NEW)
+- projects/equitymax-snapshot/voice-bot-inspiration/ (NEW — 5 Drive scripts)
+- projects/equitymax-snapshot/CONSOLE-RECRUITMENT-FLOW.md (NEW)
+- projects/abc-company-snapshot/CONSOLE-KILLSWITCHES-AND-TAGS.md (NEW)
+- xpert-command-center/public/ghl-dedup.html (new — LIVE at xpert-command-center.vercel.app/ghl-dedup.html)
+- xpert-command-center/public/ghl-state.html (nav link added)
+- claude-skills/cold-outreach-sequences.md (NEW, 686 lines)
+- claude-skills/funnel-qualified-landing-page.md (NEW)
+- claude-skills/sam.md (pointer added)
+- claude-skills/actuator-agent.md (forward-walk reflex section added)
+- claude-skills/knowledge-keeper.md (MCP monitoring section added)
+- ~/.claude/CLAUDE.md (ALWAYS-ON list updated)
+- ~/.claude/projects/C--Users-User/memory/MEMORY.md + 7 new feedback/reference memories
+- scripts/morning-brief/ (NEW — generate-brief.js + README)
+
+DECISIONS LOCKED IN:
+1. EquityMax sub = template for Canadian mortgage pros + their partners. ABC sub = template for all other niches. NEITHER is Renée personal.
+2. Keep user_*, delete owner_*. Canonical for everything = shortest key wins.
+3. business_hours = client-facing "9am-6pm EST" (not personal work window).
+4. niche = "Mortgage" (not "Mortgage Brokerage" — plays better in bot sentences).
+5. Killswitches at CV layer, NOT draft-mode. 4 channels (voice/SMS/email/master) + retrofit pattern on every workflow.
+6. "lead currently in workflow" tag on every workflow entry, removed on every exit. Old lead tracker deprecated.
+7. No content without skill backing. Ever.
+8. Forward-walk reflex (Success/Failure/Multiplicity/Handoff) runs on every workflow/agent touched — audit time included, not just pre-launch.
+9. Partnership flow v1: minimal — just move to correct stage + internal notification + task create.
+10. 14 forward-walk gaps deferred to post-v1.
+11. Subject prefix required on all emails to Renée (Morning Brief / Claude Brief / Claude Talk / etc). Inbox read scope limited to those + claude-code label.
+
+NEXT SESSION STARTS WITH:
+1. Restart Claude Code → /context-restore (GHL MCP + n8n come online)
+2. Fire the 3 Console handoffs from github.com/poweragentsystem-ai/ghl-brain:
+   - CONSOLE-PHASE-3-HANDOFF.md (reference swaps)
+   - CONSOLE-KILLSWITCHES-AND-TAGS.md (121 workflow retrofit)
+   - CONSOLE-RECRUITMENT-FLOW.md (recruitment build)
+3. Post-Console: I run functional verification via GHL MCP
+4. Then snapshot export
+5. Then pricing (Stripe MCP)
+---
