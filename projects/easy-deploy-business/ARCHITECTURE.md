@@ -22,20 +22,46 @@
 - When Easy Deploy deploys a client, voice calls route through Renée's agency voice AI pool until revenue supports Assistable migration
 - Future migration path: add a "Voice Provider" setting per client (GHL native / Assistable / ElevenLabs) so clients can upgrade when they want
 
-## 8 REQUIRED PAGES (Renée's spec 2026-04-23)
+## 9 REQUIRED PAGES (updated post-Ulio-recon 2026-04-23)
 
-Every Easy Deploy instance has these 8 pages / sections. Anything else is add-on.
+Every Easy Deploy instance has these 9 pages / sections. Anything else is add-on.
 
 | Page | URL path | Purpose |
 |---|---|---|
-| **Leads** | `/leads` | Lead Finder — search by niche + city + country. Scorecards per lead (GBP rating, reviews, est. revenue). Canada + USA coverage. |
-| **AI Employees** | `/employees` | The bot library — 9 core bots + niche-specific. Enable / disable / configure each. |
+| **Leads** | `/leads` | Lead Finder — search by niche + city + country. Scorecards per lead. Canada + USA coverage. **Plus Business Deep Dive panel** (Owner/Email/Direct Line/Website/Hours/Est. Revenue + review-signal tags: Phone Issues / Below 4.0 / Booking Complaints) |
+| **AI Employees** | `/employees` | The bot library — 9 core bots + niche-specific. Enable / disable / configure each. **Per-bot live transfer toggle** (AI escalates to human when intent score > X). |
 | **Sample Page** | `/sample` | A live demo of what a deployed client system looks + feels like. Public-facing marketing. |
-| **Pricing Page** | `/pricing` | Sliding-scale pricing. Default $997 setup + default-minutes tier. Live price calc. |
-| **AI Proposal** | `/proposal/:id` | AI-generated proposal. **Editable before send.** Then email to contact with a "Sign & Pay" CTA. |
-| **Payment Page** | `/pay/:proposalId` | Stripe + e-signature + T&Cs acceptance. Checkout flow. |
-| **Settings** | `/settings` | Account / billing / branding / integrations / team. |
-| **Voice Settings** | `/settings/voice` | **Dedicated voice AI config** — provider (GHL / Assistable / ElevenLabs), voice selection, style, speed, caller ID, voicemail drop script, disclosure language (AI voice identity disclosure per CRTC). |
+| **Pricing Page** | `/pricing` | Sliding-scale pricing. **Live profitability calc** (Est. Cost / Est. Profit / Profitable ✓ / Break-even after N months). Default $997 setup + default-minutes tier. |
+| **AI Proposal** | `/proposal/:id` | AI-generated proposal. **Editable before send.** References specific review quotes + local competitor names. Email to contact with "Sign & Pay" CTA. |
+| **Payment Page** | `/pay/:proposalId` | Stripe + e-signature + T&Cs acceptance. 5 mandatory compliance checkboxes before activation. |
+| **Settings** | `/settings` | Account / billing / branding / integrations / **team seats with role-based access** (admin / setter / closer / account-manager). |
+| **Voice Settings** | `/settings/voice` | Provider (GHL / Assistable / ElevenLabs voice-clone), voice selection, style, speed, caller ID, voicemail drop script, CRTC AI disclosure. **Simulated call stress-test** — runs 20 scripted scenarios against the agent. |
+| **Content Library** | `/library` | **(9th page — added post-recon as growth engine)** Demo videos + swipe files + ROI calc + carousel templates + competitor doc + creator coaching playbooks. 20% lifetime recurring for creators who share assets. Niche-specific kits (mortgage/dental/HVAC/realtor/etc). Canadian payout via Wise + Stripe + PayPal. |
+
+## AGENT BUILDER — Brain / Tests / Go Live / Business (Ulio pattern, improved)
+
+When a partner clicks into a specific deployed bot to configure it, they see 4 tabs:
+
+| Tab | What's in it |
+|---|---|
+| **Brain** | AI Greeting + Behavior + Knowledge Base (URL import + file upload) + Tone + Max-3-name-uses rule + Compliance disclosure auto-inserted |
+| **Tests** | Real-time chat + voice test with transcript. **PLUS simulated-call button that runs 20 scripted scenarios automatically** (angry caller / wrong number / long-winded / silent / DND request / voicemail / etc.) |
+| **Go Live** | Phone number assignment, live/pause toggle, schedule (hours), escalation rules (when to transfer to human), fallback voicemail |
+| **Business** | The client business info — editable in-page so you don't have to bounce to Settings |
+
+## POST-RECON ENHANCEMENTS (2026-04-23)
+
+- **Platform Billing toggle** — Ulio pattern. "We handle payments from this business" — Stripe Connect for split billing. Partner gets margin, Easy Deploy takes COGS + platform fee.
+- **Live Profitability Math** — sliders + real-time Est. Cost / Est. Profit / Profitable badge on pricing page.
+- **Business Deep Dive** enrichment panel on every lead card.
+- **Lead Insights tags** — Phone Issues / Below 4.0 / Booking Complaints / High Volume / Service Issues / etc.
+- **Content Library** as 9th page (creator/affiliate growth engine — beats Ulio's 17% with 20% lifetime).
+- **Team seats + role-based access** on Settings.
+- **Live transfer / human escalation** option per bot.
+- **Simulated call stress-test** on Voice Settings.
+- **Marketing hook locked:** "Build it. Own it. Ship it." — ownership-first angle (Ulio's weak spot per red-flag comment).
+
+See `ULIO-COUNTER-MOVES.md` for the full strategic breakdown of what we steal, improve, and ignore.
 
 ---
 

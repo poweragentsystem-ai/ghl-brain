@@ -10,19 +10,20 @@ Minimal React page scaffolds for the 8 required pages. Each stub defines:
 **Theme:** navy (#0A1628) + gold (#C9A84C) — matches Xpert brand
 **Mobile-first:** all pages must work at 320px width
 
-## The 8 pages
+## The 9 pages (post-Ulio-recon)
 
 | Stub | Path | Purpose |
 |---|---|---|
 | `OrbPage.jsx` | `/orb` | Orb chat — interview the lead, build their system |
-| `LeadsPage.jsx` | `/leads` | Lead Finder — search Canada + USA businesses, scorecards |
+| `LeadsPage.jsx` | `/leads` | Lead Finder + Business Deep Dive with review-signal tags |
 | `EmployeesPage.jsx` | `/employees` | AI Employees — bot library, per-bot enable/configure |
 | `SamplePage.jsx` | `/sample` | Sample — public marketing demo of a deployed system |
-| `PricingPage.jsx` | `/pricing` | Sliding-scale pricing, live calc |
+| `PricingPage.jsx` | `/pricing` | Sliding-scale pricing + LIVE PROFITABILITY CALC |
 | `ProposalPage.jsx` | `/proposal/:id` | AI proposal, editable before send |
-| `PaymentPage.jsx` | `/pay/:proposalId` | Stripe checkout + e-sign + T&Cs |
-| `SettingsPage.jsx` | `/settings` | Account / billing / branding / integrations |
-| `VoiceSettingsPage.jsx` | `/settings/voice` | Dedicated voice AI config |
+| `PaymentPage.jsx` | `/pay/:proposalId` | Stripe checkout + e-sign + T&Cs (5 mandatory checkboxes) |
+| `SettingsPage.jsx` | `/settings` | Account / billing / branding / integrations / team seats |
+| `VoiceSettingsPage.jsx` | `/settings/voice` | Voice AI config + simulated-call stress test |
+| `ContentLibraryPage.jsx` | `/library` | **9th page — creator/affiliate growth engine** 20% lifetime recurring. Niche-specific kits. |
 
 ## Navigation
 Public pages: Sample, Pricing, Orb (entry point) — no login needed
