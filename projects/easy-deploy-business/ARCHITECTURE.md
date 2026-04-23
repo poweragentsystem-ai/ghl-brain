@@ -6,13 +6,36 @@
 - ORB on a standalone page asks leads the questions that shape the build
 - Bots are niche-based + website-knowledge-based (ORB learns the niche during the chat)
 - Pricing page with default setup fee + default-minutes sliding scale
-- AI-generated proposal sent to contact after "I like this" click
+- AI-generated proposal sent to contact after "I like this" click — **must be editable before send, not just read-only**
 - Sign + pay flow with contract
 - Legal disclaimer protecting us (user responsible for their country/state/province laws)
 - Generic bot library (9 bots listed below)
 - Cold email centre (to be added later)
 - Post-purchase: client picks digital number + uploads pricing sheets + extras; platform does the rest
 - GHL BYO caller ID wired so client shows their own business number on outbound
+- **SEPARATE BUSINESS** from Xpert's mortgage work — Easy Deploy has its own brand, domain, positioning. EquityMax mortgage stuff does NOT bleed into Easy Deploy's identity.
+
+## VOICE AI — Decision locked 2026-04-23
+
+- **Target (when budget allows):** Assistable.ai — pay-per-minute, flat rate, production-grade
+- **MVP / bootstrapped mode:** use **GHL native Voice AI** inside Renée's agency-level sub-account (NOT ABC or EqM — they're templates)
+- When Easy Deploy deploys a client, voice calls route through Renée's agency voice AI pool until revenue supports Assistable migration
+- Future migration path: add a "Voice Provider" setting per client (GHL native / Assistable / ElevenLabs) so clients can upgrade when they want
+
+## 8 REQUIRED PAGES (Renée's spec 2026-04-23)
+
+Every Easy Deploy instance has these 8 pages / sections. Anything else is add-on.
+
+| Page | URL path | Purpose |
+|---|---|---|
+| **Leads** | `/leads` | Lead Finder — search by niche + city + country. Scorecards per lead (GBP rating, reviews, est. revenue). Canada + USA coverage. |
+| **AI Employees** | `/employees` | The bot library — 9 core bots + niche-specific. Enable / disable / configure each. |
+| **Sample Page** | `/sample` | A live demo of what a deployed client system looks + feels like. Public-facing marketing. |
+| **Pricing Page** | `/pricing` | Sliding-scale pricing. Default $997 setup + default-minutes tier. Live price calc. |
+| **AI Proposal** | `/proposal/:id` | AI-generated proposal. **Editable before send.** Then email to contact with a "Sign & Pay" CTA. |
+| **Payment Page** | `/pay/:proposalId` | Stripe + e-signature + T&Cs acceptance. Checkout flow. |
+| **Settings** | `/settings` | Account / billing / branding / integrations / team. |
+| **Voice Settings** | `/settings/voice` | **Dedicated voice AI config** — provider (GHL / Assistable / ElevenLabs), voice selection, style, speed, caller ID, voicemail drop script, disclosure language (AI voice identity disclosure per CRTC). |
 
 ---
 
