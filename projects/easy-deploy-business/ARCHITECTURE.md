@@ -2,10 +2,10 @@
 
 **Goal:** beat Ulio.ai. Agency partners (or business owners directly) sign up → an ORB chat interviews them → builds a full AI-automation system tailored to their niche + city + brand → auto-proposal with sliding-scale pricing → sign + pay → deploy to GHL sub-account. Even a teenager could use it.
 
-**Renée's requirements locked in (2026-04-23):**
+**Renée's requirements locked in (2026-04-23, updated after pricing + compliance + ownership corrections):**
 - ORB on a standalone page asks leads the questions that shape the build
 - Bots are niche-based + website-knowledge-based (ORB learns the niche during the chat)
-- Pricing page with default setup fee + default-minutes sliding scale
+- Pricing page with default setup fee + default-minutes sliding scale + **manual type-in**
 - AI-generated proposal sent to contact after "I like this" click — **must be editable before send, not just read-only**
 - Sign + pay flow with contract
 - Legal disclaimer protecting us (user responsible for their country/state/province laws)
@@ -13,7 +13,44 @@
 - Cold email centre (to be added later)
 - Post-purchase: client picks digital number + uploads pricing sheets + extras; platform does the rest
 - GHL BYO caller ID wired so client shows their own business number on outbound
-- **SEPARATE BUSINESS** from Xpert's mortgage work — Easy Deploy has its own brand, domain, positioning. EquityMax mortgage stuff does NOT bleed into Easy Deploy's identity.
+- **SEPARATE BUSINESS** from Xpert's mortgage work — Easy Deploy has its own brand, domain, positioning. FSRA does NOT apply to Easy Deploy. The mortgage niche template is just one option, not the core of the product.
+- **GHL is backend only.** Subscribers never see GHL's interface. Easy Deploy has its own custom frontend. GHL provides the plumbing (sub-account, workflows, voice AI).
+- **Subscribers own their accounts.** They're direct customers, not "clients of an affiliate." Easy Deploy makes money on subscription + minutes. No affiliate-owns-client middleman.
+
+## PRICING — locked in (2026-04-23)
+
+Three tiers with minute-based caps + overage + hard-stop budget guardrail.
+
+| Tier | $/mo | Minutes Included | Overage | Who it's for |
+|---|---|---|---|---|
+| **Starter** | $97 | 250 | $0.25/min | Solo / testing |
+| **Grow** | $197 | 1,000 | $0.25/min | Active small business |
+| **Scale** | $397 | 3,000 | $0.25/min | Busy / multi-location |
+| **Custom** | negotiated | custom | negotiated | enterprise |
+
+**Setup fee (one-time):** slider from $497 (simple) to $2,497 (complex), default $997. Includes: niche research, 9 bots configured for their niche, voice selection + training, number provisioning, first 14 days hand-holding.
+
+**Hard-stop budget guardrail:** in Settings → Billing, owner sets a monthly cap. When reached, voice AI pauses (SMS + email keep running). Prevents runaway bills. Required to activate account.
+
+**Marketing hook for $47:** optional first-month promo ($47 Try Month) that auto-rolls into Starter $97 in month 2. Real cost recovery + marketing conversion win.
+
+## COMPLIANCE — what Easy Deploy actually says
+
+No FSRA claims. No mortgage-license positioning. Easy Deploy is a general SaaS.
+
+What we say:
+- **Uses GHL's built-in A2P 10DLC registration** for SMS compliance (US)
+- **CASL-compliant email flows** (Canada) via GHL's consent mechanics
+- **Honours DNC / opt-out lists** automatically (GHL-managed)
+- **PIPEDA-aware data handling** (Canadian data residency where available)
+- **GDPR data export / delete** available on request (not automated yet)
+
+What we DON'T say:
+- FSRA-compliant (that's mortgage-specific, doesn't apply to Easy Deploy)
+- "Canadian compliance-first" (overclaim — GHL provides standard CA tooling, not a compliance moat)
+- Anything implying a compliance-qualified person is reviewing each subscriber's configuration
+
+**Legal disclaimer still applies:** subscribers are responsible for their own compliance with their jurisdiction (CASL, TCPA, GDPR, local privacy laws). We're providing tools, not legal protection.
 
 ## VOICE AI — Decision locked 2026-04-23
 
@@ -22,21 +59,42 @@
 - When Easy Deploy deploys a client, voice calls route through Renée's agency voice AI pool until revenue supports Assistable migration
 - Future migration path: add a "Voice Provider" setting per client (GHL native / Assistable / ElevenLabs) so clients can upgrade when they want
 
-## 9 REQUIRED PAGES (updated post-Ulio-recon 2026-04-23)
+## TWO USER TYPES — SAME CODEBASE, DIFFERENT VIEWS
 
-Every Easy Deploy instance has these 9 pages / sections. Anything else is add-on.
+### User Type A — End Subscribers (pay Renée $97–$397/mo)
+Small business owners who use Easy Deploy to run their own AI automation. They see everything in the "SUBSCRIBER PAGES" list below.
+
+### User Type B — Master (Renée)
+Sees every subscriber page (she can view-as-subscriber to support) PLUS a Master Dashboard with:
+- **Her AI consulting leads** (high-ticket prospects she's working)
+- **Her AI Employees** — her own outbound calling agents used to find consulting clients
+- **My SaaS Subscribers section** — list of paying Easy Deploy customers, MRR, usage (minutes consumed this month), churn risk flags, support ticket queue, new-signups feed
+
+## SUBSCRIBER PAGES (10 — the actual product)
 
 | Page | URL path | Purpose |
 |---|---|---|
-| **Leads** | `/leads` | Lead Finder — search by niche + city + country. Scorecards per lead. Canada + USA coverage. **Plus Business Deep Dive panel** (Owner/Email/Direct Line/Website/Hours/Est. Revenue + review-signal tags: Phone Issues / Below 4.0 / Booking Complaints) |
-| **AI Employees** | `/employees` | The bot library — 9 core bots + niche-specific. Enable / disable / configure each. **Per-bot live transfer toggle** (AI escalates to human when intent score > X). |
-| **Sample Page** | `/sample` | A live demo of what a deployed client system looks + feels like. Public-facing marketing. |
-| **Pricing Page** | `/pricing` | Sliding-scale pricing. **Live profitability calc** (Est. Cost / Est. Profit / Profitable ✓ / Break-even after N months). Default $997 setup + default-minutes tier. |
-| **AI Proposal** | `/proposal/:id` | AI-generated proposal. **Editable before send.** References specific review quotes + local competitor names. Email to contact with "Sign & Pay" CTA. |
-| **Payment Page** | `/pay/:proposalId` | Stripe + e-signature + T&Cs acceptance. 5 mandatory compliance checkboxes before activation. |
-| **Settings** | `/settings` | Account / billing / branding / integrations / **team seats with role-based access** (admin / setter / closer / account-manager). |
-| **Voice Settings** | `/settings/voice` | Provider (GHL / Assistable / ElevenLabs voice-clone), voice selection, style, speed, caller ID, voicemail drop script, CRTC AI disclosure. **Simulated call stress-test** — runs 20 scripted scenarios against the agent. |
-| **Content Library** | `/library` | **(9th page — added post-recon as growth engine)** Demo videos + swipe files + ROI calc + carousel templates + competitor doc + creator coaching playbooks. 20% lifetime recurring for creators who share assets. Niche-specific kits (mortgage/dental/HVAC/realtor/etc). Canadian payout via Wise + Stripe + PayPal. |
+| **Main / Orb** | `/` | Hero page. Orb in the middle. Below the fold: scroll to a form (same questions Orb asks, visitor picks tap-Orb OR type-form). |
+| **Build Preview** | `/build-preview` | After Orb/form done. Shows how many bots they need, estimated minutes, **sample voice button** (listen to how their bot would sound). |
+| **Pricing** | `/pricing` | Tier sliders + **manual type-in** for monthly + setup. Shows budget guardrail setting. |
+| **Proposal** | `/proposal/:id` | AI-generated, **editable before send**. Email via one click + contract + payment link in the email. |
+| **Payment** | `/pay/:proposalId` | Stripe checkout + e-sign + T&Cs (5 mandatory checkboxes). |
+| **Launch Pad** | `/launch` | **Onboarding wizard** after payment. Step-by-step: 1) pick phone number (new or BYO via GHL Verified Caller ID), 2) upload pricing sheets, 3) connect email, 4) connect calendar, 5) review bot voices, 6) go-live checklist. Progress tracker. |
+| **Dashboard** | `/dashboard` | Their leads + today's calls + pipeline snapshot + minutes-used-this-month. |
+| **Search** | `/search` | Lead Finder — search businesses by niche/city/country (Google Places API backend). Used for cold outbound campaigns. |
+| **AI Employees** | `/employees` | The bot library — 9 core bots + niche-specific. Enable / disable / configure each. Per-bot live transfer toggle. |
+| **Pipeline** | `/pipeline` | Kanban view of their deal flow — same as GHL pipelines but on Easy Deploy UI. |
+| **Email + Calendar** | `/inbox` | Connect their Gmail + Google Calendar. Read emails from prospects, see calendar availability for demo bookings. Two-way sync via Gmail MCP + Google Calendar MCP. |
+| **Settings** | `/settings` | Business config, default pricing for their own clients, payment integration, calendar integration, email integration, voice settings, branding, team seats. **Hard-stop budget cap** lives here too. |
+
+## MASTER PAGES (Renée only — on top of all subscriber pages)
+
+| Page | URL path | Purpose |
+|---|---|---|
+| **Master Dashboard** | `/master` | Consulting leads + SaaS subscribers in two panels. MRR, churn, support tickets, active usage. |
+| **My SaaS Subscribers** | `/master/subscribers` | Subscriber list. Click in → view-as-subscriber, impersonate for support, see their usage, issue refunds, reset settings. |
+| **Content Library** | `/library` | Creator/affiliate growth engine. 20% lifetime recurring. Niche kits. Accessible to affiliates Renée invites. |
+| **Analytics** | `/master/analytics` | Platform-wide metrics — subscriber growth, average minutes, churn, cohort revenue. |
 
 ## AGENT BUILDER — Brain / Tests / Go Live / Business (Ulio pattern, improved)
 

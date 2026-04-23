@@ -65,22 +65,27 @@ Derived from full ULIO-RECON.md (2026-04-23). This doc extracts the strategic pl
 
 ---
 
-## 12 DIFFERENTIATORS — WHERE WE BEAT ULIO
+## DIFFERENTIATORS — WHERE WE BEAT ULIO (corrected 2026-04-23 — removed unverified claims)
+
+**REMOVED (couldn't be verified from public videos / too risky to claim):**
+- ~~"No live transfer" — Ulio might have it, we just didn't see it in videos.~~
+- ~~"No Canadian payouts" — Renée noted a Ulio creator is Canadian. Unverified claim.~~
+- ~~"FSRA-compliant" — FSRA is Renée's PERSONAL mortgage license. Does NOT apply to Easy Deploy as a general SaaS. Claiming this creates legal risk.~~
+- ~~"Canadian compliance-first" as a moat — overclaim. GHL provides standard A2P/CASL tooling; we're not a compliance product.~~
+
+## 9 DIFFERENTIATORS — WHERE WE BEAT ULIO (verified)
 
 | # | Differentiator | Why it wins |
 |---|---|---|
-| 1 | **Clients OWN their GHL sub-account** | Ulio commenter red-flag: "You DONT HAVE FULLY OWNERSHIP." Easy Deploy: your account, your data, your export rights, your Twilio number. Bake into marketing as headline. |
-| 2 | **Canadian compliance built in** | CASL + CRTC + PIPEDA + A2P 10DLC + FSRA (mortgage). Ulio has ZERO compliance framing. Position as the "safe-for-Canada" AI platform. |
-| 3 | **10+ niche blueprints** | Ulio ships one generic receptionist. Easy Deploy ships with mortgage, dental, HVAC, roofing, realtor, plumbing, trades, consultants, spas, gyms, legal, fitness. |
-| 4 | **Voice cloning upsell (Assistable / ElevenLabs)** | Ulio: pre-installed voice only. Easy Deploy: Tier 1 (GHL native — free), Tier 2 (Assistable — pay-per-minute), Tier 3 (ElevenLabs voice clone of business owner). |
-| 5 | **GHL-native CRM write-back** | Every call → lead → pipeline stage in the CLIENT's GHL. Ulio keeps data in their walled garden. |
-| 6 | **Live transfer to human** | AI escalates to human when intent score > threshold. Service businesses trust this. Ulio is fully autonomous with no escalation path shown. |
-| 7 | **Simulated call stress-test** | Easy Deploy runs 20 scripted scenarios against the agent automatically. Ulio: click-speak-wait loop only. |
-| 8 | **Free first deploy** | Ulio: paywalled signup, "Create account and subscribe." Easy Deploy: deploy first client free, pay only when that client converts. |
-| 9 | **Team seats + role-based access** | Ulio is single-user. Easy Deploy: partner can invite setters, closers, account managers with distinct permissions. |
-| 10 | **Live-updating proposal** | Ulio: templated proposal. Easy Deploy: proposal pulls in real review quotes, local competitor names, specific pain. Editable before send. |
-| 11 | **Editable everything** | Proposal sections editable, AI agent prompts editable, workflow bots editable (not just on/off). Ulio: mostly on/off. |
-| 12 | **Canadian payouts** | Wise + Stripe Connect + PayPal. Ulio: Stripe/PayPal only. Canadian creators get shut out on PayPal fees. |
+| 1 | **Subscribers own their own accounts** | Direct-to-business SaaS model, not affiliate-owns-client. Subscriber's CRM, phone, data, and brand. If Easy Deploy ever went dark, they keep running. |
+| 2 | **10+ niche blueprints** | Ulio ships one generic receptionist. Easy Deploy ships with dental, HVAC, roofing, realtor, plumbing, trades, consultants, spas, gyms, legal, fitness, and mortgage (as an optional vertical). |
+| 3 | **Voice cloning upsell** | Tier 1 (GHL native — included), Tier 2 (Assistable — pay-per-minute), Tier 3 (ElevenLabs voice clone of business owner). |
+| 4 | **GHL-native CRM under the hood** | Every call → lead → pipeline stage in a real CRM the subscriber can export. Ulio keeps data in their walled garden. |
+| 5 | **Simulated call stress-test** | 20 scripted scenarios run against the agent automatically. Ulio: click-speak-wait loop. |
+| 6 | **Team seats + role-based access** | Admin / setter / closer / account-manager permissions. Ulio shown as single-user in demos. |
+| 7 | **Live-updating proposal** | Pulls in actual review quotes + local competitor names + niche-specific pain. Editable before send. Ulio: static template. |
+| 8 | **Editable everything** | Proposal sections, AI agent prompts, workflow bot configs — all editable. Ulio: mostly on/off toggles. |
+| 9 | **Hard-stop budget guardrail** | Subscriber sets a monthly voice cap in Settings. Voice pauses when reached (SMS/email keep running). Protects them from bill shock. |
 
 ---
 
