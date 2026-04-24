@@ -76,7 +76,12 @@ AT SESSION START + BETWEEN TASKS:
    - {"ok":true, "task": {...}, "lease_expires_at": "..."} → you own it for 15 minutes
    - {"ok":true, "task": null, "reason": "no pending tasks"} → queue is empty, stop
 
-3. You now own the task. Read `task` + `context`. Execute via GHL MCP tools.
+3. You now own the task. Read `task` + `context`. **BEFORE EXECUTING ANY BROWSER ACTION, DISPLAY THE PLAN IN PLAIN ENGLISH:**
+   
+   "Claimed task <id> priority <urgent|high|normal|low>: <one-line restatement>.
+    My plan: [step 1], [step 2], [step 3]. Proceeding."
+   
+   Renée wants visibility into what you're about to do before you do it. If the plan is wrong she can interrupt. No silent execution — announce every task's plan first, then execute.
 
 4. If work will take >10 min, send a heartbeat every 10 min:
    PATCH /api/console-queue
