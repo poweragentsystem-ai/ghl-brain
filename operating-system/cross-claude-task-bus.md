@@ -4,6 +4,8 @@
 **Endpoint:** `https://xpert-command-center.vercel.app/api/console-queue`
 **Purpose:** Eliminate the Renée-as-middleman copy-paste loop between Claude Code and Console.
 
+**Persistence:** Upstash Redis via Vercel Marketplace. If env vars `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` are NOT set, bus falls back to in-memory (lost on cold start). Enable at Vercel → xpert-command-center → Storage tab → Create Database → Upstash Redis.
+
 ---
 
 ## How it works
