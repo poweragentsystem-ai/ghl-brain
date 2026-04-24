@@ -38,6 +38,38 @@ type: skill
 
 ## STAGE 1 — NEW LEAD INTAKE
 
+### This stage is ONE workflow in TWO parts
+
+**Part 1 — Auto-Tagger (product-service → tag)**
+Reads the custom field the form or ad captured (`product_service_1`, `product_service_2`, etc.) and auto-applies the matching tag via IF/ELSE:
+
+```
+IF contact.product_service_1 contains "purchase"      → add tag purchase-lead
+ELSE IF contact.product_service_1 contains "refi"     → add tag refi-lead
+ELSE IF contact.product_service_1 contains "renewal"  → add tag renewal-lead
+ELSE IF contact.product_service_1 contains "heloc"    → add tag heloc-lead
+ELSE IF contact.product_service_1 contains "private"  → add tag private-lead
+ELSE IF contact.product_service_1 contains "pre"      → add tag preapproval-lead
+ELSE IF contact.product_service_1 contains "debt"     → add tag debt-consolidation-lead
+ELSE                                                  → add tag general-inquiry
+```
+
+Renée's note 2026-04-24: *"this automation is made but in a legacy format."* Find it + modernize + reuse — don't rebuild from scratch.
+
+Product-service tags drive message personalization. Every SMS / email / voice greeting can reference `{{contact.custom_fields.product_service_1}}` directly:
+
+> "Hi {{contact.first_name}}, I saw you were interested in {{contact.custom_fields.product_service_1}}. How soon did you need funding?"
+
+Renée's craft note: *"this allows the lead to picture themselves with the money already as if it is effortless."*
+
+**Part 2 — Welcome + Routing**
+After Part 1 tags the contact:
+- Welcome email fires (template below)
+- Welcome SMS fires (24/7)
+- Source tag applied (based on UTM / ad / referrer)
+- `lead-currently-in-workflow` tag applied
+- Lead moves to Stage 2 (Conversational Pre-Qualify) during next contact window
+
 ### Sources (each gets a tag)
 
 | Source | Tag |

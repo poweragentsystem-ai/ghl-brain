@@ -90,6 +90,38 @@ You're a guide with the prospect's hand. Not a gatekeeper.
 
 Small details = "this person knows what they're doing." Generic = "this is a call center."
 
+### 5b. EFFORTLESS VISION — let them picture the outcome already in hand
+
+Put the desired outcome in the message as if it's already halfway done. They picture themselves on the other side of the decision, not in front of it.
+
+Renée's example (2026-04-24):
+> "Hi John, I saw you were interested in refinance mortgage. How soon did you need funding?"
+
+Why it works:
+- "How soon did you need funding" skips the "are you going to do this" question entirely
+- It assumes the funding is happening — the only question is timing
+- The lead mentally answers "well, I'd want it in 30 days" — they just committed in their head
+- Zero pressure, zero promise, maximum forward pull
+
+More examples of the same move:
+
+> "When you get approved, what are you thinking of using the equity for first?"
+
+> "After we close, will you be staying in the current place or moving?"
+
+> "Once your file lands with the lender, I usually hear back in 48 hours — what's your phone best times for me to reach you?"
+
+YES (effortless-vision) | ❌ NO (asking for permission)
+---|---
+"How soon did you need funding?" | "Are you still thinking about refinancing?"
+"When you get approved..." | "If we can get you approved..."
+"After we close..." | "If everything goes well..."
+"Once the lender comes back..." | "If the lender says yes..."
+
+**Rule:** in conversations with qualified or near-qualified leads, skip the "if" and talk in "when." They feel the outcome before they feel the work.
+
+This is NOT promising. You're not saying they WILL be approved. You're assuming the conversation is about timing + preference, not qualification. If they push back (*"wait, am I even approved?"*) — that's a buying signal + you reframe to pre-qualify / pre-approval language.
+
 ### 6. TRANSPARENT AVAILABILITY — build trust through presence
 
 ✅ YES | ❌ NO
