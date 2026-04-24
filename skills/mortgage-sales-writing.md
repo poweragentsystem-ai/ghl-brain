@@ -115,12 +115,24 @@ Real humans tell you where they are. Corporate machines don't.
 
 ### HARD NO — never use in mortgage copy
 - "Best rate in Canada" (unverifiable)
-- "Pre-approved" unless actually pre-approved in writing from a lender
 - "Lowest rate" / "cheapest" claims
 - Specific rate promises without named lender + written backing
 - "Guaranteed approval"
 - "100% success rate"
 - "Won't affect your credit" (soft pulls vs hard pulls require disclosure)
+- "You're pre-approved!" used loosely as a marketing hook when there's no formal lender pre-approval letter backing it up
+
+### IMPORTANT DISTINCTION — pre-qualify vs pre-approval vs approval
+
+All three are real stages in the mortgage process. Use them correctly:
+
+| Term | What it means | When to use it in copy |
+|---|---|---|
+| **Pre-qualify** | Initial conversational screening — we ask about income, debts, property, credit — no documents pulled, no lender involved yet | "Let me help you get pre-qualified..." / "Fill out this quick pre-qualify form and I'll know in 2 minutes where you stand." |
+| **Pre-approval** | Formal letter from a lender based on verified income + credit pull. Valid 90–120 days typically. Tells a buyer how much they can afford so they can shop with confidence. | "Let's get you pre-approved so you know your budget before shopping." / "Your pre-approval letter is ready — I'll email it over." |
+| **Approval** | Final commitment from a lender on a specific property once the full file is submitted and underwritten | "Submitting your file to get you approved." / "We're in underwriting with [lender] for final approval." |
+
+**Never conflate these.** A pre-qualify is not a pre-approval. A pre-approval is not a loan approval. When the prospect's in the discovery phase, say pre-qualify. When they're ready to shop, pre-approval. When the deal's live, approval.
 
 ### GRAY ZONE — safer not to use
 - "Save $X per month" (can be challenged)
@@ -139,6 +151,18 @@ Real humans tell you where they are. Corporate machines don't.
 ---
 
 ## PHRASE BANK — ready-to-use for common mortgage moments
+
+### Inviting a new lead to pre-qualify
+> "Hi [first_name], thanks for reaching out. Let me help you get pre-qualified — it's a quick 2-min conversation and I'll tell you exactly where you stand + what kind of options make sense for you. When's a good time to jump on a call?"
+
+### Booking the discovery appointment
+> "Hi [first_name], let me book you an appointment with {{custom_values.user_first_name}} to go over your file so we can get your deal submitted. Here's {{custom_values.user_first_name}}'s calendar — grab whatever slot works: {{custom_values.my_calendar}}"
+
+### Moving from pre-qualify to pre-approval
+> "Hi [first_name], you look like a solid candidate based on our chat. Next step is getting you a proper pre-approval — that's the letter you'll want in hand before you shop. I'll pull credit + verify income, then we'll have something you can show any realtor. Takes about 24-48 hours once I've got your docs."
+
+### Submitting the file
+> "Hi [first_name], got everything I need. Submitting your file to get you approved — I'll message you the second I hear back from the lender."
 
 ### Waiting on documents (Renée's original)
 > "Hi [first_name], just touching base on getting those last docs together. We've got a couple of lenders in mind but waiting on you for the final pieces. Did you need a hand pulling anything?"
