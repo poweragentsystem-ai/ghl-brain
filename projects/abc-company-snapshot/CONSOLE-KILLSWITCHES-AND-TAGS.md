@@ -55,18 +55,27 @@ IF custom_value.email_enabled != "yes" OR custom_value.all_outreach_enabled != "
 
 ### Create two killswitch-toggle workflows
 
-**Workflow A: "KILLSWITCH — Disable Voice AI"**
+**CANONICAL NAMING (Renée, 2026-04-23):** Use `Master Voice AI Shut Off` as the display name for the disable workflow. Same naming convention across both subs.
+
+**Workflow A: "Master Voice AI Shut Off"** (rename existing ABC draft `KILLSWITCH — Disable Voice AI` → `Master Voice AI Shut Off`)
 - Trigger: Manual (fired by clicking "Run Workflow" on a contact) OR by tagging any contact with `admin-disable-voice-ai`
 - Action 1: Update custom value `voice_ai_enabled` → `"no"`
-- Action 2: Send internal notification email to owner: "Voice AI has been DISABLED. SMS + Email still active. Re-enable with 'KILLSWITCH — Enable Voice AI' workflow."
+- Action 2: Send internal notification email to owner: "Voice AI has been DISABLED. SMS + Email still active. Re-enable with 'Master Voice AI Turn On' workflow."
 - Action 3: Create task: "Re-enable voice AI when resolved"
 
-**Workflow B: "KILLSWITCH — Enable Voice AI"**
+**Workflow B: "Master Voice AI Turn On"** (rename existing ABC draft `KILLSWITCH — Enable Voice AI` → `Master Voice AI Turn On`)
 - Trigger: Same manual pattern OR tag `admin-enable-voice-ai`
 - Action 1: Update custom value `voice_ai_enabled` → `"yes"`
 - Action 2: Send internal notification: "Voice AI RE-ENABLED."
 
-**Repeat the same pattern for SMS, Email, and All-Outreach** — 8 killswitch workflows total (4 disable, 4 enable). Or combine into one master "Channel Control" workflow with branching based on which tag was added.
+**Repeat the same pattern for SMS, Email, and All-Outreach:**
+- "Master SMS Shut Off" / "Master SMS Turn On"
+- "Master Email Shut Off" / "Master Email Turn On"
+- "Master All Outreach Shut Off" / "Master All Outreach Turn On"
+
+**EqM status (2026-04-23 API pull):** no killswitch workflows exist yet. Build the full 8-workflow set in EqM using the same naming.
+
+**ABC status (2026-04-23 API pull):** 2 draft workflows present (`KILLSWITCH — Disable Voice AI`, `KILLSWITCH — Enable Voice AI`). Rename in browser + build the remaining 6 (SMS pair, Email pair, All Outreach pair).
 
 ### Universal precondition ON ACTIONS (not just workflow start)
 
