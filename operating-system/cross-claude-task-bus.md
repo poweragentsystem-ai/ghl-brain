@@ -78,7 +78,11 @@ AT SESSION START + BETWEEN TASKS:
 
 3. You now own the task. Read `task` + `context`. **HARD RULES FOR ALL GHL CONTENT YOU TOUCH:**
 
-**A. NEVER hardcode personal info.** Every name, company, phone, email, license number, city — must be a `{{custom_values.*}}` token, never literal text. Search-and-replace before saving:
+**A. NEVER hardcode personal info — AND fix it on sight even outside task scope.**
+
+While working on ANY task, if you SEE hardcoded personal/company info anywhere (workflow name, email body, SMS, agent prompt, internal notification, custom value), fix it ON THE SPOT before continuing. Don't wait for a dedicated sweep task. Don't flag for later. Fix the moment you see it. This is the "leave it cleaner than you found it" rule. Note any boy-scout fixes in your PATCH so Renée knows what you cleaned beyond the task scope.
+
+Every name, company, phone, email, license number, city — must be a `{{custom_values.*}}` token, never literal text. Search-and-replace before saving:
 
 | Never write | Use this instead |
 |---|---|
