@@ -76,7 +76,25 @@ AT SESSION START + BETWEEN TASKS:
    - {"ok":true, "task": {...}, "lease_expires_at": "..."} → you own it for 15 minutes
    - {"ok":true, "task": null, "reason": "no pending tasks"} → queue is empty, stop
 
-3. You now own the task. Read `task` + `context`. **BEFORE EXECUTING ANY BROWSER ACTION, DISPLAY THE PLAN IN PLAIN ENGLISH:**
+3. You now own the task. Read `task` + `context`. **HARD RULES FOR ALL GHL CONTENT YOU TOUCH:**
+
+**A. NEVER hardcode personal info.** Every name, company, phone, email, license number, city — must be a `{{custom_values.*}}` token, never literal text. Search-and-replace before saving:
+
+| Never write | Use this instead |
+|---|---|
+| Renée | `{{custom_values.user_first_name}}` |
+| Renée Ross | `{{custom_values.user_full_name}}` |
+| EquityMax | `{{custom_values.company_name}}` |
+| Ontario Lending Solutions | `{{custom_values.brokerage_name}}` |
+| 13063 | `{{custom_values.brokerage_license_number}}` |
+| Mortgage Agent Level 2 | `{{custom_values.agent_license_level}}` |
+| 4168784622 | `{{custom_values.user_phone}}` |
+| renee.ross@gmail.com | `{{custom_values.business_email}}` |
+| equitymax.ca | `{{custom_values.website}}` |
+
+This applies to: workflow NAMES, email subject + body, SMS body, voice greetings, AI agent prompts, internal notification emails, calendar templates, form titles, ALL of it. EquityMax + ABC are TEMPLATES — they get cloned for other operators. Every "Renée" or "EquityMax" is a bug that ships to a paying customer.
+
+**B. DISPLAY THE PLAN IN PLAIN ENGLISH BEFORE EXECUTING ANY BROWSER ACTION:**
    
    "Claimed task <id> priority <urgent|high|normal|low>: <one-line restatement>.
     My plan: [step 1], [step 2], [step 3]. Proceeding."

@@ -92,7 +92,7 @@ Small details = "this person knows what they're doing." Generic = "this is a cal
 
 ### 5b. EFFORTLESS VISION — let them picture the outcome already in hand
 
-Put the desired outcome in the message as if it's already halfway done. They picture themselves on the other side of the decision, not in front of it.
+Put the desired outcome in the message as if it's already halfway done — but use SOCIAL PROOF (clients in a similar position), not personal promises. They picture themselves on the other side of the decision through someone else's proven path.
 
 Renée's example (2026-04-24):
 > "Hi John, I saw you were interested in refinance mortgage. How soon did you need funding?"
@@ -103,24 +103,32 @@ Why it works:
 - The lead mentally answers "well, I'd want it in 30 days" — they just committed in their head
 - Zero pressure, zero promise, maximum forward pull
 
-More examples of the same move:
+### THE SOCIAL PROOF RULE (Renée 2026-04-24 correction)
 
-> "When you get approved, what are you thinking of using the equity for first?"
+**Never say "when YOU get approved"** — that implies a guarantee we can't make. The money isn't ours and the decision isn't ours.
 
-> "After we close, will you be staying in the current place or moving?"
+Instead, flip it to social proof: *"we helped clients in a similar position get approved"* + ask a forward-looking question.
 
-> "Once your file lands with the lender, I usually hear back in 48 hours — what's your phone best times for me to reach you?"
-
-YES (effortless-vision) | ❌ NO (asking for permission)
+YES (social proof + forward pull) | ❌ NO (personal promise)
 ---|---
-"How soon did you need funding?" | "Are you still thinking about refinancing?"
-"When you get approved..." | "If we can get you approved..."
-"After we close..." | "If everything goes well..."
-"Once the lender comes back..." | "If the lender says yes..."
+"We helped clients in a similar position get approved — they usually put the funds toward [X, Y, Z]. What would be top of mind for you?" | "When you get approved, what are you thinking of using it for?"
+"Once clients like you are funded, most close within 30 days — is that timing realistic for you?" | "When we fund your file, you'll close in 30 days"
+"For people with your credit + equity profile, we typically see rates in the [X–Y] range — worth running?" | "You'll get a rate around X%"
+"Most of our self-employed clients get through with 2 years of BFS — do you have that on hand?" | "You'll qualify with 2 years BFS"
 
-**Rule:** in conversations with qualified or near-qualified leads, skip the "if" and talk in "when." They feel the outcome before they feel the work.
+The craft: talk about PAST CLIENTS as the subject, then invite the prospect to compare themselves. They do the picturing without us doing the promising.
 
-This is NOT promising. You're not saying they WILL be approved. You're assuming the conversation is about timing + preference, not qualification. If they push back (*"wait, am I even approved?"*) — that's a buying signal + you reframe to pre-qualify / pre-approval language.
+### More examples
+
+> "We've helped a lot of refi clients in your spot use the equity for [reno / investment / debt-consolidation]. What's first on your list if the file comes together?"
+
+> "Once clients in your ballpark are funded, they usually spend the first week on [X]. What's your priority when funding lands?"
+
+> "When past clients submit a file like yours, the lender usually comes back in 48–72 hours. I'll update you the second we hear."
+
+**Rule:** in conversations with qualified or near-qualified leads, talk about PAST CLIENTS in "when" — never "when YOU." Let the social proof do the heavy lifting.
+
+This is NOT promising. You're not saying THEY will be approved. You're referencing what happened with similar clients + inviting them to imagine their path forward. If they push back (*"wait, am I even approved?"*) — that's a buying signal + reframe to pre-qualify / pre-approval language.
 
 ### 6. TRANSPARENT AVAILABILITY — build trust through presence
 
