@@ -95,6 +95,17 @@ Every name, company, phone, email, license number, city — must be a `{{custom_
 | 4168784622 | `{{custom_values.user_phone}}` |
 | renee.ross@gmail.com | `{{custom_values.business_email}}` |
 | equitymax.ca | `{{custom_values.website}}` |
+| **mortgage / mortgage options / mortgage services** (when the word names the NICHE/INDUSTRY in customer-facing content) | `{{custom_values.niche}}` (or `{{custom_values.niche}} options`, etc.) |
+
+**The niche rule trips Console up.** Even within the EquityMax sub (where the niche IS mortgage), the template gets cloned for other operators who may use different niche words. Examples:
+- Wrong: "We help with mortgage options"
+- Right: "We help with `{{custom_values.niche}}` options"
+
+EXCEPTIONS — keep literal:
+- Mortgage product names: "refinance", "HELOC", "purchase", "renewal", "private mortgage" — those are PRODUCTS within the niche, not the niche itself
+- FSRA / mortgage-regulator-specific compliance language (only lives in mortgage subs anyway)
+
+Rule of thumb: word answers "what industry?" → token it. Word answers "what product?" → leave literal.
 
 This applies to: workflow NAMES, email subject + body, SMS body, voice greetings, AI agent prompts, internal notification emails, calendar templates, form titles, ALL of it. EquityMax + ABC are TEMPLATES — they get cloned for other operators. Every "Renée" or "EquityMax" is a bug that ships to a paying customer.
 
