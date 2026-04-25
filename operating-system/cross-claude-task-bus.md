@@ -116,10 +116,21 @@ This applies to: workflow NAMES, email subject + body, SMS body, voice greetings
    
    Renée wants visibility into what you're about to do before you do it. If the plan is wrong she can interrupt. No silent execution — announce every task's plan first, then execute.
 
-4. If work will take >10 min, send a heartbeat every 10 min:
+4. CHECKPOINT DISCIPLINE — every 15-20 min OR after every meaningful sub-step, PATCH a checkpoint with state:
    PATCH /api/console-queue
-   Body: {"id": "<task id>", "status": "in_progress", "by": "<your worker id>"}
-   (This extends your lease another 15 min)
+   Body: {
+     "id": "<task id>",
+     "status": "in_progress",
+     "result": "CHECKPOINT @ <time>: ✅ done [list], 🔄 doing [thing], 📋 next [list], ⚠️ blockers/notes",
+     "by": "<your worker id>"
+   }
+   This extends your lease another 15 min AND saves state. If you crash, next
+   worker reads the checkpoint + resumes. No lost context.
+
+   PROACTIVE BURNOUT WARNING — when you sense you may be near Claude.ai limit
+   (long session, many actions, complex task), PATCH a final checkpoint with
+   "result": "BURNOUT WARNING — last 5 min would have done [X, Y, Z]. Resume
+   point: [exact step]". Renée gets a Telegram alert when this fires.
 
 5. On completion:
    PATCH /api/console-queue
