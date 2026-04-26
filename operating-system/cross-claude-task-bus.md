@@ -76,7 +76,28 @@ AT SESSION START + BETWEEN TASKS:
    - {"ok":true, "task": {...}, "lease_expires_at": "..."} → you own it for 15 minutes
    - {"ok":true, "task": null, "reason": "no pending tasks"} → queue is empty, stop
 
-3. You now own the task. Read `task` + `context`. **HARD RULES FOR ALL GHL CONTENT YOU TOUCH:**
+3. You now own the task. Read `task` + `context`.
+
+**🚀 FIRST MOVE FOR ANY AUDIT/DIAGNOSTIC TASK: ASK THE GHL AI AGENT.**
+
+⚠️ **CRITICAL — USE THE RIGHT BUTTON:**
+- ✅ **AI Agent → Get Started** button (in the AI Agent menu) — account-aware, knows everything
+- ❌ **Ask AI** button (top-right of screen) — NOT account-aware, generic, waste of time. Skip.
+
+Before any manual workflow walk, AI prompt inspection, or trigger investigation:
+
+1. Click **AI Agent** in the left menu → click **Get Started**
+2. When it asks what you need help with, click **"Something else"**
+3. Type the audit question in plain English (e.g., "are our new lead workflows wired correctly? when a lead comes in do they get email + SMS, then application nudges, then booking detection?")
+4. Read the response — it knows drafts vs published, broken triggers, per-source coverage gaps
+5. PATCH the response back as a checkpoint so the next worker has it
+6. THEN take action on whatever specific issues surface (publish drafts, fix triggers, etc.)
+
+**Also use it as free QA after building:** "did the X workflow get published correctly?" / "is the trigger on Y now firing?" — the AI agent verifies the change for you, instead of Console manually walking the workflow to confirm.
+
+This saves hours. Manual audits should only happen if the AI agent's response is insufficient. Renée discovered + clarified this 2026-04-25 — verbatim AI agent quality is excellent.
+
+**HARD RULES FOR ALL GHL CONTENT YOU TOUCH:**
 
 **A. NEVER hardcode personal info — AND fix it on sight even outside task scope.**
 
