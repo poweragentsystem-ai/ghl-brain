@@ -78,24 +78,53 @@ AT SESSION START + BETWEEN TASKS:
 
 3. You now own the task. Read `task` + `context`.
 
-**🚀 FIRST MOVE FOR ANY AUDIT/DIAGNOSTIC TASK: ASK THE GHL AI AGENT.**
+**🚀 FIRST MOVE FOR ANY GHL TASK — AUDIT *OR* ACTION: USE THE GHL AI AGENT.**
 
 ⚠️ **CRITICAL — USE THE RIGHT BUTTON:**
-- ✅ **AI Agent → Get Started** button (in the AI Agent menu) — account-aware, knows everything
+- ✅ **AI Agent → Get Started** button (in the AI Agent menu) — account-aware, knows everything, can take real CRM actions
 - ❌ **Ask AI** button (top-right of screen) — NOT account-aware, generic, waste of time. Skip.
 
-Before any manual workflow walk, AI prompt inspection, or trigger investigation:
+The GHL AI Agent does TWO things:
+
+**A. AUDITS / DIAGNOSES** — workflows status, drafts vs published, broken triggers, per-source coverage gaps, "is X working?", QA verification.
+
+**B. EXECUTES REAL CRM ACTIONS** (with approval gate before each action):
+- Contacts CRUD + tags + notes + tasks
+- Opportunities + pipeline stage moves
+- Calendars + appointments + slot blocking
+- Conversations — send SMS, send email
+- Invoices + payments
+- Social media post scheduling
+- AI image generation (branded)
+- Users CRUD
+- Funnels/forms review
+
+**It CANNOT directly edit:** workflow step internals OR AI Agent Studio prompt internals. For those it walks-through (still faster than full Console manual click-through).
+
+**The new Console routing rule:**
+
+For any GHL task you receive:
+
+1. Can the **GHL AI Agent → Get Started** do this? If yes → use it. Tell it the task in plain English. Approve each action when prompted. Done.
+2. Can it ONLY guide you (workflow internals)? Then you do the manual edit while the AI Agent guides — still faster than walking it solo.
+3. Manual UI work without AI guidance is now the LAST resort.
+
+**How to use:**
 
 1. Click **AI Agent** in the left menu → click **Get Started**
 2. When it asks what you need help with, click **"Something else"**
-3. Type the audit question in plain English (e.g., "are our new lead workflows wired correctly? when a lead comes in do they get email + SMS, then application nudges, then booking detection?")
-4. Read the response — it knows drafts vs published, broken triggers, per-source coverage gaps
-5. PATCH the response back as a checkpoint so the next worker has it
-6. THEN take action on whatever specific issues surface (publish drafts, fix triggers, etc.)
+3. Type the request in plain English — be specific:
+   - Audits: "are our new lead workflows wired correctly? does every source get a welcome email + SMS, then application nudges, then booking detection?"
+   - Actions: "tag every contact who hasn't booked their meeting yet with 'follow-up-needed' and add a task for me to call them"
+   - QA: "did the workflow '01 - New Lead Entry — 24/7 Welcome (All Sources)' get published correctly?"
+4. Approve each action it proposes
+5. PATCH the AI Agent's response back as a checkpoint so the next worker has the trail
 
-**Also use it as free QA after building:** "did the X workflow get published correctly?" / "is the trigger on Y now firing?" — the AI agent verifies the change for you, instead of Console manually walking the workflow to confirm.
+**Why this matters:**
 
-This saves hours. Manual audits should only happen if the AI agent's response is insufficient. Renée discovered + clarified this 2026-04-25 — verbatim AI agent quality is excellent.
+A task like "tag all contacts who didn't book and send them a follow-up SMS" used to be: 30 min of Console manual clicking through Smart Lists + bulk tagging + opening each contact + drafting SMS. Now: 60 seconds of "Hey AI Agent, do X." Done.
+
+Renée discovered + clarified this 2026-04-25. Verbatim quality is excellent. Manual UI work should only happen for things explicitly in the "cannot directly edit" list above.
 
 **HARD RULES FOR ALL GHL CONTENT YOU TOUCH:**
 
