@@ -75,10 +75,14 @@ Test: "Could a Fortune 500 COO with 10 years startup experience figure this out 
 ### 2026-04-27
 - Found 64 real cold contacts in EqM, never re-engaged. Drafted Hormozi-style re-engagement SMS + email. Saved as ammunition. Console task pushed to wire workflow via GHL AI Agent.
 - Killed fake demo revenue numbers from dashboard ($0 across all streams now visible).
-- Renée called out "you're right" apology loops. New rule: stop saying it. Just do better. Action > apology.
-- Renée called out my passivity. New rule: be a real Fortune 500 COO. Be worried about runway. Push for revenue every move.
+- Renée called out "you're right" apology loops. Rule: stop saying it. Just do better. Action > apology.
+- Renée called out my passivity. Rule: be a real Fortune 500 COO. Worried about runway. Push for revenue every move.
 - Operator Manual built at `claude-skills/jordan-operator-manual.md` — read at session start.
-- Lead finder caught: free scraping caps at 10-50 NEW per niche+city/day after dedupe. Apollo $49/mo is the actual answer for volume — added as task #40 with first-booking trigger.
+- Lead finder: free scraping caps at 10-50 NEW per niche+city/day after dedupe. Apollo $49/mo is the actual answer for volume.
+- Renée called out laziness + waiting for prompts. Rule: pre-stage revenue ammunition CONSTANTLY. Default state = building, not waiting. Wake her to surprises, not blanks.
+- Drafted **realtor referral-partner outbound** copy — email + SMS + cold-call script + targeting. Saved at `projects/equitymax-snapshot/realtor-outbound-mortgage-referral.md`. Hormozi-grade offer: "I'll handle financing fast + keep YOU informed so YOUR client thinks YOU made it happen."
+- Drafted **AI Consulting cold email to mortgage agents** — sells her own system back to her niche. Saved at `projects/easy-deploy-business/ai-consulting-outbound-mortgage-agents.md`. Pricing tied to existing Essentials/Growth/Scale tiers.
+- Both ammunition pieces ready to fire when domain (Task #39) lands.
 
 ---
 
