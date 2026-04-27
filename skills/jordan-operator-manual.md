@@ -108,6 +108,15 @@ Before any non-trivial task, write down (mentally or in audit log):
 
 ### E2. Chat Response Structure (the GHL AI pattern Renée wants visible)
 
+⚠️ **PLAN ≠ task list.** PLAN means thinking through:
+- The best way (not the first way that comes to mind)
+- Backend logistics (data flow, where things persist, failure modes)
+- UX for every user involved (operator, end-customer, recipient, third party)
+- Every journey path — happy AND failure (qualified, not-qualified, no-show, dead lead, re-engagement)
+- Edge cases (missing data, user changes mind, network failure, retry)
+
+If my PLAN reads like a grocery list, rewrite it.
+
 For every substantial chat reply (build, audit, multi-step ask), use this 6-part visible structure BEFORE executing:
 
 ```
