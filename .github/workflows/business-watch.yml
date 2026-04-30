@@ -1,0 +1,83 @@
+name: Business Watch
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # every hour, on the hour
+  workflow_dispatch:      # manual trigger button in Actions tab
+  push:
+    paths:
+      - business-watch/**
+      - .github/workflows/business-watch.yml
+
+permissions:
+  contents: write   # to commit findings.md back
+  issues: write     # to open issues for broken assets
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install requests pyyaml
+
+      - name: Run sweep
+        id: sweep
+        env:
+          GHL_ABC_API_KEY: ${{ secrets.GHL_ABC_API_KEY }}
+          GHL_EQM_API_KEY: ${{ secrets.GHL_EQM_API_KEY }}
+        run: |
+          set +e
+          python3 business-watch/sweep.py
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
+          set -e
+
+      - name: Commit findings if changed
+        run: |
+          git config user.name "business-watch"
+          git config user.email "business-watch@users.noreply.github.com"
+          if ! git diff --quiet business-watch/findings.md business-watch/findings.json; then
+            git add business-watch/findings.md business-watch/findings.json
+            git commit -m "business-watch: refresh findings $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          else
+            echo "no changes"
+          fi
+
+      - name: Open issues for broken assets
+        if: steps.sweep.outputs.exit_code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const summary = JSON.parse(fs.readFileSync('business-watch/findings.json'));
+            const broken = summary.results.filter(r => r.severity === 'broken');
+            for (const r of broken) {
+              const title = `[business-watch] ${r.asset} ${r.check} broken — ${r.detail}`;
+              const existing = await github.rest.issues.listForRepo({
+                owner: context.repo.owner, repo: context.repo.repo,
+                state: 'open', labels: 'business-watch'
+              });
+              if (existing.data.some(i => i.title === title)) {
+                console.log(`skip — already open: ${title}`);
+                continue;
+              }
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title, labels: ['business-watch', 'broken'],
+                body: [
+                  `**Asset:** \`${r.asset}\``,
+                  `**Kind:** ${r.kind}`,
+                  `**Check:** ${r.check}`,
+                  `**Detail:** ${r.detail}`,
+                  ``,
+                  `Detected by Business Watch at ${summary.finished}.`,
+                  `Full findings: business-watch/findings.md`,
+                ].join('\n')
+              });
+              console.log(`opened: ${title}`);
+            }

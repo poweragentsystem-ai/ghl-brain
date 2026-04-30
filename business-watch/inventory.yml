@@ -1,0 +1,112 @@
+# Business Inventory — single registry of every asset under the office
+# Updated by Code Claude when something is built / deployed / changed.
+# business-watch/sweep.py reads this and runs health checks on every entry.
+# Add new entries here when something new ships.
+
+deployments:
+  - id: command-center
+    name: Xpert Command Center
+    url: https://xpert-command-center.vercel.app
+    expected_status: 200
+    owner: code
+    notes: "Jordan AI dashboard. Known: scroll blank below fold; Jordan API needs serverless wiring."
+    checks: [http]
+
+  - id: agency-site
+    name: Agency landing page
+    url: https://agency-site-nine-tau.vercel.app
+    expected_status: 200
+    owner: code
+    notes: Lead capture → /api/submit-lead → GHL ABC contact. Live since 2026-04-21.
+    checks: [http, lead-form-endpoint]
+
+  - id: easy-deploy
+    name: Easy-Deploy Business
+    url: https://easy-deploy-business.vercel.app
+    expected_status: 200
+    owner: code
+    notes: Frontend deployed; backend NOT deployed (REACT_APP_BACKEND_URL undefined). Login broken. Source not pushed to GitHub.
+    checks: [http]
+
+  - id: equitymax-site
+    name: EquityMax website
+    url: null  # not deployed yet
+    expected_status: null
+    owner: code
+    notes: Code at C:/Users/User/equitymax-website/. Pending deploy to equitymax.ca.
+    checks: []
+
+repos:
+  - id: ghl-brain
+    name: GHL Brain (this repo)
+    github: poweragentsystem-ai/ghl-brain
+    role: Central memory + audit layer + tools.
+
+  - id: agency-site-repo
+    name: Agency Site
+    github: poweragentsystem-ai/agency-site
+    role: Source for agency-site-nine-tau.vercel.app.
+
+ghl_locations:
+  - id: abc
+    name: ABC Company (Generic Universal Snapshot)
+    location_id: AKbAtRra4m908e2w2Kbo
+    api_key_env: GHL_ABC_API_KEY  # set as GitHub Action secret
+    snapshot_status: 85%
+    notes: 25 workflows (17 pub / 8 draft), 145 fields, ~178 values, 8 calendars.
+    checks: [api-token-valid, contact-count]
+
+  - id: equitymax
+    name: EquityMax (Mortgage Snapshot)
+    location_id: OBmMdqdnPLZvVyHloFly
+    api_key_env: GHL_EQM_API_KEY
+    snapshot_status: 30%
+    notes: 92 workflows (mess), 168 custom values, 11 AI agents.
+    checks: [api-token-valid, contact-count]
+
+claude_surfaces:
+  - id: code
+    name: Code Claude
+    runtime: Sandboxed Linux, syncs ghl-brain
+    can_write_repo: true
+    can_run_code: true
+    notes: This surface. Reads CLAUDE.md + sprint/* on session start.
+
+  - id: console
+    name: Console Claude
+    runtime: Browser on Renée's laptop
+    can_write_repo: false
+    can_run_code: false
+    notes: Drives GHL browser ops Code Claude can't do via API (workflow delete, voice bot build).
+
+  - id: mobile
+    name: Mobile Claude
+    runtime: Anthropic Claude iOS/Android
+    can_write_repo: false
+    can_run_code: false
+    notes: Conversational. Cannot push to repo — asks must be relayed.
+
+  - id: telegram
+    name: Telegram Claude
+    runtime: Anthropic Claude in Telegram
+    can_write_repo: false
+    can_run_code: false
+    notes: Conversational. Cannot extract video — bridge built at tools/video-intel/.
+
+ai_agents:
+  - location: abc
+    folder: General Business Automation
+    count: 10
+    status: published
+  - location: equitymax
+    folder: General Business Automation
+    count: 10
+    status: published
+  - location: equitymax
+    folder: Mortgage
+    count: 1
+    status: pre-existing
+    name: Mortgage Pre-Qualifier
+  - location: command-center-dashboard
+    count: 21
+    status: configured-with-active-intelligence-directive

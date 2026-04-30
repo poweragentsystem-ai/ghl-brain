@@ -1,0 +1,108 @@
+{
+  "started": "2026-04-30T04:49:50.054379+00:00",
+  "finished": "2026-04-30T04:49:51.849568+00:00",
+  "totals": {
+    "ok": 0,
+    "degraded": 3,
+    "broken": 3,
+    "skipped": 5
+  },
+  "results": [
+    {
+      "asset": "command-center",
+      "kind": "deployment",
+      "check": "http",
+      "ok": false,
+      "status_code": 403,
+      "elapsed_ms": 645,
+      "final_url": "https://xpert-command-center.vercel.app/",
+      "severity": "broken",
+      "detail": "403 in 645ms"
+    },
+    {
+      "asset": "agency-site",
+      "kind": "deployment",
+      "check": "http",
+      "ok": false,
+      "status_code": 403,
+      "elapsed_ms": 578,
+      "final_url": "https://agency-site-nine-tau.vercel.app/",
+      "severity": "broken",
+      "detail": "403 in 578ms"
+    },
+    {
+      "asset": "agency-site",
+      "kind": "deployment",
+      "check": "lead-form",
+      "ok": false,
+      "severity": "degraded",
+      "detail": "unexpected 403"
+    },
+    {
+      "asset": "easy-deploy",
+      "kind": "deployment",
+      "check": "http",
+      "ok": false,
+      "status_code": 403,
+      "elapsed_ms": 297,
+      "final_url": "https://easy-deploy-business.vercel.app/",
+      "severity": "broken",
+      "detail": "403 in 297ms"
+    },
+    {
+      "asset": "equitymax-site",
+      "kind": "deployment",
+      "check": "http",
+      "severity": "skipped",
+      "detail": "no url (not deployed)"
+    },
+    {
+      "asset": "abc",
+      "kind": "ghl",
+      "check": "token",
+      "ok": null,
+      "severity": "skipped",
+      "detail": "env GHL_ABC_API_KEY not set"
+    },
+    {
+      "asset": "abc",
+      "kind": "ghl",
+      "check": "contact-count",
+      "ok": null,
+      "severity": "skipped",
+      "detail": "env GHL_ABC_API_KEY not set"
+    },
+    {
+      "asset": "equitymax",
+      "kind": "ghl",
+      "check": "token",
+      "ok": null,
+      "severity": "skipped",
+      "detail": "env GHL_EQM_API_KEY not set"
+    },
+    {
+      "asset": "equitymax",
+      "kind": "ghl",
+      "check": "contact-count",
+      "ok": null,
+      "severity": "skipped",
+      "detail": "env GHL_EQM_API_KEY not set"
+    },
+    {
+      "asset": "ghl-brain",
+      "kind": "repo",
+      "check": "github",
+      "ok": false,
+      "severity": "degraded",
+      "detail": "status 403"
+    },
+    {
+      "asset": "agency-site-repo",
+      "kind": "repo",
+      "check": "github",
+      "ok": false,
+      "severity": "degraded",
+      "detail": "status 403"
+    }
+  ]
+}

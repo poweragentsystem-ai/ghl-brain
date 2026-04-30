@@ -4,7 +4,8 @@
 Before responding to Renée, read in this order:
 1. `sprint/open-requests.md` — outstanding asks across all surfaces. If anything is open >3 days, ship it or write a real blocker.
 2. `sprint/capability-gaps.md` — what each Claude surface (Code / Console / Mobile / Telegram) can and can't do. Don't ask Renée to explain a gap that's already documented.
-3. `sprint/master-build-status.md` — overall project state + activity log.
+3. `business-watch/findings.md` — latest hourly health scan of every asset. If anything is BROKEN or DEGRADED, fix it before doing anything else (unless Renée asks otherwise).
+4. `sprint/master-build-status.md` — overall project state + activity log.
 
 If Renée raises something not in `open-requests.md`, append it there immediately.
 If you ship something, mark it DONE in `open-requests.md` with the date.

@@ -21,7 +21,9 @@ STATUS values:
 
 - [DONE] 2026-04-30 | code | Telegram bot can't extract Instagram videos — gap closed via tools/video-intel (yt-dlp pipeline). NEEDS WIRING into actual Telegram bot runtime — see BLOCKED below. | Code | 2026-04-30
 - [BLOCKED] 2026-04-30 | code | Wire video-intel into Telegram bot runtime. Blocker: location of Telegram bot code is unknown to Code Claude — is it Anthropic-hosted Claude in Telegram (no code access) or a custom bot? Renée to clarify, or any Claude with that context appends here. | Renée | 2026-04-30
-- [OPEN] 2026-04-30 | code | Cross-surface communication: Mobile / Telegram / Console / Code Claudes don't share memory. Renée has had to repeat asks. Audit layer being built now (this file + capability-gaps.md). | Code | 2026-04-30
+- [DONE] 2026-04-30 | code | Audit layer for cross-Claude memory: open-requests.md + capability-gaps.md + CLAUDE.md session-start rules. Telegram/Mobile write-back still pending (they have no GitHub access). | Code | 2026-04-30
+- [DONE] 2026-04-30 | code | Office-overseer / business watcher: business-watch/inventory.yml + sweep.py + hourly GitHub Action. Every deployment, repo, and GHL location pinged automatically. Auto-opens GitHub issues for broken assets. | Code | 2026-04-30
+- [BLOCKED] 2026-04-30 | code | GHL API checks in business-watch require GHL_ABC_API_KEY + GHL_EQM_API_KEY as GitHub Action secrets. Renée to add at Settings → Secrets → Actions. Until then those checks show SKIPPED. | Renée | 2026-04-30
 - [OPEN] ~2026-04-20 | code | Command Center scroll blank bug (page goes white below fold) — sticky-sidebar / grid layout issue, multiple attempts, root cause not nailed | Code | 2026-04-21
 - [OPEN] ~2026-04-20 | code | Jordan API on Vercel — needs serverless function path; Express still in the way | Code | 2026-04-21
 - [OPEN] ~2026-04-20 | code | Easy-Deploy source NOT pushed to GitHub repo — deployed via Vercel CLI only. Next session must commit + push. | Code | 2026-04-20
