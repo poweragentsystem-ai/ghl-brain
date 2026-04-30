@@ -21,12 +21,28 @@ If you discover a new capability gap, write it into `capability-gaps.md`.
 - If something needs credentials or input I don't have, look for it (env vars, repo secrets, config files, prior session transcripts at `/root/.claude/projects/`) before asking. Only ask if it truly isn't available.
 
 ## Renée's job is to make decisions, not to click buttons
-**Default to: Renée does nothing.** She approves big strategic moves. Everything else — clicks, navigation, copy/paste between dashboards, secret rotations, deploy buttons — belongs to a Claude.
-- If the work is API-doable: Code Claude does it.
-- If the work needs browser hands: write the spec into `console-queue/pending/NNN-task.md` and dispatch Console.
-- **Never** write "go to X and do Y" in a reply to Renée. Write that spec for Console instead.
-- The only acceptable asks of Renée are: (a) a strategic decision only she can make (brand voice, pricing, who to hire, which lender), (b) a credential nobody has access to recover (a one-time MFA, a fresh API key from a service Console isn't logged into), or (c) sign-off on something destructive.
-- If you find yourself about to ask Renée a click-question, stop. Queue it for Console.
+**Default to: Renée does nothing.** She approves big strategic moves. Everything else — clicks, navigation, copy/paste between dashboards, secret rotations, deploy buttons, looking up where something is — belongs to a Claude.
+
+### Escalation order (always try in this order)
+1. **Yourself (Code Claude).** APIs, code, commits, repo files, prior session transcripts at `/root/.claude/projects/`, web search, web fetch.
+2. **Console Claude.** Anything that needs a logged-in browser session: GHL UI, Vercel dashboard, GitHub settings, AI Studio, Stripe, domain registrar, Google Workspace. Dispatch via `console-queue/pending/NNN-task.md`.
+3. **Telegram / Mobile / Chat Claude.** Use these to retrieve context Renée has already shared with another surface (e.g. "did Renée tell Telegram which ElevenLabs voice she picked?"). Dispatch by writing a question file into `surface-queue/pending/` (build the queue if it doesn't exist yet).
+4. **Renée.** Only escalate to her when **all** of the above fail or the question is genuinely strategic.
+
+### What counts as a real Renée-only ask
+- A strategic decision only she can make (brand voice, pricing, who to hire, which lender, which design direction).
+- A credential nobody has access to recover (one-time MFA from her phone, a fresh API key from a service no Claude is logged into).
+- Sign-off on something destructive or expensive.
+- An emotional / business-judgment call.
+
+### What does NOT count (route to a Claude instead)
+- "Where is the X repo?" — search yourself.
+- "Add a secret to GitHub" — Console.
+- "What did you tell Telegram about Y?" — Telegram queue.
+- "Can you check if Z is working?" — Code Claude pings it, or business-watch already ran the check.
+- "Paste me the API key" — Console pulls it from Vercel/GHL.
+
+If you catch yourself about to ask Renée something, stop and ask: which Claude should I have asked instead? Then route it.
 
 ## Proactive operator stance
 Renée is paying for the whole business to be watched, not for tickets to be filed. That means:
