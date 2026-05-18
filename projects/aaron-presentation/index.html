@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aaron Briefing — Road to $50K/Month</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --navy: #0b1a36;
+    --navy-2: #122249;
+    --gold: #d4af37;
+    --gold-2: #f1d27a;
+    --ink: #0f172a;
+    --paper: #f8fafc;
+    --good: #16a34a;
+    --bad: #dc2626;
+    --warn: #f59e0b;
+  }
+  html, body { background: var(--paper); color: var(--ink); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .slide {
+    min-height: 100vh;
+    padding: 56px clamp(20px, 5vw, 80px);
+    border-bottom: 1px solid #e2e8f0;
+    scroll-margin-top: 0;
+  }
+  .slide.dark { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: #f8fafc; }
+  .slide.dark .muted { color: #cbd5e1; }
+  .gold { color: var(--gold); }
+  .bg-gold { background: var(--gold); }
+  .bg-navy { background: var(--navy); }
+  .chip {
+    display:inline-flex; align-items:center; gap:6px;
+    padding: 4px 10px; border-radius: 999px;
+    font-size: 12px; font-weight: 600;
+    background:#0b1a36; color:#f1d27a;
+    border:1px solid #f1d27a44;
+  }
+  .chip.bad { background:#fef2f2; color:#991b1b; border-color:#fecaca; }
+  .chip.good { background:#ecfdf5; color:#065f46; border-color:#a7f3d0; }
+  .chip.warn { background:#fffbeb; color:#92400e; border-color:#fde68a; }
+  .card { background:white; border:1px solid #e2e8f0; border-radius: 18px; box-shadow: 0 1px 0 rgba(2,6,23,.04); }
+  .card.dark { background:#0e1b3a; border-color:#1f2a4a; color:#e2e8f0; }
+  .h-title { font-weight: 800; letter-spacing: -0.02em; }
+  .h-eyebrow { letter-spacing: .14em; text-transform: uppercase; font-size: 12px; color:#64748b; font-weight:700; }
+  .bar { height: 16px; border-radius: 999px; background:#e2e8f0; overflow: hidden; }
+  .bar > span { display:block; height:100%; background: linear-gradient(90deg, #d4af37, #f1d27a); }
+  table.clean { border-collapse: separate; border-spacing: 0; width:100%; }
+  table.clean th, table.clean td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  table.clean th { background:#f1f5f9; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color:#475569; }
+  table.clean tr:last-child td { border-bottom: 0; }
+  .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .grid-4 { display:grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  @media (max-width: 900px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+  .kpi { font-size: 40px; font-weight: 800; letter-spacing: -0.02em; }
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11,26,54,.92); backdrop-filter: blur(8px);
+    color: #f1f5f9;
+    display:flex; gap:8px; flex-wrap:wrap;
+    padding: 10px 16px;
+    border-bottom: 1px solid #1f2a4a;
+  }
+  .nav a { color:#cbd5e1; font-size: 12px; padding: 6px 10px; border-radius: 8px; }
+  .nav a:hover { background:#16224a; color: var(--gold-2); }
+  .pill { display:inline-block; padding:2px 10px; border-radius:999px; font-weight:700; font-size: 12px; }
+  .pill-good { background:#dcfce7; color:#166534; }
+  .pill-bad { background:#fee2e2; color:#991b1b; }
+  .pill-warn { background:#fef3c7; color:#92400e; }
+  .pill-info { background:#dbeafe; color:#1e3a8a; }
+  .ribbon { background: linear-gradient(90deg, var(--gold), var(--gold-2)); color:#1f2937; font-weight:700; padding: 4px 10px; border-radius: 6px; display:inline-block; }
+  .donut { width:160px; height:160px; }
+  .legend-dot { width:10px; height:10px; border-radius:2px; display:inline-block; margin-right:6px; }
+  details > summary { cursor: pointer; }
+  .num { font-variant-numeric: tabular-nums; }
+  .footer-note { font-size: 12px; color:#64748b; }
+  .step { position: relative; padding-left: 30px; }
+  .step::before {
+    content:""; position:absolute; left:10px; top:0; bottom:-12px; width:2px; background:#cbd5e1;
+  }
+  .step:last-child::before { display:none; }
+  .step .dot {
+    position:absolute; left:3px; top:3px;
+    width:16px; height:16px; border-radius:999px; background:var(--gold); border:3px solid var(--navy);
+  }
+  .print-hide { }
+  @media print {
+    .nav { display:none; }
+    .slide { page-break-after: always; min-height: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav print-hide">
+  <a href="#cover">Cover</a>
+  <a href="#summary">Summary</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#easy-deploy">AI Consulting</a>
+  <a href="#renee">Renée Brand</a>
+  <a href="#faceless">Faceless</a>
+  <a href="#mortgage">Mortgage</a>
+  <a href="#mix">Path to $50K</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#expenses">Expenses</a>
+  <a href="#ask">The Ask</a>
+</nav>
+
+<!-- ============ COVER ============ -->
+<section id="cover" class="slide dark">
+  <div class="max-w-5xl mx-auto">
+    <div class="h-eyebrow" style="color:#f1d27a">Aaron Briefing · May 2026</div>
+    <h1 class="h-title text-5xl md:text-7xl mt-3">Road to <span class="gold">$50K/month</span></h1>
+    <p class="mt-4 text-xl muted max-w-3xl">Four real products. Honest tradeoffs. Realistic timelines. Here is how we get there — and what it costs to run.</p>
+
+    <div class="grid-4 mt-12">
+      <div class="card dark p-5">
+        <div class="h-eyebrow" style="color:#f1d27a">Product 1</div>
+        <div class="text-lg font-bold mt-1">AI Consulting</div>
+        <div class="muted text-sm">Easy Deploy + GHL</div>
+        <div class="mt-3 chip">$3K+ setup · $250–$750/mo</div>
+      </div>
+      <div class="card dark p-5">
+        <div class="h-eyebrow" style="color:#f1d27a">Product 2</div>
+        <div class="text-lg font-bold mt-1">Renée Brand</div>
+        <div class="muted text-sm">AI for women entrepreneurs</div>
+        <div class="mt-3 chip">$47 → $97/mo</div>
+      </div>
+      <div class="card dark p-5">
+        <div class="h-eyebrow" style="color:#f1d27a">Product 3</div>
+        <div class="text-lg font-bold mt-1">Faceless Page</div>
+        <div class="muted text-sm">GHL-powered content engine</div>
+        <div class="mt-3 chip">$47/mo</div>
+      </div>
+      <div class="card dark p-5">
+        <div class="h-eyebrow" style="color:#f1d27a">Product 4</div>
+        <div class="text-lg font-bold mt-1">Mortgage (Renée)</div>
+        <div class="muted text-sm">Personal book of business</div>
+        <div class="mt-3 chip">Commission-based</div>
+      </div>
+    </div>
+
+    <div class="mt-12 flex items-center gap-3">
+      <span class="ribbon">Out of scope right now</span>
+      <span class="muted">Dental — we are not HIPAA-certified yet. Parked until certified.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXECUTIVE SUMMARY ============ -->
+<section id="summary" class="slide">
+  <div class="max-w-6xl mx-auto">
+    <div class="h-eyebrow">The big picture</div>
+    <h2 class="h-title text-4xl md:text-5xl mt-2">$50K/month is a <span class="gold">blended</span> number, not a single product win.</h2>
+    <p class="mt-4 text-lg text-slate-600 max-w-4xl">No single channel gets us there on its own without massive volume. The fastest, lowest-risk path is to stack four products with very different price points and very different audiences.</p>
+
+    <div class="grid-4 mt-8">
+      <div class="card p-5">
+        <div class="h-eyebrow">High ticket</div>
+        <div class="kpi mt-2">$20K</div>
+        <div class="text-sm text-slate-600">From AI Consulting — fewer clients, more revenue.</div>
+        <div class="bar mt-3"><span style="width:40%"></span></div>
+      </div>
+      <div class="card p-5">
+        <div class="h-eyebrow">Mid ticket</div>
+        <div class="kpi mt-2">$14.5K</div>
+        <div class="text-sm text-slate-600">Renée brand subs — scalable, recurring.</div>
+        <div class="bar mt-3"><span style="width:29%"></span></div>
+      </div>
+      <div class="card p-5">
+        <div class="h-eyebrow">Low ticket</div>
+        <div class="kpi mt-2">$9.4K</div>
+        <div class="text-sm text-slate-600">Faceless page — viral funnel.</div>
+        <div class="bar mt-3"><span style="width:19%"></span></div>
+      </div>
+      <div class="card p-5">
+        <div class="h-eyebrow">Mortgage</div>
+        <div class="kpi mt-2">$6K+</div>
+        <div class="text-sm text-slate-600">Renée's personal book — Aaron supports.</div>
+        <div class="bar mt-3"><span style="width:12%"></span></div>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-10">
+      <div class="card p-6">
+        <div class="h-eyebrow">Why this works</div>
+        <ul class="mt-3 space-y-2 text-slate-700">
+          <li>✅ <b>Different price points</b> = different buyers. We are not competing with ourselves.</li>
+          <li>✅ <b>Three are recurring</b>. MRR is more valuable than one-time spikes.</li>
+          <li>✅ <b>All four share infrastructure</b> (GHL + Easy Deploy + Claude). One backend, four front doors.</li>
+          <li>✅ <b>Aaron's mortgage book</b> keeps cash flowing while SaaS scales.</li>
+        </ul>
+      </div>
+      <div class="card p-6">
+        <div class="h-eyebrow">What Aaron should know</div>
+        <ul class="mt-3 space-y-2 text-slate-700">
+          <li>⚠️ <b>None of this is overnight.</b> SaaS MRR is a 6–12 month build to $50K, not 30 days.</li>
+          <li>⚠️ <b>We will spend money before we earn it.</b> Real expense list at the back.</li>
+          <li>⚠️ <b>Dental is parked</b> until HIPAA. Do not promise dental clients.</li>
+          <li>⚠️ <b>One of us has to sell.</b> Build is the easy part — closing is the hard part.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO MATRIX ============ -->
+<section id="portfolio" class="slide">
+  <div class="max-w-6xl mx-auto">
+    <div class="h-eyebrow">The four products at a glance</div>
+    <h2 class="h-title text-4xl md:text-5xl mt-2">One picture, four bets.</h2>
+
+    <div class="card mt-8 p-2 overflow-x-auto">
+      <table class="clean">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Who buys</th>
+            <th>Price</th>
+            <th>Effort to build</th>
+            <th>Time to first $</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>AI Consulting</b><br/><span class="text-xs text-slate-500">Easy Deploy backend</span></td>
+            <td>Small business owners, agents, agencies</td>
+            <td class="num">$3K setup + $250–$500/mo<br/><span class="text-xs text-slate-500">GHL tier: $7.5K + $750/mo</span></td>
+            <td><span class="pill pill-warn">Medium</span></td>
+            <td>4–6 weeks</td>
+            <td><span class="pill pill-good">Low</span> proven model</td>
+          </tr>
+          <tr>
+            <td><b>Renée Women's Brand</b><br/><span class="text-xs text-slate-500">"Type your interest → AI builds you a business"</span></td>
+            <td>Women 25–55 wanting a side business</td>
+            <td class="num">$47/mo intro · $97/mo full</td>
+            <td><span class="pill pill-bad">High</span></td>
+            <td>8–12 weeks</td>
+            <td><span class="pill pill-warn">Medium</span> needs audience</td>
+          </tr>
+          <tr>
+            <td><b>Faceless Page</b><br/><span class="text-xs text-slate-500">GHL-powered</span></td>
+            <td>Creators, side-hustlers, anonymous brands</td>
+            <td class="num">$47/mo</td>
+            <td><span class="pill pill-good">Low</span></td>
+            <td>2–4 weeks</td>
+            <td><span class="pill pill-warn">Medium</span> needs traffic</td>
+          </tr>
+          <tr>
+            <td><b>Mortgage (Renée's book)</b></td>
+            <td>Renée's existing leads + referrals</td>
+            <td class="num">Commission per funded deal</td>
+            <td><span class="pill pill-good">None</span> already running</td>
+            <td>Already earning</td>
+            <td><span class="pill pill-good">Low</span> known business</td>
+          </tr>
+          <tr style="background:#fef2f2">
+            <td><b>Dental</b></td>
+            <td>Dental clinics</td>
+            <td>—</td>
+            <td colspan="3"><span class="pill pill-bad">BLOCKED</span> Not HIPAA-certified. Parked until we are.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="footer-note mt-4">All four products run on the same backend (GHL + Claude API). That is the leverage — we build the plumbing once.</p>
+  </div>
+</section>
+
+<!-- ============ PROJECT 1: AI CONSULTING ============ -->
+<section id="easy-deploy" class="slide">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center gap-3">
+      <span class="chip">Product 1 of 4</span>
+      <span class="pill pill-info">Highest revenue per client</span>
+    </div>
+    <h2 class="h-title text-4xl md:text-5xl mt-3">AI Consulting <span class="text-slate-400">·</span> <span class="gold">Easy Deploy</span></h2>
+    <p class="mt-3 text-lg text-slate-600 max-w-4xl">We sell a "done-for-you AI system" to a business. Orb interview → niche-tailored bots → live in their GHL. The Easy Deploy platform is the delivery engine.</p>
+
+    <div class="grid-3 mt-8">
+      <div class="card p-5">
+        <div class="chip good">✓ Why it's good</div>
+        <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+          <li>Highest ticket — one client = many faceless subs in revenue.</li>
+          <li>Recurring monthly on top of setup fee.</li>
+          <li>Easy Deploy architecture is already designed (orb, pricing engine, GHL deploy).</li>
+          <li>Real moat: 9 niche-tailored bots, killswitches, compliance baked in.</li>
+          <li>Aaron's network of agents/owners is an instant warm list.</li>
+        </ul>
+      </div>
+      <div class="card p-5">
+        <div class="chip bad">✗ Why it's not</div>
+        <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+          <li>Each sale needs a real human conversation — no impulse buys at $3K+.</li>
+          <li>Onboarding hand-holding eats Renée's time per client.</li>
+          <li>Churn risk if results aren't visible in 30–60 days.</li>
+          <li>Voice minutes overage = surprise bills if guardrails fail.</li>
+          <li>Aaron has to help sell or qualify, or pipeline starves.</li>
+        </ul>
+      </div>
+      <div class="card p-5">
+        <div class="chip warn">⏱ Timeline</div>
+        <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+          <li><b>Now → 2 wks:</b> Easy Deploy MVP (Orb + pricing + proposal).</li>
+          <li><b>Wk 3–4:</b> First paid pilot (Renée or warm lead).</li>
+          <li><b>Wk 5–8:</b> 3–5 paying clients, $300–$500/mo each.</li>
+          <li><b>Month 3–6:</b> Outbound + content engine to 20+ clients.</li>
+          <li><b>Realistic to $20K/mo MRR from this product:</b> 5–7 months.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-8">
+      <div class="card p-6">
+        <div class="h-eyebrow">Pricing — two doors</div>
+        <table class="clean mt-3">
+          <thead>
+            <tr><th>Package</th><th>Setup</th><th>Monthly</th><th>Who it's for</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Standard AI Consulting</b></td>
+              <td class="num">$3,000</td>
+              <td class="num">$250–$500</td>
+              <td>Owner who wants AI but already has their own CRM</td>
+            </tr>
+            <tr>
+              <td><b>Full GHL Build</b> <span class="pill pill-good">premium</span></td>
+              <td class="num">$7,500</td>
+              <td class="num">$750+</td>
+              <td>Owner who wants us to run the whole funnel + GHL backend</td>
+            </tr>
+            <tr>
+              <td>Custom enterprise</td>
+              <td colspan="2" class="num">Negotiated</td>
+              <td>Multi-location, multi-niche</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="footer-note mt-3">Rule: if they want GHL stuff, we charge premium. No exceptions — GHL build eats our time.</p>
+      </div>
+
+      <div class="card p-6">
+        <div class="h-eyebrow">How many clients to hit $20K/mo from this product alone?</div>
+        <div class="mt-4 space-y-4">
+          <div>
+            <div class="flex justify-between"><span class="font-semibold">All Standard ($500/mo)</span><span class="num">40 clients</span></div>
+            <div class="bar mt-1"><span style="width:100%"></span></div>
+          </div>
+          <div>
+            <div class="flex justify-between"><span class="font-semibold">All Premium ($750/mo)</span><span class="num">27 clients</span></div>
+            <div class="bar mt-1"><span style="width:68%"></span></div>
+          </div>
+          <div>
+            <div class="flex justify-between"><span class="font-semibold">Blend (15 standard + 15 premium)</span><span class="num">30 clients = $18,750/mo</span></div>
+            <div class="bar mt-1"><span style="width:75%"></span></div>
+          </div>
+        </div>
+        <p class="footer-note mt-4">Plus $3K–$7.5K setup x new client every month is a separate revenue stream. 4 new clients/mo = $12K–$30K setup cash.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECT 2: RENÉE BRAND ============ -->
+<section id="renee" class="slide dark">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center gap-3">
+      <span class="chip">Product 2 of 4</span>
+      <span class="pill pill-info">Highest ceiling · biggest TAM</span>
+    </div>
+    <h2 class="h-title text-4xl md:text-5xl mt-3">Renée's Women's Brand</h2>
+    <p class="mt-3 text-lg muted max-w-4xl">A woman types her interests, experience, and what she knows. The AI suggests 3 business ideas, then builds her digital products + content. She runs it from her phone.</p>
+
+    <div class="grid-3 mt-8">
+      <div class="card dark p-5">
+        <div class="chip good">✓ Why it's good</div>
+        <ul class="mt-3 space-y-2 muted text-sm">
+          <li>Massive audience. Women looking for side income is a forever-trend.</li>
+          <li>Renée's face + story is the differentiator — not commodity software.</li>
+          <li>Output is real value: ideas + digital products + content calendar.</li>
+          <li>$47 starter feels like a no-brainer; $97 unlocks the business builder.</li>
+          <li>This is where Renée's brand equity compounds — every customer becomes content.</li>
+        </ul>
+      </div>
+      <div class="card dark p-5">
+        <div class="chip bad">✗ Why it's not</div>
+        <ul class="mt-3 space-y-2 muted text-sm">
+          <li>Needs a real audience — no traffic = no signups, period.</li>
+          <li>Renée's time on camera is the bottleneck for content.</li>
+          <li>Churn is high in women's-business niche — must keep delivering.</li>
+          <li>Building the product is harder than it sounds (idea → digital product → calendar all in one).</li>
+          <li>Refund risk if "AI built me a business" doesn't actually work.</li>
+        </ul>
+      </div>
+      <div class="card dark p-5">
+        <div class="chip warn">⏱ Timeline</div>
+        <ul class="mt-3 space-y-2 muted text-sm">
+          <li><b>Wk 1–2:</b> Brand strategy + landing page + waitlist.</li>
+          <li><b>Wk 3–6:</b> MVP — interest survey + AI idea generator.</li>
+          <li><b>Wk 7–10:</b> Digital product + content generator added.</li>
+          <li><b>Wk 11–12:</b> Soft launch to Renée's existing audience.</li>
+          <li><b>Realistic to $14K/mo MRR:</b> 9–12 months.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-8">
+      <div class="card dark p-6">
+        <div class="h-eyebrow" style="color:#f1d27a">Pricing ladder</div>
+        <table class="clean mt-3" style="color:#0f172a">
+          <thead><tr><th>Tier</th><th>Monthly</th><th>What they get</th></tr></thead>
+          <tbody style="background:#f8fafc">
+            <tr><td><b>Spark</b></td><td class="num">$47</td><td>Idea generator + 1 digital product/mo + starter content</td></tr>
+            <tr><td><b>Builder</b> <span class="pill pill-good">recommended</span></td><td class="num">$97</td><td>Idea + unlimited digital products + content calendar + automations</td></tr>
+            <tr><td><b>Founder</b> (future)</td><td class="num">$197</td><td>Builder + group coaching + Renée's templates</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card dark p-6">
+        <div class="h-eyebrow" style="color:#f1d27a">Clients needed to hit $14,500/mo from this product</div>
+        <div class="mt-4 space-y-4">
+          <div>
+            <div class="flex justify-between"><span>All Spark ($47)</span><span class="num">309 subs</span></div>
+            <div class="bar mt-1"><span style="width:100%"></span></div>
+          </div>
+          <div>
+            <div class="flex justify-between"><span>All Builder ($97)</span><span class="num">150 subs</span></div>
+            <div class="bar mt-1"><span style="width:48%"></span></div>
+          </div>
+          <div>
+            <div class="flex justify-between"><span>Blend (100 Spark + 100 Builder)</span><span class="num">$14,400/mo · 200 subs</span></div>
+            <div class="bar mt-1"><span style="width:66%"></span></div>
+          </div>
+        </div>
+        <p class="footer-note mt-4" style="color:#cbd5e1">Reality: getting to 200 paying subs of any kind requires ~10,000 engaged followers or a real ad budget. That's the input.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECT 3: FACELESS ============ -->
+<section id="faceless" class="slide">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center gap-3">
+      <span class="chip">Product 3 of 4</span>
+      <span class="pill pill-info">Fastest to ship</span>
+    </div>
+    <h2 class="h-title text-4xl md:text-5xl mt-3">Faceless Page <span class="text-slate-400">·</span> <span class="gold">GHL Backend</span></h2>
+    <p class="mt-3 text-lg text-slate-600 max-w-4xl">A subscription product for creators and side-hustlers who want a faceless brand (TikTok, IG, YouTube Shorts). Type your niche, GHL workflow drops daily content + a landing page + lead capture.</p>
+
+    <div class="grid-3 mt-8">
+      <div class="card p-5">
+        <div class="chip good">✓ Why it's good</div>
+        <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+          <li>$47 = impulse-buy price. Few approvals needed.</li>
+          <li>100% GHL — we already know this stack cold.</li>
+          <li>Same plumbing as Renée's brand, just no human face.</li>
+          <li>Can sell to anyone, anywhere — no compliance niche risk.</li>
+          <li>Funnel-friendly: cheap intro to upsell into other products later.</li>
+        </ul>
+      </div>
+      <div class="card p-5">
+        <div class="chip bad">✗ Why it's not</div>
+        <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+          <li>$47 means we need a LOT of subscribers to move the needle.</li>
+          <li>Faceless market is crowded — must differentiate on quality of output.</li>
+          <li>Churn is brutal at this price point if value isn't obvious by day 14.</li>
+          <li>Customer support load scales with subscriber count.</li>
+          <li>Requires paid ads or organic engine to drive volume.</li>
+        </ul>
+      </div>
+      <div class="card p-5">
+        <div class="chip warn">⏱ Timeline</div>
+        <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+          <li><b>Wk 1:</b> Snapshot built in GHL + Stripe wired.</li>
+          <li><b>Wk 2:</b> Landing page + onboarding + first 10 beta users.</li>
+          <li><b>Wk 3–4:</b> Public launch.</li>
+          <li><b>Month 2–6:</b> Drive traffic. Iterate on output quality.</li>
+          <li><b>Realistic to $9K/mo MRR:</b> 4–8 months with consistent traffic.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-8">
+      <div class="card p-6">
+        <div class="h-eyebrow">Clients needed at $47/mo</div>
+        <table class="clean mt-3">
+          <thead><tr><th>Goal from this product</th><th>Subs needed</th><th>What that looks like</th></tr></thead>
+          <tbody>
+            <tr><td>$5,000/mo</td><td class="num">107</td><td>Achievable in 60–90 days with content</td></tr>
+            <tr><td>$9,400/mo (our target slice)</td><td class="num">200</td><td>Needs traffic engine — paid + organic</td></tr>
+            <tr><td>$25,000/mo</td><td class="num">532</td><td>Needs real ad spend + affiliate program</td></tr>
+            <tr><td>$50,000/mo (this product alone)</td><td class="num">1,064</td><td>Not realistic short-term — combine products</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card p-6">
+        <div class="h-eyebrow">Why it stays $47 (for now)</div>
+        <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+          <li>Volume play — get hundreds of subs, then upsell.</li>
+          <li>Acts as a tripwire into AI Consulting or Renée's brand.</li>
+          <li>Once 100+ subs, we can add a $97 "Faceless Pro" tier (longer videos, more niches, ad copy).</li>
+          <li>If churn &lt; 8%/mo, this is a quiet money printer in the background.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECT 4: MORTGAGE ============ -->
+<section id="mortgage" class="slide">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center gap-3">
+      <span class="chip">Product 4 of 4</span>
+      <span class="pill pill-good">Already earning</span>
+    </div>
+    <h2 class="h-title text-4xl md:text-5xl mt-3">Renée's Personal Mortgage Account</h2>
+    <p class="mt-3 text-lg text-slate-600 max-w-4xl">The cash-flow anchor while SaaS scales. Renée's existing book, with EquityMax + ABC infrastructure powering follow-up, renewals, and referrals. Aaron's role: keep the operations clean so Renée can focus on closing.</p>
+
+    <div class="grid-3 mt-8">
+      <div class="card p-5">
+        <div class="chip good">✓ Why it's good</div>
+        <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+          <li>Already producing revenue today — no R&D required.</li>
+          <li>Commission per deal is real cash, not MRR forecast.</li>
+          <li>EquityMax + ABC snapshots already automate renewals, document chase, no-show rebook.</li>
+          <li>FSRA-compliant funnel exists.</li>
+          <li>Cross-pollinates with everything else — Renée's mortgage clients become AI consulting leads.</li>
+        </ul>
+      </div>
+      <div class="card p-5">
+        <div class="chip bad">✗ Why it's not</div>
+        <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+          <li>Bumpy — deals close in lumps, not steady MRR.</li>
+          <li>Capped by Renée's personal hours.</li>
+          <li>Rate environment is outside our control.</li>
+          <li>Can pull Renée off SaaS focus.</li>
+          <li>Needs Aaron operationally so it doesn't bottleneck.</li>
+        </ul>
+      </div>
+      <div class="card p-5">
+        <div class="chip warn">⏱ Timeline</div>
+        <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+          <li><b>Now:</b> Renewal Countdown bot live (120/90/60/30/14-day).</li>
+          <li><b>30 days:</b> Re-engagement on cold EqM contacts.</li>
+          <li><b>60 days:</b> Realtor partnership outbound (referral channel).</li>
+          <li><b>Ongoing:</b> Aaron's role = keep pipeline visible, weekly review.</li>
+          <li><b>Realistic baseline:</b> $5K–$8K/mo blended.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-8">
+      <div class="card p-6">
+        <div class="h-eyebrow">How mortgage contributes to $50K</div>
+        <ul class="mt-3 space-y-2 text-slate-700">
+          <li>Assume <b>$3K average commission</b> per funded deal.</li>
+          <li><b>2 deals/mo</b> = $6,000 — baseline.</li>
+          <li>Renewals on existing book are the highest-confidence source.</li>
+          <li>Renewal Countdown automation + cold EqM re-engagement = realistic 2–3 deals/mo without new ad spend.</li>
+        </ul>
+      </div>
+      <div class="card p-6">
+        <div class="h-eyebrow">Aaron's specific job here</div>
+        <ol class="mt-3 space-y-2 text-slate-700 list-decimal pl-5">
+          <li>Run weekly pipeline review — what's stuck, what's hot, what's renewing.</li>
+          <li>Make sure Renée never touches admin — docs, follow-up, scheduling.</li>
+          <li>Watch the FSRA compliance flags in the GHL workflow.</li>
+          <li>Refer mortgage clients to the AI consulting product when fit.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PATH TO $50K ============ -->
+<section id="mix" class="slide dark">
+  <div class="max-w-6xl mx-auto">
+    <div class="h-eyebrow" style="color:#f1d27a">The math</div>
+    <h2 class="h-title text-4xl md:text-5xl mt-2">How four products stack to <span class="gold">$50K/month</span></h2>
+
+    <div class="grid-2 mt-8">
+      <div class="card dark p-6">
+        <div class="h-eyebrow" style="color:#f1d27a">Target mix (realistic, Month 9–12)</div>
+        <table class="clean mt-3" style="color:#0f172a">
+          <thead><tr><th>Product</th><th>Clients</th><th>$/client/mo</th><th>MRR</th></tr></thead>
+          <tbody style="background:#f8fafc">
+            <tr><td>AI Consulting — Standard</td><td class="num">15</td><td class="num">$500</td><td class="num">$7,500</td></tr>
+            <tr><td>AI Consulting — Premium GHL</td><td class="num">15</td><td class="num">$750</td><td class="num">$11,250</td></tr>
+            <tr><td>Renée Brand — Spark</td><td class="num">100</td><td class="num">$47</td><td class="num">$4,700</td></tr>
+            <tr><td>Renée Brand — Builder</td><td class="num">100</td><td class="num">$97</td><td class="num">$9,700</td></tr>
+            <tr><td>Faceless Page</td><td class="num">200</td><td class="num">$47</td><td class="num">$9,400</td></tr>
+            <tr><td>Mortgage commissions</td><td class="num">2 deals</td><td class="num">~$3,000</td><td class="num">$6,000</td></tr>
+            <tr style="background:#fef9c3"><td><b>TOTAL MRR</b></td><td colspan="2"></td><td class="num"><b>$48,550</b></td></tr>
+            <tr style="background:#dcfce7"><td><b>+ Setup fees (4 new consulting/mo)</b></td><td colspan="2">avg $5K each</td><td class="num"><b>+$20,000</b></td></tr>
+            <tr style="background:#bbf7d0"><td><b>BLENDED MONTHLY</b></td><td colspan="2"></td><td class="num"><b>~$68,550</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card dark p-6">
+        <div class="h-eyebrow" style="color:#f1d27a">Same number, visualized</div>
+        <div class="mt-4">
+          <!-- horizontal stacked bar showing contribution -->
+          <svg viewBox="0 0 400 240" class="w-full">
+            <g font-family="ui-sans-serif" font-size="12" fill="#e2e8f0">
+              <!-- AI Consulting -->
+              <rect x="20" y="20"  width="300" height="22" rx="4" fill="#2a3a66" />
+              <rect x="20" y="20"  width="232" height="22" rx="4" fill="#d4af37" />
+              <text x="20" y="14">AI Consulting · $18,750</text>
+              <text x="328" y="36">38%</text>
+
+              <!-- Renée -->
+              <rect x="20" y="62"  width="300" height="22" rx="4" fill="#2a3a66" />
+              <rect x="20" y="62"  width="178" height="22" rx="4" fill="#f1d27a" />
+              <text x="20" y="56">Renée Brand · $14,400</text>
+              <text x="328" y="78">30%</text>
+
+              <!-- Faceless -->
+              <rect x="20" y="104" width="300" height="22" rx="4" fill="#2a3a66" />
+              <rect x="20" y="104" width="116" height="22" rx="4" fill="#fde68a" />
+              <text x="20" y="98">Faceless · $9,400</text>
+              <text x="328" y="120">19%</text>
+
+              <!-- Mortgage -->
+              <rect x="20" y="146" width="300" height="22" rx="4" fill="#2a3a66" />
+              <rect x="20" y="146" width="74"  height="22" rx="4" fill="#a7f3d0" />
+              <text x="20" y="140">Mortgage · $6,000</text>
+              <text x="328" y="162">13%</text>
+
+              <!-- Goal line -->
+              <line x1="20" y1="195" x2="320" y2="195" stroke="#f87171" stroke-dasharray="4 4"/>
+              <text x="20" y="215" fill="#fca5a5">Target line · $50,000/mo</text>
+            </g>
+          </svg>
+        </div>
+        <p class="footer-note mt-4" style="color:#cbd5e1">Color = contribution. We hit the target with no single product carrying more than 38%.</p>
+      </div>
+    </div>
+
+    <div class="grid-3 mt-8">
+      <div class="card dark p-5">
+        <div class="h-eyebrow" style="color:#f1d27a">Aggressive scenario</div>
+        <div class="mt-2 text-2xl font-bold">$65K/mo by month 12</div>
+        <p class="muted text-sm mt-2">Heavy paid ads + 1 viral creator post for Renée brand + Aaron closes 6 consulting deals/mo.</p>
+      </div>
+      <div class="card dark p-5">
+        <div class="h-eyebrow" style="color:#f1d27a">Realistic scenario</div>
+        <div class="mt-2 text-2xl font-bold">$48–55K/mo by month 12</div>
+        <p class="muted text-sm mt-2">Steady outbound + organic content + 3 consulting closes/mo. Most likely outcome.</p>
+      </div>
+      <div class="card dark p-5">
+        <div class="h-eyebrow" style="color:#f1d27a">Slow scenario</div>
+        <div class="mt-2 text-2xl font-bold">$25–30K/mo by month 12</div>
+        <p class="muted text-sm mt-2">If we build but don't sell. Lesson: pipeline is the bottleneck, not product.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section id="timeline" class="slide">
+  <div class="max-w-6xl mx-auto">
+    <div class="h-eyebrow">Realistic timeline (combined)</div>
+    <h2 class="h-title text-4xl md:text-5xl mt-2">Twelve months to <span class="gold">$50K MRR</span>.</h2>
+    <p class="mt-3 text-lg text-slate-600 max-w-4xl">Aaron asked for realistic — not best case. This is what it actually looks like with us shipping consistently and selling consistently.</p>
+
+    <div class="card p-6 mt-8">
+      <table class="clean">
+        <thead>
+          <tr><th>Phase</th><th>Months</th><th>AI Consulting</th><th>Renée Brand</th><th>Faceless</th><th>Mortgage</th><th>Total MRR</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Foundation</b></td><td>0–2</td>
+            <td>Easy Deploy MVP · 1–2 pilots</td>
+            <td>Brand + waitlist</td>
+            <td>GHL snapshot live · 10 beta</td>
+            <td>Renewal automations running</td>
+            <td class="num">$5–8K</td>
+          </tr>
+          <tr>
+            <td><b>Traction</b></td><td>3–5</td>
+            <td>5 paying clients · $2.5K MRR</td>
+            <td>Soft launch · 30 subs</td>
+            <td>50 subs · $2.3K MRR</td>
+            <td>2–3 deals/mo · $6K</td>
+            <td class="num">$14–18K</td>
+          </tr>
+          <tr>
+            <td><b>Scale</b></td><td>6–9</td>
+            <td>15 clients · $8K MRR + setups</td>
+            <td>100 subs · $7K MRR</td>
+            <td>120 subs · $5.6K MRR</td>
+            <td>$6K</td>
+            <td class="num">$26–32K</td>
+          </tr>
+          <tr style="background:#fef9c3">
+            <td><b>Goal hit</b></td><td>10–12</td>
+            <td>30 clients · $18K MRR + setups</td>
+            <td>200 subs · $14K MRR</td>
+            <td>200 subs · $9.4K MRR</td>
+            <td>$6K</td>
+            <td class="num"><b>$47–55K</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-3 mt-8">
+      <div class="card p-5">
+        <div class="h-eyebrow">What can speed it up</div>
+        <ul class="mt-2 space-y-1 text-sm text-slate-700">
+          <li>Aaron full-time on sales for AI consulting</li>
+          <li>$2K–$5K/mo paid ads for Renée brand</li>
+          <li>An affiliate program (20% lifetime — already designed)</li>
+          <li>One viral content moment</li>
+        </ul>
+      </div>
+      <div class="card p-5">
+        <div class="h-eyebrow">What slows it down</div>
+        <ul class="mt-2 space-y-1 text-sm text-slate-700">
+          <li>Building features instead of selling</li>
+          <li>Chasing dental (still HIPAA-blocked)</li>
+          <li>Discounting consulting under $3K setup</li>
+          <li>Voice minutes overage surprise bills</li>
+        </ul>
+      </div>
+      <div class="card p-5">
+        <div class="h-eyebrow">Non-negotiables</div>
+        <ul class="mt-2 space-y-1 text-sm text-slate-700">
+          <li>Weekly pipeline review (Aaron leads)</li>
+          <li>Monthly P&amp;L vs forecast</li>
+          <li>One product per quarter gets a real push</li>
+          <li>Hard-stop budget caps on every GHL deploy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPENSES ============ -->
+<section id="expenses" class="slide">
+  <div class="max-w-6xl mx-auto">
+    <div class="h-eyebrow">Real money out the door</div>
+    <h2 class="h-title text-4xl md:text-5xl mt-2">Expenses — what we pay <span class="gold">to run</span>.</h2>
+    <p class="mt-3 text-lg text-slate-600 max-w-4xl">Two buckets: current (already paying) and upcoming (will start paying as we scale). These are rough monthly estimates — Aaron should confirm exact numbers from statements.</p>
+
+    <div class="grid-2 mt-8">
+      <div class="card p-6">
+        <div class="h-eyebrow">Current monthly expenses</div>
+        <table class="clean mt-3">
+          <thead><tr><th>Item</th><th>Est. $/mo</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>GHL agency plan</td><td class="num">$497</td><td>Backbone — every product runs here</td></tr>
+            <tr><td>Claude API (Anthropic)</td><td class="num">$200–$600</td><td>Powers all agents; scales with usage</td></tr>
+            <tr><td>Vercel hosting</td><td class="num">$20–$50</td><td>Frontends + Command Center</td></tr>
+            <tr><td>Domains + email</td><td class="num">$30</td><td>Renée brand domains + business email</td></tr>
+            <tr><td>n8n cloud</td><td class="num">$20–$50</td><td>Cross-platform automations</td></tr>
+            <tr><td>Stripe fees</td><td class="num">~2.9%+30¢</td><td>Per transaction — variable</td></tr>
+            <tr><td>Cell/internet/biz tools</td><td class="num">$200</td><td>Phone, Zoom, etc.</td></tr>
+            <tr style="background:#fef9c3"><td><b>Current total est.</b></td><td colspan="2" class="num"><b>~$1,100–$1,500/mo</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card p-6">
+        <div class="h-eyebrow">Upcoming / needed expenses</div>
+        <table class="clean mt-3">
+          <thead><tr><th>Item</th><th>When</th><th>Est. $</th></tr></thead>
+          <tbody>
+            <tr><td>ElevenLabs voice (per-min)</td><td>When 1st client onboards</td><td class="num">$50–$300/mo</td></tr>
+            <tr><td>Assistable.ai voice migration</td><td>When MRR &gt; $10K</td><td class="num">$200–$500/mo</td></tr>
+            <tr><td>Paid ads (Renée brand)</td><td>Month 3+</td><td class="num">$2,000–$5,000/mo</td></tr>
+            <tr><td>Paid ads (Faceless)</td><td>Month 2+</td><td class="num">$1,000–$3,000/mo</td></tr>
+            <tr><td>Legal review (lawyer)</td><td>Before first paid client</td><td class="num">$1,000–$2,500 one-time</td></tr>
+            <tr><td>HIPAA certification (for dental)</td><td>When we unblock dental</td><td class="num">$3,000–$8,000 one-time + audits</td></tr>
+            <tr><td>Apollo / Instantly outbound</td><td>Month 2+</td><td class="num">$200–$400/mo</td></tr>
+            <tr><td>Fireflies / Zoom Pro</td><td>Sales cadence ramps up</td><td class="num">$50–$150/mo</td></tr>
+            <tr><td>Bookkeeper / accountant</td><td>By month 3</td><td class="num">$200–$500/mo</td></tr>
+            <tr><td>Setter / VA (part-time)</td><td>When pipeline &gt; capacity</td><td class="num">$1,500–$3,000/mo</td></tr>
+            <tr style="background:#fef9c3"><td><b>Upcoming run-rate add</b></td><td colspan="2" class="num"><b>~$5,000–$13,000/mo (at full ramp)</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-3 mt-8">
+      <div class="card p-5">
+        <div class="h-eyebrow">Month 0–2 burn</div>
+        <div class="kpi mt-2 num">~$1,500/mo</div>
+        <p class="text-sm text-slate-600 mt-2">Lean. We are still small.</p>
+      </div>
+      <div class="card p-5">
+        <div class="h-eyebrow">Month 3–6 burn</div>
+        <div class="kpi mt-2 num">~$4,500/mo</div>
+        <p class="text-sm text-slate-600 mt-2">Ads start. First VA. Voice usage.</p>
+      </div>
+      <div class="card p-5">
+        <div class="h-eyebrow">Month 7–12 burn</div>
+        <div class="kpi mt-2 num">~$8–13K/mo</div>
+        <p class="text-sm text-slate-600 mt-2">Real ad spend + team. Still healthy vs $50K MRR.</p>
+      </div>
+    </div>
+
+    <p class="footer-note mt-4">Even at peak burn (~$13K/mo), our target gross margin at $50K MRR is ~74%. That is healthy for a SaaS-services blend.</p>
+  </div>
+</section>
+
+<!-- ============ THE ASK ============ -->
+<section id="ask" class="slide dark">
+  <div class="max-w-5xl mx-auto">
+    <div class="h-eyebrow" style="color:#f1d27a">The ask</div>
+    <h2 class="h-title text-4xl md:text-6xl mt-2">Aaron — here's what we need from you.</h2>
+
+    <div class="grid-2 mt-10">
+      <div class="card dark p-6">
+        <div class="h-eyebrow" style="color:#f1d27a">Decisions we need</div>
+        <ol class="mt-3 space-y-2 list-decimal pl-5 muted">
+          <li>Approve the four-product portfolio (no dental until HIPAA).</li>
+          <li>Confirm AI consulting floor: <b>$3K setup + $250–$500/mo</b>. GHL build: <b>$7.5K + $750/mo</b>.</li>
+          <li>Lock Renée brand pricing: <b>$47 Spark / $97 Builder</b>.</li>
+          <li>Approve a paid-ads budget starting Month 3 ($2–5K/mo).</li>
+          <li>Sign off on legal review (lawyer engagement before first paid client).</li>
+        </ol>
+      </div>
+      <div class="card dark p-6">
+        <div class="h-eyebrow" style="color:#f1d27a">What we'll deliver in return</div>
+        <ol class="mt-3 space-y-2 list-decimal pl-5 muted">
+          <li>Weekly pipeline + MRR dashboard.</li>
+          <li>Monthly forecast vs actual.</li>
+          <li>One product shipped or doubled every quarter.</li>
+          <li>Renée focused on closing + on-camera, not on admin.</li>
+          <li>A path to <b>$50K/month within 9–12 months</b>.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="mt-10 card dark p-6">
+      <div class="h-eyebrow" style="color:#f1d27a">One slide summary</div>
+      <p class="mt-3 text-lg muted">
+        Four products. One backend. Different price points, different audiences. AI consulting is the heavy lifter. Renée's brand is the scale play. Faceless is the volume funnel. Mortgage is the cash anchor. Dental is parked.
+        At a realistic mix we land around <b class="gold">$48–55K MRR</b> by month 12, with another <b class="gold">$20K/mo</b> in setup fees on top. Burn stays under <b class="gold">$13K/mo</b> even at peak.
+      </p>
+    </div>
+
+    <p class="footer-note mt-6" style="color:#94a3b8">Prepared for Aaron · Generated on <span id="date"></span></p>
+  </div>
+</section>
+
+<script>
+  document.getElementById('date').textContent = new Date().toLocaleDateString(undefined, { year:'numeric', month:'long', day:'numeric' });
+</script>
+</body>
+</html>
