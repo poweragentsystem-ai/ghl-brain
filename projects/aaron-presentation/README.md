@@ -1,6 +1,8 @@
 # Aaron Briefing — Road to $50K/Month
 
-Single-file HTML presentation for Aaron covering the four-product portfolio and the realistic path to $50K/month.
+**Two files:**
+- `index.html` — the 4-page visual briefing for Aaron. Charts, bubbles, kill-criteria gates. Open this one with Aaron.
+- `detailed-appendix.html` — the long-form deck with every table, pricing, expense, hurdle, etc. Use as reference / leave-behind only if Aaron asks for more detail.
 
 ## How to view
 
@@ -10,7 +12,7 @@ Open `index.html` directly in any browser. No build step, no dependencies — Ta
 open projects/aaron-presentation/index.html
 ```
 
-For a clean PDF: open in Chrome → Print → Save as PDF (Letter or A4, background graphics on).
+For a clean PDF: open in Chrome → Print → Save as PDF (Letter or A4, background graphics on). The 4 pages each break to their own sheet.
 
 ## What's inside
 
