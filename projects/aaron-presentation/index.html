@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aaron · Road to $50K/Month</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --navy: #0b1a36;
+    --navy-2: #122249;
+    --gold: #d4af37;
+    --gold-2: #f1d27a;
+    --ink: #0f172a;
+    --paper: #f8fafc;
+    --good: #16a34a;
+    --bad: #dc2626;
+    --warn: #f59e0b;
+  }
+  html, body {
+    background: #eef2f7;
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .page {
+    width: min(1100px, 96vw);
+    margin: 28px auto;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 12px 40px rgba(11,26,54,.10), 0 2px 6px rgba(11,26,54,.06);
+    padding: 44px clamp(24px, 4vw, 56px);
+    min-height: 800px;
+    page-break-after: always;
+    position: relative;
+  }
+  .page.dark { background: linear-gradient(160deg, #0b1a36 0%, #122249 100%); color:#f8fafc; }
+  .page.dark .muted { color: #cbd5e1; }
+  .pagetag {
+    position: absolute; top: 22px; right: 28px;
+    font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    color: #94a3b8; font-weight: 700;
+  }
+  .page.dark .pagetag { color:#94a3b8; }
+  .gold { color: var(--gold); }
+  .h-title { font-weight: 800; letter-spacing: -0.025em; }
+  .eyebrow { letter-spacing: .14em; text-transform: uppercase; font-size: 11px; color:#64748b; font-weight:700; }
+  .page.dark .eyebrow { color:#fde68a; }
+  .num { font-variant-numeric: tabular-nums; }
+  .pill { display:inline-block; padding:3px 10px; border-radius:999px; font-weight:700; font-size: 11px; letter-spacing: .04em; }
+  .pill-good { background:#dcfce7; color:#166534; }
+  .pill-bad  { background:#fee2e2; color:#991b1b; }
+  .pill-warn { background:#fef3c7; color:#92400e; }
+
+  /* bubbles for product viz */
+  .bubble {
+    border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 14px;
+    color: #0b1a36; font-weight: 700;
+    box-shadow: 0 10px 30px rgba(11,26,54,.18);
+  }
+  .bubble .num { display:block; font-size: 28px; line-height: 1; font-weight: 800; }
+  .bubble .lbl { display:block; font-size: 12px; margin-top: 6px; font-weight: 600; opacity:.85; }
+
+  /* simple chart bar */
+  .bar { height: 14px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
+  .bar > span { display:block; height:100%; }
+
+  .legendbox { display:flex; align-items:center; gap:8px; font-size: 13px; }
+  .swatch { width:12px; height:12px; border-radius: 3px; }
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; margin: 0; border-radius: 0; width: 100%; min-height: auto; padding: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================= PAGE 1 — SNAPSHOT ========================= -->
+<section class="page dark">
+  <div class="pagetag">Page 1 of 4 · Snapshot</div>
+
+  <div class="eyebrow">For Aaron · May 2026</div>
+  <h1 class="h-title text-5xl md:text-6xl mt-2">Road to <span class="gold">$50K/month</span></h1>
+  <p class="mt-2 text-lg muted">Four products. One backend. Twelve months. Realistic, not best-case.</p>
+
+  <!-- Bubble chart of the four products, sized by target MRR contribution -->
+  <div class="mt-8 relative" style="height: 360px;">
+    <svg viewBox="0 0 800 360" class="w-full h-full">
+      <!-- Goal pill -->
+      <g>
+        <rect x="320" y="14" width="160" height="36" rx="18" fill="#d4af37"/>
+        <text x="400" y="38" text-anchor="middle" font-size="16" font-weight="800" fill="#0b1a36">$50K MRR goal</text>
+      </g>
+
+      <!-- AI Consulting bubble (largest) -->
+      <g>
+        <circle cx="220" cy="220" r="115" fill="#d4af37" />
+        <circle cx="220" cy="220" r="115" fill="url(#g1)" opacity="0.35"/>
+        <text x="220" y="200" text-anchor="middle" font-size="32" font-weight="800" fill="#0b1a36">$33K</text>
+        <text x="220" y="225" text-anchor="middle" font-size="13" font-weight="700" fill="#0b1a36">AI Consulting</text>
+        <text x="220" y="245" text-anchor="middle" font-size="11" fill="#0b1a36" opacity="0.75">+ SaaS layer</text>
+        <text x="220" y="262" text-anchor="middle" font-size="11" fill="#0b1a36" opacity="0.75">$3K–$7.5K setup</text>
+      </g>
+
+      <!-- Renée Brand bubble -->
+      <g>
+        <circle cx="450" cy="180" r="78" fill="#f1d27a"/>
+        <text x="450" y="170" text-anchor="middle" font-size="24" font-weight="800" fill="#0b1a36">$14K</text>
+        <text x="450" y="190" text-anchor="middle" font-size="12" font-weight="700" fill="#0b1a36">Renée Brand</text>
+        <text x="450" y="207" text-anchor="middle" font-size="10" fill="#0b1a36" opacity="0.75">$47 / $97/mo</text>
+      </g>
+
+      <!-- Mortgage bubble -->
+      <g>
+        <circle cx="600" cy="260" r="72" fill="#a7f3d0"/>
+        <text x="600" y="250" text-anchor="middle" font-size="22" font-weight="800" fill="#064e3b">$12K</text>
+        <text x="600" y="270" text-anchor="middle" font-size="12" font-weight="700" fill="#064e3b">Mortgage</text>
+        <text x="600" y="287" text-anchor="middle" font-size="10" fill="#064e3b" opacity="0.85">$4K/deal · 3/mo</text>
+      </g>
+
+      <!-- Faceless bubble -->
+      <g>
+        <circle cx="700" cy="130" r="58" fill="#bfdbfe"/>
+        <text x="700" y="124" text-anchor="middle" font-size="18" font-weight="800" fill="#1e3a8a">$9K</text>
+        <text x="700" y="142" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">Faceless</text>
+        <text x="700" y="158" text-anchor="middle" font-size="10" fill="#1e3a8a" opacity="0.85">$47/mo · 200 subs</text>
+      </g>
+
+      <!-- Stop road -->
+      <g>
+        <rect x="40" y="320" width="720" height="32" rx="8" fill="#7f1d1d"/>
+        <text x="60" y="340" font-size="12" font-weight="800" fill="#fecaca" letter-spacing="0.15em">STOP ROAD</text>
+        <text x="160" y="340" font-size="13" fill="#fecaca">Regulated health (dental · chiro · med spa · physio · mental health) — parked until HIPAA / PHIPA certified.</text>
+      </g>
+
+      <defs>
+        <radialGradient id="g1" cx="40%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="white"/>
+          <stop offset="100%" stop-color="#d4af37"/>
+        </radialGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- Color legend strip -->
+  <div class="mt-6 grid grid-cols-3 gap-3">
+    <div class="rounded-xl p-3" style="background:#0f3a25; border:1px solid #16a34a">
+      <div class="text-xs font-bold tracking-wider" style="color:#86efac">🟢 GREEN</div>
+      <div class="text-sm mt-1 muted">Already earning · proven · in our favour</div>
+    </div>
+    <div class="rounded-xl p-3" style="background:#3a2a08; border:1px solid #f59e0b">
+      <div class="text-xs font-bold tracking-wider" style="color:#fde68a">🟡 YELLOW</div>
+      <div class="text-sm mt-1 muted">Hurdles · ad spend · pricing · decisions</div>
+    </div>
+    <div class="rounded-xl p-3" style="background:#3a0e0e; border:1px solid #ef4444">
+      <div class="text-xs font-bold tracking-wider" style="color:#fecaca">🔴 RED</div>
+      <div class="text-sm mt-1 muted">Stop roads · do not proceed until resolved</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PAGE 2 — THE MATH ========================= -->
+<section class="page">
+  <div class="pagetag">Page 2 of 4 · The Math</div>
+
+  <div class="eyebrow">How we get to $50K/month</div>
+  <h2 class="h-title text-4xl md:text-5xl mt-1">12 months. <span class="gold">Stacked, not stretched.</span></h2>
+
+  <div class="grid grid-cols-12 gap-6 mt-7">
+    <!-- LEFT: stacked monthly MRR climb chart -->
+    <div class="col-span-12 md:col-span-7">
+      <div class="rounded-2xl p-4" style="background:#f8fafc; border:1px solid #e2e8f0">
+        <div class="eyebrow">MRR climb · month 1 → 12</div>
+        <svg viewBox="0 0 520 280" class="w-full mt-2">
+          <!-- gridlines -->
+          <g stroke="#e2e8f0" stroke-width="1">
+            <line x1="40" y1="40"  x2="500" y2="40"/>
+            <line x1="40" y1="100" x2="500" y2="100"/>
+            <line x1="40" y1="160" x2="500" y2="160"/>
+            <line x1="40" y1="220" x2="500" y2="220"/>
+          </g>
+          <g font-size="10" fill="#64748b" font-family="ui-sans-serif">
+            <text x="34" y="44"  text-anchor="end">$60K</text>
+            <text x="34" y="104" text-anchor="end">$40K</text>
+            <text x="34" y="164" text-anchor="end">$20K</text>
+            <text x="34" y="224" text-anchor="end">$0</text>
+          </g>
+
+          <!-- target line at $50K (y = 70) -->
+          <line x1="40" y1="70" x2="500" y2="70" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text x="496" y="64" text-anchor="end" font-size="10" font-weight="800" fill="#dc2626">$50K TARGET</text>
+
+          <!-- bars: 12 months, stacked: mortgage, faceless, renée, AI consulting -->
+          <!-- helper: y baseline = 220, scale: $1K = 3px -->
+          <!-- Month MRR rough plan:
+               m1: morgage 6, faceless 0.5, renee 0, ai 0  = 6.5
+               m2: 8, 1, 0, 1 = 10
+               m3: 10, 2, 0.5, 2 = 14.5
+               m4: 12, 3, 1, 3 = 19
+               m5: 12, 4, 2, 5 = 23
+               m6: 12, 5, 3.5, 7 = 27.5
+               m7: 12, 6, 5, 9 = 32
+               m8: 12, 7, 7, 11 = 37
+               m9: 12, 8, 9, 13 = 42
+               m10: 12, 8.5, 11, 15 = 46.5
+               m11: 12, 9, 12, 17 = 50
+               m12: 12, 9.4, 14, 18 = 53.4
+          -->
+          <g>
+            <!-- Each bar: starts at x = 60 + (i-1)*36, width 26 -->
+            <!-- Month 1 -->
+            <g><rect x="60"  y="200.5" width="26" height="19.5" fill="#a7f3d0"/></g>
+            <!-- Month 2 -->
+            <g><rect x="96"  y="190" width="26" height="30" fill="#a7f3d0"/><rect x="96" y="187" width="26" height="3" fill="#bfdbfe"/><rect x="96" y="184" width="26" height="3" fill="#d4af37"/></g>
+            <!-- Month 3 -->
+            <g>
+              <rect x="132" y="190" width="26" height="30" fill="#a7f3d0"/>
+              <rect x="132" y="184" width="26" height="6" fill="#bfdbfe"/>
+              <rect x="132" y="182.5" width="26" height="1.5" fill="#f1d27a"/>
+              <rect x="132" y="176.5" width="26" height="6" fill="#d4af37"/>
+            </g>
+            <!-- Month 4 -->
+            <g>
+              <rect x="168" y="184" width="26" height="36" fill="#a7f3d0"/>
+              <rect x="168" y="175" width="26" height="9" fill="#bfdbfe"/>
+              <rect x="168" y="172" width="26" height="3" fill="#f1d27a"/>
+              <rect x="168" y="163" width="26" height="9" fill="#d4af37"/>
+            </g>
+            <!-- Month 5 -->
+            <g>
+              <rect x="204" y="184" width="26" height="36" fill="#a7f3d0"/>
+              <rect x="204" y="172" width="26" height="12" fill="#bfdbfe"/>
+              <rect x="204" y="166" width="26" height="6" fill="#f1d27a"/>
+              <rect x="204" y="151" width="26" height="15" fill="#d4af37"/>
+            </g>
+            <!-- Month 6 -->
+            <g>
+              <rect x="240" y="184" width="26" height="36" fill="#a7f3d0"/>
+              <rect x="240" y="169" width="26" height="15" fill="#bfdbfe"/>
+              <rect x="240" y="158.5" width="26" height="10.5" fill="#f1d27a"/>
+              <rect x="240" y="137.5" width="26" height="21" fill="#d4af37"/>
+            </g>
+            <!-- Month 7 -->
+            <g>
+              <rect x="276" y="184" width="26" height="36" fill="#a7f3d0"/>
+              <rect x="276" y="166" width="26" height="18" fill="#bfdbfe"/>
+              <rect x="276" y="151" width="26" height="15" fill="#f1d27a"/>
+              <rect x="276" y="124" width="26" height="27" fill="#d4af37"/>
+            </g>
+            <!-- Month 8 -->
+            <g>
+              <rect x="312" y="184" width="26" height="36" fill="#a7f3d0"/>
+              <rect x="312" y="163" width="26" height="21" fill="#bfdbfe"/>
+              <rect x="312" y="142" width="26" height="21" fill="#f1d27a"/>
+              <rect x="312" y="109" width="26" height="33" fill="#d4af37"/>
+            </g>
+            <!-- Month 9 -->
+            <g>
+              <rect x="348" y="184" width="26" height="36" fill="#a7f3d0"/>
+              <rect x="348" y="160" width="26" height="24" fill="#bfdbfe"/>
+              <rect x="348" y="133" width="26" height="27" fill="#f1d27a"/>
+              <rect x="348" y="94" width="26" height="39" fill="#d4af37"/>
+            </g>
+            <!-- Month 10 -->
+            <g>
+              <rect x="384" y="184" width="26" height="36" fill="#a7f3d0"/>
+              <rect x="384" y="158.5" width="26" height="25.5" fill="#bfdbfe"/>
+              <rect x="384" y="125.5" width="26" height="33" fill="#f1d27a"/>
+              <rect x="384" y="80.5" width="26" height="45" fill="#d4af37"/>
+            </g>
+            <!-- Month 11 -->
+            <g>
+              <rect x="420" y="184" width="26" height="36" fill="#a7f3d0"/>
+              <rect x="420" y="157" width="26" height="27" fill="#bfdbfe"/>
+              <rect x="420" y="121" width="26" height="36" fill="#f1d27a"/>
+              <rect x="420" y="70" width="26" height="51" fill="#d4af37"/>
+            </g>
+            <!-- Month 12 -->
+            <g>
+              <rect x="456" y="184" width="26" height="36" fill="#a7f3d0"/>
+              <rect x="456" y="155.8" width="26" height="28.2" fill="#bfdbfe"/>
+              <rect x="456" y="113.8" width="26" height="42" fill="#f1d27a"/>
+              <rect x="456" y="59.8" width="26" height="54" fill="#d4af37"/>
+            </g>
+          </g>
+
+          <!-- x-axis labels -->
+          <g font-size="10" fill="#64748b" font-family="ui-sans-serif">
+            <text x="73"  y="234" text-anchor="middle">M1</text>
+            <text x="145" y="234" text-anchor="middle">M3</text>
+            <text x="253" y="234" text-anchor="middle">M6</text>
+            <text x="361" y="234" text-anchor="middle">M9</text>
+            <text x="469" y="234" text-anchor="middle">M12</text>
+          </g>
+
+          <!-- legend -->
+          <g font-size="10" font-family="ui-sans-serif" fill="#0f172a">
+            <rect x="60"  y="252" width="10" height="10" fill="#d4af37"/><text x="74"  y="261">AI Consulting</text>
+            <rect x="180" y="252" width="10" height="10" fill="#f1d27a"/><text x="194" y="261">Renée Brand</text>
+            <rect x="290" y="252" width="10" height="10" fill="#bfdbfe"/><text x="304" y="261">Faceless</text>
+            <rect x="370" y="252" width="10" height="10" fill="#a7f3d0"/><text x="384" y="261">Mortgage</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- RIGHT: 4 KPI tiles -->
+    <div class="col-span-12 md:col-span-5">
+      <div class="grid grid-cols-2 gap-3">
+        <div class="rounded-2xl p-4" style="background:#dcfce7; border:1px solid #86efac">
+          <div class="text-xs font-bold tracking-wider" style="color:#166534">BREAKEVEN</div>
+          <div class="text-3xl font-extrabold mt-1" style="color:#14532d">Month 1</div>
+          <div class="text-xs mt-1" style="color:#166534">Mortgage covers all current ops costs from day one.</div>
+        </div>
+        <div class="rounded-2xl p-4" style="background:#fef3c7; border:1px solid #fde047">
+          <div class="text-xs font-bold tracking-wider" style="color:#92400e">$25K MRR</div>
+          <div class="text-3xl font-extrabold mt-1" style="color:#78350f">Month 5–6</div>
+          <div class="text-xs mt-1" style="color:#92400e">Halfway to goal. First "good month."</div>
+        </div>
+        <div class="rounded-2xl p-4" style="background:#fee2e2; border:1px solid #fca5a5">
+          <div class="text-xs font-bold tracking-wider" style="color:#991b1b">$50K MRR</div>
+          <div class="text-3xl font-extrabold mt-1" style="color:#7f1d1d">Month 11–12</div>
+          <div class="text-xs mt-1" style="color:#991b1b">Goal hit. Realistic, not best-case.</div>
+        </div>
+        <div class="rounded-2xl p-4" style="background:#e0e7ff; border:1px solid #a5b4fc">
+          <div class="text-xs font-bold tracking-wider" style="color:#3730a3">PEAK BURN</div>
+          <div class="text-3xl font-extrabold mt-1" style="color:#312e81">~$10K/mo</div>
+          <div class="text-xs mt-1" style="color:#3730a3">At full ramp. ~80% gross margin at $50K.</div>
+        </div>
+      </div>
+
+      <div class="rounded-2xl p-4 mt-3" style="background:#0b1a36; color:#f1f5f9">
+        <div class="text-xs font-bold tracking-wider" style="color:#f1d27a">PRICING SNAPSHOT</div>
+        <div class="grid grid-cols-2 gap-x-3 gap-y-1 mt-2 text-sm">
+          <div>AI Consulting</div><div class="text-right num">$3K + $250–$500</div>
+          <div>· GHL build tier</div><div class="text-right num">$7.5K + $750</div>
+          <div>· SaaS sub</div><div class="text-right num">$97/mo</div>
+          <div>· Minute markup</div><div class="text-right num">$0.03/min</div>
+          <div>Renée Brand</div><div class="text-right num">$47 / $97</div>
+          <div>Faceless</div><div class="text-right num">$47/mo</div>
+          <div>Mortgage</div><div class="text-right num">$4K / deal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PAGE 3 — KILL CRITERIA ========================= -->
+<section class="page">
+  <div class="pagetag">Page 3 of 4 · Aaron's Escape Valves</div>
+
+  <div class="eyebrow">When we walk away</div>
+  <h2 class="h-title text-4xl md:text-5xl mt-1">Kill criteria. <span style="color:#dc2626">Hard dates, hard numbers.</span></h2>
+  <p class="mt-2 text-slate-600 max-w-3xl">Four checkpoints. If we miss the number, we cut — not "give it more time." Aaron gets a clean exit at every gate.</p>
+
+  <!-- 4 gates as horizontal cards -->
+  <div class="grid grid-cols-4 gap-3 mt-7">
+    <div class="rounded-2xl p-4 text-center" style="background:#dcfce7; border:2px solid #16a34a">
+      <div class="text-xs font-bold tracking-wider" style="color:#166534">GATE 1</div>
+      <div class="text-2xl font-extrabold mt-1" style="color:#14532d">Month 3</div>
+      <div class="mt-3 text-sm" style="color:#14532d">
+        <b>Easy Deploy MVP shipped</b><br/>+ 1 paid AI consulting client<br/>+ 50 faceless beta users
+      </div>
+      <div class="mt-3 text-xs px-2 py-1 rounded-full inline-block" style="background:#fee2e2; color:#991b1b; font-weight:700">If miss → pause faceless</div>
+    </div>
+
+    <div class="rounded-2xl p-4 text-center" style="background:#fef9c3; border:2px solid #eab308">
+      <div class="text-xs font-bold tracking-wider" style="color:#854d0e">GATE 2</div>
+      <div class="text-2xl font-extrabold mt-1" style="color:#713f12">Month 6</div>
+      <div class="mt-3 text-sm" style="color:#713f12">
+        <b>$20K total monthly</b><br/>(mortgage + MRR)<br/>5 paying consulting clients
+      </div>
+      <div class="mt-3 text-xs px-2 py-1 rounded-full inline-block" style="background:#fee2e2; color:#991b1b; font-weight:700">If miss → kill 1 product</div>
+    </div>
+
+    <div class="rounded-2xl p-4 text-center" style="background:#fed7aa; border:2px solid #f97316">
+      <div class="text-xs font-bold tracking-wider" style="color:#9a3412">GATE 3</div>
+      <div class="text-2xl font-extrabold mt-1" style="color:#7c2d12">Month 9</div>
+      <div class="mt-3 text-sm" style="color:#7c2d12">
+        <b>$35K total monthly</b><br/>20 SaaS subs<br/>100 Renée brand subs
+      </div>
+      <div class="mt-3 text-xs px-2 py-1 rounded-full inline-block" style="background:#fee2e2; color:#991b1b; font-weight:700">If miss → narrow to top 2</div>
+    </div>
+
+    <div class="rounded-2xl p-4 text-center" style="background:#fee2e2; border:2px solid #ef4444">
+      <div class="text-xs font-bold tracking-wider" style="color:#991b1b">GATE 4</div>
+      <div class="text-2xl font-extrabold mt-1" style="color:#7f1d1d">Month 12</div>
+      <div class="mt-3 text-sm" style="color:#7f1d1d">
+        <b>$50K total monthly</b><br/>Sustained 3 months<br/>OR clear path to it
+      </div>
+      <div class="mt-3 text-xs px-2 py-1 rounded-full inline-block" style="background:#fee2e2; color:#991b1b; font-weight:700">If miss → wind down to mortgage only</div>
+    </div>
+  </div>
+
+  <!-- Why it's been slow -->
+  <div class="mt-7 grid grid-cols-2 gap-4">
+    <div class="rounded-2xl p-4" style="background:#fef2f2; border:1px solid #fecaca">
+      <div class="text-xs font-bold tracking-wider" style="color:#991b1b">WHY IT'S BEEN SLOW (the honest version)</div>
+      <ul class="mt-2 text-sm space-y-1 text-slate-800">
+        <li>• Tools didn't talk to each other (Claude Code ⇄ Console)</li>
+        <li>• Built first, sold later — no client funded the build</li>
+        <li>• Four ideas running in parallel, none finished</li>
+        <li>• No kill switches — everything dragged on</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl p-4" style="background:#ecfdf5; border:1px solid #a7f3d0">
+      <div class="text-xs font-bold tracking-wider" style="color:#166534">WHAT'S CHANGING</div>
+      <ul class="mt-2 text-sm space-y-1 text-slate-800">
+        <li>• One shared brain — <code>ghl-brain</code> vault Code + Console both read</li>
+        <li>• Sell while building — pitch consulting <i>now</i></li>
+        <li>• One product per quarter gets the push</li>
+        <li>• These gates (above) enforce the discipline</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PAGE 4 — HURDLES + ASK ========================= -->
+<section class="page dark">
+  <div class="pagetag">Page 4 of 4 · The Ask</div>
+
+  <div class="eyebrow">What's in our way · What we need from you</div>
+  <h2 class="h-title text-4xl md:text-5xl mt-1">Three hurdles. <span class="gold">Three asks.</span></h2>
+
+  <!-- Hurdles as bubbles -->
+  <div class="mt-7 grid grid-cols-3 gap-4">
+    <div class="rounded-2xl p-5 text-center" style="background:#451a03; border:2px solid #f59e0b">
+      <div class="mx-auto mb-3 rounded-full flex items-center justify-center" style="width:70px; height:70px; background:#f59e0b; color:#451a03; font-weight:800; font-size: 20px;">$$</div>
+      <div class="text-sm font-bold tracking-wider" style="color:#fde68a">HURDLE 1 · AD SPEND</div>
+      <div class="mt-2 text-sm muted">Mortgage + Faceless need paid ads. ~$2–5K/mo at full ramp. Aaron owns the budget cap and kills losing creatives fast.</div>
+    </div>
+    <div class="rounded-2xl p-5 text-center" style="background:#451a03; border:2px solid #f59e0b">
+      <div class="mx-auto mb-3 rounded-full flex items-center justify-center" style="width:70px; height:70px; background:#f59e0b; color:#451a03; font-weight:800; font-size: 18px;">?¢</div>
+      <div class="text-sm font-bold tracking-wider" style="color:#fde68a">HURDLE 2 · SUPPORT PRICING</div>
+      <div class="mt-2 text-sm muted">$197 support on a $97 SaaS sub is 2× the base. Will scare customers. <b>Decide before launch:</b> bundle basic free, or reprice to $47/$147.</div>
+    </div>
+    <div class="rounded-2xl p-5 text-center" style="background:#451a03; border:2px solid #f59e0b">
+      <div class="mx-auto mb-3 rounded-full flex items-center justify-center" style="width:70px; height:70px; background:#f59e0b; color:#451a03; font-weight:800; font-size: 18px;">📣</div>
+      <div class="text-sm font-bold tracking-wider" style="color:#fde68a">HURDLE 3 · SELL > BUILD</div>
+      <div class="mt-2 text-sm muted">We have built more than we've sold. Renée needs Aaron (or a setter) on the phones. Building without a paying client is the trap that killed us so far.</div>
+    </div>
+  </div>
+
+  <!-- The Ask -->
+  <div class="mt-8">
+    <div class="eyebrow" style="color:#f1d27a">The Ask · 3 decisions before next Monday</div>
+    <div class="grid grid-cols-3 gap-4 mt-3">
+      <div class="rounded-2xl p-4" style="background:#0e1b3a; border:1px solid #d4af37">
+        <div class="font-bold text-lg gold">1 · Commit to the gates</div>
+        <div class="mt-1 text-sm muted">Page 3 gates become law. If we miss, we cut without negotiation.</div>
+      </div>
+      <div class="rounded-2xl p-4" style="background:#0e1b3a; border:1px solid #d4af37">
+        <div class="font-bold text-lg gold">2 · Approve $3K ad budget</div>
+        <div class="mt-1 text-sm muted">Mortgage ads start Month 1 ($1K). Faceless ads Month 2 ($2K). Hard caps, Aaron owns it.</div>
+      </div>
+      <div class="rounded-2xl p-4" style="background:#0e1b3a; border:1px solid #d4af37">
+        <div class="font-bold text-lg gold">3 · Pick support tier pricing</div>
+        <div class="mt-1 text-sm muted">Bundle basic free? Reprice $47/$147? Or keep $197/$497 and accept low attach rate.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom line strip -->
+  <div class="mt-8 rounded-2xl p-5" style="background:linear-gradient(90deg,#d4af37,#f1d27a); color:#0b1a36">
+    <div class="flex items-center justify-between flex-wrap gap-3">
+      <div>
+        <div class="text-xs font-extrabold tracking-widest">BOTTOM LINE</div>
+        <div class="text-lg font-bold mt-1">$50K MRR by Month 12 is realistic — but only if we stop building in parallel and start finishing one thing at a time.</div>
+      </div>
+      <div class="text-right">
+        <div class="text-xs font-bold tracking-widest">PROFITABLE FROM</div>
+        <div class="text-2xl font-extrabold">Month 1</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
