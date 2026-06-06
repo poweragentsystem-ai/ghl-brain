@@ -184,3 +184,20 @@ Why: Workflow AI sees the entire workflow at once, so it updates every custom co
 How: open the workflow -> click Workflow AI -> say plainly what the customs should become, e.g. "Update all of the custom values/fields used in this workflow to [the new values/structure]." Let it apply them all. Then verify with the describe technique + MCP counts.
 
 This is the companion to the DESCRIBE rule above: Workflow AI DESCRIBES the workflow so you understand it -> Workflow AI UPDATES the customs so the change is correct and complete. Two reflexes, same principle: the Workflow AI is the specialist inside a workflow; let it do the work.
+
+---
+
+## STANDARD: ask Workflow AI to LIST all tags + customs in a workflow for review (Renee 2026-06-05)
+
+When reviewing a workflow, ask the Workflow AI (Build-with-AI inside it) to LIST every tag and every custom value/field used anywhere in that workflow. Review the single list it produces instead of opening each action/automation one at a time.
+
+Why: opening every action by hand to see what tags/customs it touches is slow and easy to miss. Workflow AI reads the whole workflow and gives you the complete list at once.
+
+How: open the workflow -> Workflow AI -> "List all tags and all custom values/fields used in this workflow." Use that list to review/audit.
+
+## THE THREE WORKFLOW-AI REFLEXES (use the AI, never do it piecemeal)
+Inside any workflow, the Workflow AI is the specialist. Three standard reflexes, all 2026-06-05:
+1. DESCRIBE — ask it to describe the whole workflow in detail before you touch anything.
+2. LIST — ask it to list all tags + customs in the workflow so you can review in one place.
+3. UPDATE — ask it to update all the customs at once; never update them one-by-one on your own.
+If the AI (or Console, or Claude) starts editing/inspecting things one at a time manually, stop and route the whole job to Workflow AI.
