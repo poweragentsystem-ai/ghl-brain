@@ -12,6 +12,19 @@ metadata:
 
 # GHL AI Is the Senior Expert — Operational Protocol
 
+## ⛔ READ FIRST — THE #1 RULE CONSOLE KEEPS FORGETTING: NEVER HARDCODE INFO IN A WORKFLOW
+
+This snapshot is GENERIC. We sell it to OTHER mortgage professionals. The mortgage account is only the TEST environment. So BEFORE typing ANY value into a workflow, agent prompt, tag, template, email, SMS, opportunity stage, or field — STOP and ask: "Would this still be correct for a DIFFERENT mortgage pro who installs this snapshot?"
+
+If the value names a specific person, brokerage, lender, rate, phone, email, license number, city, or a count of anything — it MUST be a `{{custom_values.X}}` placeholder, NOT the real value. Empty custom values render empty and degrade gracefully; hardcoded values break every other business that installs this.
+
+**When you ask Workflow AI / GHL AI to build or update, TELL IT EVERY TIME:** "This is a generic snapshot sold to other businesses — use `{{custom_values.X}}` for anything business-specific, never hardcode real info." The AI will hardcode by default unless you say this.
+
+**If Console (or anyone, including the GHL AI) suggests putting Renée's real info into a workflow — that is WRONG.** It is the #1 recurring mistake. The correct response is: "No — that's a custom value, not a hardcoded value." This rule is non-negotiable: CLAUDE.md critical rule #9 + `feedback_hardcode_prevention_rule` + `feedback_anyone_use_test`. Banned niche words in any deployable artifact: mortgage / lender / refi / HELOC / loan / [any niche] → use `{{custom_values.niche}}`.
+
+---
+
+
 > Bible rule. Applies to every GHL task, every instance, every project. Renée 2026-05-30.
 
 ## ⚠️ CRITICAL — THREE DIFFERENT GHL AIs (Renée 2026-05-30)
