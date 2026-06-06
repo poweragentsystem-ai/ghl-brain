@@ -172,3 +172,15 @@ Why: the AI reads the actual live config, so its description is the source of tr
 How: open the workflow → click Workflow AI → ask: "Describe this workflow in detail — every trigger, action, condition and branch, and what a contact experiences going through it." Read that back before making any change. Same technique works on AI Agents ("explain this agent") and forms.
 
 This pairs with DUPLICATE-FIRST (clone before editing) and the GHL-AI build→Console-review loop: understand (Workflow AI describes) → plan → build (GHL AI) → verify (describe again + MCP counts).
+
+---
+
+## STANDARD: inside a workflow, ask Workflow AI to UPDATE the customs — never piecemeal on its own (Renee 2026-06-05)
+
+When custom values or custom fields need updating while a workflow is open, the STANDARD is to ASK the Workflow AI (the Build-with-AI button inside that workflow) to update ALL of the customs in one request. Do NOT have the GHL AI, Console, or Claude update customs one at a time on their own.
+
+Why: Workflow AI sees the entire workflow at once, so it updates every custom correctly and together. Manual, one-by-one editing is slower, misses references, and is exactly what Renee does not want. If the AI starts trying to update things itself, stop it and route the whole update to Workflow AI instead.
+
+How: open the workflow -> click Workflow AI -> say plainly what the customs should become, e.g. "Update all of the custom values/fields used in this workflow to [the new values/structure]." Let it apply them all. Then verify with the describe technique + MCP counts.
+
+This is the companion to the DESCRIBE rule above: Workflow AI DESCRIBES the workflow so you understand it -> Workflow AI UPDATES the customs so the change is correct and complete. Two reflexes, same principle: the Workflow AI is the specialist inside a workflow; let it do the work.
