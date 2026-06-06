@@ -1,0 +1,305 @@
+# Cross-Claude Task Bus — Protocol
+
+**Status:** LIVE as of 2026-04-24
+**Endpoint:** `https://xpert-command-center.vercel.app/api/console-queue`
+**Purpose:** Eliminate the Renée-as-middleman copy-paste loop between Claude Code and Console.
+
+---
+
+## ⛔ MANDATORY BRAIN UPDATE PROTOCOL (Claude Code · Console · Mobile · Runners)
+
+**Rule established 2026-05-13.** Every Claude instance that creates or significantly updates any of these artifacts MUST add brain-graph tags BEFORE finishing the task:
+
+| When you create/update... | You MUST add... |
+|---|---|
+| Command Center project (POST `/api/projects`) | `relatesTo` block with 7+ dimensions (see process doc) |
+| Memory rule (`/memory/*.md`) | Frontmatter `tags` array + `related_to` |
+| Skill file (`/XpertVault/06-skills/*/skill.md`) | Frontmatter `tags` + `related_to` |
+| Agent file (`/XpertVault/04-agents/*/skill.md`) | Frontmatter `tags` + `related_to` |
+| Process file (`/XpertVault/00-rules/process/*.md`) | Tags + cross-references at the top |
+| Substantive edit to Renée's profile | Re-validate the `relatesTo` block at top |
+
+**Why:** The brain knowledge graph at `/api/brain-graph` (when live) aggregates from tagged artifacts. Untagged = orphan = invisible in the graph. Tagging is what makes infinite memory work — pre-built links beat re-derivation.
+
+**Full spec:** `/XpertVault/00-rules/process/brain-graph-maintenance.md`
+
+**Cross-instance note:**
+- Claude Code: enforced automatically by the visual-project-tracking + bidirectional-graph memory rules
+- **Console: Renée's task-bus prompts must include the footer: "If you created any project/memory rule/skill/agent file, tag it per `/00-rules/process/brain-graph-maintenance.md` before finishing."**
+- Mobile: same rule, manual when creating from a phone session
+- Future autonomous runners (`/api/claude-runner`): tagging is part of the work definition
+
+**Renée's central node:** Her profile (`/01-renee/profile.md`) is the largest node by definition. Never overwrite its `relatesTo` block — only ADD to it as new dimensions emerge.
+
+---
+
+**Persistence:** Upstash Redis via Vercel Marketplace. If env vars `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` are NOT set, bus falls back to in-memory (lost on cold start). Enable at Vercel → xpert-command-center → Storage tab → Create Database → Upstash Redis.
+
+---
+
+## How it works
+
+1. **Claude Code** pushes tasks to the queue via POST.
+2. **Console** (browser Claude inside GHL) pulls pending tasks via GET at session start.
+3. Console executes each task, then PATCHes back with status `done` or `failed` + result payload.
+4. Renée's Command Center shows a live "🔔 N tasks waiting for Console" pill; she opens Console, says "sync queue," Console drains it autonomously.
+
+---
+
+## Endpoint reference
+
+### `GET /api/console-queue`
+Lists **pending** tasks by default.
+
+Optional: `?status=all | done | failed | pending`.
+
+Returns `{ count, pending, done, failed, tasks: [...] }`.
+
+### `POST /api/console-queue`
+Push a new task.
+
+Body:
+```json
+{
+  "from": "claude-code",
+  "task": "Short human-readable instruction",
+  "priority": "low | normal | high | urgent",
+  "context": { "anyKey": "anyValue — optional metadata, IDs, previous results" }
+}
+```
+
+Returns the created task with `id`.
+
+### `PATCH /api/console-queue`
+Update task status after execution.
+
+Body:
+```json
+{
+  "id": "t_xxxxx",
+  "status": "done | failed | in_progress",
+  "result": "free-text summary of what happened or error",
+  "by": "console"
+}
+```
+
+---
+
+## Console session-start protocol — CLAIM-FIRST (concurrency-safe)
+
+At the beginning of every Console session, paste this into Console's system prompt:
+
+```
+You are connected to the cross-Claude task bus. You may be one of several Console tabs
+running in parallel. To avoid duplicate work:
+
+AT SESSION START + BETWEEN TASKS:
+
+1. Pick your worker ID: use "console-{random 4 chars}" so parallel tabs are distinct.
+
+2. Claim the next task atomically:
+   POST https://xpert-command-center.vercel.app/api/console-queue
+   Body: {"claim": true, "claimedBy": "<your worker id>"}
+   
+   Response is either:
+   - {"ok":true, "task": {...}, "lease_expires_at": "..."} → you own it for 15 minutes
+   - {"ok":true, "task": null, "reason": "no pending tasks"} → queue is empty, stop
+
+3. You now own the task. Read `task` + `context`.
+
+**🚀 FIRST MOVE FOR ANY GHL TASK — AUDIT *OR* ACTION: USE THE GHL AI AGENT.**
+
+⚠️ **CRITICAL — USE THE RIGHT BUTTON:**
+- ✅ **AI Agent → Get Started** button (in the AI Agent menu) — account-aware, knows everything, can take real CRM actions
+- ❌ **Ask AI** button (top-right of screen) — NOT account-aware, generic, waste of time. Skip.
+
+The GHL AI Agent does TWO things:
+
+**A. AUDITS / DIAGNOSES** — workflows status, drafts vs published, broken triggers, per-source coverage gaps, "is X working?", QA verification.
+
+**B. EXECUTES REAL CRM ACTIONS** (with approval gate before each action):
+- Contacts CRUD + tags + notes + tasks
+- Opportunities + pipeline stage moves
+- Calendars + appointments + slot blocking
+- Conversations — send SMS, send email
+- Invoices + payments
+- Social media post scheduling
+- AI image generation (branded)
+- Users CRUD
+- Funnels/forms review
+
+**It CANNOT directly edit:** workflow step internals OR AI Agent Studio prompt internals. For those it walks-through (still faster than full Console manual click-through).
+
+**The new Console routing rule:**
+
+For any GHL task you receive:
+
+1. Can the **GHL AI Agent → Get Started** do this? If yes → use it. Tell it the task in plain English. Approve each action when prompted. Done.
+2. Can it ONLY guide you (workflow internals)? Then you do the manual edit while the AI Agent guides — still faster than walking it solo.
+3. Manual UI work without AI guidance is now the LAST resort.
+
+**How to use:**
+
+1. Click **AI Agent** in the left menu → click **Get Started**
+2. When it asks what you need help with, click **"Something else"**
+3. Type the request in plain English — be specific:
+   - Audits: "are our new lead workflows wired correctly? does every source get a welcome email + SMS, then application nudges, then booking detection?"
+   - Actions: "tag every contact who hasn't booked their meeting yet with 'follow-up-needed' and add a task for me to call them"
+   - QA: "did the workflow '01 - New Lead Entry — 24/7 Welcome (All Sources)' get published correctly?"
+4. Approve each action it proposes
+5. PATCH the AI Agent's response back as a checkpoint so the next worker has the trail
+
+**Why this matters:**
+
+A task like "tag all contacts who didn't book and send them a follow-up SMS" used to be: 30 min of Console manual clicking through Smart Lists + bulk tagging + opening each contact + drafting SMS. Now: 60 seconds of "Hey AI Agent, do X." Done.
+
+Renée discovered + clarified this 2026-04-25. Verbatim quality is excellent. Manual UI work should only happen for things explicitly in the "cannot directly edit" list above.
+
+**HARD RULES FOR ALL GHL CONTENT YOU TOUCH:**
+
+**A. NEVER hardcode personal info — AND fix it on sight even outside task scope.**
+
+While working on ANY task, if you SEE hardcoded personal/company info anywhere (workflow name, email body, SMS, agent prompt, internal notification, custom value), fix it ON THE SPOT before continuing. Don't wait for a dedicated sweep task. Don't flag for later. Fix the moment you see it. This is the "leave it cleaner than you found it" rule. Note any boy-scout fixes in your PATCH so Renée knows what you cleaned beyond the task scope.
+
+Every name, company, phone, email, license number, city — must be a `{{custom_values.*}}` token, never literal text. Search-and-replace before saving:
+
+| Never write | Use this instead |
+|---|---|
+| Renée | `{{custom_values.user_first_name}}` |
+| Renée Ross | `{{custom_values.user_full_name}}` |
+| EquityMax | `{{custom_values.company_name}}` |
+| Ontario Lending Solutions | `{{custom_values.brokerage_name}}` |
+| 13063 | `{{custom_values.brokerage_license_number}}` |
+| Mortgage Agent Level 2 | `{{custom_values.agent_license_level}}` |
+| 4168784622 | `{{custom_values.user_phone}}` |
+| renee.ross@gmail.com | `{{custom_values.business_email}}` |
+| equitymax.ca | `{{custom_values.website}}` |
+| **mortgage / mortgage options / mortgage services** (when the word names the NICHE/INDUSTRY in customer-facing content) | `{{custom_values.niche}}` (or `{{custom_values.niche}} options`, etc.) |
+
+**The niche rule trips Console up.** Even within the EquityMax sub (where the niche IS mortgage), the template gets cloned for other operators who may use different niche words. Examples:
+- Wrong: "We help with mortgage options"
+- Right: "We help with `{{custom_values.niche}}` options"
+
+EXCEPTIONS — keep literal:
+- Mortgage product names: "refinance", "HELOC", "purchase", "renewal", "private mortgage" — those are PRODUCTS within the niche, not the niche itself
+- FSRA / mortgage-regulator-specific compliance language (only lives in mortgage subs anyway)
+
+Rule of thumb: word answers "what industry?" → token it. Word answers "what product?" → leave literal.
+
+This applies to: workflow NAMES, email subject + body, SMS body, voice greetings, AI agent prompts, internal notification emails, calendar templates, form titles, ALL of it. EquityMax + ABC are TEMPLATES — they get cloned for other operators. Every "Renée" or "EquityMax" is a bug that ships to a paying customer.
+
+**B. DISPLAY THE PLAN IN PLAIN ENGLISH BEFORE EXECUTING ANY BROWSER ACTION:**
+   
+   "Claimed task <id> priority <urgent|high|normal|low>: <one-line restatement>.
+    My plan: [step 1], [step 2], [step 3]. Proceeding."
+   
+   Renée wants visibility into what you're about to do before you do it. If the plan is wrong she can interrupt. No silent execution — announce every task's plan first, then execute.
+
+4. CHECKPOINT DISCIPLINE — every 15-20 min OR after every meaningful sub-step, PATCH a checkpoint with state:
+   PATCH /api/console-queue
+   Body: {
+     "id": "<task id>",
+     "status": "in_progress",
+     "result": "CHECKPOINT @ <time>: ✅ done [list], 🔄 doing [thing], 📋 next [list], ⚠️ blockers/notes",
+     "by": "<your worker id>"
+   }
+   This extends your lease another 15 min AND saves state. If you crash, next
+   worker reads the checkpoint + resumes. No lost context.
+
+   PROACTIVE BURNOUT WARNING — when you sense you may be near Claude.ai limit
+   (long session, many actions, complex task), PATCH a final checkpoint with
+   "result": "BURNOUT WARNING — last 5 min would have done [X, Y, Z]. Resume
+   point: [exact step]". Renée gets a Telegram alert when this fires.
+
+5. On completion:
+   PATCH /api/console-queue
+   Body: {"id": "<task id>", "status": "done", "result": "<summary of what happened>", "by": "<your worker id>"}
+
+6. On failure:
+   PATCH /api/console-queue
+   Body: {"id": "<task id>", "status": "failed", "result": "<error + what you tried>", "by": "<your worker id>"}
+
+7. Loop back to step 2 until the claim endpoint returns task:null.
+
+8. When drained, report to Renée: "✅ Executed N tasks from Claude Code. M failed."
+
+CONCURRENCY GUARANTEES:
+- Two Console tabs will NEVER get the same task — claim is atomic.
+- If a Console tab crashes mid-work, its task auto-releases after 15 min of silence.
+- If Renée has 3 Console windows open, they'll process tasks in parallel with no collisions.
+- Priority order: urgent → high → normal → low, FIFO within each priority.
+
+NEVER:
+- PATCH a task you don't own (status "in_progress" with a different claimedBy will 409).
+- Skip the claim step and just modify a task directly.
+- Leave a task as "in_progress" forever — heartbeat every 10 min or it'll be reassigned.
+```
+
+## Claude Code push protocol
+
+When Claude Code needs something Console-only (browser, GHL AI Agent Studio, workflow edits inside GHL UI):
+
+```bash
+curl -X POST https://xpert-command-center.vercel.app/api/console-queue \
+  -H "Content-Type: application/json" \
+  -d '{
+    "from": "claude-code",
+    "task": "Rename the 2 draft killswitches in ABC to Master Voice AI Shut Off / Turn On. IDs in context.",
+    "priority": "high",
+    "context": {
+      "sub": "ABC",
+      "location_id": "AKbAtRra4m908e2w2Kbo",
+      "workflow_ids": ["c7584001-a2da-4675-af3f-9a42a0d3a9aa", "6b2a4c17-8893-4111-9db2-fe0cbbe2cccd"],
+      "new_names": ["Master Voice AI Shut Off", "Master Voice AI Turn On"]
+    }
+  }'
+```
+
+---
+
+## Priorities
+
+| Priority | Meaning | Console behavior |
+|---|---|---|
+| `urgent` | Blocker for Renée right now | Stop whatever Console is doing, handle first |
+| `high` | Time-sensitive, same-session | Handle before session ends |
+| `normal` | Standard queued work | Handle in order received |
+| `low` | Nice-to-have, can wait | Handle when idle |
+
+---
+
+## Notification surface (Command Center)
+
+The Command Center dashboard (xpert-command-center.vercel.app) will display:
+- A pill showing pending task count (updates via GET /api/console-queue every 60s)
+- Color: green = 0 pending, amber = 1-5, red = 6+ or any urgent
+- Click → opens task detail modal
+
+---
+
+## What goes on the bus (decision tree)
+
+**Put on bus:** Anything that requires Console's GHL-inside-browser actions — AI Agent Studio prompt edits, workflow step body edits, manual form UI work, anything that GHL public API can't do (form deletes, workflow deletes, AI agent edits).
+
+**Don't put on bus:** Anything Claude Code can do via API directly — CV/CF/tag CRUD, contact upsert, conversation send, snapshot-file downloads. If API works, use API.
+
+---
+
+## Failure handling
+
+If Console PATCHes a task with `status: failed`, Claude Code:
+1. Reads the error in `result`
+2. Retries with adjusted instruction if recoverable
+3. If not recoverable, surfaces to Renée with context
+
+---
+
+## Inspection
+
+To see the current queue state at any moment:
+- `https://xpert-command-center.vercel.app/api/console-queue?status=all` — full history
+- `https://xpert-command-center.vercel.app/api/console-queue` — pending only
+
+---
+
+**Related:** `operating-system/cross-claude-inbox.md` (passive notes channel via intel.html — kept for ad-hoc CLAUDE-NOTE drops, different use case)

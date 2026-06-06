@@ -665,3 +665,12 @@ Before starting any task:
 
 *This file lives at: C:\Users\User\Documents\XpertVault\operating-system\claude-project-brief-ghl.md*
 *Keep this file updated as tracks are completed and decisions are made.*
+
+
+---
+
+## The Command Center (Renée's dashboard) — know this
+
+If Renée mentions "the Command Center," it is her private React dashboard at **https://xpert-command-center.vercel.app** (file command-center-v86-stitch.jsx, deployed on Vercel by Claude Code). It is NOT inside GHL and NOT customer-facing. It holds the Jordan (COO) orb chat, the live Tasks board via /api/brain, intel feed, reminders, agents, and revenue charts.
+
+**Anything to be built "in the Command Center" is a Claude Code task, NOT a Console task** — Console works inside GHL and cannot build the dashboard frontend (e.g. a Whisper voice mic on the orb chat). Full reference: 00-rules/command-center-reference.md

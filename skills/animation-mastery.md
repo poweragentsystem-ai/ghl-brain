@@ -157,6 +157,91 @@ import * as THREE from 'three'
 
 ---
 
+## APPROACH G — Premium Automated (motionsites.ai + Claude Design + Whisk Nano Banana + Veo)
+
+**When:** client wants $20k+ cinematic feel WITHOUT writing animations from scratch. Renée's preferred workflow as of 2026-04-28.
+
+**Cost:** motionsites.ai (free templates) + Claude Design (free / Pro) + Whisk (Google paid tier, Nano Banana + Veo).
+
+**Effort:** 90-180 min per site. Output is genuinely cinematic.
+
+### The 5-step recipe
+
+**Step 1 — Pick template at motionsites.ai**
+- Browse motionsites.ai for premium animated templates.
+- **Filter for FREE pages** (not all are free — pay attention).
+- Pick one matching the brand mood (dark premium, tech, agency, etc.).
+- Note the template's structural rhythm (hero → 3-step → comparison → CTA).
+
+**Step 2 — Claude Design + replace placeholder content**
+- Open Claude Design (claude.ai/design or via the design-mode chat).
+- "Start new project" with the chosen template as the starting point.
+- Paste the project brief (what the brand is, audience, goal, voice/tone, hero copy, sections).
+- Claude Design replaces placeholder content with the brand-specific content while preserving template animations + structure.
+
+**Step 3 — Generate animated hero video via Google Whisk**
+
+CORRECT Whisk UI flow (verified by Renée 2026-04-28):
+- Open Google Whisk (`labs.google/fx/tools/whisk`).
+- **Type a detailed text description** of the FIRST FRAME of the video (the still image Whisk should render). The more specific, the better:
+  - Subject + scene: *aerial view of a suburban town*
+  - Location + setting: *Toronto, Ontario*
+  - Time + lighting: *sunny mid-afternoon, soft golden hour just starting*
+  - Mood + style: *cinematic, photoreal, slight haze*
+  - Camera/lens: *wide angle, slight downward tilt, drone perspective*
+- Whisk renders the image (Nano Banana under the hood).
+- Two paths from here:
+  - **Click "Edit"** → refine the still image with another text description (color shift, add/remove element, adjust composition). Iterate until the still is right.
+  - **Click "Video"** → describe how you want the motion. Be specific:
+    - Camera move: *slow forward push, gentle drift right, subtle pan up*
+    - Subject motion: *trees sway slightly, light haze drifting, slow cloud movement*
+    - Speed: *real-time / slow-motion / time-lapse*
+    - Duration feel: *8-second loop that returns to start frame*
+- Whisk (Veo under the hood) renders the cinematic video.
+- Download the video file when ready.
+
+Reference inputs (optional but powerful):
+- Upload an existing image as a STYLE reference (Whisk pulls mood/lighting from it)
+- Upload a SUBJECT reference (Whisk uses it as the anchor identity in the generated frame)
+- Combine references for better consistency across multiple generations
+
+**Step 4 — Back to Claude Design — integrate the video**
+- Return to the Claude Design project.
+- Upload the downloaded Whisk video.
+- Instruction: "Replace the hero background with this video. Keep the same style. Finish the rest of the page in the same visual language."
+- Claude Design rewrites the hero section with the video as a fullscreen background-video element + appropriate overlay/dimming for text contrast. Then propagates the visual style (color palette pulled from the video, motion timing, type weight) through the rest of the page.
+
+**Step 5 — Export code + deploy**
+- Use Claude Design's "Export" or "Get code" feature.
+- Drop the exported HTML/React/Vite bundle into the project repo.
+- Verify the video file is hosted somewhere (Vercel public assets, Cloudflare R2, or self-hosted) — large MP4s should be served from a CDN, not bundled in JS.
+- Deploy to Vercel.
+- 3-layer test: code parses, user walkthrough, lead-journey end-to-end.
+
+### Why this beats hand-coding
+
+- Whisk + Veo produce video that looks photoreal — not synthetic 3D, not CSS-animated, real cinematic motion.
+- motionsites.ai templates already have the scroll/parallax/reveal rhythm baked in.
+- Claude Design preserves the template's animation choreography while injecting brand content — no fighting framer-motion timings manually.
+- Total time-to-cinematic-deploy: 2-3 hours vs days of hand-built animation.
+
+### Common pitfalls
+
+1. **Picking a paid motionsites template by accident** — filter for FREE first, otherwise export is locked.
+2. **Whisk video too long** — keep to 8s loop. Longer = slow page load.
+3. **Video file too large** — encode to H.264 + AAC, under 5MB. Use HandBrake or ffmpeg if needed.
+4. **No fallback poster image** — always set `poster="..."` on the `<video>` so slow connections see a still.
+5. **Skip the lead-journey QA** — same rule as every deploy. Layer 1 + 2 + 3 testing.
+
+### Renée's specific preferences (per project briefs)
+
+- **Brand tokens:** navy `#0A1628`, mid-navy `#132541`, gold `#C9A84C` / `#E8C97A` / `#F5E6C0`, muted text `#8FA3BF`.
+- **Type:** Space Grotesk for headlines (-0.02em tracking), Inter for body, generous vertical pad `clamp(60px, 8vw, 100px)`.
+- **Restraint over flash** — peachworlds-style high-contrast monochrome more than Apple-style aggressive parallax.
+- **Real video > 3D synthetic** — rule from Approach D applies. "Would a viewer think this was a real video?" Only "yes" ships.
+
+---
+
 ## APPROACH F — Framer Motion + CSS-only (premium but fast-ship)
 
 **When:** marketing page needs to feel polished but doesn't need 3D.

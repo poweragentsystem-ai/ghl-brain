@@ -298,3 +298,50 @@ NEXT SESSION STARTS WITH:
 4. Then snapshot export
 5. Then pricing (Stripe MCP)
 ---
+
+---
+DATE: 2026-05-06
+WHAT WE BUILT:
+- 4 new CLAUDE.md gates (Workaholic, Migration Discipline, Universal Pre-Flight, Verify-Live)
+- 11 new memory rules saved + synced to KV
+- Vault UI bug fix deployed (username field always visible)
+- CC Phase 1 deployed (Tasks actions + Agents clickable + projects-tasks join fix)
+- SKOOL__SCOTIA_ vault entry now has username christang11j@gmail.com
+- Vault reorganization plan LOCKED (19-folder structure, research-backed via MindStudio Agentic OS + PARA + Renée's specific asks)
+- Session-start brief addendum (every Claude surface reads same context)
+
+FILES CHANGED:
+- ~/.claude/CLAUDE.md (+4 gates)
+- ~/.claude/projects/C--Users-User/memory/MEMORY.md (+11 entries)
+- ~/.claude/projects/C--Users-User/memory/feedback_workaholic_gate_promoted.md (NEW)
+- ~/.claude/projects/C--Users-User/memory/feedback_migration_discipline_gate.md (NEW)
+- ~/.claude/projects/C--Users-User/memory/feedback_universal_preflight_gate.md (NEW)
+- ~/.claude/projects/C--Users-User/memory/feedback_verify_live_gate_promoted.md (NEW)
+- ~/.claude/projects/C--Users-User/memory/feedback_telegram_human_voice_only.md (NEW)
+- ~/.claude/projects/C--Users-User/memory/feedback_morning_brief_myclaw_format.md (NEW)
+- ~/.claude/projects/C--Users-User/memory/feedback_mcp_browser_lock_unrecoverable.md (NEW)
+- ~/.claude/projects/C--Users-User/memory/feedback_knowledge_provenance_track_source.md (NEW)
+- ~/.claude/projects/C--Users-User/memory/feedback_operator_lens_pressure_test.md (NEW)
+- ~/.claude/projects/C--Users-User/memory/feedback_snapshot_genericity_in_prompts.md (NEW)
+- ~/.claude/projects/C--Users-User/memory/feedback_playwright_first_for_trademark_gates.md (NEW)
+- ~/claude-skills/human-cognition.md (NEW)
+- ~/.claude/state/active-task.md (rewritten for next session)
+- C:/Users/User/Documents/XpertVault/sprint/vault-migration-plan-2026-05-06.md (NEW — the plan)
+- C:/Users/User/Documents/XpertVault/projects/assistlet-name-trademark/README.md + assistlet-findings.html + assistlet-findings.pdf (NEW)
+- xpert-command-center/src/command-center-v86-stitch.jsx (TasksPage actions + AgentsPage modal + tasksForProject fuzzy join + vault username field always visible)
+- KV vault:cred:SKOOL__SCOTIA_ + vault:meta:SKOOL__SCOTIA_ updated with username
+
+DECISIONS MADE:
+- Brand name: Assistlet AI on assistlet.ai (.com is held by ABT Solutions UK, micro-entity, accepted-risk per Renée CEO call). USPTO + CIPO clear. Domain not yet purchased.
+- Vault structure: 19 top-level folders combining MindStudio Agentic OS pattern + PARA method + Renée's specific list (rules, renee, jordan, business, agents, tools-systems, skills-as-folders, projects, areas, resources, self-correction, learning, daily, intel, outputs, proactive, media, legal-compliance, archive)
+- Migration runs autonomously next session — no per-step approval required, standard safety nets apply
+- Skool bootcamp consumption deferred to after Claude Code restart (Playwright wedge unrecoverable in this session)
+
+NEXT SESSION STARTS WITH:
+1. Read this session-log entry
+2. Read C:/Users/User/Documents/XpertVault/sprint/vault-migration-plan-2026-05-06.md
+3. Execute the migration step-by-step (snapshot → dedupe memory folders → migrate folder by folder smallest first → update path references → verify → rollback if needed)
+4. After migration: consume AI Video Bootcamp via Playwright with christang11j@gmail.com / Workwork123!
+5. After bootcamp: Morning brief MyClaw rebuild
+6. After brief: CC Phase 2 (Marketing pipeline + design review + ad A/B testing)
+---
