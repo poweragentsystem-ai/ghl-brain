@@ -1,0 +1,259 @@
+# Memory Index
+
+- [Design-review gate — UI/visual builds MUST pass through Allan + swipe file before "done" (2026-07-03)](feedback_design_review_gate_programmed.md) — Stop hook `design-review-check.js` blocks any page/funnel/palette build lacking a 🎨 review marker. Programmed after shipping un-researched funnel colors. Tested.
+- [Allan (Creative) ICM workspace + LOCKED visual quality bar (2026-07-03)](project_allan_creative_icm_workspace.md) — Design refs now have a systematic home (extends ICM
+- [Scroll-scrub keyframe→video→frames pipeline (Skool course technique) — hyperrealistic cinematic scroll sites (2026-07-02)](project_scroll_scrub_keyframe_pipeline.md) — Generate hyperreal START+END frames → AI video
+- [STOP saying "want me to…" — execute as an expert, research to expert level, don't ask permission (2026-07-02)](feedback_stop_asking_execute_as_expert.md) — Renée: "you are asking a toddler to drive." Obvious
+- [Intel auto-check at session start — new drops surface before Renée asks (2026-07-03)](reference_intel_check_hook.md) — `~/.claude/hooks/intel-check.js` (SessionStart
+- [Real-time session capture hook — messages + URLs saved live, not at session end (2026-07-02)](reference_realtime_capture_hook.md) — `~/.claude/hooks/capture-session.js`
+- [Design swipe file — every sample Renée sends gets torn down + reused (2026-07-02)](project_design_swipe_file.md) — Root-cause fix: her design samples were never
+
+> Auto-loaded each session. ONE short line per memory; full detail lives in each linked file. Pointers → [MEMORY-REFERENCES.md](MEMORY-REFERENCES.md). Backup: MEMORY.md.backup-2026-06-05. KEEP UNDER ~38KB — add new memories as ONE line (<200 chars); trim oldest descriptions if it grows, never delete a memory file.
+
+- [GHL: API does DATA, browser does BUILD — classify the task first (2026-06-13)](reference_ghl_api_vs_browser.md) — API = read/write contacts/messages/fields/tags +
+- [Pair FACTS with my OPINION — never dump raw data alone (2026-06-13)](feedback_pair_facts_with_opinion.md) — Fact (labelled source) → my read ("in my opinion…"
+- [Be honest about how sure I am — state confidence, flag the risky part (2026-06-13)](feedback_state_confidence_on_claims.md) — On any load-bearing claim/result/recommendation: "✅
+- [VERIFY GHL in the product, never assert its features from memory — Renée isn't my fact-checker (2026-06-14)](feedback_verify_ghl_in_product_not_from_memory.md) — I wrongly said GHL has no web voice orb (it does) +
+- [NEVER call/text a lead after hours — US TCPA 8am–9pm LEAD's local time; push back even on Renée unless she insists (2026-06-14)](feedback_after_hours_calling_compliance.md) — Enforce calling windows by the lead's time zone
+- [Jordan (GHL Assistlet bot) learns via a file-based loop — brain file ↔ KB, gaps auto-logged, re-sync to compound (2026-06-14)](feedback_jordan_assistant_learn_loop.md) — `jordan-brain-knowledge.md` is the source of truth
+- [Assistlet = productized AI assistant "connected to GHL"; train CA mortgage→US→any business; document as client SOP (2026-06-13)](project_assistlet_productization_sop.md) — Keep notes of every build step as a repeatable
+- [Treat knowledge like a human learner — apply/aware/disagree, keep it, surface it, teach it back (2026-06-13)](feedback_treat_knowledge_like_human_learner.md) — Books/courses/videos Renée assigns get captured in
+- [Understand the WHY + the WHOLE before placing any piece (2026-06-13)](feedback_understand_the_whole_not_just_the_piece.md) — A step can be individually correct but wrong
+- [Sent a video → TRANSCRIBE **and** SCREENSHOT (both) (2026-06-11)](feedback_video_transcribe_and_screenshot.md) — Words miss the visuals. Run transcribe.mjs
+- [Be SPECIFIC for Console — exact path + exact words (2026-06-11)](feedback_be_specific_for_console.md) — Name the exact button/menu + literal text to type +
+- [ASK for the 2FA/credential, don't route around an available human (2026-06-11)](feedback_ask_for_2fa_dont_route_around.md) — A 2FA code / password / one-time click is only a
+- [CLONE & ADJUST, don't rebuild — default everywhere (2026-06-11)](feedback_clone_and_adjust_default.md) — Before building anything, copy an existing working
+- [ALWAYS give a plain "Basically..." breakdown (2026-06-11)](feedback_basically_plain_breakdown.md) — Every technical thing gets a 1–2 line "Basically
+- [FORESEE → OPTIONS → RESEARCH → SELECT, don't trial-and-error (2026-06-11)](feedback_foresee_options_research_select.md) — Pre-build pre-mortem micro-gate: write top-3
+- [Use a visible TO-DO LIST on complex tasks/projects (2026-06-10)](feedback_todo_list_complex_tasks.md) — TaskCreate/TaskUpdate at the start of any
+- [Stay current on Claude too — adopt not just know (2026-06-10)](stay_current_on_claude.md) — Engine `claude-update-check.md` + session-start
+- [SAVE THE WINNING PATH — runbooks + solutions log, reproduce without being re-taught (2026-06-07)](feedback_save_winning_path_runbooks.md) — After a successful task, distill the clean
+- [Never use backticks inside node -e via Bash — silent file corruption (2026-06-07)](feedback_node_eval_backtick_corruption.md) — Bash eats backticks before node runs → blank holes
+- [Renée LIKES goal-driven autonomy — give a goal, drive to premium outcome, no stopping (2026-06-06)](feedback_renee_likes_goal_driven_autonomy.md) — Run goals to completion autonomously; only stop for
+- [Command Center orb has two-way VOICE (2026-06-05)](project_command_center_voice_chat.md) — Talk to Jordan (mic→text) + hear replies (TTS
+- [CLAUDE.md slimmed under 40k load limit (2026-06-05)](reference_claude_md_slimmed_under_40k.md) — Global CLAUDE.md trimmed 80k→32.5k so it fully
+- [Open a workflow → ask the Workflow AI FIRST](feedback_open_workflow_ask_workflow_ai_first.md) — Every time a workflow is open and something needs
+- [Lender messaging: vague + exclusive + hope, never reveal product/strategy](feedback_lender_messaging_vague_exclusive_hopeful.md) — Never tell leads the exact product/strategy used to
+- [Website is GHL AI Studio now, NOT Lovable + record runbooks](reference_ghl_ai_studio_not_lovable.md) — Site rebuilt in GHL AI Studio; the website form
+- [browse.exe blocked → use Playwright MCP for UI screenshots](reference_browse_exe_blocked_use_playwright.md) — gstack /browse binary returns "Permission denied"
+- [ICM architecture adopted — folder structure as enforcement (Renée 2026-06-03)](feedback_icm_architecture_adopted.md) — Vault now uses Jake Van Clief's ICM (arxiv
+- [AgentName (Title) format ALWAYS — every mention, not just first (Renée 2026-06-02)](feedback_agent_name_title_format_always.md) — REINFORCEMENT of existing CLAUDE.md "AGENT
+- [END-TO-END PERSONA WALKTHROUGH before claiming done (Renée 2026-05-31)](feedback_end_to_end_persona_walkthrough.md) — DEEPENS SCREENSHOT-UI-VERIFY gate
+- [STOP one-way Telegram pings until two-way rebuild (Renée 2026-05-31)](feedback_telegram_pings_off_until_two_way.md) — Renée stopped reading Telegram because she can't
+- [SESSION-END LEARNING RITUAL — the forcing function for compounding learning (Renée 2026-05-31, UPDATED 8-Q)](feedback_session_end_learning_ritual.md) — At session end every Claude instance MUST write
+- [GHL AI BUILDS, Console REVIEWS — the relationship (Renée 2026-05-30)](feedback_ghl_ai_builds_console_reviews.md) — DEEPENS the "consult first" rule
+- [ANYONE-USE TEST — the unifying lens behind every snapshot-genericity failure (Renée 2026-05-30)](feedback_anyone_use_test.md) — BEFORE typing ANY line of text into a deployable
+- [Build where Renée already works, not a side surface (2026-06-30)](feedback_build_in_renee_existing_surface.md) — Built voice as a standalone page when the obvious
+- [Vault unreliability ROOT CAUSE + fix (2026-06-30)](project_vault_upstash_burn_fixed.md) — "things don't save" = Upstash free tier 500K/mo
+- [Human-sounding client copy — pro but not robotic (2026-06-29)](feedback_human_sounding_copy.md) — Emails/SMS/voice must read like a sharp
+- [Ask questions until ~90% confident on the GOAL, not the HOW (2026-06-29)](feedback_ask_until_90_confident.md) — Get to ~90% on what Renée wants + the facts the
+- [GHL AI is the senior expert — USE FIRST then review (bible-level, UPDATED 2026-06-29)](feedback_ghl_ai_is_senior_expert.md) — GHL AI is an asset: use it FIRST, manual only if
+- [Design Skill Stack 2026-05 — Emil + Taste + Impeccable + gstack inventory](project_design_skill_stack_2026_05.md) — Renée 2026-05-26 intel drops
+- [DESIGN-FIRST workflow + Claude design system](feedback_design_first_workflow.md) — Renée 2026-05-25. GHL AI Studio + Emergent produce
+- [NEVER overwrite Renée's originals — always Claude-copy first](feedback_never_overwrite_originals.md) — Renée 2026-05-25 (3rd reminder)
+- [GHL AI Agent action architecture — Conversation Memory + Customer Replied + 15k char prompts](project_ghl_ai_agent_action_architecture.md) — Renée 2026-05-25 + GHL Facebook group + 2
+- [Stay current on GHL — research before building](feedback_stay_current_on_ghl.md) — Renée 2026-05-25. My GHL knowledge stales fast
+- [HARDCODE PREVENTION + BANNED NICHE WORDS (UPDATED 2026-05-30)](feedback_hardcode_prevention_rule.md) — Renée 2026-05-25 + 2026-05-30 DOUBLE RE-ESCALATION
+- [Template genericity — owner_title + regulator + test contact](feedback_template_genericity_owner_title.md) — Renée 2026-05-25. When building agency-deployed
+- [Telegram = human voice + push + CC URLs + deadline reminders](feedback_telegram_human_voice_and_push.md) — Renée 2026-05-19. Telegram pings need explicit
+- [Brain Architecture v1 — 4-layer cross-instance memory](feedback_brain_architecture_v1.md) — Renée 2026-05-19. Every project gets 6 files
+- [Use GHL Build-with-AI for ALL GHL building](feedback_use_ghl_build_with_ai.md) — Renée 2026-05-17. GHL has its own AI that builds
+- [GHL voice agents — Voice AI Studio + Voice AI Outbound action, NEVER Eliza](project_ghl_voice_agent_correct_actions.md) — Renée 2026-05-17. Eliza / Conversation AI = GHL's
+- [Snapshot pricing tiers + multi-user model](project_snapshot_pricing_tiers.md) — Renée 2026-05-13. 3 tiers: Solo (base) /
+- [Proactive expertise + design-first + board on EVERY task — no threshold](feedback_proactive_expertise_always_design_first.md) — Renée 2026-05-13. The $500+ threshold for board
+- [Step notes always in plain English action-list voice](feedback_step_notes_plain_english.md) — Renée 2026-05-13. Command Center step notes must
+- [Bidirectional relationship graph — 7-dimension tagging on every project](feedback_bidirectional_relationship_graph.md) — Renée 2026-05-13. Each project tags audience /
+- [Visual project tracking MANDATORY for multi-phase work](feedback_visual_project_tracking_mandatory.md) — Renée 2026-05-13. ANY 3+ phase work MUST get a
+- [Screenshot UI changes before claiming verified](feedback_screenshot_ui_changes_before_verified.md) — Renée 2026-05-12. Curl-grep for strings in deployed
+- [Command Center has /api/projects endpoint — push project work there](project_command_center_projects_endpoint.md) — Renée 2026-05-12. Multi-phase work (3+ phases /
+- [Never name specific lenders to leads](project_never_name_specific_lenders.md) — Renée 2026-05-11. AI / email / SMS / voice / web
+- [Check GHL native before building custom agents](feedback_check_ghl_native_before_building.md) — Renée 2026-05-11. I built complex Meeting Phone IVR
+- [Wholesale/Flip Lender Rules](project_wholesale_lender_rules.md) — Extracted from Lovable bundle 2026-05-10
+- [Canadian Mortgage LTV Rules](project_canadian_mortgage_ltv_rules.md) — Renée 2026-05-10. LTV ceilings: 80%
+- [Knowledge customs require manual per-account fill](project_knowledge_customs_per_account_fill.md) — Renée 2026-05-10. Snapshot SOP: AI Knowledge Link
+- [Investigate before diagnosing](feedback_investigate_before_diagnose.md) — Renée 2026-05-08. Vault "wipe" was actually Upstash
+- [SESSION START — auto-check intel feed for CLAUDE-NOTE items](feedback_session_start_check_intel.md) — Renée 2026-05-08. Every session start: fetch
+- [INVOKE skills routinely, don't just reference them](feedback_invoke_skills_routinely.md) — Renée 2026-05-07. ~40 local skills + ui-ux-pro-max
+- [Auto-load ui-ux-pro-max skill before UI work](feedback_load_uiux_skill_before_design_work.md) — Renée 2026-05-07. Marketplace skill
+- [Default to RIGHT not EASY](feedback_default_right_not_easy.md) — Renée 2026-05-07. When ranking options, FIRST check
+- [Use vision tool — don't design blind](feedback_use_vision_dont_design_blind.md) — Renée 2026-05-07. I have image-reading capability
+- [Creative workaround before redesign](feedback_creative_workaround_before_redesign.md) — Renée 2026-05-06. When a proven pattern seems
+- [Funnels must fit actual capacity, not template fantasy](feedback_funnel_must_fit_actual_capacity.md) — Renée 2026-05-06. Caught me drafting a Brunson book
+- [Pain research before any funnel/offer draft](feedback_pain_research_before_funnel_draft.md) — Renée 2026-05-06 caught me skipping Step 0 of
+- [Console = thinking surface only](feedback_console_thinking_surface_only.md) — Renée 2026-05-06. RETIRED Console as execution
+- [Never make Renée type slugs / technical IDs](feedback_never_make_renee_type_slugs.md) — Renée 2026-05-06. When adding credentials/integratio
+- [Confirm factual premises before plans](feedback_confirm_factual_premises_before_building_plans.md) — Renée 2026-05-06. When a plan hinges on a fact
+- [Lead Vault is B2B source](feedback_lead_vault_is_b2b_source.md) — Renée 2026-05-06. B2B lead source for AI Consulting
+- [Aaron actual state](project_aaron_actual_state.md) — Renée 2026-05-06. Aaron does NOT have a real estate
+- [No FSRA in public copy](feedback_no_fsra_in_public_copy.md) — Renée 2026-05-06. Customer-facing = "licensed
+- [Top-of-brain frameworks + Billion-Dollar Board](frameworks_top_of_brain.md) — Renée 2026-05-06. Compressed gist of Hormozi value
+- [Autonomous execution — strategic-only escalation](feedback_autonomous_execution_strategic_only.md) — Renée 2026-05-06 chose Upgrade B
+- [Easy way first — copy / GHL AI / built-in tool](feedback_easy_way_first.md) — Renée 2026-05-06. Three checks before any work
+- [Process scan ownership — 3 layers](feedback_process_scan_ownership.md) — Renée 2026-05-06. Jordan scans active. Hawk audits
+- [Read process.md FIRST](feedback_read_process_md_first.md) — Renée 2026-05-06. Every skill/agent folder has
+- [Renée Ross — User Profile](user_profile.md) — Solo founder, no dev team, uses Claude Code as
+- [Operator-lens pressure test](feedback_operator_lens_pressure_test.md) — Renée 2026-05-04. Every automation/workflow/template
+- [Snapshot genericity in prompts](feedback_snapshot_genericity_in_prompts.md) — Renée 2026-05-04. Snapshot is GENERIC; mortgage is
+- [Playwright FIRST for trademark gates](feedback_playwright_first_for_trademark_gates.md) — Renée 2026-05-04. Tested USPTO TESS via Playwright
+- [WORKAHOLIC GATE promoted](feedback_workaholic_gate_promoted.md) — Renée 2026-05-04. Stop verbal "I should have"
+- [Knowledge provenance — track source](feedback_knowledge_provenance_track_source.md) — Renée 2026-05-05. Every skill/memory/artifact
+- [MIGRATION DISCIPLINE GATE promoted](feedback_migration_discipline_gate.md) — Renée 2026-05-05. Promotion to CLAUDE.md blocking
+- [UNIVERSAL PRE-FLIGHT GATE](feedback_universal_preflight_gate.md) — Renée 2026-05-05. One consolidated visible block on
+- [MCP browser lock unrecoverable](feedback_mcp_browser_lock_unrecoverable.md) — Renée 2026-05-05. When mcp__playwright__browser_navi
+- [Telegram = human voice only](feedback_telegram_human_voice_only.md) — Renée 2026-05-05. Banned: bracket-status labels
+- [Morning brief — MyClaw format](feedback_morning_brief_myclaw_format.md) — Renée 2026-05-05. The MyClaw daily newsletter
+- [VERIFY-LIVE GATE promoted](feedback_verify_live_gate_promoted.md) — Renée 2026-05-05. 3 testing memory rules existed
+- [Stakes-aware thoroughness](feedback_stakes_aware_thoroughness.md) — 🎯 STAKES: HIGH/MEDIUM/LOW line on every
+- [Command Center = INTERNAL not SaaS](project_command_center_internal_not_saas.md) — Renée 2026-05-02. xpert-command-center is Renée's
+- [Voice: GHL native FIRST, Assistable later](feedback_voice_ghl_first_assistable_later.md) — Renée 2026-05-02. All voice agents in GHL native
+- [Explain unobvious things](feedback_explain_unobvious_things.md) — Renée 2026-05-03. Never just hand a
+- [Event-driven over cron polling](feedback_event_driven_over_cron.md) — Renée 2026-05-03. Default architecture for autonomy
+- [Scroll-Effect Website Builder skill](project_scroll_effect_skill.md) — Built 2026-05-01. Decision tree + GSAP/Lenis pinned
+- [Mortgage Agent NOT Broker — FSRA hard line](feedback_agent_not_broker_fsra.md) — Renée is Mortgage Agent Level 2 under OLS (FSRA
+- [Shay (Human VA, male, India-based)](project_shay_va_back_on.md) — 2026-04-29 Renée re-engaged Shay (he/him, IST =
+- [Timestamp every reply + heartbeat + start/done](feedback_timestamp_protocol.md) — 2026-04-29 Renée: open every chat reply with `🕐
+- [Measure thrice cut once — PROCESS NON-NEGOTIABLE](feedback_measure_thrice_cut_once.md) — 2026-04-29 hard rule from Renée
+- [Plain-English summaries after work](feedback_plain_english_summaries.md) — 2026-04-30 Renée. Replace structured "Done ✅"
+- [ACTUALLY run the agents — write the audit lines](feedback_actually_run_the_agents.md) — 2026-04-30 Renée. Loading skill files != running
+- [Hawk runs BEFORE the plan](feedback_hawk_before_plan_not_after.md) — 2026-04-30 Renée. Order: LISTEN → THINK → 🦅 HAWK
+- ["Parse" is jargon — banned](feedback_no_parse_jargon.md) — 2026-04-30. Add "parse / parses / parser" to
+- [Active research pipeline — don't wait for Renée](feedback_active_research_pipeline.md) — 2026-04-30 Renée found vibeprospecting on IG before
+- [Public copy → Mark+Lex+Kai+Board FIRST](feedback_marketing_team_first_on_public_copy.md) — Hero/headline/ad/email subject/voice opener: Kai
+- [Pre-build skill-loading gate](feedback_pre_build_skill_loading_gate.md) — Classify sales model (high-ticket vs SaaS), route
+- [Vault-first for credentials](feedback_vault_first_for_credentials.md) — Every cred read goes through getCred() (vault
+- [GHL AI Studio owns qualification](feedback_ghl_ai_studio_handles_qualification.md) — Pre-qual / intent tagging / doc collection /
+- [Live-test every deploy](feedback_live_test_after_every_deploy.md) — 3-layer test (code parses · user-walkthrough ·
+- [Realistic banking timelines](feedback_realistic_banking_timelines.md) — A lenders 30-45d · B lenders 21-35d · Private 5-15d
+- [Lender DB = real deal flow](feedback_lender_db_real_deal_flow.md) — Never guess which lenders Renée uses (CIBC miss)
+- [Complete not partial — boil the lake](feedback_complete_not_partial.md) — When data backs a client decision, COMPLETE
+- [Response-structure rule — why it kept failing](feedback_why_response_structure_keeps_failing.md) — 3rd meta-failure of session
+- [Telegram = decisions only](feedback_telegram_for_decisions_not_data_updates.md) — Routine data updates (lender rates, ad performance
+- [OLS Lender Match — pickup 2026-04-29](project_ols_lender_match_pickup.md) — SHELVED 2026-04-28 night. Doc:
+- [Brand name validation — 6-step gate](feedback_brand_name_validation_complete.md) — Assistlet miss 2026-04-28 (told Renée available, UX
+- [Premium automated design recipe](project_premium_automated_design_recipe.md) — 5-step Approach G in animation-mastery skill
+- [Mortgage commercial hero spec — saved](project_mortgage_commercial_hero_spec.md) — Doc: `XpertVault/projects/mortgage-commercial-websit
+- [Decide-and-execute promoted to CLAUDE.md gate](feedback_decide_and_execute_promoted_to_gate.md) — Stop asking permission. Decide. Execute. Show
+- [Heartbeat protocol](feedback_heartbeat_protocol.md) — Helper `~/.claude/bin/tg-ping "<msg>"`
+- [Multi-perspective + multi-choice + REACT](feedback_multi_perspective_and_mc_questions.md) — Lovable/Emergent pattern adopted 2026-04-29
+- [company_name = "EquityMax.ca" intentional](feedback_company_name_eqm_dot_ca.md) — Domain reference, doesn't own trademark; never
+- [Build tool first, then use it](feedback_build_tool_before_using_it.md) — When friction repeats across tasks (curl, Console
+- [Custom GHL MCP — live](project_ghl_mcp.md) — C:/Users/User/ghl-mcp/ — full CV/CF/workflow/tag/con
+- [5-Gate Pre-Flight](feedback_5_gate_preflight.md) — MANDATORY before every task: memory sweep, skill
+- [Amy Cost Brief at End of Meetings](feedback_amy_meeting_cost_brief.md) — Amy ends every roundtable with token cost
+- [High-Conviction Persistence](feedback_high_conviction_persistence.md) — Hardcoded: agents can flag a recommendation as 🔥
+- [Hawk = Learning Warden](feedback_hawk_learning_warden.md) — Hawk owns each agent's IMMUTABLE hard-box
+- [All Agents Are Proactive Not Monitors](feedback_agents_must_be_proactive_not_monitors.md) — Hard rule: every agent ACTS on findings, never just
+- [Telegram Persistent Decision Pings](feedback_telegram_persistent_decision_pings.md) — When blocked on Renée decision, Telegram immediately
+- [GHL AI Agent — Use It FIRST for Audits + QA](feedback_use_ghl_ai_agent_for_audits.md) — Use AI Agent → Get Started button (account-aware)
+- [GHL AI Shortcuts — Master Reference](reference_ghl_ai_shortcuts_master.md) — Every AI feature inside GHL with use-case decision
+- [Communication Style](feedback_communication.md) — Not a developer, always use plain English, break
+- [Time Awareness](feedback_time_awareness.md) — Always know Toronto time; factor time of day into
+- [Morning Brief Actionable](feedback_morning_brief_actionable.md) — When Renée references brief content, resolve full
+- [Never Say "I Can't"](feedback_never_say_cant.md) — Reframe every limit as "I absolutely can — here's
+- [Plain English — No Jargon](feedback_plain_english_no_jargon.md) — Stop using "canonical", "schema", "atomic"
+- [Token Consolidation Rule](feedback_token_consolidation_rule.md) — When duplicates exist: pick keeper, swap
+- [NEVER Hardcode Personal Info](feedback_never_hardcode_personal_info.md) — HARD RULE: every name/company/phone/email/license#
+- [Xpert Web Solutions — Master Project](project_power_agent_system.md) — Full business context: 4 revenue streams, 21
+- [GHL API Keys — All Sub-Accounts](reference_ghl_api_keys.md) — ABC Company, EquityMax, PowerAgent private
+- [ABC Company — Universal Snapshot Build](project_abc_snapshot.md) — Active build: turn ABC Company into deploy-ready
+- [ABC Company Session Checkpoint — Apr 9 2026](project_abc_session_apr9.md) — Where we left off: Build with AI panel open
+- [Don't Fix What's Not Broken](feedback_dont_fix_whats_not_broken.md) — Audit what exists before building anything; copy
+- [EquityMax AI Studio — Review Before Recreating](feedback_equitymax_review_first.md) — Always check EquityMax workflows first, ask Build
+- [Amy Token Cost Rule v3+](feedback_amy_cost_rule.md) — Before large generation: assess cost, flag cheaper
+- [Billing — Pay As You Go Card](feedback_billing.md) — No overspend risk; card is loaded manually per spend
+- [API First — All Platforms, No Exceptions](feedback_api_first.md) — Research fastest automated path first; API over
+- [Autonomy, Pushback, Lead Journey Gaps](feedback_autonomy_and_pushback.md) — Operate autonomously, push back on bad ideas
+- [Build-and-Test — Continuous Testing](feedback_build_and_test.md) — Test after every meaningful code block; never build
+- [XpertVault — Obsidian Business Vault](reference_xpertvault.md) — Permanent business memory at C:\Users\User\Documents
+- [GHL Claude Project Brief](reference_ghl_project_brief.md) — Full 5-track GHL build spec at XpertVault/operating
+- [Save Important Content Immediately](feedback_save_immediately.md) — Never wait for session end; save prompts
+- [Save Decisions The Moment They're Made](feedback_save_decisions_the_moment_they_are_made.md) — Decisions (keep/delete/pick) go to
+- [Forward-Walk Every Workflow & Agent During Audit](feedback_forward_walk_every_workflow.md) — On every bot/workflow/agent touched: Success-path /
+- [Proactively Surface Capability Upgrades](feedback_proactively_surface_capability_upgrades.md) — MCP/new-API/skill unlocks surface IMMEDIATELY
+- [No Content Without Skill Backing](feedback_no_content_without_skill_backing.md) — Zero-tolerance: no SMS, voice, emails, funnels
+- [ABC vs EquityMax Purpose](project_abc_vs_equitymax_purpose.md) — EqM = snapshot template for Canadian mortgage pros
+- [Full Business Architecture](project_business_architecture.md) — 3 product lines: **Easy Deploy (MAIN — Ulio clone
+- [Email Subject Convention](reference_email_subject_convention.md) — Always prefix emails to Renée with "Morning Brief
+- [Prompt File Organization](feedback_prompt_file_organization.md) — Console prompts go to Desktop/New — Pending
+- [Stop Asking Permission On Forward-Motion](feedback_stop_asking_permission_forward.md) — Don't end with "Want me to X?" for
+- [Stop Asking Permission — REPEAT VIOLATION](feedback_execute_dont_ask_permission_repeat.md) — Renée gave me C→D→B→A. I finished C, asked "want me
+- [Command Center FIRST — never send her elsewhere](feedback_command_center_first_always.md) — Hard rule: any credential / config / action goes IN
+- [Speak Like To A Person + Concrete Example](feedback_speak_like_to_a_person.md) — Plain language, concrete example, exact next step
+- [Telegram Short Messages](feedback_telegram_short_messages.md) — Mobile-first. 3-5 lines for status, max 10 for
+- [BE A REAL PARTNER — opinions, push-back, anticipation](feedback_be_a_real_partner_have_opinions.md) — STOP order-taking. Lead with my take + reasoning +
+- [Don't Drag Renée Into Work Console Can Do](feedback_dont_drag_renee_into_work.md) — When my tooling fails for browser tasks, push to
+- [Response Structure — Listen→Think→Ask→Plan→Explain→Tasks](feedback_response_structure_listen_think_plan_tasks.md) — Every substantial chat response uses 6 visible
+- [Pre-Stage Ammunition Overnight](feedback_pre_stage_ammunition_overnight.md) — Default state is BUILDING revenue ammunition, not
+- [Speak Like To A Person](feedback_speak_like_to_a_person.md) — Concrete + plain + with next step
+- [$0 Revenue Reality](project_zero_revenue_reality.md) — Real state: $0 across all 4 streams
+- [Never Mention GHL to Easy Deploy Clients](feedback_never_mention_ghl_to_clients.md) — GHL is Easy Deploy's invisible backend
+- [Reduce Bash Tool Noise](feedback_reduce_bash_noise.md) — Renée finds bash output cluttering
+- [Announce in One Line Before Tool Batches](feedback_announce_then_execute.md) — ONE short sentence before any tool batch
+- [Auto-Use Playwright for Visual Intel](feedback_auto_playwright_visual_intel.md) — IG/TikTok/YouTube/video links = auto-fire
+- [No Opinion Without Research](feedback_no_opinion_without_research.md) — Every recommendation must cite named framework OR
+- [Ulio.ai — Competitor Intel](reference_ulio_ai_competitor.md) — AI receptionist reseller platform (lead finder +
+- [Console vs Claude Code — Capabilities](feedback_console_vs_claude_code.md) — Console has MCP and executes inside GHL; Claude
+- [Work Window — Soft Not Hard](user_work_window.md) — 10:30–3:00 is focused window for calls/meetings
+- [EquityMax Mortgage Business — Morgan Agent](project_mortgage_business.md) — Mortgage assistant Morgan added; OLS brokerage, Tom
+- [Mortgage Credentials — Brokerage & Scarlette](reference_mortgage_credentials.md) — OLS password lives in Command Center API Vault
+- [REI DealFlow Wholesale App — Plan](project_rei_dealflow_app.md) — Two-sided marketplace for Fitz/Jon/Jeff coaching
+- [FSRA Advertising Compliance — Reference](reference_fsra_ad_compliance.md) — 4 mandatory items (Renée Ross, Mortgage Agent Level
+- [Proactive — Stop Waiting, Start Delegating](feedback_proactive_not_lackadaisical.md) — Jordan auto-delegates to Ryan/Connor/Norm/Gill
+- [OLS Recruitment Proposal — Meeting with John](project_ols_recruitment.md) — Zero-cost recruiting pitch w/ rev-share; landing
+- [Flag Missing Capabilities Immediately](feedback_flag_missing_capabilities_immediately.md) — Before building a degraded version (cartoon vs
+- [Batch Messages — Don't Waste Tokens on Small Chat](feedback_batch_messages_save_tokens.md) — No filler, no sign-offs; when Renée splits a
+- [Hawk (Performance Auditor) — New Agent](project_hawk_auditor.md) — 24th agent; audits every other agent's output
+- [Propose, Don't Wait](feedback_propose_not_wait.md) — If Jordan can see a gap (missing
+- [Format Asks as Command Center Tasks](feedback_asks_as_tasks.md) — Any manual ask = titled step-by-step task Renée can
+- [Proactive Skill Hunting](feedback_proactive_skill_hunting.md) — Anticipate skills needed, research gaps early
+- [Go-Getter Agents](feedback_go_getter_agents.md) — All 24 agents operate with urgency and ownership
+- [Autonomous Overnight Setups](feedback_autonomous_overnight_work.md) — Never say "can't run autonomously"; propose Chrome
+- [Easy Path for Non-Developer](feedback_easy_path_for_non_developer.md) — Lead with VS Code/desktop/web over CLI; explain
+- [Command Center URL](project_command_center_url.md) — Canonical: https://xpert-command-center.vercel.app/
+- [Agents Must Listen to Each Other](feedback_agents_listen_to_agents.md) — Inter-agent awareness; Amy blocks waste, Jordan
+- [NEVER Use Emergent Credits](feedback_never_use_emergent_credits.md) — Console burned all Emergent credits; always use
+- [GHL AI Studio — Correct Build Flow](project_ghl_ai_studio_correct_flow.md) — AI Studio first, old workflows last resort; build
+- [EquityMax Agent Inventory](project_equitymax_agent_inventory.md) — 10 published agents in General Business folder (DO
+- [GHL Snapshot Master Spec](project_ghl_snapshot_master_spec.md) — Full 10-stage mortgage pipeline + generic; voice
+- [AUDIT BEFORE BUILD — Always](feedback_audit_before_build_always.md) — List what exists, audit each item, mark KEEP/NEEDS
+- [Think Like a Real Person](feedback_think_like_a_real_person.md) — Research → reverse-engineer from result → plan →
+- [Don't Wait for Obvious](feedback_obvious_things.md) — Professional basics (human tone, mobile-first
+- [Pattern Detection](feedback_pattern_detection_auto_update.md) — If Renée corrects the same thing twice, auto-update
+- [File Organization](feedback_file_organization.md) — New prompts in "New — Pending Prompts" folder, move
+- [Work Smarter — Use AI Tools](feedback_work_smarter_use_ai_tools.md) — Always use Build with AI first; never manually
+- [Free Account Creation](reference_free_accounts.md) — Use poweragentsystem@gmail.com, name Jordan AI
+- [GHL Custom Value Corrections](project_ghl_custom_values_corrections.md) — Correct token names (user_first_name not
+- [Kip (Knowledge Keeper) + Design Upgrade](project_new_agents_kip_design.md) — Agent #25 monitors all platforms for changes
+- [Be Hungry — Proactive Tool Hunting](feedback_proactive_tool_hunting.md) — Scout free tools, revenue shortcuts, automation
+- [Morning Brief Auto-Email](project_morning_brief_email.md) — Daily 8AM email to poweragentsystem@gmail.com via
+- [Command Center Feature Requests](project_feature_requests_command_center.md) — Drawing board, video/link input, split-screen
+- [Jordan — Mouths to Feed](feedback_jordan_mouths_to_feed.md) — Aggressive, revenue-hungry COO; no money made =
+- [Don't Present — Just Get It](feedback_just_get_it_dont_present.md) — Skills/tools: go get them; only ask for
+- [Anticipation Agent](feedback_anticipation_agent.md) — Forward-walk every scenario, pre-stage
+- [Drawing Board — Feature Request](project_drawing_board_request.md) — Sketch panel in Command Center (tldraw), saves to
+- [No .md Files for Renée](feedback_no_md_files_for_renee.md) — Surface work in Command Center, desktop PDF, email
+- [New Agents — Finley, Sienna, Connie](project_new_agents_needed.md) — Funnel agent, Social Media agent, Consulting Intake
+- [Edwina (Voice of AI) — Being Tracked as Competitor](project_edwina_competitor.md) — Edwina is the TARGET, not an agent
+- [Flag Chrome Extension Usage](feedback_flag_chrome_extension.md) — Always tell Renée when to use Chrome extension vs
+- [Emergent / Easy-Deploy Status](project_emergent_app_status.md) — Purple theme bug diagnosed; paid search API
+- [Design Tool Stack](project_design_tools_research.md) — Free-first: Gemini, OpenArt, 21st.dev, v0
+- [EquityMax LTV Form Rebuild](project_equitymax_ltv_form_rebuild.md) — Replicate Lovable form inside GHL w/ LTV
+- [Notify via Telegram or App](feedback_notify_via_telegram_or_app.md) — Set up Telegram bot for milestone pings; app
+- [Outlook — Browser Only](reference_outlook_browser_only.md) — No admin access for MS365; all Outlook work via
+- [Morgan Lender & Underwriter Knowledge](project_morgan_lender_knowledge.md) — Cheryl = OLS underwriter; LTV/private/KYC/comms
+- [Outlook Folder Structure](project_outlook_folder_structure.md) — Lenders/Clients/GHL Account/Receipts-Taxes/Complianc
+- [SuperDesign.dev Library](project_superdesign_dev.md) — p.superdesign.dev/library free prompt library; use
+- [Store Designs, Don't Auto-Deploy](feedback_store_not_deploy_designs.md) — Save design prompts to library; only deploy when
+- [Console: No Stupid Questions When Away](feedback_console_stupid_questions.md) — Make judgment calls; never block on a question
+- [Don't Defer Deletes](feedback_dont_defer_deletes.md) — Cleanup asks = execute that session via API; do not
+- [GHL Tag Convention — AI Voice vs AI Chat](project_ghl_ai_tag_convention.md) — Action/outcome tags split into ai-voice-* /
+- [Auto-Sync Project Folders](feedback_auto_sync_project_folders.md) — Every GHL data refresh/prompt revision auto-copies
+- [GHL Brain GitHub Repo](project_ghl_brain_github_repo.md) — Public repo github.com/poweragentsystem-ai/ghl-brain
+- [Research → Plan → Build → Test](feedback_research_plan_build_test.md) — Mandatory build sequence. Never claim "shipped"
+- [Mine Existing Work First](feedback_mine_existing_first.md) — Before writing prompts/emails/SMS/copy, find
+- [Push Back When Questionable](feedback_push_back_when_questionable.md) — Stop and ask when something's unclear, conflicting
+- [Real 3D Skills — No Cartoon Primitives](feedback_no_cartoon_3d.md) — All 3D scenes use MeshTransmissionMaterial, HDRI
+- [No Lazy Handoffs](feedback_no_lazy_handoffs.md) — Console handoff must include 4 ingredients
+- [Talk Like Claude App, Not a Terminal](feedback_talk_like_claude_app.md) — plain English, no bash output, no HTTP/curl/IDs in
+- [Save Every 15 Minutes — Hard Cadence](feedback_save_every_15_min.md) — tightened from 20-min; save + sync to GitHub so
+- [Stack Corrections — 2026-04-23](project_stack_corrections_2026_04_23.md) — Claude-native only (no MyClaw/Tasklet), REI
