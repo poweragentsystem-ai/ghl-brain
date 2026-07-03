@@ -1,5 +1,6 @@
 # Memory Index
 
+- [Expert-panel review is AUTOMATIC for landing pages — Hormozi/Brunson/Vee/Allan, enforced (2026-07-03)](feedback_expert_panel_auto_review.md) — Any landing/sales/funnel page must pass the 4-lens panel before "done"; `design-review-check.js` blocks ship without a 🏛 marker. Process: `04-agents/allan/stages/02-expert-panel-review/`. Never remindered.
 - [Design-review gate — UI/visual builds MUST pass through Allan + swipe file before "done" (2026-07-03)](feedback_design_review_gate_programmed.md) — Stop hook `design-review-check.js` blocks any page/funnel/palette build lacking a 🎨 review marker. Programmed after shipping un-researched funnel colors. Tested.
 - [Allan (Creative) ICM workspace + LOCKED visual quality bar (2026-07-03)](project_allan_creative_icm_workspace.md) — Design refs now have a systematic home (extends ICM
 - [Scroll-scrub keyframe→video→frames pipeline (Skool course technique) — hyperrealistic cinematic scroll sites (2026-07-02)](project_scroll_scrub_keyframe_pipeline.md) — Generate hyperreal START+END frames → AI video

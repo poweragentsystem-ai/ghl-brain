@@ -13,7 +13,7 @@ Xpert Web Solutions Inc. (Toronto). Owner/CEO: Renée Ross. AI automation agency
 - Niche: personal finance / budget spreadsheets (research-selected). Working brand "Money Reset" (placeholder — needs brand-name gate).
 - Offer: $17 budget spreadsheet core → +$9 bill/subscription tracker order bump → +$37 Financial Freedom System upsell.
 - Products BUILT + verified: `07-projects/faceless-finance-offer/product/` (2 real .xlsx w/ formulas, 30-day workbook, mini-course).
-- Funnel LIVE + public: **https://funnel-two-kappa.vercel.app** (sales → checkout+bump → upsell → delivery). NOT YET SELLABLE.
+- Funnel LIVE + public: **https://funnel-two-kappa.vercel.app** (sales → checkout+bump → upsell → delivery). REBUILT 2026-07-03 per expert panel (Hormozi/Brunson/Vee/Allan) — all 24 fixes applied (real spreadsheet hero, founder story, value stack $161→$17, named guarantee, bonuses, urgency, researched palette, thank-you ascension, mobile sticky CTA). Verified live. NOT YET SELLABLE (needs Stripe key + real sheet screenshots + real testimonials).
 - Content engine BUILT: `07-projects/faceless-finance-offer/content/CONTENT-PACK.md` (10 templates + 12 posts, "RESET" auto-DM keyword).
 - Layer 2 (staged, trigger = 1st sale): a ~$47 product/platform teaching others to do this / build their own — Renée's SaaS line.
 
