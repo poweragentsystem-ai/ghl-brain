@@ -23,9 +23,12 @@ Xpert Web Solutions Inc. (Toronto). Owner/CEO: Renée Ross. AI automation agency
 - Content engine BUILT: `07-projects/faceless-finance-offer/content/CONTENT-PACK.md` (10 templates + 12 posts, "RESET" auto-DM keyword).
 - Layer 2 (staged, trigger = 1st sale): a ~$47 product/platform teaching others to do this / build their own — Renée's SaaS line.
 
-**2. Infrastructure hardening** (making the setup stop dropping things)
-- New hooks live + tested: real-time capture, session-start intel auto-check, design-review gate (Allan), agent-routing.
-- MEMORY.md trimmed under load cap; REI ACTIVE/PAUSED contradiction fixed (now PAUSED everywhere).
+**2. Infrastructure hardening — SETUP REVIEW COMPLETE (2026-07-04, on Fable 5)**
+- 7 hooks live + lint-clean: intel auto-check (SessionStart) · capture + agent-routing (every message) · credential guard (pre-edit) · verify-live + persona-walkthrough + design-review/expert-panel (response end).
+- ✅ **ALL 24 agents now have ICM workspaces** (batch-scaffolded 2026-07-04) — routing hook checks the filesystem LIVE, no stale tables. Jordan consolidated → `jordan-coo/`.
+- **`00-rules/PROCEDURES.md`** = the canonical task→agent→process→enforcement map. Session-start step 0 = this file (BRAIN-INDEX).
+- Obsidian: vault configured; BRAIN-INDEX bookmarked "🧠 START HERE" + swipe file/runbooks/audits pinned.
+- MEMORY.md under load cap; REI contradiction fixed (PAUSED everywhere).
 
 ## ⏳ WAITING ON RENÉE (the switches only she can flip)
 1. **Stripe key** → add STRIPE_SECRET_KEY + STRIPE_PUBLISHABLE_KEY in Vercel env → funnel can charge.
@@ -35,6 +38,7 @@ Xpert Web Solutions Inc. (Toronto). Owner/CEO: Renée Ross. AI automation agency
 5. Real download links + real testimonials on funnel before paid traffic. Brand-name validation.
 
 ## KEY POINTERS
+- **⚙️ HOW WORK GETS DONE (procedures + enforcement):** `00-rules/PROCEDURES.md` — task→agent→process→hook map. Read this to know who owns what and which gate enforces it.
 - Full offer spec: `07-projects/faceless-finance-offer/OFFER-SPEC.md`
 - Audits (2026-07-03): `12-daily/audits/` (systemic gaps, intel triage, command-center findings)
 - Design references + quality bar: `design-references/design-swipe-file.md`

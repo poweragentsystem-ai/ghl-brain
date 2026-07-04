@@ -132,12 +132,11 @@ Jordan (COO) is the dispatcher. Any multi-step project, or any task that needs r
 
 ---
 
-## Status: post-ICM-adoption (2026-06-03)
+## Status: ICM migration COMPLETE (2026-07-04)
 
-| Agent | ICM workspace built | Notes |
-|---|---|---|
-| Gill (GHL) | ✅ 2026-06-03 pilot | Full 5-stage workspace |
-| Morgan (Mortgage Assistant) | ⏳ next | Most complex — biggest revenue |
-| All other 22 agents | ⏳ pending | 3-4 per session migration cadence |
+✅ **ALL 24 agents have ICM workspaces** (`04-agents/<agent>/CLAUDE.md` + `CONTEXT.md`).
+- **Deep** (stages + config): Gill (GHL), Jordan (COO at `jordan-coo/`), Allan (Creative).
+- **v1-light** (identity + router wrapping their `claude-skills/<agent>.md`, batch-scaffolded 2026-07-04): all others. Skill files remain the knowledge source; the workspace is the process wrapper.
+- Special cases: `jordan/` + `jordan-operator-manual/` = README pointers → `jordan-coo/`; `riley-state/` = data store, not an agent.
 
-Until each agent has its ICM workspace built, fall back to `claude-skills/<agent>.md` as the temporary source of truth.
+**Do NOT hand-maintain this table.** The `agent-routing.js` hook checks the filesystem live on every message and injects the correct routing — trust its output. Full task→agent→process→enforcement map: `00-rules/PROCEDURES.md`.
