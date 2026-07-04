@@ -8,8 +8,14 @@
 ## WHO / WHAT
 Xpert Web Solutions Inc. (Toronto). Owner/CEO: Renée Ross. AI automation agency. 3 lines: AI Consulting, SaaS (digital-product builder), Mortgage (EquityMax, FSRA). Brand name still placeholder.
 
-## 🔴 CURRENT ACTIVE WORK (2026-07-03)
-**1. Faceless Finance Low-Ticket Offer** (the money-maker, Layer 1 of 2)
+## 🔴 CURRENT ACTIVE WORK (2026-07-04) — PIVOTED
+**Product pivoted (Renée, after several iterations): the real low-ticket product is "THE CREATOR" — a TOOL, sold via a guide→tool funnel.**
+- **The Creator tool** (the real product / upsell $47): niche in → AI-generated digital product + sales page + 30-day content + GHL post-scheduling. LIVE: **https://app-tau-two-63.vercel.app** (UI verified, endpoints graceful). ⛔ BLOCKED: needs a valid `ANTHROPIC_API_KEY` (missing/invalid since 2026-05-19) to actually generate — that's the #1 gate. Optional: GHL_TOKEN (auto-post), STRIPE (charge). Code: `07-projects/product-creator-tool/app/`.
+- **$17 front-end guide** ("How to Create & Sell a Digital Product with AI" — teaches the manual version, bridges to the tool): `07-projects/product-creator-tool/guide/`. Built.
+- **Funnel** (guide → tool upsell): being wrapped around the above, warm-editorial brand to match the tool. Reuses the shell at `07-projects/faceless-finance-offer/funnel/`.
+- Prior explorations (budget spreadsheet, mom-AI info-product) archived/superseded — do NOT resume; the tool is the product.
+
+**(archived) Faceless Finance Low-Ticket Offer** (superseded by the pivot above)
 - Niche: personal finance / budget spreadsheets (research-selected). Working brand "Money Reset" (placeholder — needs brand-name gate).
 - Offer: $17 budget spreadsheet core → +$9 bill/subscription tracker order bump → +$37 Financial Freedom System upsell.
 - Products BUILT + verified: `07-projects/faceless-finance-offer/product/` (2 real .xlsx w/ formulas, 30-day workbook, mini-course).
