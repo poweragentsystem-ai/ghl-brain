@@ -1,5 +1,7 @@
 # Memory Index
 
+- [NO KEYS IN THE BROWSER — ever (Renée 2026-07-04)](feedback_no_keys_in_frontend_ever.md) — Keys server-side only (env/vault); browser calls our /api/*; audit pages+bundles for sk- patterns after integration deploys. CLAUDE.md critical rule #12.
+
 - [Setup review COMPLETE — all 24 agents scaffolded, PROCEDURES.md enforcement map, live routing (2026-07-04)](project_setup_review_complete_2026_07_04.md) — Hooks enforce, workspaces receive, brain syncs, runbooks compound. Trust `agent-routing.js` (filesystem-live), not tables. Map: `00-rules/PROCEDURES.md`.
 
 - [Expert-panel review is AUTOMATIC for landing pages — Hormozi/Brunson/Vee/Allan, enforced (2026-07-03)](feedback_expert_panel_auto_review.md) — Any landing/sales/funnel page must pass the 4-lens panel before "done"; `design-review-check.js` blocks ship without a 🏛 marker. Process: `04-agents/allan/stages/02-expert-panel-review/`. Never remindered.
