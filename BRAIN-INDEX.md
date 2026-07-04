@@ -12,7 +12,7 @@ Xpert Web Solutions Inc. (Toronto). Owner/CEO: Renée Ross. AI automation agency
 **Product pivoted (Renée, after several iterations): the real low-ticket product is "THE CREATOR" — a TOOL, sold via a guide→tool funnel.**
 - **The Creator tool** (the real product / upsell $47): niche in → AI-generated digital product + sales page + 30-day content + GHL post-scheduling. LIVE: **https://app-tau-two-63.vercel.app** (UI verified, endpoints graceful). ⛔ BLOCKED: needs a valid `ANTHROPIC_API_KEY` (missing/invalid since 2026-05-19) to actually generate — that's the #1 gate. Optional: GHL_TOKEN (auto-post), STRIPE (charge). Code: `07-projects/product-creator-tool/app/`.
 - **$17 front-end guide** ("How to Create & Sell a Digital Product with AI" — teaches the manual version, bridges to the tool): `07-projects/product-creator-tool/guide/`. Built.
-- **Funnel** (guide → tool upsell): being wrapped around the above, warm-editorial brand to match the tool. Reuses the shell at `07-projects/faceless-finance-offer/funnel/`.
+- **Funnel** (guide → tool upsell): DONE + verified LIVE at **https://funnel-two-kappa.vercel.app** — "The Creator's Playbook" $17 → +$9 bump → +$47 The Creator app upsell → delivery. One cohesive warm-editorial brand with the tool. Panel self-check 9/9/8/9. Placeholders remaining: "look inside" video + guide download links (Renée's go-live). Shell: `07-projects/faceless-finance-offer/funnel/`.
 - Prior explorations (budget spreadsheet, mom-AI info-product) archived/superseded — do NOT resume; the tool is the product.
 
 **(archived) Faceless Finance Low-Ticket Offer** (superseded by the pivot above)
