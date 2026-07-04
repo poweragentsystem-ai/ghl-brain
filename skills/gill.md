@@ -36,6 +36,62 @@ GHL platform specialist for Xpert Web Solutions. Deep expertise across every mod
 
 ---
 
+## 2026 AI FEATURES — VERIFIED 2026-06-29
+
+> Kept current by `claude-skills/ghl-update-check.md` (session-start staleness gate >7 days + weekly Windows scheduled task). Baseline + source dates live in `~/.claude/state/ghl-last-checked.md`. Flag a cutoff date on any artifact built from this; if Renée's panel shows new options, screenshot to verify.
+
+### 🆕 Verified 2026-06-29 (deltas since 2026-06-10)
+- **"Summer of AI" promo — Jun 1 to Aug 31, 2026:** every PAID sub-account gets 5 AI tools FREE (Ask AI, AI Studio, Workflow AI, Funnel AI, Email AI); eligible subs also get Conversation AI + Voice AI + every AI Agent free for 30 days. Build/test at zero AI cost this window. [official gohighlevel.com/ai]
+- **Top-right "Ask AI" is task-capable** (scheduled tasks, blog gen, voice mode, persistent memory, pay-per-use). Use it to DO non-workflow tasks. It can't create workflows (use Build with AI) and can't see all custom fields/values/tags (paste them into the chat). ← reverses the old "never use Ask AI" rule.
+- **AI Employee = unified layer** (May 2026): bundles Conversation AI + Voice AI + Appointment Setter. Official roles: AI Receptionist, AI Scheduler, AI Marketer, AI Reputation Agent, AI Sales Agent. ("Social Media Manager" role = 3rd-party claim, unverified.)
+- **AI Studio visual editor now free** (was paid).
+- **Voice AI:** real-time calendar check + books during the call; 19 languages / 340+ voices; existing-number support; TTS upgraded (Feb 2026) for natural pacing.
+
+### Conversation AI Flow Builder (the "new conversational AI")
+Visual, goal-oriented flow designer for the text bot — replaces flat single-prompt bots with a branching map. **This is what Renée meant by "new conversational AI."**
+- **Mode:** Auto Pilot. **Channels:** SMS, Facebook, Instagram, WhatsApp, Live Chat. **Max messages:** ~100 for long convos.
+- **Goals block:** tone keywords + personality sentences + merge fields, business context, conditions (Stop Bot / Human Handover / Auto Followup), appointment toggles (cancel/reschedule).
+- **Actions:**
+  - **Capture Information (Qualify)** — *loops autonomously* until it has the data or hits max attempts. The qualification engine.
+  - **Book Appointment** — *loops* until booked or declined; branches "Appointment Booked" / "not booked."
+  - **AI Splitter** — branches logic from already-collected info WITHOUT sending a message.
+  - **AI Message** (one contextual generated reply) · **Custom Message** (literal text, unmodified) · **End Conversation** · **Transfer Bot** (hand to another bot, exits flow) · **Continue Conversation** (post-objective instructions).
+- **Triggers:** default entry = "Chat Initiated" (only entry point). Custom triggers (up to 3) fire at `[END]` nodes, each with priority (1-10) + sensitivity (Low/Med/High). `[END]` = objective complete, NOT chat termination — chat continues without an active objective.
+- This is a SEPARATE environment from Automations/Workflow builder — it lives inside Conversation AI.
+
+### ⭐ WHERE Conversation AI lives + HOW to make it respond to leads (the #1 confusion)
+**Menu path:** Sub-account → **AI Agents → Conversation AI → + Create Bot**. (Agent Studio for complex multi-node agents lives at **AI Agents → Agent Studio**.)
+**Three build methods:** Guided Form (simple) · **Prompt-Based Bot** (pick a template / "start from scratch" / describe it — this is the "ask AI to build it" path; a newer co-founder-demoed Copilot sits on top of this — exact UI label is new, functionally = Create Bot → describe it) · Flow-Based Builder (visual branching).
+**THE KEY: how it actually replies to leads.** A new bot defaults to **Off**. To make it respond you do NOT have to build a workflow. In **Bot Settings**:
+1. Set mode = **Auto-Pilot** (Off / Suggestive / Auto-Pilot). Auto-Pilot = replies automatically; Suggestive = drafts for a human to send.
+2. **Enable the channels** in Bot Settings (SMS, Email, Facebook, Instagram, WhatsApp, Chat Widget/SMS Chat, Live Chat).
+→ Once Auto-Pilot + a channel is enabled, the bot **automatically replies to every inbound message on that channel** — no workflow needed. It waits a configurable window (default 2 min, range 1s–5min), collects the messages, then replies.
+**Use a workflow ONLY for conditional control** (the "Conversation AI" / "AI Agent" workflow action on a "Customer Replied"/inbound trigger) — e.g. only fire for certain tags/pipeline stages. For "respond to all new leads on this channel," channel-level Auto-Pilot is simpler and more reliable than wiring the Workflow/Flow Builder (which still has gaps).
+**Gotchas:** defaults to Off (must flip to Auto-Pilot); **Sleep Mode** = bot sleeps 2h after a manual or workflow-sent message; default 10-message cap per convo; only ENABLED channels respond; thumbs up/down on each reply trains it (FAQ/URL training).
+
+### AskAI "Conversation AI Agent Copilot" (CONFIRMED via Shaun Clark video 2026-06-09)
+The newest build path: open **AskAI** and describe the agent in plain language — it builds AND deploys a full Conversation AI agent in ONE step, no manual config. The onboarding wizard pulls the **business profile + brand voice + past conversations** (e.g. "last 100 conversations in the last 30 days") to synthesize the agent's tone + instructions, then enables it on the channels you name, in the mode you name. It shows you the steps before executing.
+Example one-liner to type into AskAI: *"Build the conversation agent from my past 100 conversations in the last 30 days, enable it on all channels including SMS and live chat, and turn it on in Suggestive mode."* → done. (For EquityMax, swap in our compliant qualify-and-book instructions + start in Suggestive on Renée's contact before Auto-Pilot.)
+
+### Voice AI (2026)
+- Inbound + outbound phone agent: answers, qualifies by natural voice, books on-call, transfers to human, routes by intent.
+- **Runs on the same Flow Builder engine** → the "conversation flow that matches the lead" = the Capture/Qualify + AI Splitter branching driving the voice convo down the path the lead's answers dictate, plus context handling (detects mumbled/mispronounced words from context).
+- **Persistent conversation memory** — retains history across sessions; a lead who texted/called weeks ago has prior context pulled in. *(blog-sourced — confirm in panel)*
+- Voice AI Chat Widget; multilingual (12-19 langs, claims vary); Onboarding Orb setup assistant; redesigned single-pane dashboard; outbound-to-mobile with consent + verified caller ID + 9am-7pm local window; Voice AI performance reports. *(several blog-sourced — confirm in panel)*
+- ⚠️ Our rule still holds: GHL native Voice AI is default until first paying client (memory `voice_ghl_first_assistable_later`). Test only on Renée's contact.
+
+### AI Agent Studio (2026)
+- Agents with knowledge bases, web search, **MCP server connections** (talk to external tools natively), API requests, routers, sequential actions.
+- Pre-built templates (Lead Pipeline Tracker, Form Lead Follow-Up); pre-loaded tools (opportunity update, contact create, SMS send).
+- **User permissions** (view vs edit per agent); **Todo Manager** (enhanced agent tasking); Conversation Memory toggle in Advanced Options; ~15k-char prompt budget; GPT-5.1-class model.
+
+### Other 2026 worth knowing
+- **AI Employee** plan (~$97/mo bundle of the AI tools).
+- **Ask AI**: scheduled tasks, blog generation, voice mode, persistent memory, pay-per-use.
+- Funnel & Website AI rebuilt; native HubSpot + Klaviyo integrations; Communities (live A/V, nested channels); Mobile App 4.0.
+
+---
+
 ## GHL Account Structure
 - **Agency account:** PowerAgent ({{AGENCY_API_KEY}}) — intake survey lives here
 - **ABC Company:** AKbAtRra4m908e2w2Kbo ({{ABC_API_KEY}}) — universal snapshot being built

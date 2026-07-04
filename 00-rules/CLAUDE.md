@@ -75,6 +75,7 @@ The auto-memory store at `C:/Users/User/.claude/projects/C--Users-User/memory/` 
 
 Every session, in this order, before any task:
 
+0. **Read `XpertVault/BRAIN-INDEX.md`** — the current-state entry point (same file every remote surface reads at `raw.githubusercontent.com/poweragentsystem-ai/ghl-brain/main/BRAIN-INDEX.md`). After any meaningful state change, UPDATE it and re-sync via `sprint/sync-to-github.sh` — this is what keeps dispatch/mobile/Console non-blind.
 1. **Read `XpertVault/sprint/master-build-status.md`** (legacy path still active) — single source of truth across Claude Code, Console, Mobile.
 2. **Read `XpertVault/00-rules/pending-saves-queue.md`** — if items are unchecked, complete those saves FIRST.
 3. **Read `XpertVault/12-daily/session-log.md`** — find the last entry. Know exactly where we left off.

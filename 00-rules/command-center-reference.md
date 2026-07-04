@@ -26,3 +26,6 @@ That is a **frontend feature in the React app** → it is a **Claude Code task, 
 
 ## Cross-instance note
 All three Claudes coordinate through the central brain (`/api/brain`) + the vault (mirrored to the `ghl-brain` GitHub repo for Console). The Command Center is where Renée *sees* that shared state. When in doubt about "what is X" — this file and `CONTEXT.md` (the Layer-1 router) are the place to look first.
+
+## Protocol correction — 2026-07-03: all 3 surfaces can POST to intel
+App/Chat Claude **CAN POST to the intel feed directly** via `POST https://xpert-command-center.vercel.app/api/intel` with body `{"note":"CLAUDE-NOTE: ..."}` — confirmed **HTTP 200**. The old "read-only" rule (that App/Chat could only read intel) is **outdated**. All 3 surfaces (Claude Code, Console, App/Chat) can drop CLAUDE-NOTE items programmatically. Use this for cross-instance handoffs instead of routing everything through one surface.

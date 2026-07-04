@@ -152,7 +152,7 @@ All token efficiency rules live in `/operating-system/token-efficiency.md`. Foll
 3. Canadian compliance always applies: CASL, PIPEDA, CRTC, FSRA
 4. Mobile-first on all UI. Dark theme on all dashboards.
 5. Brand name is placeholder until finalized — never hard-code "Power Agent System" into anything new
-6. REI DealFlow wholesale app is ACTIVE (as of 2026-04-15) — Fitz/Jon/Jeff coaching group partnership; Renée gets 25% subscription + JV cut. Older `rei-dealflow` repo is archived — only build on `wholesale-app-reidealflow`.
+6. REI DealFlow wholesale app is PAUSED (since 2026-04-23, may dissolve) — do NOT build on it unless Renée explicitly resumes. (Reconciled 2026-07-03 to match the authoritative `00-rules/CLAUDE.md` + global CLAUDE.md, which was the source-of-truth; this file previously said ACTIVE from 2026-04-15 and was stale. If resumed: address masking is critical. Prior partnership terms if revived: Fitz/Jon/Jeff coaching group, 25% subscription + JV cut; build only on `wholesale-app-reidealflow`, not the archived `rei-dealflow`.)
 7. If GHL can do it natively, use GHL — don't add n8n complexity unless required
 
 ---

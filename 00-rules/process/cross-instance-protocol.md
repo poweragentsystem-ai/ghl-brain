@@ -127,22 +127,36 @@ SESSION START — read in order, then claim:
 The relationship: GHL AI builds → Console reviews / approves / verifies. NOT Console-builds-with-GHL-AI-as-tool.
 Console-first when GHL AI could do it = BAD WORK. The car vs. bike framing applies to every task.
 
-THREE AIs — never confuse:
-  ❌ "Ask AI" (top-right) = generic, no account context. NEVER use.
-  ✅ "Get Started" (Sub → AI Agent → Get Started) = account-aware. DEFAULT for every task.
-  ✅ "Build with AI" (inside any workflow → button at top) = workflow specialist.
+THE AI SURFACES — use them, don't go manual (UPDATED Renée 2026-06-29):
+  ✅ "Ask AI" (top-right) = NOW TASK-CAPABLE. GHL upgraded it — it DOES tasks (build email
+       sequences, create/edit fields, values, tags, answer account questions, etc.).
+       Renée 2026-06-29 REVERSED the old "never use" rule. This is now a default doer for
+       non-workflow tasks. (If it turns out this is a different button, flag to Renée.)
+  ✅ "Build with AI" (open a workflow → button at top) = workflow builder. Use for creating/
+       editing WORKFLOWS — the one thing Ask AI can't do.
+  ✅ "Get Started" (Sub → AI Agent → Get Started) = account-aware agent surface — still valid.
+
+  ⚠️ TWO LIMITS of "Ask AI" — work WITH them, don't abandon the AI over them:
+    1. It CAN'T create workflows → switch to Build with AI inside a workflow for those.
+    2. It CAN'T see all custom fields / custom values / tags → when a task needs them,
+       COPY the real list (MCP cf_list / cv_list / tag_list) and PASTE it into the chat.
+
+  ❌ DON'T build manually (the Console email-sequence mistake, 2026-06-29) when Ask AI or
+     Build with AI could have done it. GHL AI is an EXPERT ASSET — use it FIRST, then I
+     review / correct / finish manually only if it's wrong or genuinely can't do the task.
 
 THE FLOW on EVERY GHL task:
   0. RESUME prior chat if one exists for this task (don't start fresh + lose context)
-  1. OPEN Get Started AI (or resumed chat)
+  1. OPEN the right AI: Ask AI (top-right) for general tasks · Build with AI for workflows ·
+     Get Started for account-aware planning. Paste in fields/values/tags if the task needs them.
   2. ASK FOR PROPOSAL: "How would you approach <task>?" — GHL AI proposes a plan
   3. REVIEW + APPROVE: read the proposal, push back / refine / OK it (Console = REVIEWER, not commander)
   4. BUILD: let GHL AI execute the approved plan
   5. VERIFY: "Describe step by step what you just built"
   6. MCP CROSS-CHECK (only for specific things — see below)
   7. CORRECT discrepancies → re-verify
-  8. WORKFLOW FALLBACK — if Get Started can't build a workflow: open new workflow → Build with AI (still NOT manual)
-  9. TRUE MANUAL = last resort only when both AIs fail
+  8. WORKFLOW = Build with AI (Ask AI can't make workflows; still NOT manual)
+  9. TRUE MANUAL = last resort only when no AI surface can do it
 
 🔄 BIDIRECTIONAL ADVICE — even when YOU have an idea:
    "I was thinking <X> — does that make sense? Is there a better way?"

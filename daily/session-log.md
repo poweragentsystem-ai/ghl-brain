@@ -345,3 +345,6 @@ NEXT SESSION STARTS WITH:
 5. After bootcamp: Morning brief MyClaw rebuild
 6. After brief: CC Phase 2 (Marketing pipeline + design review + ad A/B testing)
 ---
+
+[CHECKPOINT —  | Claude-Code]
+Rebuilt faceless funnel for new offer (Nap-Time Income Kit, $17/$9/$37). Warm mom-friendly re-skin, expert lessons carried over, live + verified at funnel-two-kappa.vercel.app.
