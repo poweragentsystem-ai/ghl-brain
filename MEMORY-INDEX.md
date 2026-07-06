@@ -1,5 +1,6 @@
 # Memory Index
 
+- [🔻 RED-TEAM every Renée idea + all creative BEFORE enthusiasm (2026-07-05)](feedback_red_team_every_idea_and_creative.md) - failure modes/cost/kill criteria/verdict block first; same negative pass on ads/content. CLAUDE.md gate.
 - [Test like a REAL user — messy inputs, 3 timed runs vs platform limits (Renée 2026-07-04)](feedback_test_like_a_real_user_not_clean_inputs.md) - One clean pass ≠ tested; worst run needs 20% headroom vs hard limits; design review DURING build, not retro.
 - [Tools registry = source of truth; never assume subscriptions from installed skills (2026-07-04)](feedback_tools_registry_and_no_assumed_subscriptions.md) - Check ?tools_registry=1 before recommending; POST new suggestions same turn; free-first for video.
 - [NO KEYS IN THE BROWSER — ever (Renée 2026-07-04)](feedback_no_keys_in_frontend_ever.md) — Keys server-side only (env/vault); browser calls our /api/*; audit pages+bundles for sk- patterns after integration deploys. CLAUDE.md critical rule #12.

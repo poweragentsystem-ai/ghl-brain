@@ -28,3 +28,6 @@ logs → after every change · screenshot + design checklist → after every vis
 
 ## WHERE EMERGENT'S LOOP BREAKS (so ours doesn't)
 Third-party OAuth flows it can't drive itself (it made the human click) — flag these honestly as "needs your click." Mature codebases (regressions in untouched code) — our ledger + re-running prior phase tests covers this. No post-deploy monitoring daemon — ours is the canary/verify-live gates.
+
+## ADDENDUM (Renée 2026-07-05) — independent design reviewer
+Phase-end UI review (step 5d/8) should be run by a FRESH-CONTEXT design-review subagent when the surface is customer-facing: hand it the live URL + screenshot + the written checklist; it grades sizing, colors, spacing, relevance, and what to tweak — independent eyes, not self-review. (Self-review remains the inner-loop default for internal surfaces/speed.) Also load `ui-ux-pro-max`/`impeccable` on customer-facing visual builds per the standing UI/UX rule.
