@@ -1,5 +1,5 @@
 # 🧠 XPERT BRAIN — START HERE (any surface: Code / Console / mobile / dispatch)
-*Single current-state entry point. Synced to the public ghl-brain repo so remote surfaces can read it. NO PII or secrets in this file — safe to be public. Last updated: 2026-07-03.*
+*Single current-state entry point. Synced to the public ghl-brain repo so remote surfaces can read it. NO PII or secrets in this file — safe to be public. Last updated: 2026-07-05 (mega-session).*
 
 **Read this at:** `https://raw.githubusercontent.com/poweragentsystem-ai/ghl-brain/main/BRAIN-INDEX.md`
 
@@ -10,7 +10,14 @@ Xpert Web Solutions Inc. (Toronto). Owner/CEO: Renée Ross. AI automation agency
 
 ## 🔴 CURRENT ACTIVE WORK (2026-07-04) — PIVOTED
 **Product pivoted (Renée, after several iterations): the real low-ticket product is "THE CREATOR" — a TOOL, sold via a guide→tool funnel.**
-- **The Creator tool** (the real product / upsell $47): niche in → AI-generated digital product + sales page + 30-day content + GHL post-scheduling. LIVE + **FULLY GENERATING**: **https://app-tau-two-63.vercel.app** ✅ UNBLOCKED 2026-07-04: ANTHROPIC_API_KEY pulled from the Command Center vault (it was there all along) → Vercel env. v1 monolithic call hit Vercel's 60s timeout → rebuilt as 3 parallel part-calls (product=Sonnet 4.6, sales=Sonnet 4.6, posts=Haiku 4.5), frontend renders each part as it lands. End-to-end verified live via browser: real 8-section guide + sales page + 30 posts generated for a test niche. Still optional: GHL_TOKEN (auto-post), STRIPE (charge). Code: `07-projects/product-creator-tool/app/`.
+- **The Creator tool** (the real product / upsell $47): **https://app-tau-two-63.vercel.app** — FULLY GENERATING + massively upgraded 2026-07-04/05 (all Renée-directed, all live-verified):
+  - **Conversational intake** ("Start now" → Claude-style welcome → human-cadence chat, ≤3 code-capped follow-ups) → **live-researched 3–5 product ideas** with demand bars (1–100 + evidence, sorted) → tap → auto-generates product+sales+30 posts.
+  - **Doctrines wired into the engine:** NICHE RULE (lived experience picks the niche; interest = tool, never beginner-taught topics) · MARKET-SIZE RULE (specific outcome × broad audience, no geo-narrowed titles) · PROVEN-FIRST (titles adapt real researched sellers; hooks locked to viral formula taxonomy) · HONESTY (no invented stats/averages/prices; personal results only as [your numbers] templates) · in-engine Kai/Vee offer-check per idea.
+  - **Sell It Your Way:** user picks Stripe/Gumroad/Etsy/other → 3-step guide → pastes THEIR product link → sales-page CTA wires to it (E2E verified).
+  - **Hardened:** per-IP rate limits (8/min suggest, 15/min generate), security headers, no key leakage (audited), error internals server-side only, structural self-healing (drift force-call, ↻ Try again resume). /terms live w/ methodology fine print.
+  - **First ad creatives live:** /ads/ad-1..3.png (typographic tier, brand tokens, real hooks).
+  - **Switches still Renée's:** real Stripe SECRET key (vault entry currently holds publishable — see active-task), GHL_TOKEN, visual-engine path (labs.google free vs fal.ai/Replicate paid) for avatar reels/photo ads.
+  - Test ledger: `07-projects/product-creator-tool/app/test_result.md` (Emergent-loop protocol, adopted as standard: `00-rules/process/emergent-build-loop.md`).
 - **$17 front-end guide** ("How to Create & Sell a Digital Product with AI" — teaches the manual version, bridges to the tool): `07-projects/product-creator-tool/guide/`. Built.
 - **Funnel** (guide → tool upsell): DONE + verified LIVE at **https://funnel-two-kappa.vercel.app** — "The Creator's Playbook" $17 → +$9 bump → +$47 The Creator app upsell → delivery. One cohesive warm-editorial brand with the tool. Panel self-check 9/9/8/9. Placeholders remaining: "look inside" video + guide download links (Renée's go-live). Shell: `07-projects/faceless-finance-offer/funnel/`.
 - Prior explorations (budget spreadsheet, mom-AI info-product) archived/superseded — do NOT resume; the tool is the product.
