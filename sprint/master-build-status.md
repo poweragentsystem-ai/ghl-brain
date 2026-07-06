@@ -319,3 +319,4 @@ ABC (8 CVs + 1 tag):
 
 - [2026-05-13 20:00 ET | Renée] GHL EquityMax custom fields cleanup COMPLETE. 17 folders created, all fields organized, 19 legacy folders deleted, 2 Lovable fields created (product_service_selected, qualification_status), broken Pre-Approved Amount field fixed. Next: tags build, then duplicate fields deletion phase.
 - [ | Claude-Code] Re-topiced funnel Money-Reset → Nap-Time Income Kit (AI income for moms). Rewrote all 4 pages + styles.css (researched warm terracotta/cream/sage palette) + API product names. Deployed funnel-two-kappa.vercel.app, verified live (Playwright desktop+mobile, 0 console errors, no overflow, bump total $17→$26). Stripe still demo-mode, no keys hardcoded.
+- [2026-07-06 | Claude-Code] Console-Project pipe verified end-to-end; fixed root PROCEDURES.md 404 (pointer file + sync script line)

@@ -1,5 +1,5 @@
 # One-time paste: make Console / Claude app auto-read the brain
-*(v2 — 2026-07-05: now includes the GHL-AI-FIRST standing law + no-new-customs ban)*
+*(v3 — 2026-07-06: GHL paragraph hardened after Console manually reviewed a workflow on 2026-07-05 instead of asking Workflow AI — added the hard ban + self-check + mandatory protocol fetch before GHL work)*
 
 **Where to paste (once):** claude.ai → the Project Console uses → **Project instructions** (Settings/Customize). Every new chat in that project then follows it automatically — no more re-telling.
 
@@ -10,7 +10,10 @@ At the start of EVERY conversation, before responding, fetch and read:
 https://raw.githubusercontent.com/poweragentsystem-ai/ghl-brain/main/BRAIN-INDEX.md
 That is the live current-state brain for Xpert Web Solutions (current builds, blockers, owners, standing protocols). For standing rules or agent ownership, also fetch PROCEDURES.md and 00-rules/process/ghl-ai-as-senior-expert.md from the same repo (same base URL, swap the path).
 
-FOR ALL GHL WORK — GHL-AI-FIRST is standing law: GHL has trained AI built in; use it instead of manual clicking. Ask AI = chat about the whole sub-account and it can action the AI agents. To know what a workflow does: open the workflow → Workflow AI / Build with AI → ask for a DETAILED BREAKDOWN first → then instruct changes. AI Studios builds landing pages, funnels, and apps. Two blind spots: Ask AI cannot see all custom values/fields and cannot see inside workflows — paste the full customs lists from Google Drive ("Custom Values List" and "Custom Fields List" docs) into the chat when its opinion touches customs. GHL AI is the GHL expert; you are the business expert — push back when it conflicts with our rules (generic snapshots, {{custom_values}} placeholders, no niche hardcodes).
+FOR ALL GHL WORK — GHL-AI-FIRST is standing law, and BEFORE touching anything in GHL you MUST fetch and re-read https://raw.githubusercontent.com/poweragentsystem-ai/ghl-brain/main/00-rules/process/ghl-ai-as-senior-expert.md (not optional — it is the protocol). The two rules most violated:
+(1) ⛔ NEVER manually review a workflow's steps yourself. Opening a workflow and reading/clicking through its steps one by one is BANNED as a first move. The ONLY correct sequence: open the workflow → Workflow AI / Build with AI → first message = "Give me a DETAILED BREAKDOWN of this workflow — every trigger, step, condition" → THEN ask it about the specific thing you're doing. Self-check before every workflow action, every time, no matter how deep into the chat you are: "Did I ask the Workflow AI first?" If no — stop and ask it.
+(2) ⛔ Never hardcode business-specific values — everything is {{custom_values.X}}; snapshots are generic and sold to other businesses.
+AI Studios builds landing pages, funnels, and apps. Two blind spots: Ask AI cannot see all custom values/fields and cannot see inside workflows — paste the full customs lists from Google Drive ("Custom Values List" and "Custom Fields List" docs) into the chat when its opinion touches customs. GHL AI is the GHL expert; you are the business expert — push back when it conflicts with our rules.
 ⛔ NEVER create new custom values or custom fields — cleanup of broken/unneeded ones is in progress and new ones made the mess worse. Reuse existing, or ask Renée first and update the Drive list in the same breath.
 
 To leave a note for Claude Code, POST to https://xpert-command-center.vercel.app/api/intel with body {"note":"CLAUDE-NOTE: ..."}.

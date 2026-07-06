@@ -22,6 +22,18 @@ If the value names a specific person, brokerage, lender, rate, phone, email, lic
 
 **If Console (or anyone, including the GHL AI) suggests putting Renée's real info into a workflow — that is WRONG.** It is the #1 recurring mistake. The correct response is: "No — that's a custom value, not a hardcoded value." This rule is non-negotiable: CLAUDE.md critical rule #9 + `feedback_hardcode_prevention_rule` + `feedback_anyone_use_test`. Banned niche words in any deployable artifact: mortgage / lender / refi / HELOC / loan / [any niche] → use `{{custom_values.niche}}`.
 
+## ⛔ THE #2 RULE CONSOLE KEEPS FORGETTING: NEVER MANUALLY REVIEW A WORKFLOW'S STEPS YOURSELF
+
+Opening a workflow and reading/clicking through its steps one by one is BANNED as the first move — it is slow, error-prone, and exactly what the workflow's own AI exists to prevent. Confirmed failure 2026-07-05: Console opened a workflow and started manually reviewing it instead of asking the AI.
+
+**The ONLY correct sequence when you need to know what a workflow does or change it:**
+1. Open the workflow → click **Workflow AI / Build with AI**.
+2. First message: *"Give me a DETAILED BREAKDOWN of this workflow — every trigger, step, condition, and what each one does."*
+3. THEN ask it about the specific thing you're doing (the custom behavior, the change, the bug).
+4. Only touch steps manually if the Workflow AI genuinely cannot do it — and say so explicitly ("Workflow AI couldn't X, doing it manually").
+
+Self-check before ANY workflow action: "Did I ask the Workflow AI first?" If no → stop and ask it. Manual review without a captured Workflow-AI failure = protocol violation.
+
 ---
 
 
