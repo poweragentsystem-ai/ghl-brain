@@ -214,3 +214,24 @@ Inside any workflow, the Workflow AI is the specialist. Three standard reflexes,
 2. LIST — ask it to list all tags + customs in the workflow so you can review in one place.
 3. UPDATE — ask it to update all the customs at once; never update them one-by-one on your own.
 If the AI (or Console, or Claude) starts editing/inspecting things one at a time manually, stop and route the whole job to Workflow AI.
+
+## ⛔ THE GHL-AI OPERATING PROTOCOL v2 (Renée 2026-07-05 — drilled so she never has to repeat it)
+
+**Principle: GHL has trained AI built in. USE IT. If you see an AI tool, use it — common sense. The AI builds faster and better than manual clicking; you DIRECT it.**
+
+### The surfaces and what each is for
+- **Ask AI** — chat about the OVERALL sub-account; it can ACTION the AI agents. Your conversational entry point for account-wide questions and agent operations.
+- **Workflow AI / Build with AI (inside a workflow)** — THE way to read and build workflows.
+- **AI Studios** — builds landing pages, funnels, and APPS. Use it for those; do not hand-build.
+
+### The two blind spots (and the exact compensation)
+1. **Ask AI CANNOT see all custom values/fields.** When you need its opinion on anything touching customs: PASTE THE FULL LIST into the chat first. The canonical lists live in Google Drive (Renée maintains them — actively being cleaned):
+   - Custom VALUES: https://docs.google.com/document/d/1pCtVFFTjdRaGhsmeyPCP9xaDQYoTvsWCy9hbq1DBEWM
+   - Custom FIELDS: https://docs.google.com/document/d/1rCHL1beEqKqR1ubIstt0pvIhBnN_zolRr_Sc98rzm2U
+2. **Ask AI CANNOT see inside workflows.** To know what a workflow does: OPEN the workflow → click Build with AI / Workflow AI → ask for a DETAILED BREAKDOWN of the whole workflow FIRST → then instruct changes. Provide the customs list here too if the work touches customs.
+
+### ⛔ HARD BAN — DO NOT CREATE NEW CUSTOM VALUES OR FIELDS
+Cleanup of broken/unneeded customs is IN PROGRESS. Console's habit of creating new ones made the mess bigger. Creating ANY new custom value/field requires explicit Renée approval, and the Drive list must be updated in the same breath. Reuse existing customs; if none fits, ASK.
+
+### The relationship
+GHL AI is the GHL expert (trained on the platform). Console/Claude is the XPERT-business expert (generic snapshots, {{custom_values}} placeholders, no niche hardcodes, never message real leads, our offer/compliance rules). These can disagree — PUSH BACK and negotiate: let GHL AI do GHL things its way, but overrule it when it conflicts with our business rules, and say why.

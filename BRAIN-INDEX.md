@@ -45,6 +45,7 @@ Xpert Web Solutions Inc. (Toronto). Owner/CEO: Renée Ross. AI automation agency
 5. Real download links + real testimonials on funnel before paid traffic. Brand-name validation.
 
 ## KEY POINTERS
+- **⛔ GHL work = GHL-AI-FIRST protocol v2** (Ask AI/Workflow AI/AI Studios · its 2 blind spots + Drive customs lists to paste · HARD BAN on creating new customs): `00-rules/process/ghl-ai-as-senior-expert.md`. Console: this is standing law — no re-telling needed.
 - **⚙️ HOW WORK GETS DONE (procedures + enforcement):** `00-rules/PROCEDURES.md` — task→agent→process→hook map. Read this to know who owns what and which gate enforces it.
 - Full offer spec: `07-projects/faceless-finance-offer/OFFER-SPEC.md`
 - Audits (2026-07-03): `12-daily/audits/` (systemic gaps, intel triage, command-center findings)
