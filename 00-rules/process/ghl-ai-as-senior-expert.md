@@ -34,6 +34,15 @@ Opening a workflow and reading/clicking through its steps one by one is BANNED a
 
 Self-check before ANY workflow action: "Did I ask the Workflow AI first?" If no → stop and ask it. Manual review without a captured Workflow-AI failure = protocol violation.
 
+## ⛔ THE #3 RULE: BUILD WITH AI SILENTLY REWRITES MESSAGE COPY — FORBID IT EVERY TIME
+
+Build with AI / Workflow AI "helpfully" rephrases and grammatically polishes existing message text (SMS, emails, agent prompts, templates) while making unrelated changes. Renée's messaging is deliberate — its tone, wording, and imperfections are chosen. Confirmed recurring problem (Renée, 2026-07-06).
+
+**Every single instruction you give Build with AI / Workflow AI must end with this line, verbatim:**
+"Do NOT rewrite, rephrase, shorten, or grammatically correct any existing message text, email copy, SMS copy, or agent prompt wording. Preserve all existing messaging EXACTLY as written, character for character. Only change what I explicitly asked you to change."
+
+**And after every Build-with-AI edit:** ask it "list every message/text field you touched" — then spot-check that untouched messages are still verbatim. If it altered copy it wasn't asked to touch, tell it to restore the original wording exactly.
+
 ---
 
 
