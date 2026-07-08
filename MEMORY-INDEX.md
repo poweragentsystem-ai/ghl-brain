@@ -266,3 +266,4 @@
 - [Talk Like Claude App, Not a Terminal](feedback_talk_like_claude_app.md)
 - [Save Every 15 Minutes — Hard Cadence](feedback_save_every_15_min.md)
 - [Stack Corrections — 2026-04-23](project_stack_corrections_2026_04_23.md)
+- [Dispatch messaging channel — how to message Renée on her phone](reference_dispatch_messaging_channel.md) — RemoteTrigger update trig_018VaKGD31... + run → 📬 session in her claude.ai Code list; two-way; beats Telegram (her preference 2026-07-08)
