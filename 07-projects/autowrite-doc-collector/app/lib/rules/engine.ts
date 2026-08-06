@@ -76,6 +76,34 @@ function computeLtv(a: IntakeAnswers) {
 export function classifyPath(a: IntakeAnswers): { path: DealPath; notes: PathNote[] } {
   const notes: PathNote[] = [];
 
+  // Explicit start-screen choice wins — with the same never-dead-end gates.
+  if (a.productChoice) {
+    switch (a.productChoice) {
+      case "renewal":
+        return { path: "renewal", notes };
+      case "purchase":
+        break; // fall through to purchase logic below (quick-close check still applies)
+      case "refinance":
+        if (a.timeline === "days") {
+          notes.push({ audience: "agent", tone: "info", text: "Chose refinance but needs funds in days — routed private, refinance as the exit." });
+          return { path: "private", notes };
+        }
+        return { path: "refinance", notes };
+      case "reverse":
+        if ((a.age ?? 0) >= REVERSE_MIN_AGE) return { path: "reverse", notes };
+        notes.push({
+          audience: "client",
+          tone: "good_news",
+          text: "A reverse mortgage needs you to be 55+, but good news — you can still move forward today. We'll set you up on the refinance route, which gets you the same access to your equity.",
+        });
+        return { path: "refinance", notes };
+      case "private":
+        return { path: "private", notes };
+      case "other":
+        return { path: "triage", notes };
+    }
+  }
+
   if (a.goal === "renewal") return { path: "renewal", notes };
 
   if (a.goal === "purchase") {

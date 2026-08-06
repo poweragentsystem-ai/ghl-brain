@@ -5,6 +5,9 @@
 
 export type Goal = "purchase" | "equity" | "renewal" | "unsure";
 
+/** The start-screen selection — deal type first, in plain options. */
+export type ProductChoice = "purchase" | "refinance" | "renewal" | "reverse" | "private" | "other";
+
 export type Employment =
   | "employed"
   | "self_employed"
@@ -21,6 +24,10 @@ export type IdType = "drivers_licence" | "passport";
 
 export interface IntakeAnswers {
   goal: Goal;
+  /** Explicit start-screen product selection; when present it wins over inference. */
+  productChoice?: ProductChoice;
+  /** Who completed intake — the client, or the agent on their behalf. */
+  completedBy?: "client" | "agent";
   isHomeowner?: boolean;
   propertyValue?: number;
   mortgageBalance?: number;

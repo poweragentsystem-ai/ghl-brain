@@ -45,6 +45,16 @@ SIN module (`lib/sin.test.ts`):
 - Name-variant cross-doc heads-up (neutral wording, never "fraud") ✅ (unit test)
 - Screenshot of the underwriter cockpit visually verified ✅
 
+## v1.2 round (2026-08-06, same session) — 50/50 unit tests, build clean
+
+Live E2E on fresh server (all executed, outputs observed):
+1. **Agent-filled intake**: agent posted answers on the client's behalf (explicit "private" product) → path=private, exit plan captured, `completedBy: agent` ✅; same call WITHOUT the agent cookie → 401 unauthorized ✅. Client's link then goes consent → straight to checklist.
+2. **Product-first start screen** (screenshot verified @375px): Buying a home / Refinance / Renewal / Reverse (55+) / Private-fast / Something else. Engine honors explicit choice (4 new tests: private→exit-plan, reverse 60→reverse vs 45→refinance+note, refinance-in-days→private w/ refinance-as-exit note, renewal/other) ✅
+3. **Co-applicant privacy (the core of it)**: primary added self-mode co-applicant → co-applicant got own private link (invite nudge audit-logged to test contact) ✅; **primary upload into co-applicant slot → 403 "That applicant's documents are private."** ✅; co-applicant upload on own link → verified ✅; co-applicant portal shows ONLY their 5 slots ✅; primary portal hides their docs, shows 🔒 summary (1/5 in) ✅; **sharing toggled ON by co-applicant → primary now sees their slots** ✅ (4 unit tests on canAccess + delegated mode)
+4. **Applicant-aware progress**: perApplicant docs duplicate per applicant, shared docs single; docs attach to the right applicant's slot ✅ (2 unit tests)
+5. **Welcome back**: returning client (any doc present) greeted "Welcome back, [name]" at their progress ✅ (code-reviewed; rendering exercised in checklist screenshots)
+6. Digest cron now chases self-mode co-applicants on their own links; primary nudged for own + delegated slots only.
+
 ## Known limits / untested (honest list)
 
 - **SupabaseStore untested** — no Supabase project/keys in this environment. Code complete; needs a live smoke test when Renée creates the ca-central-1 project (SQL in README).

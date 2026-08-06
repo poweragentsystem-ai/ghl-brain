@@ -1,12 +1,20 @@
 import ClientPortal from "@/components/ClientPortal";
 import FsraFooter from "@/components/FsraFooter";
 import { getStore } from "@/lib/store";
+import { resolveViewer } from "@/lib/viewer";
+import { isAgentAuthed } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
 
-export default async function ClientPage({ params }: { params: { token: string } }) {
-  const file = await getStore().getFileByToken(params.token);
-  if (!file) {
+export default async function ClientPage({
+  params,
+  searchParams,
+}: {
+  params: { token: string };
+  searchParams: { as?: string };
+}) {
+  const viewer = await resolveViewer(getStore(), params.token);
+  if (!viewer) {
     return (
       <main className="mx-auto max-w-md px-5 py-16 text-center">
         <h1 className="text-2xl font-bold">Hmm, this link isn't active</h1>
@@ -16,9 +24,10 @@ export default async function ClientPage({ params }: { params: { token: string }
       </main>
     );
   }
+  const asAgent = searchParams.as === "agent" && isAgentAuthed() && viewer.type === "primary";
   return (
     <>
-      <ClientPortal token={params.token} />
+      <ClientPortal token={params.token} asAgent={asAgent} />
       <FsraFooter />
     </>
   );

@@ -129,6 +129,29 @@ describe("LTV math is silent guidance, never rejection", () => {
   });
 });
 
+describe("start-screen product choice wins (v1.2)", () => {
+  it("explicit private → private path, exit plan required", () => {
+    const r = evaluate({ goal: "equity", productChoice: "private", isHomeowner: true, employment: "employed" });
+    expect(r.path).toBe("private");
+    expect(r.askNext).toContain("exitPlan");
+  });
+  it("explicit reverse at 60 → reverse; at 45 → refinance with still-move-forward note", () => {
+    expect(classifyPath({ goal: "equity", productChoice: "reverse", age: 60 }).path).toBe("reverse");
+    const r = classifyPath({ goal: "equity", productChoice: "reverse", age: 45 });
+    expect(r.path).toBe("refinance");
+    expect(r.notes.some((n) => /still move forward/i.test(n.text))).toBe(true);
+  });
+  it("explicit refinance but needs funds in days → private with agent note", () => {
+    const r = classifyPath({ goal: "equity", productChoice: "refinance", timeline: "days" });
+    expect(r.path).toBe("private");
+    expect(r.notes.some((n) => n.audience === "agent" && /refinance as the exit/.test(n.text))).toBe(true);
+  });
+  it("explicit renewal / other route directly", () => {
+    expect(classifyPath({ goal: "renewal", productChoice: "renewal" }).path).toBe("renewal");
+    expect(classifyPath({ goal: "unsure", productChoice: "other" }).path).toBe("triage");
+  });
+});
+
 describe("the universal invariant: NO combination of answers dead-ends", () => {
   it("fuzz across the whole answer space", () => {
     const goals = ["purchase", "equity", "renewal", "unsure"] as const;

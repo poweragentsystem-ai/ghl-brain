@@ -3,6 +3,7 @@ import { getStore } from "@/lib/store";
 import { readDocument } from "@/lib/ai/reader";
 import { rateLimit } from "@/lib/ratelimit";
 import { applyCrossDocRules } from "@/lib/rules/crossdoc";
+import { resolveViewer, canAccess } from "@/lib/viewer";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -16,13 +17,18 @@ export async function POST(req: NextRequest, { params }: { params: { token: stri
     return NextResponse.json({ error: "Slow down a moment." }, { status: 429 });
   }
   const store = getStore();
-  const file = await store.getFileByToken(params.token);
-  if (!file) return NextResponse.json({ error: "not found" }, { status: 404 });
+  const viewer = await resolveViewer(store, params.token);
+  if (!viewer) return NextResponse.json({ error: "not found" }, { status: 404 });
+  const file = viewer.file;
   if (!file.consentAt) return NextResponse.json({ error: "consent required" }, { status: 403 });
 
   const form = await req.formData();
   const reqKey = String(form.get("reqKey") ?? "");
   const part = form.get("part") ? String(form.get("part")) : undefined;
+  const applicantId = String(form.get("applicantId") ?? viewer.ownId) || viewer.ownId;
+  if (!canAccess(viewer, applicantId)) {
+    return NextResponse.json({ error: "That applicant's documents are private." }, { status: 403 });
+  }
   const upload = form.get("file") as File | null;
 
   if (!upload || !reqKey) return NextResponse.json({ error: "missing file or slot" }, { status: 400 });
@@ -39,12 +45,13 @@ export async function POST(req: NextRequest, { params }: { params: { token: stri
 
   const data = Buffer.from(await upload.arrayBuffer());
   const ext = contentType === "application/pdf" ? "pdf" : contentType.split("/")[1];
-  const storagePath = `${file.id}/${reqKey}${part ? `-${part.toLowerCase().replace(/\s+/g, "_")}` : ""}-${Date.now()}.${ext}`;
+  const storagePath = `${file.id}/${applicantId}-${reqKey}${part ? `-${part.toLowerCase().replace(/\s+/g, "_")}` : ""}-${Date.now()}.${ext}`;
   await store.putBlob(storagePath, data, contentType);
 
   const doc = await store.createDoc({
     fileId: file.id,
     reqKey,
+    applicantId,
     part,
     filename: upload.name,
     contentType,

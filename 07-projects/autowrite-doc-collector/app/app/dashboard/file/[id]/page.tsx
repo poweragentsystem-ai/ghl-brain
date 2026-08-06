@@ -46,6 +46,16 @@ export default async function FileDetail({ params }: { params: { id: string } })
             <p className="mt-1 break-all text-xs text-slate-500">
               Client link: /c/{file.token}
             </p>
+            {!file.requirements?.length && (
+              <a href={`/c/${file.token}?as=agent`} className="mt-2 inline-block rounded-lg bg-teal/20 px-3 py-1.5 text-xs font-bold text-teal transition hover:bg-teal/30">
+                ✎ Fill intake for {file.clientName.split(" ")[0]} — their link then goes straight to uploads
+              </a>
+            )}
+            {(file.applicants ?? []).length > 0 && (
+              <p className="mt-2 text-xs text-slate-400">
+                Co-applicants: {(file.applicants ?? []).map((ap) => `${ap.name} (${ap.mode === "self" ? "own link" : "primary uploads"}${ap.shareWithPrimary ? ", shared" : ""})`).join(" · ")}
+              </p>
+            )}
           </div>
           <div className="text-right">
             <p className="text-3xl font-extrabold text-white">{progress.pct}%</p>

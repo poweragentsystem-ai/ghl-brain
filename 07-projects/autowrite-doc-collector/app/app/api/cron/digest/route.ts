@@ -26,15 +26,28 @@ export async function GET(req: NextRequest) {
     const lastNudge = [...events].reverse().find((e) => e.action.startsWith("nudge_"));
     if (lastNudge && Date.now() - new Date(lastNudge.ts).getTime() < 3 * 24 * 3600_000) continue;
 
-    const missing = progress.slots
-      .filter((s) => !s.doc || ["needs_reupload", "rejected"].includes(s.doc.status))
-      .map((s) => s.label + (s.part ? ` (${s.part})` : ""));
-    if (!missing.length) continue;
+    const gap = (s: (typeof progress.slots)[number]) => !s.doc || ["needs_reupload", "rejected"].includes(s.doc.status);
+    const label = (s: (typeof progress.slots)[number]) => s.label + (s.part ? ` (${s.part})` : "");
 
-    const link = `${req.nextUrl.origin}/c/${file.token}`;
-    const mail = missingDocsEmail(file.clientName.split(" ")[0], missing, link);
-    await sendNudge({ fileId: file.id, to: file.clientEmail, ...mail });
-    nudged++;
+    // Primary gets nudged for their own docs + any delegated co-applicant docs.
+    const selfIds = new Set((file.applicants ?? []).filter((ap) => ap.mode === "self").map((ap) => ap.id));
+    const primaryMissing = progress.slots.filter((s) => gap(s) && !selfIds.has(s.applicantId)).map(label);
+    if (primaryMissing.length) {
+      const link = `${req.nextUrl.origin}/c/${file.token}`;
+      const mail = missingDocsEmail(file.clientName.split(" ")[0], primaryMissing, link);
+      await sendNudge({ fileId: file.id, to: file.clientEmail, ...mail });
+      nudged++;
+    }
+    // Self-mode co-applicants are chased directly on their own private links.
+    for (const ap of file.applicants ?? []) {
+      if (ap.mode !== "self") continue;
+      const theirMissing = progress.slots.filter((s) => s.applicantId === ap.id && gap(s)).map(label);
+      if (!theirMissing.length) continue;
+      const link = `${req.nextUrl.origin}/c/${ap.token}`;
+      const mail = missingDocsEmail(ap.name.split(" ")[0], theirMissing, link);
+      await sendNudge({ fileId: file.id, to: ap.email, ...mail });
+      nudged++;
+    }
   }
 
   return NextResponse.json({ ok: true, filesChecked: files.length, nudged });

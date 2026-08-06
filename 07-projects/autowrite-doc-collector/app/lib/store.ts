@@ -14,11 +14,25 @@ import type { DealPath, DocRequirement, IntakeAnswers, PathNote } from "./rules/
 export type FileStatus = "invited" | "collecting" | "review" | "complete";
 export type DocStatus = "processing" | "verified" | "needs_reupload" | "needs_review" | "accepted" | "rejected";
 
+export interface Applicant {
+  id: string;
+  name: string;
+  email: string;
+  /** Their own portal token (mode "self") — the app chases them directly. */
+  token: string;
+  /** "self" = uploads via their own link; "delegated" = primary uploads for them. */
+  mode: "self" | "delegated";
+  /** Privacy default OFF: the primary applicant cannot see/manage their documents
+   *  unless this applicant turns sharing on ("let them help me"). */
+  shareWithPrimary: boolean;
+}
+
 export interface ClientFile {
   id: string;
   token: string;
   clientName: string;
   clientEmail: string;
+  applicants?: Applicant[];
   createdAt: string;
   consentAt?: string;
   answers?: IntakeAnswers;
@@ -34,6 +48,8 @@ export interface DocRecord {
   id: string;
   fileId: string;
   reqKey: string;
+  /** Which applicant this document belongs to ("primary" when absent). */
+  applicantId?: string;
   part?: string;
   filename: string;
   contentType: string;
