@@ -1,4 +1,13 @@
-# autowrite.ca — Mortgage Document Collector & AI Underwriter
+# Mortgage Document Collector & AI Underwriter (working name: "DocDesk" — ⚠️ NEEDS BRAND-NAME GATE)
+
+**⚠️ NAMING CORRECTION (2026-08-06):** autowrite.ca is an EXISTING COMPETITOR — "AI Mortgage Underwriting & Compliance for Canadian Brokers" (doc intake, underwriting, submission, compliance packages). It was the inspiration in Renée's intel note, not our name. Our product needs its own name through the 6-step brand-validation gate before anything public. Code/app unaffected (name is env-configurable, nothing hardcoded).
+
+## Competitive read vs autowrite.ca (recon 2026-08-06, limited — their site bot-blocks)
+- Their headline = our v1 scope overlap: intake, AI underwriting, compliance packages. Feature-bullet parity is NOT a winning strategy.
+- Their public footprint is tiny: no reviews (Capterra/G2), no press, no indexed pricing/docs. Early-stage → market not won.
+- **Our wedges (build these, don't chase parity):** (1) client-side experience — their pitch is broker ops; the uploading CLIENT is the wedge (our wizard/never-dead-end/welcome-back). (2) Co-applicant privacy model — rare anywhere. (3) Per-broker live rate-sheet ingestion from the broker's own lender emails — a generic vendor can't have Renée's lender relationships. (4) New-licensee "agent-in-a-box" visual clarity (Renée's insight). (5) GHL-agency distribution + near-zero cost base.
+- **Parity gaps we still owe:** compliance-package generator (they claim it; FSRA file assembly), direct submission, deal-structuring scenarios.
+- **Best intel move (Renée, 10 min):** book their demo/trial + screenshot the IG post from the original intel drop + their site — feeds the teardown.
 
 *Living spec. Source of truth for the build. Captured from Renée's intel drop (`msh0e4rmgyjv`, 2026-08-06) + follow-up intake logic (2026-08-06). Update as decisions are made. NOTHING here is final product rule until Renée / Morgan (Mortgage) confirms — see "⚠️ Confirm-before-hardcode" flags.*
 
