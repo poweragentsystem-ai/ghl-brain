@@ -62,3 +62,10 @@ Live E2E on fresh server (all executed, outputs observed):
 - **Resend sending untested** — logged-only mode verified; non-prod forced-recipient guard is code-reviewed + unit-logic simple, but first live send should target renee.ross@gmail.com deliberately.
 - Multi-applicant UI: engine marks docs perApplicant; portal v1 shows one set (co-applicant flag captured for the agent). Phase 2.
 - 🎨/🏛 design + expert-panel review: self-review done in-session (screenshots); formal panel pass still owed before client-facing go-live.
+
+## v1.3 design round (2026-08-06) — 50/50 tests, build clean
+- Claude-style minimal hero: logo top-left, "Your Mortgage Starts Here", horizontal snap-scroll type cards, trust card (headshot+credentials+brokerage) bottom — screenshot verified @375px
+- Agent branding settings (/dashboard/settings): logo + credentials + optional headshot, live on every client link (saved via API, 303 verified)
+- Slide-in step transitions + minimal ← Back chip
+- Upload cards: drag-and-drop zone + file picker + separate "take a photo" (camera) option
+- BUG FOUND BY UI-TESTING + FIXED: hero tap did not advance (next() clamped vs pre-choice 1-step list) — jump to step 1 directly; re-verified by scripted tap

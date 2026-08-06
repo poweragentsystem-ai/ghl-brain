@@ -11,8 +11,11 @@ type Req = { key: string; label: string; category: string; howToGet: string; par
 type Slot = { reqKey: string; part: string | null; applicantId: string; applicantName: string | null; status: string; reason: string | null };
 type ApplicantInfo = { id: string; name: string; mode: "self" | "delegated"; shareWithPrimary: boolean };
 
+type Branding = { agentName: string | null; credentials: string | null; companyName: string | null; logo: string | null; headshot: string | null };
+
 interface PortalState {
   clientName: string;
+  branding: Branding;
   viewer: { type: "primary" | "applicant"; name: string; shareWithPrimary: boolean | null };
   status: string;
   consentAt: string | null;
@@ -97,7 +100,8 @@ export default function ClientPortal({ token, asAgent = false }: { token: string
   };
   const pickProduct = (pc: string, goal: string, extra?: Record<string, any>) => {
     setAnswers((a: any) => ({ ...a, productChoice: pc, goal, ...(extra ?? {}) }));
-    setTimeout(next, 150);
+    // Jump directly — `next()` would clamp against the pre-choice 1-step list.
+    setTimeout(() => setStepIndex(1), 150);
   };
 
   const submitAnswers = async () => {
@@ -173,25 +177,68 @@ export default function ClientPortal({ token, asAgent = false }: { token: string
     );
   }
 
+  if (phase === "wizard" && step === "goal") {
+    // Minimal hero start screen — logo, one line, a horizontal scroll of types.
+    const TYPES = [
+      { pc: "purchase", goal: "purchase", icon: "🏡", label: "Buying a home", sub: "First or next", extra: undefined as any },
+      { pc: "refinance", goal: "equity", icon: "🔄", label: "Refinance", sub: "Rate or equity", extra: { isHomeowner: true } },
+      { pc: "renewal", goal: "renewal", icon: "📅", label: "Renewal", sub: "Term ending", extra: undefined },
+      { pc: "reverse", goal: "equity", icon: "🌅", label: "Reverse", sub: "55+ equity income", extra: { isHomeowner: true, interestedInReverse: true } },
+      { pc: "private", goal: "equity", icon: "⚡", label: "Private / fast", sub: "Speed first", extra: { timeline: "days" } },
+      { pc: "other", goal: "unsure", icon: "💬", label: "Not sure yet", sub: "We'll figure it out", extra: undefined },
+    ];
+    const b = state.branding;
+    return (
+      <main className="mx-auto flex min-h-[92vh] max-w-md flex-col px-5 py-6">
+        <div className="flex items-center justify-between">
+          {b.logo ? <img src={b.logo} alt={b.companyName ?? "logo"} className="h-8" /> : <span className="text-xs font-semibold uppercase tracking-widest text-teal">{b.companyName ?? "Autowrite"}</span>}
+          {asAgent && <span className="rounded-full bg-amber-soft px-2.5 py-1 text-[11px] font-bold text-navy/70">Agent mode</span>}
+        </div>
+
+        <div className="flex flex-1 flex-col justify-center">
+          <h1 className="text-center text-[34px] font-bold leading-tight tracking-tight">Your Mortgage<br />Starts Here</h1>
+          <p className="mt-3 text-center text-navy/55">Pick what fits — about 2 minutes, from your phone.</p>
+
+          <div className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2">
+            {TYPES.map((t) => (
+              <button
+                key={t.pc}
+                type="button"
+                onClick={() => pickProduct(t.pc, t.goal, t.extra)}
+                className="min-w-[130px] shrink-0 snap-center rounded-2xl border-2 border-navy/10 bg-white px-4 py-5 text-left shadow-sm transition hover:border-teal active:scale-[0.97]"
+              >
+                <span className="block text-2xl">{t.icon}</span>
+                <span className="mt-2 block font-semibold leading-snug">{t.label}</span>
+                <span className="mt-0.5 block text-xs text-navy/50">{t.sub}</span>
+              </button>
+            ))}
+          </div>
+          <p className="mt-2 text-center text-xs text-navy/35">swipe for more →</p>
+        </div>
+
+        {(b.agentName || b.headshot) && (
+          <div className="mt-6 flex items-center justify-center gap-3 rounded-2xl bg-white/70 px-4 py-3">
+            {b.headshot && <img src={b.headshot} alt={b.agentName ?? "agent"} className="h-11 w-11 rounded-full object-cover" />}
+            <div className="text-left">
+              <p className="text-sm font-semibold leading-tight">{b.agentName}</p>
+              {b.credentials && <p className="text-xs text-navy/55">{b.credentials}</p>}
+              {b.companyName && <p className="text-xs text-navy/45">{b.companyName}</p>}
+            </div>
+          </div>
+        )}
+      </main>
+    );
+  }
+
   if (phase === "wizard") {
     return (
-      <Shell progress={progress} stepLabel={answers.productChoice ? `Step ${stepIndex + 1} of ${steps.length}` : "Step 1"}>
+      <Shell progress={progress} stepLabel={`Step ${stepIndex + 1} of ${steps.length}`} branding={state.branding}>
         {asAgent && (
           <p className="mb-4 rounded-lg bg-amber-soft px-3 py-2 text-sm font-semibold text-navy/70">
             Agent mode — you're filling this in for {state.clientName}.
           </p>
         )}
-
-        {step === "goal" && (
-          <Q title={asAgent ? "What's the deal?" : "What are we doing for you?"}>
-            <Choice onClick={() => pickProduct("purchase", "purchase")} label="Buying a home" />
-            <Choice onClick={() => pickProduct("refinance", "equity", { isHomeowner: true })} label="Refinance" sub="Better rate, or use your home's equity" />
-            <Choice onClick={() => pickProduct("renewal", "renewal")} label="Renewal" sub="Your mortgage term is ending" />
-            <Choice onClick={() => pickProduct("reverse", "equity", { isHomeowner: true, interestedInReverse: true })} label="Reverse mortgage" sub="55+ · turn equity into income, stay in your home" />
-            <Choice onClick={() => pickProduct("private", "equity", { timeline: "days" })} label="Private / fast funding" sub="Speed matters more than rate" />
-            <Choice onClick={() => pickProduct("other", "unsure")} label="Something else / not sure" sub="No stress — we'll figure it out together" />
-          </Q>
-        )}
+        <div key={step} className="step-anim">
 
         {step === "homeowner" && (
           <Q title="Do you currently own a home?">
@@ -301,8 +348,14 @@ export default function ClientPortal({ token, asAgent = false }: { token: string
           </Q>
         )}
 
+        </div>
         {stepIndex > 0 && (
-          <button className="mt-6 text-sm font-medium text-navy/50 underline" onClick={back}>← Go back</button>
+          <button
+            className="mt-6 inline-flex items-center gap-1 rounded-full border border-navy/15 px-3.5 py-1.5 text-sm font-medium text-navy/60 transition hover:border-navy/30 active:scale-95"
+            onClick={back}
+          >
+            ← Back
+          </button>
         )}
       </Shell>
     );
@@ -313,12 +366,16 @@ export default function ClientPortal({ token, asAgent = false }: { token: string
 
 // ------------------------------------------------------------------ pieces
 
-function Shell({ children, progress, stepLabel }: { children: React.ReactNode; progress: number; stepLabel?: string }) {
+function Shell({ children, progress, stepLabel, branding }: { children: React.ReactNode; progress: number; stepLabel?: string; branding?: Branding }) {
   return (
     <main className="mx-auto max-w-md px-5 py-6">
       <div className="mb-6">
         <div className="flex items-center justify-between text-xs font-semibold text-navy/50">
-          <span className="uppercase tracking-widest text-teal">Autowrite</span>
+          {branding?.logo ? (
+            <img src={branding.logo} alt="" className="h-6" />
+          ) : (
+            <span className="uppercase tracking-widest text-teal">{branding?.companyName ?? "Autowrite"}</span>
+          )}
           {stepLabel && <span>{stepLabel}</span>}
         </div>
         <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-navy/10">
@@ -413,7 +470,11 @@ function Checklist({ token, state, onChange, api }: { token: string; state: Port
   return (
     <main className="mx-auto max-w-md px-5 py-6 pb-16">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-semibold uppercase tracking-widest text-teal">Autowrite</span>
+        {state.branding.logo ? (
+          <img src={state.branding.logo} alt="" className="h-6" />
+        ) : (
+          <span className="text-xs font-semibold uppercase tracking-widest text-teal">{state.branding.companyName ?? "Autowrite"}</span>
+        )}
         <span className="text-xs font-semibold text-navy/50">{done} of {allVisible.length} in</span>
       </div>
 
@@ -505,7 +566,18 @@ function Checklist({ token, state, onChange, api }: { token: string; state: Port
         </div>
       )}
 
-      <p className="mt-8 text-center text-xs text-navy/40">
+      {(state.branding.agentName || state.branding.headshot) && (
+        <div className="mt-8 flex items-center justify-center gap-3 rounded-2xl bg-white/70 px-4 py-3">
+          {state.branding.headshot && <img src={state.branding.headshot} alt="" className="h-11 w-11 rounded-full object-cover" />}
+          <div className="text-left">
+            <p className="text-sm font-semibold leading-tight">{state.branding.agentName}</p>
+            {state.branding.credentials && <p className="text-xs text-navy/55">{state.branding.credentials}</p>}
+            {state.branding.companyName && <p className="text-xs text-navy/45">{state.branding.companyName}</p>}
+          </div>
+        </div>
+      )}
+
+      <p className="mt-6 text-center text-xs text-navy/40">
         Documents are encrypted, stored in Canada, and SINs are automatically hidden. <a href="/privacy" className="underline">Privacy</a>
       </p>
     </main>
@@ -559,7 +631,9 @@ function AddApplicant({ api, onDone, existing }: { api: (b?: any) => Promise<any
 function UploadCard({ token, slot, req, onDone }: { token: string; slot: Slot; req?: Req; onDone: () => Promise<void> }) {
   const [busy, setBusy] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
+  const [dragging, setDragging] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const cameraRef = useRef<HTMLInputElement>(null);
   if (!req) return null;
 
   const meta = STATUS_META[slot.status] ?? STATUS_META.missing;
@@ -610,7 +684,18 @@ function UploadCard({ token, slot, req, onDone }: { token: string; slot: Slot; r
           <input
             ref={inputRef}
             type="file"
-            accept="image/*,application/pdf"
+            accept="image/*,application/pdf,.pdf,.heic"
+            className="hidden"
+            onChange={(e) => {
+              const f = e.target.files?.[0];
+              if (f) upload(f);
+              e.currentTarget.value = "";
+            }}
+          />
+          <input
+            ref={cameraRef}
+            type="file"
+            accept="image/*"
             capture="environment"
             className="hidden"
             onChange={(e) => {
@@ -619,13 +704,31 @@ function UploadCard({ token, slot, req, onDone }: { token: string; slot: Slot; r
               e.currentTarget.value = "";
             }}
           />
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => inputRef.current?.click()}
+            onKeyDown={(e) => e.key === "Enter" && inputRef.current?.click()}
+            onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+            onDragLeave={() => setDragging(false)}
+            onDrop={(e) => {
+              e.preventDefault();
+              setDragging(false);
+              const f = e.dataTransfer.files?.[0];
+              if (f) upload(f);
+            }}
+            className={`mt-3 w-full cursor-pointer rounded-xl2 border-2 border-dashed border-teal/50 bg-teal-soft/50 px-4 py-4 text-center text-sm font-semibold text-teal transition active:scale-[0.99] ${dragging ? "drop-active" : ""}`}
+          >
+            {busy ? "Uploading…" : slot.status === "missing" ? "Tap to choose a file — or drag & drop" : "↻ Upload a better copy"}
+            <span className="mt-0.5 block text-xs font-normal text-navy/45">Photo, PDF, or screenshot</span>
+          </div>
           <button
             type="button"
             disabled={busy}
-            onClick={() => inputRef.current?.click()}
-            className="mt-3 w-full rounded-xl2 border-2 border-dashed border-teal/50 bg-teal-soft/50 px-4 py-3 text-sm font-semibold text-teal transition active:scale-[0.99]"
+            onClick={() => cameraRef.current?.click()}
+            className="mt-2 w-full rounded-xl2 px-4 py-2 text-sm font-semibold text-teal/90 underline-offset-2 hover:underline"
           >
-            {slot.status === "missing" ? "📷 Take a photo or choose a file" : "↻ Upload a better copy"}
+            📷 Or take a photo now
           </button>
         </>
       )}

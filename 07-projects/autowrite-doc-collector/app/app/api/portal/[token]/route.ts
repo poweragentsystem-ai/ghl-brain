@@ -7,6 +7,7 @@ import { resolveViewer, canAccess } from "@/lib/viewer";
 import { isAgentAuthed } from "@/lib/session";
 import { sendNudge } from "@/lib/nudge";
 import { computeProgress } from "@/lib/progress";
+import { getProfile } from "@/lib/profile";
 
 export const dynamic = "force-dynamic";
 
@@ -33,8 +34,16 @@ export async function GET(_req: NextRequest, { params }: { params: { token: stri
           })
       : [];
 
+  const profile = await getProfile();
   return NextResponse.json({
     clientName: file.clientName,
+    branding: {
+      agentName: profile.agentName ?? null,
+      credentials: profile.credentials ?? null,
+      companyName: profile.companyName ?? null,
+      logo: profile.logoDataUrl ?? null,
+      headshot: profile.headshotDataUrl ?? null,
+    },
     viewer: { type: viewer.type, name: viewer.applicant?.name ?? file.clientName, shareWithPrimary: viewer.applicant?.shareWithPrimary ?? null },
     status: file.status,
     consentAt: file.consentAt ?? null,

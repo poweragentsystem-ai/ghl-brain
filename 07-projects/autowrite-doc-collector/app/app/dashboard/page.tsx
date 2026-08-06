@@ -38,11 +38,16 @@ export default async function Dashboard() {
             <p className="text-xs font-semibold uppercase tracking-widest text-teal">Autowrite</p>
             <h1 className="mt-1 text-2xl font-bold text-white">Files</h1>
           </div>
-          {needsYou > 0 && (
-            <span className="rounded-full bg-coral/20 px-3 py-1 text-sm font-bold text-coral">
-              {needsYou} need{needsYou === 1 ? "s" : ""} you
-            </span>
-          )}
+          <div className="flex items-center gap-3">
+            {needsYou > 0 && (
+              <span className="rounded-full bg-coral/20 px-3 py-1 text-sm font-bold text-coral">
+                {needsYou} need{needsYou === 1 ? "s" : ""} you
+              </span>
+            )}
+            <Link href="/dashboard/settings" className="rounded-full border border-white/15 px-3 py-1 text-sm font-semibold text-slate-300 transition hover:border-teal/50">
+              ⚙ Branding
+            </Link>
+          </div>
         </div>
 
         <form action="/api/files" method="post" className="mt-6 grid grid-cols-1 gap-2 rounded-xl2 border border-white/10 bg-white/5 p-4 sm:grid-cols-[1fr_1fr_auto]">
