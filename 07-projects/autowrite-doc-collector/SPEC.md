@@ -122,7 +122,8 @@ Things a mortgage pro would also ask that aren't yet specified — to complete t
 
 - [x] Intel note read + captured
 - [x] Intake logic (this doc) captured
-- [ ] Renée confirms mortgage-product rules (LTV lines, reverse age, ID list) — ⚠️ blocking before any rule is hardcoded
-- [ ] MVP scope locked (see chat: secure collect/store/nudge core first vs. full underwriter brain)
-- [ ] Stack + security/compliance model (PIPEDA/FSRA, Canadian data residency) chosen
-- [ ] Build plan drafted
+- [x] Product rules validated (wowa.ca + `skills/morgan-mortgage.md`): reverse 55+ (CHIP ≤55% LTV, $250k min home), refi 80%/practical 75%, self-employed 2yr NOAs + T1/T2125 + licence/incorporation, FTB 5/10/20 tiers
+- [x] MVP scope locked + **v1 BUILT: `app/`** — rules engine (24 tests green), client wizard + checklist + uploads, AI reader w/ SIN masking, agent dashboard, nudges, PIPEDA consent/privacy + FSRA footer. E2E-verified with screenshots; ledger: `app/test_result.md`
+- [x] Stack + compliance model: Next.js/Vercel + Supabase ca-central-1 (Canadian residency); SIN answer = never collect + auto-mask from documents (OPC-grounded)
+- [ ] Renée's go-live switches (~20 min, see `app/README.md`): Supabase project, Vercel env keys, autowrite.ca domain, OLS principal-broker review
+- [ ] Phase 2: lender-fit suggestions (reuse `skills/lender-matching-ols.md` engine), employer real-company checks, Velocity/Finmo/Scarlett export, multi-applicant portal UI, GHL/SMS nudges when account unlocked
