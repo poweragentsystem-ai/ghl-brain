@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStore } from "@/lib/store";
 import { readDocument } from "@/lib/ai/reader";
 import { rateLimit } from "@/lib/ratelimit";
+import { applyCrossDocRules } from "@/lib/rules/crossdoc";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -84,9 +85,32 @@ export async function POST(req: NextRequest, { params }: { params: { token: stri
     detail: `${reqKey}${outcome.reason ? ` — ${outcome.reason}` : ""}${outcome.sinDetected ? " [SIN detected → masked]" : ""}`,
   });
 
+  // Cross-document rules: what a pro notices after reading (e.g. <1yr tenure
+  // on the employment letter → auto-add 2-year employment history).
+  const allDocs = await store.listDocs(file.id);
+  const finding = applyCrossDocRules(allDocs, file.requirements ?? []);
+  if (finding.addRequirements.length || finding.notes.length) {
+    const fresh = await store.getFile(file.id);
+    if (fresh) {
+      const reqs = [...(fresh.requirements ?? [])];
+      for (const add of finding.addRequirements) {
+        if (!reqs.some((r) => r.key === add.key)) reqs.push(add);
+      }
+      const notes = [...(fresh.notes ?? [])];
+      for (const note of finding.notes) {
+        if (!notes.some((n) => n.text === note.text)) notes.push(note);
+      }
+      await store.updateFile(file.id, { requirements: reqs, notes });
+      for (const add of finding.addRequirements) {
+        await store.audit({ fileId: file.id, actor: "system", action: "requirement_added", detail: `${add.key} (cross-doc rule)` });
+      }
+    }
+  }
+
   return NextResponse.json({
     id: updated.id,
     status: updated.status,
     reason: updated.reason ?? null,
+    checklistChanged: finding.addRequirements.length > 0,
   });
 }

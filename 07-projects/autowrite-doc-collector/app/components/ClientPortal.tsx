@@ -29,7 +29,7 @@ interface PortalState {
 
 type StepId =
   | "goal" | "homeowner" | "numbers" | "timeline" | "exitPlan" | "reverse"
-  | "employment" | "purchase" | "coApplicant" | "idType" | "review";
+  | "employment" | "money" | "purchase" | "coApplicant" | "idType" | "review";
 
 export default function ClientPortal({ token }: { token: string }) {
   const [state, setState] = useState<PortalState | null>(null);
@@ -77,7 +77,7 @@ export default function ClientPortal({ token }: { token: string }) {
       (answers.goal === "purchase" && answers.timeline === "days" && (answers.downPaymentPct ?? 0) >= 20);
     if (privateDeal) s.push("exitPlan");
     if (answers.goal === "equity" && answers.isHomeowner) s.push("reverse");
-    s.push("employment");
+    s.push("employment", "money");
     if (answers.goal === "purchase") s.push("purchase");
     s.push("coApplicant", "idType", "review");
     return s;
@@ -160,12 +160,26 @@ export default function ClientPortal({ token }: { token: string }) {
 
         {step === "numbers" && (
           <Q title="A few quick numbers" sub="Best guesses are totally fine.">
+            <label className="block">
+              <span className="mb-1 block text-sm font-semibold text-navy/70">Property address</span>
+              <input className="input" placeholder="e.g. 123 Main St, Mississauga" value={answers.propertyAddress ?? ""} onChange={(e) => set("propertyAddress", e.target.value)} />
+            </label>
             <Num label="What's your home roughly worth?" value={answers.propertyValue} onChange={(v) => set("propertyValue", v)} placeholder="e.g. 800,000" />
             <Num label="What's left on your mortgage?" value={answers.mortgageBalance} onChange={(v) => set("mortgageBalance", v)} placeholder="e.g. 350,000" />
             {answers.goal === "equity" && (
               <Num label="How much are you hoping to access?" value={answers.cashNeeded} onChange={(v) => set("cashNeeded", v)} placeholder="e.g. 50,000" />
             )}
             <button className="btn-primary mt-2" onClick={next} disabled={!answers.propertyValue}>Continue</button>
+          </Q>
+        )}
+
+        {step === "money" && (
+          <Q title="Your money picture" sub="Rough numbers help us match you to the right options. Nothing here disqualifies you.">
+            <Num label="Household income per year (before tax)" value={answers.annualIncome} onChange={(v) => set("annualIncome", v)} placeholder="e.g. 95,000" />
+            <Num label="Monthly debt payments (cards, car, loans)" value={answers.monthlyDebts} onChange={(v) => set("monthlyDebts", v)} placeholder="e.g. 600 — put 0 if none" />
+            <p className="mt-1 text-sm font-semibold text-navy/70">Any bankruptcy or consumer proposal in the last 7 years?</p>
+            <Choice onClick={() => pick("hadBankruptcy", false)} label="No" active={answers.hadBankruptcy === false} />
+            <Choice onClick={() => pick("hadBankruptcy", true)} label="Yes" sub="Good to know upfront — there are lenders for this" active={answers.hadBankruptcy === true} />
           </Q>
         )}
 
@@ -236,7 +250,13 @@ export default function ClientPortal({ token }: { token: string }) {
         )}
 
         {step === "review" && (
-          <Q title="That's everything!" sub="We'll build your exact document checklist — only what your situation needs.">
+          <Q title="Last one — in your own words" sub="What are you looking for, and why now? Totally optional, but it helps your agent help you.">
+            <textarea
+              className="input min-h-[110px]"
+              placeholder="e.g. We want to consolidate two credit cards and redo the kitchen before winter…"
+              value={answers.clientNote ?? ""}
+              onChange={(e) => set("clientNote", e.target.value)}
+            />
             <button className="btn-primary" onClick={submitAnswers}>Show my checklist</button>
           </Q>
         )}

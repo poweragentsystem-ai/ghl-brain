@@ -34,6 +34,17 @@ SIN module (`lib/sin.test.ts`):
 9. Screenshots (Playwright, chromium): client checklist @375px, consent @375px, dashboard, file detail — all visually verified in-session ✅
 10. Key-leak audit: `grep` of `.next/static/` for sk-ant/sk_live/SERVICE_ROLE/API keys → **clean** ✅
 
+## v1.1 round (2026-08-06, same session) — 40/40 unit tests, build clean
+
+- **Renée's tenure rule proven live:** uploaded employment letter with start date 6 months back → `checklistChanged: true`, "Previous employment proof (2-year history)" auto-added, friendly client note + agent alert written, requirement visible on both surfaces ✅ (5 unit tests incl. 12-month boundary + no-double-add + unparseable-date safety)
+- Client "in your own words" note captured in wizard → shown on file detail + in export ✅
+- Agent back-end notes: saved via form, agent-only, in export ✅
+- GDS/TDS panel: 33.5%/41.1% computed from stated income/debts (green/amber/red vs 39/44 prime, 50/55 B-side), payment estimate + assumptions listed, "indicative" labelled ✅ (4 unit tests)
+- Lender fit panel: ranked by rate, **both 4.09% ties badged BEST (green)**, promos + broker incentives in gold badges, "not a fit today (2) — and why" collapsed, FSRA indicative footer, lender names agent-only ✅ (6 unit tests: urgency→quick-close/private, self-employed→BFS reasons, unemployed→non-traditional fits, LTV-cap knockouts, bankruptcy filtering)
+- Export package: Velocity-API-IN-shaped JSON with applicant/deal/property/ratios/doc statuses/extracted fields/agent notes — **no SIN possible by design** (scrubbed at ingest; verified in output) ✅
+- Name-variant cross-doc heads-up (neutral wording, never "fraud") ✅ (unit test)
+- Screenshot of the underwriter cockpit visually verified ✅
+
 ## Known limits / untested (honest list)
 
 - **SupabaseStore untested** — no Supabase project/keys in this environment. Code complete; needs a live smoke test when Renée creates the ca-central-1 project (SQL in README).

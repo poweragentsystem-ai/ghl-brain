@@ -4,6 +4,9 @@ import { notFound, redirect } from "next/navigation";
 import { isAgentAuthed } from "@/lib/session";
 import { getStore } from "@/lib/store";
 import { computeProgress } from "@/lib/progress";
+import { computeRatios, ratioVerdict, BENCHMARKS } from "@/lib/mortgage-math";
+import { matchLenders } from "@/lib/lenders/match";
+import { RATE_SHEET_AS_OF } from "@/lib/lenders/data";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
@@ -63,6 +66,37 @@ export default async function FileDetail({ params }: { params: { id: string } })
             ))}
           </div>
         )}
+
+        {file.answers?.clientNote && (
+          <div className="mt-4 rounded-xl2 border border-teal/30 bg-teal/10 p-4">
+            <p className="text-xs font-bold uppercase tracking-wide text-teal">In the client's own words</p>
+            <p className="mt-1 text-slate-200">“{file.answers.clientNote}”</p>
+          </div>
+        )}
+
+        <RatioPanel file={file} />
+        <LenderPanel file={file} />
+
+        <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <a
+            href={`/api/files/${file.id}/export`}
+            className="rounded-xl2 border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-semibold text-slate-200 transition hover:border-teal/50"
+          >
+            ⬇ Export application package (Velocity-ready JSON)
+          </a>
+          <details className="rounded-xl2 border border-white/15 bg-white/5 px-4 py-3 text-sm text-slate-300">
+            <summary className="cursor-pointer font-semibold">✎ Your notes on this file</summary>
+            <form action={`/api/files/${file.id}/notes`} method="post" className="mt-3">
+              <textarea
+                name="agentNotes"
+                defaultValue={file.agentNotes ?? ""}
+                placeholder="Deal strategy, lender conversations, follow-ups… (never shown to the client)"
+                className="min-h-[110px] w-full rounded-lg border border-white/10 bg-white/10 p-3 text-slate-100 outline-none focus:border-teal"
+              />
+              <button className="mt-2 rounded-lg bg-teal px-4 py-2 text-sm font-semibold text-white">Save notes</button>
+            </form>
+          </details>
+        </div>
 
         {missingLabels.length > 0 && file.requirements?.length ? (
           <form action={`/api/files/${file.id}/nudge`} method="post" className="mt-4">
@@ -127,6 +161,86 @@ export default async function FileDetail({ params }: { params: { id: string } })
         </ul>
       </div>
     </main>
+  );
+}
+
+function RatioPanel({ file }: { file: any }) {
+  const a = file.answers ?? {};
+  const loanAmount = (a.mortgageBalance ?? 0) + (a.cashNeeded ?? 0);
+  const r = computeRatios({ annualIncome: a.annualIncome, monthlyDebts: a.monthlyDebts, loanAmount });
+  const colour = (v: "green" | "amber" | "red" | "unknown") =>
+    v === "green" ? "text-teal" : v === "amber" ? "text-amber" : v === "red" ? "text-coral" : "text-slate-500";
+
+  return (
+    <div className="mt-4 rounded-xl2 border border-white/10 bg-white/5 p-4">
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-bold uppercase tracking-wide text-slate-400">Ratios — indicative</p>
+        <p className="text-xs text-slate-500">GDS ≤{BENCHMARKS.prime.gds} / TDS ≤{BENCHMARKS.prime.tds} prime · ≤{BENCHMARKS.bSide.gds}/{BENCHMARKS.bSide.tds} B-side</p>
+      </div>
+      <div className="mt-3 grid grid-cols-3 gap-4">
+        <div>
+          <p className="text-xs text-slate-500">GDS</p>
+          <p className={`text-2xl font-extrabold ${colour(ratioVerdict(r.gds, "gds"))}`}>{r.gds != null ? `${r.gds}%` : "—"}</p>
+        </div>
+        <div>
+          <p className="text-xs text-slate-500">TDS</p>
+          <p className={`text-2xl font-extrabold ${colour(ratioVerdict(r.tds, "tds"))}`}>{r.tds != null ? `${r.tds}%` : "—"}</p>
+        </div>
+        <div>
+          <p className="text-xs text-slate-500">Est. payment</p>
+          <p className="text-2xl font-extrabold text-slate-200">${r.paymentMonthly.toLocaleString("en-CA")}<span className="text-sm font-medium text-slate-500">/mo</span></p>
+        </div>
+      </div>
+      <p className="mt-2 text-xs text-slate-500">
+        {r.gds == null ? "Client hasn't given income yet — ratios appear once they do. " : ""}
+        {r.assumptions.join(" · ")}
+      </p>
+    </div>
+  );
+}
+
+function LenderPanel({ file }: { file: any }) {
+  if (!file.answers) return null;
+  const { fits, nonFits } = matchLenders(file);
+  return (
+    <div className="mt-4 rounded-xl2 border border-white/10 bg-white/5 p-4">
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-bold uppercase tracking-wide text-slate-400">Lender fit — ranked, agent-only</p>
+        <p className="text-xs text-slate-500">Sheet: {RATE_SHEET_AS_OF}</p>
+      </div>
+      <div className="mt-3 space-y-2">
+        {fits.length === 0 && <p className="text-sm text-slate-400">No clean fits on current data — check the non-fits below for what to solve.</p>}
+        {fits.map((m) => (
+          <div
+            key={m.lender.id}
+            className={`rounded-lg border p-3 ${m.best ? "border-teal/60 bg-teal/10" : "border-white/10 bg-white/5"}`}
+          >
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="font-semibold text-white">{m.lender.name}</p>
+              <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-bold uppercase text-slate-300">{m.lender.tier}</span>
+              {m.best && <span className="rounded-full bg-teal px-2 py-0.5 text-[10px] font-bold text-white">BEST</span>}
+              {m.lender.promo && <span className="rounded-full bg-amber px-2 py-0.5 text-[10px] font-bold text-navy">★ {m.lender.promo}</span>}
+              {m.lender.brokerIncentive && <span className="rounded-full bg-amber/30 px-2 py-0.5 text-[10px] font-bold text-amber">$ {m.lender.brokerIncentive}</span>}
+              <p className="ml-auto text-lg font-extrabold text-white">{m.lender.rate5yrFixedPct.toFixed(2)}%</p>
+            </div>
+            <p className="mt-1 text-xs text-slate-400">{m.reasons.join(" · ")}{m.lender.notes ? ` · ${m.lender.notes}` : ""}</p>
+          </div>
+        ))}
+      </div>
+      {nonFits.length > 0 && (
+        <details className="mt-3 text-sm text-slate-400">
+          <summary className="cursor-pointer text-xs font-semibold uppercase tracking-wide">Not a fit today ({nonFits.length}) — and why</summary>
+          <ul className="mt-2 space-y-1">
+            {nonFits.map((m) => (
+              <li key={m.lender.id}><b className="text-slate-300">{m.lender.name}:</b> {m.reasons.join("; ")}</li>
+            ))}
+          </ul>
+        </details>
+      )}
+      <p className="mt-3 text-[11px] text-slate-500">
+        Rates shown are indicative based on the scenario provided. Final approval and rate are subject to the lender's underwriting. Lender names are never shown to clients.
+      </p>
+    </div>
   );
 }
 

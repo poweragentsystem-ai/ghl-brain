@@ -39,6 +39,15 @@ export interface IntakeAnswers {
   firstTimeBuyer?: boolean;
   hasCoApplicant?: boolean;
   primaryIdType?: IdType;
+  /** Money picture — powers GDS/TDS estimates + lender matching. All optional. */
+  annualIncome?: number;
+  monthlyDebts?: number;
+  hadBankruptcy?: boolean;
+  /** Property details for the application package */
+  propertyAddress?: string;
+  city?: string;
+  /** Client's own words: what they're looking for and why. */
+  clientNote?: string;
 }
 
 /** Which product path the engine has classified the file into. */

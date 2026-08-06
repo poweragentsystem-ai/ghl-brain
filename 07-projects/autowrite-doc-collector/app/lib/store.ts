@@ -25,6 +25,8 @@ export interface ClientFile {
   path?: DealPath;
   requirements?: DocRequirement[];
   notes?: PathNote[];
+  /** Broker's back-end working notes — agent-only, never shown to the client. */
+  agentNotes?: string;
   status: FileStatus;
 }
 

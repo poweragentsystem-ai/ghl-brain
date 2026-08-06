@@ -106,7 +106,16 @@ function simulate(reqKey: string, filename: string): any {
         ? { "Tax year": String(f.includes("old") ? currentYear - 4 : currentYear - 1), "Line 15000 total income": "$84,000", "SIN on document": "046-454-286" }
         : reqKey === "t4_2yr"
           ? { Employer: "Acme Corp", "Box 14": "$82,500", "Employee SIN": "046454286" }
-          : { Name: "Renée Test" },
+          : reqKey === "employment_letter"
+            ? {
+                Employer: "Acme Corp",
+                Role: "Operations Manager",
+                Salary: "$84,000",
+                "Start date": f.includes("newjob")
+                  ? new Date(Date.now() - 182 * 24 * 3600 * 1000).toISOString().slice(0, 10)
+                  : `${currentYear - 3}-04-01`,
+              }
+            : { Name: "Renée Test" },
     concerns: f.includes("edited") ? ["Font weight differs on the income line — review suggested"] : [],
   };
   return base;
