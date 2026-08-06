@@ -69,3 +69,7 @@ Live E2E on fresh server (all executed, outputs observed):
 - Slide-in step transitions + minimal ← Back chip
 - Upload cards: drag-and-drop zone + file picker + separate "take a photo" (camera) option
 - BUG FOUND BY UI-TESTING + FIXED: hero tap did not advance (next() clamped vs pre-choice 1-step list) — jump to step 1 directly; re-verified by scripted tap
+
+## v1.4 (2026-08-06) — auto-renaming (parity w/ autowrite, per Renée video intel) — 53/53 tests
+- Every processed doc gets a canonical organized name: IMG_4821.png → Renee-Test_T4-slips_2025.png (client/applicant name + doc type + tax year/part; accents cleaned, jpeg→jpg). Live-verified.
+- Shown on agent file view (📄 monospace line) + in the export package per document.

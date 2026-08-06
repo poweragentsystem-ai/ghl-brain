@@ -52,6 +52,8 @@ export interface DocRecord {
   applicantId?: string;
   part?: string;
   filename: string;
+  /** Canonical organized name, e.g. "Renee-Ross_T4-slips_2025.pdf". */
+  displayName?: string;
   contentType: string;
   storagePath: string;
   uploadedAt: string;

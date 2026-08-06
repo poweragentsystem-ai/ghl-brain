@@ -135,6 +135,7 @@ export default async function FileDetail({ params }: { params: { id: string } })
                   </p>
                   <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-bold ${meta.cls}`}>{meta.label}</span>
                 </div>
+                {d?.displayName && <p className="mt-1 font-mono text-xs text-slate-500">📄 {d.displayName}</p>}
                 {d?.reason && <p className="mt-2 text-sm text-slate-300">{d.reason}</p>}
                 {d?.sinDetected && (
                   <p className="mt-2 text-xs font-semibold text-teal">🔒 SIN detected on document — masked everywhere, never stored.</p>

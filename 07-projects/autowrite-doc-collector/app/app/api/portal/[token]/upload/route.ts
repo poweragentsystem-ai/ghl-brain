@@ -4,6 +4,7 @@ import { readDocument } from "@/lib/ai/reader";
 import { rateLimit } from "@/lib/ratelimit";
 import { applyCrossDocRules } from "@/lib/rules/crossdoc";
 import { resolveViewer, canAccess } from "@/lib/viewer";
+import { canonicalDocName } from "@/lib/docname";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -77,7 +78,19 @@ export async function POST(req: NextRequest, { params }: { params: { token: stri
     };
   }
 
+  // Auto-rename: classified docs get an organized canonical name.
+  const applicantName = applicantId === "primary" ? null : (file.applicants ?? []).find((ap) => ap.id === applicantId)?.name;
+  const displayName = canonicalDocName({
+    clientName: file.clientName,
+    applicantName,
+    reqKey,
+    part,
+    taxYear: outcome.extracted?.["Tax year"] ?? null,
+    contentType,
+  });
+
   const updated = await store.updateDoc(doc.id, {
+    displayName,
     status: outcome.status,
     reason: outcome.reason,
     extracted: outcome.extracted,

@@ -61,6 +61,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     },
     documents: progress.slots.map((s) => ({
       requirement: s.label,
+      filename: s.doc?.displayName ?? null,
       part: s.part,
       status: s.doc?.status ?? "missing",
       extracted: s.doc?.extracted ?? null,
