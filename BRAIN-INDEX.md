@@ -5,6 +5,14 @@
 
 ---
 
+## 🏠 EQUITYMAX / MORTGAGE — READ THIS FIRST IF THE TOPIC IS THE WEBSITE FORM, WORKFLOWS, VOICE AI, OR FOLLOW UP
+**Current state as of 2026-08-25 → [EQUITYMAX-CURRENT.md](EQUITYMAX-CURRENT.md)**
+Raw: `https://raw.githubusercontent.com/poweragentsystem-ai/ghl-brain/main/EQUITYMAX-CURRENT.md`
+Board: https://claude.ai/code/artifact/06d15bb0-37f0-47f6-a511-6f88278316f6
+Headline: website form finished and live · 4 automations had no sending hours and were fixed · voice agents reviewed and 3 gaps closed · the chase follow up already exists but has NEVER fired (listens for the old form) · 2 decisions pending from Renée (call transfer destination, GHL billing card).
+
+---
+
 ## WHO / WHAT
 Xpert Web Solutions Inc. (Toronto). Owner/CEO: Renée Ross. AI automation agency. 3 lines: AI Consulting, SaaS (digital-product builder), Mortgage (EquityMax, FSRA). Brand name still placeholder.
 
