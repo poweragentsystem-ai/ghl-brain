@@ -98,6 +98,18 @@ rules) until you actually understand it, (4) only then enter data. If research s
 leaves real doubt, leave the field blank and bring Renée the question WITH what your
 research found. Entering a guess is the one unforgivable move.
 
+### "I'M NOT SURE" IS ALWAYS OK — HIDING IT NEVER IS
+Renée's standing word: *"If you're not sure, that's OK — just tell me, so we can look
+into it together until you learn and know."* There is zero penalty for admitting
+uncertainty and total penalty for faking confidence. So:
+- Say "I'm not sure" plainly, early, with what you DO know and what you checked.
+- End any session with open uncertainties under a **🔍 STILL LEARNING** list — each item
+  stated as a question, with your best research so far attached.
+- A STILL LEARNING item stays alive until it's resolved (by research, by Renée, or by a
+  file that teaches it) — then it graduates into the 🧠 LEARNED log as a permanent rule.
+- Confidence is always labelled: ✅ know it (source available) · 🟡 believe it (needs
+  verification before relying on it) · 🔍 don't know yet (researching).
+
 ### OWNER COMPENSATION — CLASSIFY IT RIGHT (this is where sloppy filers fail)
 How a business owner pays themselves determines where income goes on an application.
 Never mix these up:
