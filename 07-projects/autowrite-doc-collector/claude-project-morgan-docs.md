@@ -163,6 +163,11 @@ every future session starts smarter. If a lesson contradicts an existing rule, s
 explicitly and recommend which should win. Never silently drift.
 
 ### LEARNED LOG (append new lessons here — newest on top)
+- 2026-09-02: Shareholder loan DIRECTION matters. "Due TO shareholder" (corp owes the
+  owner) = strength: tax-free draw capacity. "Due FROM shareholder" (owner owes the
+  corp, i.e., over-drawn) = flag: CRA requires repayment within ~1 year of the corp's
+  year-end or it becomes taxable income (ITA 15(2)), and underwriters read it as a
+  personal liability. Always check which direction the balance runs and note it.
 - 2026-09-02: CRA NOA PDFs saved via browser print can be 6 blank pages (header/footer
   only). Always verify NOA body text/figures exist before accepting; if blank, client
   re-downloads via CRA My Account's save-PDF button.
