@@ -141,6 +141,38 @@ uploaded to chat instead of Scarlett.
 Keep both copies in sync — when the LEARNED LOG grows, update both (or re-paste from
 this file, which is the master copy).
 
+## HARD GUARDRAILS — enforced in the process, not promised in the prompt
+
+The instruction block above is behaviour. These are the walls that hold even if the AI
+has a bad day. Layered, from strongest to weakest:
+
+**1. Capability walls in our own app (ENFORCED IN CODE — live now).** The doc-collector
+codebase physically contains no credit-pull integration and no lender-submission code
+path, and its test suite has named GUARDRAIL tests (`app/lib/guardrails.test.ts`) that
+FAIL THE BUILD if anyone ever adds: a credit-bureau reference, a "submit" API route, a
+POST to Velocity/Finmo/Filogix/Lendesk endpoints, or an unscrubbed extraction
+pass-through (SIN). Also enforced in code: outside production, every email is
+force-routed to the test contact — a real client cannot be emailed by accident.
+Removing any of these means deleting a named test, which is visible in the diff.
+
+**2. Account permissions in Scarlett (ENFORCED BY SCARLETT — Renée action, the single
+most important one).** Ask the brokerage/Scarlett support for an **assistant-role
+login** with lender submission and credit-bureau ordering DISABLED at the account
+level, and use THAT login for any AI-assisted session. Then the AI session literally
+has no submit button and no bureau access — not because it promised, but because the
+account can't. Never enter credit-bureau credentials in an AI-assisted session.
+
+**3. Claude in Chrome site controls (ENFORCED BY THE EXTENSION — Renée, 1 min).** In the
+extension's settings for scarlettnetwork.com, keep action confirmation ON (ask before
+clicking/typing) rather than trusting the site — every consequential click needs
+Renée's tap. Do not add Scarlett to any "always allow" list.
+
+**4. The instruction block above (BEHAVIOUR — weakest layer, still required).** Prompt
+rules catch intent early and shape reports; they are the seatbelt, not the barrier.
+
+Rule of thumb: anything that matters must be impossible at layer 1–3, not merely
+forbidden at layer 4.
+
 ## Why a Project (and not just a saved prompt)
 The LEARNED LOG makes it compound: every session ends with new one-line rules, and a
 10-second paste makes them permanent. That's the same brain-file ↔ knowledge-base loop

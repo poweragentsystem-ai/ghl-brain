@@ -14,7 +14,7 @@ interface Nudge {
   body: string;
 }
 
-function resolveRecipient(to: string): string {
+export function resolveRecipient(to: string): string {
   const test = process.env.TEST_CONTACT_EMAIL || "renee.ross@gmail.com";
   return process.env.APP_ENV === "production" ? to : test;
 }

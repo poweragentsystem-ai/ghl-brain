@@ -73,3 +73,7 @@ Live E2E on fresh server (all executed, outputs observed):
 ## v1.4 (2026-08-06) — auto-renaming (parity w/ autowrite, per Renée video intel) — 53/53 tests
 - Every processed doc gets a canonical organized name: IMG_4821.png → Renee-Test_T4-slips_2025.png (client/applicant name + doc type + tax year/part; accents cleaned, jpeg→jpg). Live-verified.
 - Shown on agent file view (📄 monospace line) + in the export package per document.
+
+## Guardrail round (2026-09-02) — 58/58 tests
+- Added named GUARDRAIL tests that fail the build if anyone adds: credit-bureau references, a "submit" API route, POSTs to lender endpoints (velocity/finmo/filogix/lendesk), or an unscrubbed extraction pass-through. Mail force-routing to test contact outside production now unit-tested.
+- Morgan Docs master updated with 4-layer hard-guardrail model (code walls, Scarlett assistant-role account, Chrome per-action confirmation, prompt as weakest layer).
