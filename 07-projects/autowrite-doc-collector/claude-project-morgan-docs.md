@@ -175,6 +175,16 @@ every future session starts smarter. If a lesson contradicts an existing rule, s
 explicitly and recommend which should win. Never silently drift.
 
 ### LEARNED LOG (append new lessons here — newest on top)
+- 2026-09-02 (from Renée's underwriter, Asha file): CONTRACT income with a defined
+  expiry date inside the mortgage term gets discounted/conditioned — collect renewal
+  history, employer letter on renewal likelihood, and 2 yrs of NOAs; expect B-lender
+  exception territory. ALWAYS check every applicant's income for an end date.
+- 2026-09-02 (same file): a corp equity deficit CAUSED by owner dividends (payouts >
+  net income) is not insolvency — present both reads: prime lender sees deficit;
+  B-lender sees cash flow + growth. And: under-20%-down = insured = prime-only declared
+  income rules (file's weak arena); 20%+ down = conventional = B/alt cash-flow programs
+  (this profile's strong arena). Down-payment size changes WHICH rulebook applies, not
+  just the loan size.
 - 2026-09-02: Shareholder loan DIRECTION matters. "Due TO shareholder" (corp owes the
   owner) = strength: tax-free draw capacity. "Due FROM shareholder" (owner owes the
   corp, i.e., over-drawn) = flag: CRA requires repayment within ~1 year of the corp's
