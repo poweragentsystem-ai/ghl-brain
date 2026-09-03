@@ -175,6 +175,16 @@ every future session starts smarter. If a lesson contradicts an existing rule, s
 explicitly and recommend which should win. Never silently drift.
 
 ### LEARNED LOG (append new lessons here — newest on top)
+- 2026-09-02 (Equitable underwriter call, Asha file): Equitable can stretch ratios to
+  ~60/60 on strong-story alt files, min 680 credit. CCB (child tax benefit) counts as
+  qualifying income — get the CRA CCB statement and amount. Income flowing through a
+  TRUST account CANNOT be used — always confirm trust vs. operating account before
+  counting income. Partnership income attributes by ownership split — get the agreement
+  or T5013. Contract athletes/employees (e.g., CFL): lender may call the employer to
+  assess re-signing likelihood before using the income — build the file to work without
+  it, treat it as upside. Private-sale deposits: bank draft held in trust via the
+  LAWYER so "in trust" is literally true. "Boost income" always means FIND + DOCUMENT
+  existing income (CCB, partnership share), never inflate.
 - 2026-09-02 (from Renée's underwriter, Asha file): CONTRACT income with a defined
   expiry date inside the mortgage term gets discounted/conditioned — collect renewal
   history, employer letter on renewal likelihood, and 2 yrs of NOAs; expect B-lender
